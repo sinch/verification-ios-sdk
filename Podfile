@@ -24,4 +24,9 @@ end
 target 'VerificationCore' do
   project 'VerificationCore/VerificationCore.xcodeproj'
   pod 'Alamofire', '~> 5.2'
+  
+  target 'VerificationCoreTests' do
+      inherit! :search_paths
+  end
+  
 end

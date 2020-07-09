@@ -8,8 +8,19 @@
 
 /* Begin PBXBuildFile section */
 		35597AD118821FF6883F81C7 /* libPods-VerificationCore.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1553536381E997AE6C1D99E7 /* libPods-VerificationCore.a */; };
+		59E37C1EE9DA793B25DE4D05 /* libPods-VerificationCoreTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 701DB62876AEF03541AEF750 /* libPods-VerificationCoreTests.a */; };
+		B1A2ECC324B70732005A0447 /* AuthorizationMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1A2ECC224B70732005A0447 /* AuthorizationMethod.swift */; };
+		B1A2ECC524B70865005A0447 /* SinchSessionHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1A2ECC424B70865005A0447 /* SinchSessionHandler.swift */; };
+		B1A2ECC724B70BE1005A0447 /* AppKeyAuthorizationMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1A2ECC624B70BE1005A0447 /* AppKeyAuthorizationMethod.swift */; };
+		B1A2ECCA24B70D68005A0447 /* HasApply.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1A2ECC924B70D68005A0447 /* HasApply.swift */; };
+		B1A2ECCC24B71734005A0447 /* ApiManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1A2ECCB24B71734005A0447 /* ApiManager.swift */; };
+		B1A2ECCE24B71A4A005A0447 /* SinchGlobalConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1A2ECCD24B71A4A005A0447 /* SinchGlobalConfig.swift */; };
+		B1A2ECD024B71AE9005A0447 /* ApiRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1A2ECCF24B71AE9005A0447 /* ApiRouter.swift */; };
+		B1A2ECD224B71B4B005A0447 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1A2ECD124B71B4B005A0447 /* Constants.swift */; };
+		B1A2ECD424B72C46005A0447 /* GlobalConfigCreator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1A2ECD324B72C46005A0447 /* GlobalConfigCreator.swift */; };
+		B1A2ECD624B72D59005A0447 /* AuthorizationMethodSetter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1A2ECD524B72D59005A0447 /* AuthorizationMethodSetter.swift */; };
 		B1EF433224B59D4D009BE30C /* VerificationCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B1EF432824B59D4D009BE30C /* VerificationCore.framework */; };
-		B1EF433724B59D4D009BE30C /* VerificationCoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1EF433624B59D4D009BE30C /* VerificationCoreTests.swift */; };
+		B1EF433724B59D4D009BE30C /* AppKeyAuthorizationMethodTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1EF433624B59D4D009BE30C /* AppKeyAuthorizationMethodTests.swift */; };
 		B1EF433924B59D4D009BE30C /* VerificationCore.h in Headers */ = {isa = PBXBuildFile; fileRef = B1EF432B24B59D4D009BE30C /* VerificationCore.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
 
@@ -26,13 +37,26 @@
 /* Begin PBXFileReference section */
 		1553536381E997AE6C1D99E7 /* libPods-VerificationCore.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-VerificationCore.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4D9D12C6207F5170C6BCFD7B /* Pods-VerificationCore.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VerificationCore.release.xcconfig"; path = "Target Support Files/Pods-VerificationCore/Pods-VerificationCore.release.xcconfig"; sourceTree = "<group>"; };
+		58D90E9974CE9D0A17C050B8 /* Pods-VerificationCoreTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VerificationCoreTests.debug.xcconfig"; path = "Target Support Files/Pods-VerificationCoreTests/Pods-VerificationCoreTests.debug.xcconfig"; sourceTree = "<group>"; };
+		701DB62876AEF03541AEF750 /* libPods-VerificationCoreTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-VerificationCoreTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		B1A2ECC224B70732005A0447 /* AuthorizationMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationMethod.swift; sourceTree = "<group>"; };
+		B1A2ECC424B70865005A0447 /* SinchSessionHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SinchSessionHandler.swift; sourceTree = "<group>"; };
+		B1A2ECC624B70BE1005A0447 /* AppKeyAuthorizationMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppKeyAuthorizationMethod.swift; sourceTree = "<group>"; };
+		B1A2ECC924B70D68005A0447 /* HasApply.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HasApply.swift; sourceTree = "<group>"; };
+		B1A2ECCB24B71734005A0447 /* ApiManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiManager.swift; sourceTree = "<group>"; };
+		B1A2ECCD24B71A4A005A0447 /* SinchGlobalConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SinchGlobalConfig.swift; sourceTree = "<group>"; };
+		B1A2ECCF24B71AE9005A0447 /* ApiRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiRouter.swift; sourceTree = "<group>"; };
+		B1A2ECD124B71B4B005A0447 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		B1A2ECD324B72C46005A0447 /* GlobalConfigCreator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalConfigCreator.swift; sourceTree = "<group>"; };
+		B1A2ECD524B72D59005A0447 /* AuthorizationMethodSetter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationMethodSetter.swift; sourceTree = "<group>"; };
 		B1EF432824B59D4D009BE30C /* VerificationCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = VerificationCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B1EF432B24B59D4D009BE30C /* VerificationCore.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VerificationCore.h; sourceTree = "<group>"; };
 		B1EF432C24B59D4D009BE30C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B1EF433124B59D4D009BE30C /* VerificationCoreTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VerificationCoreTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		B1EF433624B59D4D009BE30C /* VerificationCoreTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerificationCoreTests.swift; sourceTree = "<group>"; };
+		B1EF433624B59D4D009BE30C /* AppKeyAuthorizationMethodTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppKeyAuthorizationMethodTests.swift; sourceTree = "<group>"; };
 		B1EF433824B59D4D009BE30C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E6C4F4477437276B6098E46B /* Pods-VerificationCore.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VerificationCore.debug.xcconfig"; path = "Target Support Files/Pods-VerificationCore/Pods-VerificationCore.debug.xcconfig"; sourceTree = "<group>"; };
+		F391AE9A4788D9BEBFA6978D /* Pods-VerificationCoreTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VerificationCoreTests.release.xcconfig"; path = "Target Support Files/Pods-VerificationCoreTests/Pods-VerificationCoreTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -49,6 +73,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B1EF433224B59D4D009BE30C /* VerificationCore.framework in Frameworks */,
+				59E37C1EE9DA793B25DE4D05 /* libPods-VerificationCoreTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -59,6 +84,7 @@
 			isa = PBXGroup;
 			children = (
 				1553536381E997AE6C1D99E7 /* libPods-VerificationCore.a */,
+				701DB62876AEF03541AEF750 /* libPods-VerificationCoreTests.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -68,6 +94,8 @@
 			children = (
 				E6C4F4477437276B6098E46B /* Pods-VerificationCore.debug.xcconfig */,
 				4D9D12C6207F5170C6BCFD7B /* Pods-VerificationCore.release.xcconfig */,
+				58D90E9974CE9D0A17C050B8 /* Pods-VerificationCoreTests.debug.xcconfig */,
+				F391AE9A4788D9BEBFA6978D /* Pods-VerificationCoreTests.release.xcconfig */,
 			);
 			name = Pods;
 			path = ../Pods;
@@ -76,8 +104,58 @@
 		B1A2ECAE24B5BA3E005A0447 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				B1A2ECC024B703D9005A0447 /* Network */,
+				B1A2ECBE24B70346005A0447 /* Config */,
+				B1A2ECC824B70D4A005A0447 /* Extensions */,
+				B1A2ECD124B71B4B005A0447 /* Constants.swift */,
 			);
 			path = Classes;
+			sourceTree = "<group>";
+		};
+		B1A2ECBE24B70346005A0447 /* Config */ = {
+			isa = PBXGroup;
+			children = (
+				B1A2ECBF24B7035C005A0447 /* Global */,
+			);
+			path = Config;
+			sourceTree = "<group>";
+		};
+		B1A2ECBF24B7035C005A0447 /* Global */ = {
+			isa = PBXGroup;
+			children = (
+				B1A2ECCD24B71A4A005A0447 /* SinchGlobalConfig.swift */,
+				B1A2ECD324B72C46005A0447 /* GlobalConfigCreator.swift */,
+				B1A2ECD524B72D59005A0447 /* AuthorizationMethodSetter.swift */,
+			);
+			path = Global;
+			sourceTree = "<group>";
+		};
+		B1A2ECC024B703D9005A0447 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				B1A2ECC124B70717005A0447 /* Auth */,
+				B1A2ECCB24B71734005A0447 /* ApiManager.swift */,
+				B1A2ECCF24B71AE9005A0447 /* ApiRouter.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		B1A2ECC124B70717005A0447 /* Auth */ = {
+			isa = PBXGroup;
+			children = (
+				B1A2ECC224B70732005A0447 /* AuthorizationMethod.swift */,
+				B1A2ECC424B70865005A0447 /* SinchSessionHandler.swift */,
+				B1A2ECC624B70BE1005A0447 /* AppKeyAuthorizationMethod.swift */,
+			);
+			path = Auth;
+			sourceTree = "<group>";
+		};
+		B1A2ECC824B70D4A005A0447 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				B1A2ECC924B70D68005A0447 /* HasApply.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		B1EF431E24B59D4D009BE30C = {
@@ -113,7 +191,7 @@
 		B1EF433524B59D4D009BE30C /* VerificationCoreTests */ = {
 			isa = PBXGroup;
 			children = (
-				B1EF433624B59D4D009BE30C /* VerificationCoreTests.swift */,
+				B1EF433624B59D4D009BE30C /* AppKeyAuthorizationMethodTests.swift */,
 				B1EF433824B59D4D009BE30C /* Info.plist */,
 			);
 			path = VerificationCoreTests;
@@ -156,6 +234,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = B1EF433F24B59D4D009BE30C /* Build configuration list for PBXNativeTarget "VerificationCoreTests" */;
 			buildPhases = (
+				633FD6AC26DC38F16F889D76 /* [CP] Check Pods Manifest.lock */,
 				B1EF432D24B59D4D009BE30C /* Sources */,
 				B1EF432E24B59D4D009BE30C /* Frameworks */,
 				B1EF432F24B59D4D009BE30C /* Resources */,
@@ -226,6 +305,28 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		633FD6AC26DC38F16F889D76 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-VerificationCoreTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
 		90BFB51ACAEC1B26D0377C1C /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -255,6 +356,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B1A2ECC324B70732005A0447 /* AuthorizationMethod.swift in Sources */,
+				B1A2ECC524B70865005A0447 /* SinchSessionHandler.swift in Sources */,
+				B1A2ECCC24B71734005A0447 /* ApiManager.swift in Sources */,
+				B1A2ECC724B70BE1005A0447 /* AppKeyAuthorizationMethod.swift in Sources */,
+				B1A2ECCE24B71A4A005A0447 /* SinchGlobalConfig.swift in Sources */,
+				B1A2ECD624B72D59005A0447 /* AuthorizationMethodSetter.swift in Sources */,
+				B1A2ECCA24B70D68005A0447 /* HasApply.swift in Sources */,
+				B1A2ECD024B71AE9005A0447 /* ApiRouter.swift in Sources */,
+				B1A2ECD424B72C46005A0447 /* GlobalConfigCreator.swift in Sources */,
+				B1A2ECD224B71B4B005A0447 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -262,7 +373,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B1EF433724B59D4D009BE30C /* VerificationCoreTests.swift in Sources */,
+				B1EF433724B59D4D009BE30C /* AppKeyAuthorizationMethodTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -401,6 +512,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = E6C4F4477437276B6098E46B /* Pods-VerificationCore.debug.xcconfig */;
 			buildSettings = {
+				API_URL = "https://verificationapi-v1.sinch.com/";
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
@@ -427,6 +539,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 4D9D12C6207F5170C6BCFD7B /* Pods-VerificationCore.release.xcconfig */;
 			buildSettings = {
+				API_URL = "https://verificationapi-v1.sinch.com/";
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
@@ -450,7 +563,9 @@
 		};
 		B1EF434024B59D4D009BE30C /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 58D90E9974CE9D0A17C050B8 /* Pods-VerificationCoreTests.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = VerificationCoreTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -467,7 +582,9 @@
 		};
 		B1EF434124B59D4D009BE30C /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F391AE9A4788D9BEBFA6978D /* Pods-VerificationCoreTests.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = VerificationCoreTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
