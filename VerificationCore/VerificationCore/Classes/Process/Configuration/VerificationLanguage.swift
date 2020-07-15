@@ -9,7 +9,7 @@
 import Foundation
 
 /// Language that can be used by the verification process. Instance of this classes can be used during the initialization of verification process.
-class VerificationLanguage {
+public class VerificationLanguage {
     
     /// Language tag (locale identifier). This consists of a 2-3 letter base language tag representing the language.
     let language: String

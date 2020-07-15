@@ -7,12 +7,20 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		5F83B736814623DC4095B6B8 /* libPods-VerificationSms.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CB071420CF93B84CDDF5AE0C /* libPods-VerificationSms.a */; };
 		B1A2EC9524B5B004005A0447 /* VerificationSms.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B1A2EC8B24B5B003005A0447 /* VerificationSms.framework */; };
 		B1A2EC9A24B5B004005A0447 /* VerificationSmsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1A2EC9924B5B004005A0447 /* VerificationSmsTests.swift */; };
 		B1A2EC9C24B5B004005A0447 /* VerificationSms.h in Headers */ = {isa = PBXBuildFile; fileRef = B1A2EC8E24B5B003005A0447 /* VerificationSms.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		B1A2ECB224B5D688005A0447 /* VerificationCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B1A2ECB124B5D688005A0447 /* VerificationCore.framework */; };
 		B1A2ECB324B5D688005A0447 /* VerificationCore.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B1A2ECB124B5D688005A0447 /* VerificationCore.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		B1A2ED0724BED499005A0447 /* SmsVerificationRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1A2ED0624BED499005A0447 /* SmsVerificationRouter.swift */; };
+		B1A2ED1024BED757005A0447 /* SmsVerificationInitiationData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1A2ED0F24BED757005A0447 /* SmsVerificationInitiationData.swift */; };
+		B1A2ED1424BEDB72005A0447 /* VerificationCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B1A2ED1324BEDB72005A0447 /* VerificationCore.framework */; };
+		B1A2ED1824BEE9CC005A0447 /* SmsVerificationConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1A2ED1724BEE9CC005A0447 /* SmsVerificationConfig.swift */; };
+		B1A2ED1A24BEED26005A0447 /* SmsVerificationMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1A2ED1924BEED26005A0447 /* SmsVerificationMethod.swift */; };
+		B1A2ED1C24BEEFA9005A0447 /* SmsInitiationResponseData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1A2ED1B24BEEFA9005A0447 /* SmsInitiationResponseData.swift */; };
+		B1A2ED1E24BEF0A2005A0447 /* SmsInitiationDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1A2ED1D24BEF0A2005A0447 /* SmsInitiationDetails.swift */; };
+		B1A2ED2024BF0C0B005A0447 /* SmsInitiationListener.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1A2ED1F24BF0C0B005A0447 /* SmsInitiationListener.swift */; };
+		B1A2ED2924C0561C005A0447 /* SmsConfigBuilderSetters.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1A2ED2824C0561C005A0447 /* SmsConfigBuilderSetters.swift */; };
+		C24B87FDB090B2E61F8161F8 /* Pods_VerificationSms.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D6920974E9D85E82298727C5 /* Pods_VerificationSms.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,8 +56,18 @@
 		B1A2EC9924B5B004005A0447 /* VerificationSmsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerificationSmsTests.swift; sourceTree = "<group>"; };
 		B1A2EC9B24B5B004005A0447 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B1A2ECB124B5D688005A0447 /* VerificationCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = VerificationCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B1A2ED0624BED499005A0447 /* SmsVerificationRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmsVerificationRouter.swift; sourceTree = "<group>"; };
+		B1A2ED0F24BED757005A0447 /* SmsVerificationInitiationData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmsVerificationInitiationData.swift; sourceTree = "<group>"; };
+		B1A2ED1124BEDB68005A0447 /* VerificationCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = VerificationCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B1A2ED1324BEDB72005A0447 /* VerificationCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = VerificationCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B1A2ED1724BEE9CC005A0447 /* SmsVerificationConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmsVerificationConfig.swift; sourceTree = "<group>"; };
+		B1A2ED1924BEED26005A0447 /* SmsVerificationMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmsVerificationMethod.swift; sourceTree = "<group>"; };
+		B1A2ED1B24BEEFA9005A0447 /* SmsInitiationResponseData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmsInitiationResponseData.swift; sourceTree = "<group>"; };
+		B1A2ED1D24BEF0A2005A0447 /* SmsInitiationDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmsInitiationDetails.swift; sourceTree = "<group>"; };
+		B1A2ED1F24BF0C0B005A0447 /* SmsInitiationListener.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmsInitiationListener.swift; sourceTree = "<group>"; };
+		B1A2ED2824C0561C005A0447 /* SmsConfigBuilderSetters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmsConfigBuilderSetters.swift; sourceTree = "<group>"; };
 		B6650AA195AB6F3FCE3CF200 /* Pods-VerificationSms.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VerificationSms.release.xcconfig"; path = "Target Support Files/Pods-VerificationSms/Pods-VerificationSms.release.xcconfig"; sourceTree = "<group>"; };
-		CB071420CF93B84CDDF5AE0C /* libPods-VerificationSms.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-VerificationSms.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		D6920974E9D85E82298727C5 /* Pods_VerificationSms.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VerificationSms.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,8 +75,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B1A2ECB224B5D688005A0447 /* VerificationCore.framework in Frameworks */,
-				5F83B736814623DC4095B6B8 /* libPods-VerificationSms.a in Frameworks */,
+				B1A2ED1424BEDB72005A0447 /* VerificationCore.framework in Frameworks */,
+				C24B87FDB090B2E61F8161F8 /* Pods_VerificationSms.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -86,8 +104,10 @@
 		7FE5A85C10ACF9BD6BCE1FB4 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				B1A2ED1324BEDB72005A0447 /* VerificationCore.framework */,
+				B1A2ED1124BEDB68005A0447 /* VerificationCore.framework */,
 				B1A2ECB124B5D688005A0447 /* VerificationCore.framework */,
-				CB071420CF93B84CDDF5AE0C /* libPods-VerificationSms.a */,
+				D6920974E9D85E82298727C5 /* Pods_VerificationSms.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -134,8 +154,40 @@
 		B1A2ECB924B5D6BA005A0447 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				B1A2ED0524BED46F005A0447 /* Network */,
+				B1A2ED0424BED451005A0447 /* Config */,
+				B1A2ED0E24BED741005A0447 /* Initiation */,
+				B1A2ED1924BEED26005A0447 /* SmsVerificationMethod.swift */,
 			);
 			path = Classes;
+			sourceTree = "<group>";
+		};
+		B1A2ED0424BED451005A0447 /* Config */ = {
+			isa = PBXGroup;
+			children = (
+				B1A2ED1724BEE9CC005A0447 /* SmsVerificationConfig.swift */,
+				B1A2ED2824C0561C005A0447 /* SmsConfigBuilderSetters.swift */,
+			);
+			path = Config;
+			sourceTree = "<group>";
+		};
+		B1A2ED0524BED46F005A0447 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				B1A2ED0624BED499005A0447 /* SmsVerificationRouter.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		B1A2ED0E24BED741005A0447 /* Initiation */ = {
+			isa = PBXGroup;
+			children = (
+				B1A2ED0F24BED757005A0447 /* SmsVerificationInitiationData.swift */,
+				B1A2ED1B24BEEFA9005A0447 /* SmsInitiationResponseData.swift */,
+				B1A2ED1D24BEF0A2005A0447 /* SmsInitiationDetails.swift */,
+				B1A2ED1F24BF0C0B005A0447 /* SmsInitiationListener.swift */,
+			);
+			path = Initiation;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -275,6 +327,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B1A2ED1E24BEF0A2005A0447 /* SmsInitiationDetails.swift in Sources */,
+				B1A2ED2024BF0C0B005A0447 /* SmsInitiationListener.swift in Sources */,
+				B1A2ED1824BEE9CC005A0447 /* SmsVerificationConfig.swift in Sources */,
+				B1A2ED1A24BEED26005A0447 /* SmsVerificationMethod.swift in Sources */,
+				B1A2ED1C24BEEFA9005A0447 /* SmsInitiationResponseData.swift in Sources */,
+				B1A2ED1024BED757005A0447 /* SmsVerificationInitiationData.swift in Sources */,
+				B1A2ED0724BED499005A0447 /* SmsVerificationRouter.swift in Sources */,
+				B1A2ED2924C0561C005A0447 /* SmsConfigBuilderSetters.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -471,6 +531,7 @@
 		B1A2ECA324B5B004005A0447 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = VerificationSmsTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -488,6 +549,7 @@
 		B1A2ECA424B5B004005A0447 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = VerificationSmsTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (

@@ -8,7 +8,7 @@
 
 /// Current state of the verification process.
 /// - Tag: VerificationState
-enum VerificationState: Equatable {
+public enum VerificationState: Equatable {
     
     /// Verification instance has been constructed but it was manually stopped.
     case idle

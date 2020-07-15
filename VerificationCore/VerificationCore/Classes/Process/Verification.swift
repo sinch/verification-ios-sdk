@@ -10,7 +10,7 @@
  Interface collecting requirements each verification method must follow. After constructing specific verification instance it has to be successfully initiated. Then depending on verification method used the specific code needs to be passed back to backend.
  - Tag: Verification
  */
-protocol Verification {
+public protocol Verification {
     
     /// Current state of verification process.
     var verificationState: VerificationState { get }

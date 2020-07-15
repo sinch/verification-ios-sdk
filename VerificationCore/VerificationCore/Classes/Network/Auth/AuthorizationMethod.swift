@@ -10,7 +10,7 @@
  General interface used for implementing different kind of ways to authorize Sinch API requests.
   - Tag: AuthorizationMethod
 */
-protocol AuthorizationMethod {
+public protocol AuthorizationMethod {
     
     /// Method invoked each time API call is made. Implementation should modify and return authorized version of the request.
     /// - Parameter urlRequest: Unauthorized request.

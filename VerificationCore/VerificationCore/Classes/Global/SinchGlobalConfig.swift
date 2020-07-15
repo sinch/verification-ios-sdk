@@ -13,9 +13,9 @@ import Foundation
  
  Use: [SinchGlobalConfig.Builder](x-source-tag://[SinchGlobalConfigBuilder]) to create an instance of configuration..
  */
-class SinchGlobalConfig {
+public class SinchGlobalConfig {
     
-    let apiManager: ApiManager
+    public let apiManager: ApiManager
     
     private init(apiManager: ApiManager){
         self.apiManager = apiManager
@@ -25,13 +25,13 @@ class SinchGlobalConfig {
      Builder implementing [fluent builder](https://dzone.com/articles/fluent-builder-pattern) pattern to create global config objects.
      - Tag: SinchGlobalConfigBuilder
      */
-    class Builder: AuthorizationMethodSetter, GlobalConfigCreator {
+    public class Builder: AuthorizationMethodSetter, GlobalConfigCreator {
         
         private init() {}
         
         /// Instance of builder that should be used to create global config object.
         /// - Returns: A builder instance.
-        static func instance() -> AuthorizationMethodSetter {
+        public static func instance() -> AuthorizationMethodSetter {
             return SinchGlobalConfig.Builder()
         }
         
@@ -40,13 +40,13 @@ class SinchGlobalConfig {
         /// Assigns authorization method to the builder.
         /// - Parameter authorizationMethod: [AuthorizationMethod](x-source-tag://[AuthorizationMethod]) used for veryfing API requests.
         /// - Returns: Builder with assigned [AuthorizationMethod](x-source-tag://[AuthorizationMethod]).
-        func authorizationMethod(_ authorizationMethod: AuthorizationMethod) -> GlobalConfigCreator {
+        public func authorizationMethod(_ authorizationMethod: AuthorizationMethod) -> GlobalConfigCreator {
             return apply { $0.authorizationMethod = authorizationMethod }
         }
         
         /// Builds global config instance.
         /// - Returns: Sinch global config instance with previously defined parameters.
-        func build() -> SinchGlobalConfig {
+        public func build() -> SinchGlobalConfig {
             return SinchGlobalConfig(apiManager: ApiManager(authMethod: self.authorizationMethod))
         }
         

@@ -7,9 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		67B75D6F8BA390FAC4B71CFB /* libPods-VerificationSample.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9839FC380B65288126D2822B /* libPods-VerificationSample.a */; };
+		875E1DDACB0A97B376431852 /* Pods_VerificationSample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BFBFC7B91A1F1AE8FFC7A762 /* Pods_VerificationSample.framework */; };
 		B1A2ECB624B5D693005A0447 /* VerificationSms.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B1A2ECB524B5D693005A0447 /* VerificationSms.framework */; };
 		B1A2ECB724B5D693005A0447 /* VerificationSms.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B1A2ECB524B5D693005A0447 /* VerificationSms.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		B1A2ED2224BF282C005A0447 /* VerificationCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B1A2ED2124BF282C005A0447 /* VerificationCore.framework */; };
+		B1A2ED2324BF282C005A0447 /* VerificationCore.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B1A2ED2124BF282C005A0447 /* VerificationCore.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		B1EF430924B46C5F009BE30C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1EF430824B46C5F009BE30C /* AppDelegate.swift */; };
 		B1EF430B24B46C5F009BE30C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1EF430A24B46C5F009BE30C /* SceneDelegate.swift */; };
 		B1EF430D24B46C5F009BE30C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1EF430C24B46C5F009BE30C /* ViewController.swift */; };
@@ -25,6 +27,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				B1A2ED2324BF282C005A0447 /* VerificationCore.framework in Embed Frameworks */,
 				B1A2ECB724B5D693005A0447 /* VerificationSms.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
@@ -34,8 +37,8 @@
 
 /* Begin PBXFileReference section */
 		4A0A77DE58183A197AEF6A05 /* Pods-VerificationSample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VerificationSample.debug.xcconfig"; path = "Target Support Files/Pods-VerificationSample/Pods-VerificationSample.debug.xcconfig"; sourceTree = "<group>"; };
-		9839FC380B65288126D2822B /* libPods-VerificationSample.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-VerificationSample.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B1A2ECB524B5D693005A0447 /* VerificationSms.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = VerificationSms.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B1A2ED2124BF282C005A0447 /* VerificationCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = VerificationCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B1EF430524B46C5F009BE30C /* VerificationSample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VerificationSample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B1EF430824B46C5F009BE30C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B1EF430A24B46C5F009BE30C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -45,6 +48,7 @@
 		B1EF431424B46C60009BE30C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B1EF431624B46C60009BE30C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B1EF434524B59EBC009BE30C /* VerificationCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = VerificationCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BFBFC7B91A1F1AE8FFC7A762 /* Pods_VerificationSample.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VerificationSample.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EE49D6251AE297B5FC6EDDD6 /* Pods-VerificationSample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VerificationSample.release.xcconfig"; path = "Target Support Files/Pods-VerificationSample/Pods-VerificationSample.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -53,8 +57,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B1A2ED2224BF282C005A0447 /* VerificationCore.framework in Frameworks */,
 				B1A2ECB624B5D693005A0447 /* VerificationSms.framework in Frameworks */,
-				67B75D6F8BA390FAC4B71CFB /* libPods-VerificationSample.a in Frameworks */,
+				875E1DDACB0A97B376431852 /* Pods_VerificationSample.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -96,9 +101,10 @@
 		B1EF434424B59EBC009BE30C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				B1A2ED2124BF282C005A0447 /* VerificationCore.framework */,
 				B1A2ECB524B5D693005A0447 /* VerificationSms.framework */,
 				B1EF434524B59EBC009BE30C /* VerificationCore.framework */,
-				9839FC380B65288126D2822B /* libPods-VerificationSample.a */,
+				BFBFC7B91A1F1AE8FFC7A762 /* Pods_VerificationSample.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -125,6 +131,7 @@
 				B1EF430224B46C5F009BE30C /* Frameworks */,
 				B1EF430324B46C5F009BE30C /* Resources */,
 				B1A2ECB824B5D693005A0447 /* Embed Frameworks */,
+				9ACA4AE6B17FF202A02F0FF8 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -182,6 +189,23 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		9ACA4AE6B17FF202A02F0FF8 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-VerificationSample/Pods-VerificationSample-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-VerificationSample/Pods-VerificationSample-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-VerificationSample/Pods-VerificationSample-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		9CF4D04C79988F5ADA2D8364 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;

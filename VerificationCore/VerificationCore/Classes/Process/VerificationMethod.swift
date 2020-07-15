@@ -6,34 +6,36 @@
 //  Copyright © 2020 Aleksander Wojcik. All rights reserved.
 //
 
+import Alamofire
+
 /// Class containing common logic for every verification method.
 ///
 /// Every specific verification method should inherit from this class.
-class VerificationMethod<Router, InitData: InitiationResponseData> {
+open class VerificationMethod<InitData: InitiationResponseData>: VerificationMethodCallbacks {
         
-    private let verificationMethodConfig: VerificationMethodConfiguration<Router>
-    private let verificationCallbacks: VerificationMethodCallbacks
+    private let verificationMethodConfig: VerificationMethodConfiguration
     private var initiationResponseData: InitData?
         
-    var verificationListener: VerificationListener
+    private(set) public weak var verificationListener: VerificationListener?
     
-    var verificationState: VerificationState = .idle
+    private(set) public var verificationState: VerificationState = .idle
         
     var id: String? {
         return initiationResponseData?.id
     }
     
+    public var service: Session {
+        return verificationMethodConfig.globalConfig.apiManager.session
+    }
+    
     /// Default initializer
     /// - Parameters:
-    ///   - verificationCallbacks: Callbacks to be invoked during the verification process.
     ///   - verificationMethodConfig: Verification method specific configuration reference.
     ///   - verificationListener: Verification listener to be notified about verification process.
-    init(
-        verificationCallbacks: VerificationMethodCallbacks,
-        verificationMethodConfig: VerificationMethodConfiguration<Router>,
-        verificationListener: VerificationListener = EmptyVerificationListener()
+    public init(
+        verificationMethodConfig: VerificationMethodConfiguration,
+        verificationListener: VerificationListener? = nil
     ) {
-        self.verificationCallbacks = verificationCallbacks
         self.verificationMethodConfig = verificationMethodConfig
         self.verificationListener = verificationListener
     }
@@ -41,26 +43,36 @@ class VerificationMethod<Router, InitData: InitiationResponseData> {
     private func verify(_ verificationCode: String, fromSource sourceType: VerificationSourceType) {
         if verificationState.canVerify {
             update(newState: .verification(status: .ongoing))
-            verificationCallbacks.onVerify(verificationCode, fromSource: sourceType)
+            onVerify(verificationCode, fromSource: sourceType)
         }
     }
-
+    
+    open func onPreInitiate() -> Bool {
+        return true
+    }
+    
+    open func report() {}
+    
+    open func onInitiate() { }
+    
+    open func onVerify(_ verificationCode: String, fromSource sourceType: VerificationSourceType) { }
+    
 }
 
 extension VerificationMethod: Verification {
     
-    final func initiate() {
-        if verificationCallbacks.onPreInitiate() && verificationState.canInitiate {
+    final public func initiate() {
+        if onPreInitiate() && verificationState.canInitiate {
             update(newState: .initialization(status: .ongoing))
-            verificationCallbacks.onInitiate()
+            onInitiate()
         }
     }
     
-    final func verify(verificationCode: String) {
+    final public func verify(verificationCode: String) {
         verify(verificationCode, fromSource: .manual)
     }
     
-    func stop() {
+    public func stop() {
         guard !verificationState.isVerificationProcessFinished else { return }
         update(newState: .manuallyStopped)
     }

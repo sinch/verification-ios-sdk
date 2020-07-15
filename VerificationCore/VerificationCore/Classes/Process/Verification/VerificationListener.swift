@@ -8,7 +8,7 @@
 
 /// Listener holding callbacks invoked by the [Verification](x-source-tag://[Verification]) implementations notifying about the verification process result.
 /// - TAG: VerificationListener
-protocol VerificationListener {
+public protocol VerificationListener: class {
     
     /// Called after entire verification process has finished successfully.
     func onVerified()

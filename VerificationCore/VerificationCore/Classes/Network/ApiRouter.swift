@@ -10,7 +10,7 @@
 import Alamofire
 
 /// Protocol defining properties of each SINCH API request.
-protocol APIRouter: URLRequestConvertible {
+public protocol APIRouter: URLRequestConvertible {
     
     /// HTTP method used for making the request.
     var method: HTTPMethod { get }
@@ -28,7 +28,7 @@ protocol APIRouter: URLRequestConvertible {
     var headers: HTTPHeaders { get }
 }
 
-extension APIRouter {
+public extension APIRouter {
     
     /// Sinch API base URL (differs based on used environment).
     var baseURL: URL {

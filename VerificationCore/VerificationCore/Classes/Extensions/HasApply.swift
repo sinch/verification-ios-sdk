@@ -11,9 +11,9 @@
  The concept is a copy of Kotlin's [apply](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/apply.html) function.
  
  */
-protocol HasApply { }
+public protocol HasApply { }
 
-extension HasApply {
+public extension HasApply {
     
     /// Calls the specified function block with this value as its receiver and returns this value.
     /// - Parameter closure: Closure applied to given object.
