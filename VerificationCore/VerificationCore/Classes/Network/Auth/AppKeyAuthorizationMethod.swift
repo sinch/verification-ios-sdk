@@ -10,13 +10,13 @@
  [AuthorizationMethod](x-source-tag://[AuthorizationMethod]) that uses application key to authorize API requests. To get the key check your application page on
  [Sinch Dashboard](https://portal.sinch.com/)
 */
-class AppKeyAuthorizationMethod {
+public class AppKeyAuthorizationMethod {
     
     let appKey: String
     
     /// Default initializer
     /// - Parameter appKey: Application key assigned to the app.
-    init(appKey: String) {
+    public init(appKey: String) {
         self.appKey = appKey
     }
     
@@ -24,7 +24,7 @@ class AppKeyAuthorizationMethod {
 
 extension AppKeyAuthorizationMethod: AuthorizationMethod {
     
-    func onAuthorize(_ urlRequest: URLRequest) -> URLRequest {
+    public func onAuthorize(_ urlRequest: URLRequest) -> URLRequest {
         var modifiedRequest = urlRequest
         modifiedRequest.setValue("Application \(appKey)", forHTTPHeaderField: "Authorization")
         return modifiedRequest

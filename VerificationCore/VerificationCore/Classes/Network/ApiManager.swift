@@ -10,7 +10,7 @@ import Alamofire
 
 /// Manager used for interacting with Sinch Verification API.
 /// - Tag: ApiManager
-class ApiManager {
+public class ApiManager {
     
     private let authMethod: AuthorizationMethod
     
@@ -21,8 +21,8 @@ class ApiManager {
     }
     
     /// Specific session instance that should be used for interacting with SINCH API (making HTTP calls).
-    lazy var session: Session = {
-        return Session(interceptor: SinchSessionHandler(authorizationMethod: authMethod))
+    public lazy var session: Session = {
+        return Session(interceptor: SinchSessionHandler(authorizationMethod: authMethod), eventMonitors: [LoggingMonitor()])
     }()
 
 }

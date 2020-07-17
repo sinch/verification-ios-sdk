@@ -8,6 +8,6 @@
 
 import Foundation
 
-protocol AuthorizationMethodSetter {
+public protocol AuthorizationMethodSetter {
     func authorizationMethod(_ authorizationMethod: AuthorizationMethod) -> GlobalConfigCreator
 }

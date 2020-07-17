@@ -8,13 +8,7 @@
 
 /// Interface defining methods notifying about verification initiation process result.
 /// - TAG: InitiationListener
-protocol InitiationListener {
-    
-    associatedtype T: InitiationResponseData
-    
-    /// Called when the initiation process has finished successfully.
-    /// - Parameter data: Extra data that might be required during actual verification process.
-    func onInitiated(_ data: InitiationResponseData)
+public protocol InitiationListener: class {
     
     /// Called when the initiation process has failed.
     /// - Parameter e: Error data.

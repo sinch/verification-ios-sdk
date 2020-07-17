@@ -7,7 +7,7 @@
 //
 
 /// Enum defining different statuses of [VerificationState](x-source-tag://[VerificationState])
-enum VerificationStateStatus {
+public enum VerificationStateStatus {
     
     /// State is "active" meaning that probably an API call is being made and the result is not known yet.
     case ongoing

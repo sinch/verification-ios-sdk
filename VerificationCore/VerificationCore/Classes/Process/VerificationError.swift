@@ -6,6 +6,7 @@
 //  Copyright © 2020 Aleksander Wojcik. All rights reserved.
 //
 
-enum VerificationError: Error {
+public enum VerificationError: Error {
     case illegalArgument(message: String?)
+    case serialization(encodable: Encodable)
 }

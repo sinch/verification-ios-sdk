@@ -7,7 +7,7 @@
 //
 
 /// Enum representing different possible ways the verification code might be collected.
-enum VerificationSourceType {
+public enum VerificationSourceType {
     
     /// Code was automatically intercepted by the interceptor.
     case interception

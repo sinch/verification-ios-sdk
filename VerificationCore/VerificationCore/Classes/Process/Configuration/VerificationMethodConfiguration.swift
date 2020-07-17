@@ -7,20 +7,18 @@
 //
 
 /// Base class for common configuration of every verification method.
-class VerificationMethodConfiguration<Router>: VerificationMethodProperties {
+open class VerificationMethodConfiguration: VerificationMethodProperties {
+
+    public let globalConfig: SinchGlobalConfig
+    public let number: String
+    public let custom: String?
+    public let reference: String?
+    public let honoursEarlyReject: Bool
+    public let acceptedLanguages: [VerificationLanguage]
     
-    let router: Router
-    let globalConfig: SinchGlobalConfig
-    let number: String
-    let custom: String?
-    let reference: String?
-    let honoursEarlyReject: Bool
-    let acceptedLanguages: [VerificationLanguage]
-    
-    init(router: Router, globalConfig: SinchGlobalConfig, number: String,
+    public init(globalConfig: SinchGlobalConfig, number: String,
          custom: String? = nil, reference: String? = nil, honoursEarlyReject: Bool = true,
          acceptedLanguages: [VerificationLanguage] = []) {
-        self.router = router
         self.globalConfig = globalConfig
         self.number = number
         self.custom = custom

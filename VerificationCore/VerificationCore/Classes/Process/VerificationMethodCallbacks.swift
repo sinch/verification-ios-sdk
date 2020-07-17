@@ -7,7 +7,7 @@
 //
 
 /// Protocol that needs to be conformed by each specific verification method, defining callbacks of the verification process.
-protocol VerificationMethodCallbacks {
+public protocol VerificationMethodCallbacks {
     
     /// Function called before specific verification methods initiate function is called.
     /// - Returns: True if the initiation process should begin, false otherwise.

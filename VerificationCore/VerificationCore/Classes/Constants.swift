@@ -16,7 +16,7 @@ enum Constants {
         
         ///Sinch API domain taken from plist file. Based on built target different domain can be used for various environments. The domain has to end with '/' sign.
         static var domain: String {
-            guard let urlPath = Bundle.main.infoDictionary!["API_URL"] as? String else {
+            guard let urlPath = Bundle(for: ApiManager.self).infoDictionary!["API_URL"] as? String else {
                 fatalError("API_URL have to be placed in plist file")
             }
             return urlPath

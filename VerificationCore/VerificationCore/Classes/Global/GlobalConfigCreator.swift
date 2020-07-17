@@ -8,6 +8,6 @@
 
 import Foundation
 
-protocol GlobalConfigCreator {
+public protocol GlobalConfigCreator {
     func build() -> SinchGlobalConfig
 }

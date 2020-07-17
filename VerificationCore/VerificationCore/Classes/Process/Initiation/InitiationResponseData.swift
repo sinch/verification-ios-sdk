@@ -7,7 +7,7 @@
 //
 
 /// Interface defining common requirements for each verification method initiation response data.
-protocol InitiationResponseData {
+public protocol InitiationResponseData {
     
     /// ID assigned to the verification.
     var id: String { get }
