@@ -19,4 +19,20 @@ public struct SmsInitiationResponseData: InitiationResponseData, Decodable {
     
     /// Details of the initiated sms verification process.
     public let details: SmsInitiationDetails
+    
+    /// Language of sms message that will be sent.
+    private(set) public var contentLanguage: String? = nil
+    
+    enum CodingKeys: String, CodingKey {
+        case id
+        case details = "sms"
+    }
+    
+    public func withContentLanguage(_ contentLanguage: String?) -> SmsInitiationResponseData {
+        return SmsInitiationResponseData(
+            id: self.id,
+            details: self.details,
+            contentLanguage: contentLanguage
+        )
+    }
 }

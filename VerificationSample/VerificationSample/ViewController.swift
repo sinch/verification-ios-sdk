@@ -42,4 +42,13 @@ class ViewController: UIViewController {
 
 extension ViewController: VerificationListener {}
 
-extension ViewController: SmsInitiationListener {}
+extension ViewController: SmsInitiationListener {
+    
+    func onInitiated(_ data: SmsInitiationResponseData) {
+        print("onInitiated called with \(data)")
+    }
+    
+    func onInitiationFailed(e: Error) {
+        print("onInitationFailed with \(e)")
+    }
+}

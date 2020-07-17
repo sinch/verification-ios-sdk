@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B17233E924C18E7100E35C9E /* ApiErrorData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B17233E824C18E7100E35C9E /* ApiErrorData.swift */; };
+		B17233EB24C1A4BB00E35C9E /* DataRequestsExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B17233EA24C1A4BB00E35C9E /* DataRequestsExtensions.swift */; };
+		B17233ED24C1A63B00E35C9E /* ApiResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = B17233EC24C1A63B00E35C9E /* ApiResponse.swift */; };
+		B17233EF24C1A77300E35C9E /* DecodableExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B17233EE24C1A77300E35C9E /* DecodableExtensions.swift */; };
 		B1A2ECC324B70732005A0447 /* AuthorizationMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1A2ECC224B70732005A0447 /* AuthorizationMethod.swift */; };
 		B1A2ECC524B70865005A0447 /* SinchSessionHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1A2ECC424B70865005A0447 /* SinchSessionHandler.swift */; };
 		B1A2ECC724B70BE1005A0447 /* AppKeyAuthorizationMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1A2ECC624B70BE1005A0447 /* AppKeyAuthorizationMethod.swift */; };
@@ -64,6 +68,10 @@
 		4D9D12C6207F5170C6BCFD7B /* Pods-VerificationCore.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VerificationCore.release.xcconfig"; path = "Target Support Files/Pods-VerificationCore/Pods-VerificationCore.release.xcconfig"; sourceTree = "<group>"; };
 		58D90E9974CE9D0A17C050B8 /* Pods-VerificationCoreTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VerificationCoreTests.debug.xcconfig"; path = "Target Support Files/Pods-VerificationCoreTests/Pods-VerificationCoreTests.debug.xcconfig"; sourceTree = "<group>"; };
 		A76F6B61929B0A1973F75532 /* Pods_VerificationCoreTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VerificationCoreTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B17233E824C18E7100E35C9E /* ApiErrorData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiErrorData.swift; sourceTree = "<group>"; };
+		B17233EA24C1A4BB00E35C9E /* DataRequestsExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataRequestsExtensions.swift; sourceTree = "<group>"; };
+		B17233EC24C1A63B00E35C9E /* ApiResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiResponse.swift; sourceTree = "<group>"; };
+		B17233EE24C1A77300E35C9E /* DecodableExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DecodableExtensions.swift; sourceTree = "<group>"; };
 		B1A2ECC224B70732005A0447 /* AuthorizationMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationMethod.swift; sourceTree = "<group>"; };
 		B1A2ECC424B70865005A0447 /* SinchSessionHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SinchSessionHandler.swift; sourceTree = "<group>"; };
 		B1A2ECC624B70BE1005A0447 /* AppKeyAuthorizationMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppKeyAuthorizationMethod.swift; sourceTree = "<group>"; };
@@ -176,10 +184,12 @@
 		B1A2ECC024B703D9005A0447 /* Network */ = {
 			isa = PBXGroup;
 			children = (
+				B17233E824C18E7100E35C9E /* ApiErrorData.swift */,
 				B1A2ECC124B70717005A0447 /* Auth */,
 				B1A2ECCB24B71734005A0447 /* ApiManager.swift */,
 				B1A2ECCF24B71AE9005A0447 /* ApiRouter.swift */,
 				B1A2ED2624C02CC3005A0447 /* LoggingMonitor.swift */,
+				B17233EC24C1A63B00E35C9E /* ApiResponse.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -200,6 +210,8 @@
 				B1A2ECC924B70D68005A0447 /* HasApply.swift */,
 				B1A2ECF324BD87B5005A0447 /* StringExtensions.swift */,
 				B1A2ED1524BEE26E005A0447 /* EncodableExtensions.swift */,
+				B17233EA24C1A4BB00E35C9E /* DataRequestsExtensions.swift */,
+				B17233EE24C1A77300E35C9E /* DecodableExtensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -482,14 +494,17 @@
 				B1A2ED2C24C059B1005A0447 /* VerificationMethodConfigCreatorParameters.swift in Sources */,
 				B1A2ECFA24BDA041005A0447 /* VerificationMethod.swift in Sources */,
 				B1A2ECF424BD87B5005A0447 /* StringExtensions.swift in Sources */,
+				B17233E924C18E7100E35C9E /* ApiErrorData.swift in Sources */,
 				B1A2ED0D24BED648005A0447 /* VerificationInitiationData.swift in Sources */,
 				B1A2ECCC24B71734005A0447 /* ApiManager.swift in Sources */,
+				B17233EB24C1A4BB00E35C9E /* DataRequestsExtensions.swift in Sources */,
 				B1A2ECFD24BDA59D005A0447 /* VerificationStateListener.swift in Sources */,
 				B1A2ECC724B70BE1005A0447 /* AppKeyAuthorizationMethod.swift in Sources */,
 				B1A2ECCE24B71A4A005A0447 /* SinchGlobalConfig.swift in Sources */,
 				B1A2ED0924BED4F5005A0447 /* VerificationIdentity.swift in Sources */,
 				B1A2ECD924BC2FC8005A0447 /* Verification.swift in Sources */,
 				B1A2ECF224BC83ED005A0447 /* VerificationError.swift in Sources */,
+				B17233EF24C1A77300E35C9E /* DecodableExtensions.swift in Sources */,
 				B1A2ECD624B72D59005A0447 /* AuthorizationMethodSetter.swift in Sources */,
 				B1A2ECCA24B70D68005A0447 /* HasApply.swift in Sources */,
 				B1A2ECD024B71AE9005A0447 /* ApiRouter.swift in Sources */,
@@ -502,6 +517,7 @@
 				B1A2ECE224BC6314005A0447 /* VerificationListener.swift in Sources */,
 				B1A2ED2E24C05DE4005A0447 /* BaseVerificationMethodConfigBuilder.swift in Sources */,
 				B1A2ECEE24BC71C8005A0447 /* VerificationMethodProperties.swift in Sources */,
+				B17233ED24C1A63B00E35C9E /* ApiResponse.swift in Sources */,
 				B1A2ECFF24BDB3B0005A0447 /* VerificationMethodCallbacks.swift in Sources */,
 				B1A2ECD224B71B4B005A0447 /* Constants.swift in Sources */,
 			);

@@ -9,4 +9,6 @@
 public enum VerificationError: Error {
     case illegalArgument(message: String?)
     case serialization(encodable: Encodable)
+    case apiCall(data: ApiErrorData)
+    case unexpected(message: String?)
 }

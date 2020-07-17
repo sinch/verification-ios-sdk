@@ -27,7 +27,24 @@ public class SmsVerificationMethod: VerificationMethod<SmsInitiationResponseData
         super.init(verificationMethodConfig: verificationMethodConfig, verificationListener: verificationListener)
     }
     
-    public override func onInitiate() { }
+    private var initiationData: SmsVerificationInitiationData {
+        return SmsVerificationInitiationData(basedOnConfiguartion: self.verificationMethodConfig)
+    }
+    
+    public override func onInitiate() {
+        self.service
+            .request(SmsVerificationRouter.initiateVerification(data: initiationData))
+            .sinchResponse { [weak self] (result: ApiResponse<SmsInitiationResponseData>) -> Void in
+                switch result {
+                case .success(let data, let headers):
+                    self?.initiationListener?.onInitiated(
+                        data.withContentLanguage(headers["Content-Language"])
+                    )
+                case .failure(let error):
+                    self?.initiationListener?.onInitiationFailed(e: error)
+                }
+        }
+    }
     
     /// Builder implementing fluent builder pattern to create [SmsVerificationMethod](x-source-tag://[SmsVerificationMethod]) objects.
     /// - TAG: SmsVerificationMethodBuilder
