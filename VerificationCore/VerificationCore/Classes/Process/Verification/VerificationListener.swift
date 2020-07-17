@@ -18,3 +18,8 @@ public protocol VerificationListener: class {
     func onVerificationFailed(e: Error)
     
 }
+
+public extension VerificationListener {
+    func onVerified() {}
+    func onVerificationFailed(e: Error) {}
+}
