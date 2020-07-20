@@ -26,12 +26,14 @@ class VerificationController: UIViewController {
     var smsConfiguarion: SmsVerificationConfig {
         return SmsVerificationConfig.Builder.instance()
             .globalConfig(self.globalConfig)
-            .number(phoneNumberTextField.text ?? "") //TODO change test number when sample app ready
+            .number(phoneNumberTextField.text ?? "")
             .build()
     }
 
     @IBAction func didTapInitializeButton(_ sender: Any) {
         let verificationDialogController = VerificationDialogController.instantiate()
+        verificationDialogController.delegate = self
+        
         self.verification = buildVerification()
         self.present(verificationDialogController, animated: true, completion: nil)
         self.verification?.initiate()
@@ -47,7 +49,17 @@ class VerificationController: UIViewController {
 
 }
 
-extension VerificationController: VerificationListener {}
+extension VerificationController: VerificationListener {
+    
+    func onVerified() {
+        print("onVerified called")
+    }
+    
+    func onVerificationFailed(e: Error) {
+        print("onVerificationFailed called with \(e)")
+    }
+    
+}
 
 extension VerificationController: SmsInitiationListener {
     
@@ -58,4 +70,14 @@ extension VerificationController: SmsInitiationListener {
     func onInitiationFailed(e: Error) {
         print("onInitationFailed with \(e)")
     }
+}
+
+extension VerificationController: VerificationDialogDelegate {
+    
+    func verificationDialog(_ verificationDialog: VerificationDialogController,
+                            didTypeVerificationCode verificationCode: String) {
+        print("Delegate passed code \(verificationCode)")
+        verification?.verify(verificationCode: verificationCode)
+    }
+    
 }
