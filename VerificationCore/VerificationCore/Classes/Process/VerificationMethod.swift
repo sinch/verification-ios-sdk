@@ -13,7 +13,7 @@ import Alamofire
 /// Every specific verification method should inherit from this class.
 open class VerificationMethod<InitData: InitiationResponseData>: VerificationMethodCallbacks {
         
-    private let verificationMethodConfig: VerificationMethodConfiguration
+    public let verificationMethodConfig: VerificationMethodConfiguration
     private var initiationResponseData: InitData?
         
     private(set) public weak var verificationListener: VerificationListener?
