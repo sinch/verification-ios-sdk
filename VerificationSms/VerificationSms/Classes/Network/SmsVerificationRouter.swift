@@ -11,6 +11,7 @@ import Alamofire
 
 public enum SmsVerificationRouter {
     case initiateVerification(data: SmsVerificationInitiationData)
+    case verifyCode(number: String, data: SmsVerificationData)
 }
 
 extension SmsVerificationRouter: APIRouter {
@@ -19,6 +20,8 @@ extension SmsVerificationRouter: APIRouter {
         switch self {
         case .initiateVerification:
             return .post
+        case .verifyCode:
+            return .put
         }
     }
     
@@ -26,26 +29,32 @@ extension SmsVerificationRouter: APIRouter {
         switch self {
         case .initiateVerification:
             return "verifications"
+        case .verifyCode(let number, _):
+            return "verifications/number/\(number)"
         }
     }
     
     public var encoding: ParameterEncoding {
         switch self {
-        case .initiateVerification:
+        case .initiateVerification, .verifyCode:
             return JSONEncoding.default
         }
     }
     
     public var parameters: Parameters {
+        let encodableData: Encodable
         switch self {
         case .initiateVerification(let data):
-            return data.asDictionary
+            encodableData = data
+        case .verifyCode(_, let smsVerificationData):
+            encodableData = smsVerificationData
         }
+        return encodableData.asDictionary
     }
     
     public var headers: HTTPHeaders {
         switch self {
-        case .initiateVerification:
+        case .initiateVerification, .verifyCode:
             return [:]
         }
     }
