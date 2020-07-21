@@ -34,7 +34,7 @@
 		B1A2ECE924BC695B005A0447 /* InitiationListener.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1A2ECE824BC695B005A0447 /* InitiationListener.swift */; };
 		B1A2ECEE24BC71C8005A0447 /* VerificationMethodProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1A2ECED24BC71C8005A0447 /* VerificationMethodProperties.swift */; };
 		B1A2ECF024BC7361005A0447 /* VerificationLanguage.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1A2ECEF24BC7361005A0447 /* VerificationLanguage.swift */; };
-		B1A2ECF224BC83ED005A0447 /* VerificationError.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1A2ECF124BC83ED005A0447 /* VerificationError.swift */; };
+		B1A2ECF224BC83ED005A0447 /* SDKError.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1A2ECF124BC83ED005A0447 /* SDKError.swift */; };
 		B1A2ECF424BD87B5005A0447 /* StringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1A2ECF324BD87B5005A0447 /* StringExtensions.swift */; };
 		B1A2ECF624BD8CBD005A0447 /* AcceptedLanguagesParsingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1A2ECF524BD8CBD005A0447 /* AcceptedLanguagesParsingTests.swift */; };
 		B1A2ECF824BD9D7B005A0447 /* VerificationMethodConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1A2ECF724BD9D7B005A0447 /* VerificationMethodConfiguration.swift */; };
@@ -98,7 +98,7 @@
 		B1A2ECE824BC695B005A0447 /* InitiationListener.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitiationListener.swift; sourceTree = "<group>"; };
 		B1A2ECED24BC71C8005A0447 /* VerificationMethodProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerificationMethodProperties.swift; sourceTree = "<group>"; };
 		B1A2ECEF24BC7361005A0447 /* VerificationLanguage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerificationLanguage.swift; sourceTree = "<group>"; };
-		B1A2ECF124BC83ED005A0447 /* VerificationError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerificationError.swift; sourceTree = "<group>"; };
+		B1A2ECF124BC83ED005A0447 /* SDKError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDKError.swift; sourceTree = "<group>"; };
 		B1A2ECF324BD87B5005A0447 /* StringExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtensions.swift; sourceTree = "<group>"; };
 		B1A2ECF524BD8CBD005A0447 /* AcceptedLanguagesParsingTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AcceptedLanguagesParsingTests.swift; sourceTree = "<group>"; };
 		B1A2ECF724BD9D7B005A0447 /* VerificationMethodConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerificationMethodConfiguration.swift; sourceTree = "<group>"; };
@@ -231,7 +231,7 @@
 				B1A2ECE024BC628D005A0447 /* Verification */,
 				B1A2ECD824BC2FC8005A0447 /* Verification.swift */,
 				B1A2ECE624BC661E005A0447 /* VerificationMethodType.swift */,
-				B1A2ECF124BC83ED005A0447 /* VerificationError.swift */,
+				B1A2ECF124BC83ED005A0447 /* SDKError.swift */,
 				B1A2ECF924BDA041005A0447 /* VerificationMethod.swift */,
 				B1A2ECFE24BDB3B0005A0447 /* VerificationMethodCallbacks.swift */,
 			);
@@ -515,7 +515,7 @@
 				B1A2ECCE24B71A4A005A0447 /* SinchGlobalConfig.swift in Sources */,
 				B1A2ED0924BED4F5005A0447 /* VerificationIdentity.swift in Sources */,
 				B1A2ECD924BC2FC8005A0447 /* Verification.swift in Sources */,
-				B1A2ECF224BC83ED005A0447 /* VerificationError.swift in Sources */,
+				B1A2ECF224BC83ED005A0447 /* SDKError.swift in Sources */,
 				B17233EF24C1A77300E35C9E /* DecodableExtensions.swift in Sources */,
 				B1A2ECD624B72D59005A0447 /* AuthorizationMethodSetter.swift in Sources */,
 				B1A2ECCA24B70D68005A0447 /* HasApply.swift in Sources */,

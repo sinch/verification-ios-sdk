@@ -6,23 +6,31 @@
 //  Copyright © 2020 Aleksander Wojcik. All rights reserved.
 //
 
+/// Enumeration defining error that SINCH Verifications API can throw.
 public enum SDKError: LocalizedError {
     
-    case illegalArgument(message: String?)
-    case serialization(encodable: Encodable)
+    /// One of the argument that was passed to the function was invalid.
+    case illegalArgument(message: String)
+    
+    /// Error indicating that given encodable object could not be encoded properly.
+    case encoding(encodable: Encodable)
+    
+    /// SDK representation of Sinch REST API error response.
     case apiCall(data: ApiErrorData)
-    case unexpected(message: String?)
+    
+    /// Unexpected error
+    case unexpected(message: String)
     
     public var errorDescription: String? {
         switch self {
         case .illegalArgument(let message):
-            return message ?? "Illegal argument was passed."
-        case .serialization(let encodable):
+            return message
+        case .encoding(let encodable):
             return "Encoding of \(encodable) failed"
         case .apiCall(let data):
             return data.message ?? "Sinch api returned an error without message"
         case .unexpected(let message):
-            return message ?? "Unexpected error"
+            return message
         }
     }
 

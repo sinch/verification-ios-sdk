@@ -43,9 +43,9 @@ public class VerificationLanguage {
         }
     }()
     
-    init(language: String, region: String? = nil, weight: Double? = nil) throws {
+    public init(language: String, region: String? = nil, weight: Double? = nil) throws {
         if let weight = weight, (weight > 1 || weight < 0) {
-            throw VerificationError.illegalArgument(message: "The weight value should be within range 0<=weight<=1")
+            throw SDKError.illegalArgument(message: "The weight value should be within range 0<=weight<=1")
         }
         self.language = language
         self.region = region
