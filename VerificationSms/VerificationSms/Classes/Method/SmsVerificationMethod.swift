@@ -46,6 +46,21 @@ public class SmsVerificationMethod: VerificationMethod<SmsInitiationResponseData
         }
     }
     
+    public override func onVerify(_ verificationCode: String, fromSource sourceType: VerificationSourceType) {
+        self.service
+            .request(SmsVerificationRouter.verifyCode(
+                number: initiationData.identity.endpoint,
+                data: SmsVerificationData(details: SmsVerificationDetails(code: verificationCode), source: sourceType)))
+            .sinchResponse { [weak self] (result: ApiResponse<VerificationResponseData>) in
+                switch result {
+                case .success:
+                    self?.verificationListener?.onVerified()
+                case .failure(let error):
+                    self?.verificationListener?.onVerificationFailed(e: error)
+                }
+        }
+    }
+    
     /// Builder implementing fluent builder pattern to create [SmsVerificationMethod](x-source-tag://[SmsVerificationMethod]) objects.
     /// - TAG: SmsVerificationMethodBuilder
     public class Builder: SmsVerificationConfigSetter, SmsVerificationMethodCreator  {

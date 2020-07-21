@@ -11,6 +11,9 @@
 		B17233EB24C1A4BB00E35C9E /* DataRequestsExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B17233EA24C1A4BB00E35C9E /* DataRequestsExtensions.swift */; };
 		B17233ED24C1A63B00E35C9E /* ApiResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = B17233EC24C1A63B00E35C9E /* ApiResponse.swift */; };
 		B17233EF24C1A77300E35C9E /* DecodableExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B17233EE24C1A77300E35C9E /* DecodableExtensions.swift */; };
+		B17233F924C5A78A00E35C9E /* VerificationData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B17233F824C5A78A00E35C9E /* VerificationData.swift */; };
+		B17233FB24C5ADA200E35C9E /* VerificationResponseData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B17233FA24C5ADA200E35C9E /* VerificationResponseData.swift */; };
+		B17233FD24C5ADE700E35C9E /* VerificationStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = B17233FC24C5ADE700E35C9E /* VerificationStatus.swift */; };
 		B1A2ECC324B70732005A0447 /* AuthorizationMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1A2ECC224B70732005A0447 /* AuthorizationMethod.swift */; };
 		B1A2ECC524B70865005A0447 /* SinchSessionHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1A2ECC424B70865005A0447 /* SinchSessionHandler.swift */; };
 		B1A2ECC724B70BE1005A0447 /* AppKeyAuthorizationMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1A2ECC624B70BE1005A0447 /* AppKeyAuthorizationMethod.swift */; };
@@ -72,6 +75,9 @@
 		B17233EA24C1A4BB00E35C9E /* DataRequestsExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataRequestsExtensions.swift; sourceTree = "<group>"; };
 		B17233EC24C1A63B00E35C9E /* ApiResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiResponse.swift; sourceTree = "<group>"; };
 		B17233EE24C1A77300E35C9E /* DecodableExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DecodableExtensions.swift; sourceTree = "<group>"; };
+		B17233F824C5A78A00E35C9E /* VerificationData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerificationData.swift; sourceTree = "<group>"; };
+		B17233FA24C5ADA200E35C9E /* VerificationResponseData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerificationResponseData.swift; sourceTree = "<group>"; };
+		B17233FC24C5ADE700E35C9E /* VerificationStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerificationStatus.swift; sourceTree = "<group>"; };
 		B1A2ECC224B70732005A0447 /* AuthorizationMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationMethod.swift; sourceTree = "<group>"; };
 		B1A2ECC424B70865005A0447 /* SinchSessionHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SinchSessionHandler.swift; sourceTree = "<group>"; };
 		B1A2ECC624B70BE1005A0447 /* AppKeyAuthorizationMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppKeyAuthorizationMethod.swift; sourceTree = "<group>"; };
@@ -237,6 +243,9 @@
 			children = (
 				B1A2ECE124BC6314005A0447 /* VerificationListener.swift */,
 				B1A2ED0224BDCAC4005A0447 /* VerificationSourceType.swift */,
+				B17233F824C5A78A00E35C9E /* VerificationData.swift */,
+				B17233FA24C5ADA200E35C9E /* VerificationResponseData.swift */,
+				B17233FC24C5ADE700E35C9E /* VerificationStatus.swift */,
 			);
 			path = Verification;
 			sourceTree = "<group>";
@@ -485,6 +494,7 @@
 			files = (
 				B1A2ECF824BD9D7B005A0447 /* VerificationMethodConfiguration.swift in Sources */,
 				B1A2ED1624BEE26E005A0447 /* EncodableExtensions.swift in Sources */,
+				B17233FD24C5ADE700E35C9E /* VerificationStatus.swift in Sources */,
 				B1A2ECF024BC7361005A0447 /* VerificationLanguage.swift in Sources */,
 				B1A2ECC324B70732005A0447 /* AuthorizationMethod.swift in Sources */,
 				B1A2ECE524BC65DD005A0447 /* InitiationResponseData.swift in Sources */,
@@ -495,10 +505,12 @@
 				B1A2ECFA24BDA041005A0447 /* VerificationMethod.swift in Sources */,
 				B1A2ECF424BD87B5005A0447 /* StringExtensions.swift in Sources */,
 				B17233E924C18E7100E35C9E /* ApiErrorData.swift in Sources */,
+				B17233F924C5A78A00E35C9E /* VerificationData.swift in Sources */,
 				B1A2ED0D24BED648005A0447 /* VerificationInitiationData.swift in Sources */,
 				B1A2ECCC24B71734005A0447 /* ApiManager.swift in Sources */,
 				B17233EB24C1A4BB00E35C9E /* DataRequestsExtensions.swift in Sources */,
 				B1A2ECFD24BDA59D005A0447 /* VerificationStateListener.swift in Sources */,
+				B17233FB24C5ADA200E35C9E /* VerificationResponseData.swift in Sources */,
 				B1A2ECC724B70BE1005A0447 /* AppKeyAuthorizationMethod.swift in Sources */,
 				B1A2ECCE24B71A4A005A0447 /* SinchGlobalConfig.swift in Sources */,
 				B1A2ED0924BED4F5005A0447 /* VerificationIdentity.swift in Sources */,

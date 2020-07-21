@@ -10,7 +10,7 @@
 public struct VerificationIdentity: Encodable {
     
     /// String identifying the user. Currently it is always user's phone number.
-    let endpoint: String
+    public let endpoint: String
     
     /// Meaning of the endpoint property. Currently only VerificationIdentityType.number is used.
     let type: VerificationIdentityType = .number
