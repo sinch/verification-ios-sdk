@@ -39,7 +39,7 @@ public extension Encodable {
             let dictionary = json as? JSON {
             return dictionary
         } else {
-            throw VerificationError.serialization(encodable: self)
+            throw SDKError.encoding(encodable: self)
         }
     }
     

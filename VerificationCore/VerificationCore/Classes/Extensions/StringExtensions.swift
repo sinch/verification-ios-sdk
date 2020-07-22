@@ -12,4 +12,7 @@ extension String {
         return prefix + self
     }
     
+    public func nilIfEmpty() -> String? {
+        self.isEmpty ? nil : self
+    }
 }

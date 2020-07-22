@@ -28,22 +28,98 @@
                                                 </constraints>
                                             </imageView>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="GKk-ZT-4XI">
-                                                <rect key="frame" x="16" y="212" width="390" height="100.5"/>
+                                                <rect key="frame" x="16" y="212" width="390" height="684"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Verification Method" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fWi-u6-SUN">
                                                         <rect key="frame" x="0.0" y="0.0" width="390" height="20.5"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                        <nil key="textColor"/>
+                                                        <color key="textColor" systemColor="secondaryLabelColor" red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="yhR-ka-YIP">
+                                                        <rect key="frame" x="0.0" y="28.5" width="390" height="28"/>
+                                                        <subviews>
+                                                            <button opaque="NO" contentMode="scaleToFill" selected="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SIo-6w-MCu" customClass="MethodButton" customModule="VerificationSample" customModuleProvider="target">
+                                                                <rect key="frame" x="0.0" y="0.0" width="97.5" height="28"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                                                <state key="normal" title="SMS"/>
+                                                                <connections>
+                                                                    <action selector="didTapMethodButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="mDp-gD-uBp"/>
+                                                                </connections>
+                                                            </button>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tYD-Q7-3jo" customClass="MethodButton" customModule="VerificationSample" customModuleProvider="target">
+                                                                <rect key="frame" x="97.5" y="0.0" width="97.5" height="28"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                                                <state key="normal" title="FLASHCALL"/>
+                                                                <connections>
+                                                                    <action selector="didTapMethodButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Dfc-bc-6ZW"/>
+                                                                </connections>
+                                                            </button>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KJ8-6y-zgI" customClass="MethodButton" customModule="VerificationSample" customModuleProvider="target">
+                                                                <rect key="frame" x="195" y="0.0" width="97.5" height="28"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                                                <state key="normal" title="CALLOUT"/>
+                                                                <connections>
+                                                                    <action selector="didTapMethodButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="zBG-CJ-uUa"/>
+                                                                </connections>
+                                                            </button>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OH6-bS-9Jv" customClass="MethodButton" customModule="VerificationSample" customModuleProvider="target">
+                                                                <rect key="frame" x="292.5" y="0.0" width="97.5" height="28"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                                                <state key="normal" title="SEAMLESS"/>
+                                                                <connections>
+                                                                    <action selector="didTapMethodButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="qx3-75-E4N"/>
+                                                                </connections>
+                                                            </button>
+                                                        </subviews>
+                                                    </stackView>
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="+85269383732" borderStyle="roundedRect" placeholder="Phone number" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gBV-Xy-nlw">
-                                                        <rect key="frame" x="0.0" y="28.5" width="390" height="34"/>
+                                                        <rect key="frame" x="0.0" y="64.5" width="390" height="388"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits" textContentType="tel"/>
                                                     </textField>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Optional configuration" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="ahu-hy-Lm4">
+                                                        <rect key="frame" x="0.0" y="460.5" width="390" height="20.5"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <color key="textColor" systemColor="secondaryLabelColor" red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Custom field" textAlignment="natural" minimumFontSize="17" id="nEG-V9-oO4" userLabel="Cust">
+                                                        <rect key="frame" x="0.0" y="489" width="390" height="34"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <textInputTraits key="textInputTraits" textContentType="tel"/>
+                                                    </textField>
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Reference field" textAlignment="natural" minimumFontSize="17" id="OHR-ze-A6A" userLabel="Cust">
+                                                        <rect key="frame" x="0.0" y="531" width="390" height="34"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <textInputTraits key="textInputTraits" textContentType="tel"/>
+                                                    </textField>
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Accepted languages" textAlignment="natural" minimumFontSize="17" id="4Oi-z2-TRp" userLabel="Cust">
+                                                        <rect key="frame" x="0.0" y="573" width="390" height="34"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <textInputTraits key="textInputTraits" textContentType="tel"/>
+                                                    </textField>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="rbL-Et-zIL">
+                                                        <rect key="frame" x="0.0" y="615" width="390" height="31"/>
+                                                        <subviews>
+                                                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qvW-9s-66I">
+                                                                <rect key="frame" x="0.0" y="0.0" width="51" height="31"/>
+                                                                <color key="onTintColor" systemColor="systemYellowColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            </switch>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Honours early reject" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="czN-I7-SGU">
+                                                                <rect key="frame" x="57" y="0.0" width="333" height="31"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                        </subviews>
+                                                    </stackView>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xBI-pT-dhE">
-                                                        <rect key="frame" x="0.0" y="70.5" width="390" height="30"/>
-                                                        <color key="backgroundColor" systemColor="systemPurpleColor" red="0.68627450980000004" green="0.32156862749999998" blue="0.87058823529999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <rect key="frame" x="0.0" y="654" width="390" height="30"/>
+                                                        <color key="backgroundColor" red="0.33333333329999998" green="0.1333333333" blue="0.55294117649999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <state key="normal" title="Initialize">
                                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         </state>
@@ -89,7 +165,15 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="acceptedLanguagesField" destination="4Oi-z2-TRp" id="aR9-zL-Fan"/>
+                        <outlet property="calloutButton" destination="KJ8-6y-zgI" id="4Fz-Ud-cIz"/>
+                        <outlet property="customField" destination="nEG-V9-oO4" id="vlb-cA-Z4q"/>
+                        <outlet property="flashcallButton" destination="tYD-Q7-3jo" id="1Uo-SS-vEW"/>
+                        <outlet property="honoursEarlyRejectField" destination="qvW-9s-66I" id="Ij3-LM-QTR"/>
                         <outlet property="phoneNumberTextField" destination="gBV-Xy-nlw" id="tie-A4-iE5"/>
+                        <outlet property="referenceField" destination="OHR-ze-A6A" id="bzW-u7-wT1"/>
+                        <outlet property="seamlessButton" destination="OH6-bS-9Jv" id="2Vk-xM-tIP"/>
+                        <outlet property="smsButton" destination="SIo-6w-MCu" id="zXz-dy-K2e"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -105,16 +189,16 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ftd-vl-U0D" userLabel="StackContainer">
-                                <rect key="frame" x="52" y="413" width="310.5" height="70"/>
+                                <rect key="frame" x="52" y="374" width="310.5" height="148"/>
                                 <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Qh3-5U-NTO">
-                                        <rect key="frame" x="8" y="8" width="137" height="54"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Qh3-5U-NTO">
+                                        <rect key="frame" x="8" y="8" width="137" height="132"/>
                                         <subviews>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gXJ-Eh-adT">
-                                                <rect key="frame" x="0.0" y="0.0" width="137" height="7.5"/>
+                                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gXJ-Eh-adT">
+                                                <rect key="frame" x="0.0" y="0.0" width="137" height="20"/>
                                                 <subviews>
-                                                    <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="Jbt-8r-Jus">
-                                                        <rect key="frame" x="50" y="0.0" width="37" height="7.5"/>
+                                                    <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" ambiguous="YES" animating="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="Jbt-8r-Jus">
+                                                        <rect key="frame" x="50" y="0.0" width="37" height="20"/>
                                                     </activityIndicatorView>
                                                 </subviews>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -124,21 +208,24 @@
                                                     <constraint firstItem="Jbt-8r-Jus" firstAttribute="top" secondItem="gXJ-Eh-adT" secondAttribute="top" id="coR-2g-CvE"/>
                                                 </constraints>
                                             </view>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Verification in progress" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YXz-hU-2K4">
-                                                <rect key="frame" x="0.0" y="15.5" width="137" height="7.5"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Verification in progress" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YXz-hU-2K4">
+                                                <rect key="frame" x="0.0" y="28" width="137" height="20"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="20" id="PT6-kg-eLr"/>
+                                                </constraints>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <nil key="textColor"/>
+                                                <color key="textColor" systemColor="secondaryLabelColor" red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Verification code" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bFM-2F-LPK">
-                                                <rect key="frame" x="0.0" y="31" width="137" height="7.5"/>
+                                            <textField opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Verification code" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bFM-2F-LPK">
+                                                <rect key="frame" x="0.0" y="56" width="137" height="0.0"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="GkM-PA-AD9">
-                                                <rect key="frame" x="0.0" y="46.5" width="137" height="7.5"/>
+                                                <rect key="frame" x="0.0" y="64" width="137" height="30"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <color key="backgroundColor" systemColor="systemPurpleColor" red="0.68627450980000004" green="0.32156862749999998" blue="0.87058823529999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <color key="backgroundColor" red="0.33333333329999998" green="0.1333333333" blue="0.55294117649999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <state key="normal" title="Verify">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
@@ -148,6 +235,23 @@
                                                 <connections>
                                                     <action selector="didTapInitializeButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="JDx-Nj-CnA"/>
                                                     <action selector="didTapVerifyButton:" destination="mWP-DG-COH" eventType="touchUpInside" id="aSk-Oh-Y4B"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="8zZ-v6-pxg">
+                                                <rect key="frame" x="0.0" y="102" width="137" height="30"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <state key="normal" title="Cancel">
+                                                    <color key="titleColor" red="0.33333333329999998" green="0.1333333333" blue="0.55294117649999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="layer.cornerRadius" value="8"/>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.borderWidth">
+                                                        <real key="value" value="0.5"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="didTapCancelButton:" destination="mWP-DG-COH" eventType="touchUpInside" id="xhE-Hp-4Rq"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -171,8 +275,13 @@
                         <viewLayoutGuide key="safeArea" id="kQu-6q-Ewv"/>
                     </view>
                     <connections>
+                        <outlet property="cancelButton" destination="8zZ-v6-pxg" id="zJ4-OD-3br"/>
+                        <outlet property="loader" destination="Jbt-8r-Jus" id="Jld-2h-IbB"/>
+                        <outlet property="loaderContainer" destination="gXJ-Eh-adT" id="lTT-JE-E3U"/>
+                        <outlet property="messageLabel" destination="YXz-hU-2K4" id="Rjp-5T-M9X"/>
                         <outlet property="verificationCodeTextField" destination="bFM-2F-LPK" id="yAI-Ng-Vvh"/>
                         <outlet property="verificationInProgressLabel" destination="YXz-hU-2K4" id="pYN-zK-Xxy"/>
+                        <outlet property="verifyButton" destination="GkM-PA-AD9" id="ZLp-0z-7I4"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ghN-PL-kcp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
