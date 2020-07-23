@@ -7,6 +7,7 @@
 //
 
 import VerificationCore
+import MetadataCollector
 
 /// Class containing data that is passed with the sms verification initiation API call.
 public struct SmsVerificationInitiationData: VerificationInitiationData, Encodable {
@@ -16,15 +17,17 @@ public struct SmsVerificationInitiationData: VerificationInitiationData, Encodab
             identity: VerificationIdentity(endpoint: config.number),
             honourEarlyReject: config.honoursEarlyReject,
             custom: config.custom,
-            reference: config.reference
+            reference: config.reference,
+            metadata: config.metadataFactory.create()
         )
     }
     
-    init(identity: VerificationIdentity, honourEarlyReject: Bool, custom: String?, reference: String?) {
+    init(identity: VerificationIdentity, honourEarlyReject: Bool, custom: String?, reference: String?, metadata: PhoneMetadata?) {
         self.identity = identity
         self.honourEarlyReject = honourEarlyReject
         self.custom = custom
         self.reference = reference
+        self.metadata = metadata
     }
     
     public let method: VerificationMethodType = .sms
@@ -33,4 +36,5 @@ public struct SmsVerificationInitiationData: VerificationInitiationData, Encodab
     public let honourEarlyReject: Bool
     public let custom: String?
     public let reference: String?
+    public let metadata: PhoneMetadata?
 }

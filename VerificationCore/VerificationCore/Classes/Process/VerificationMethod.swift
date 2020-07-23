@@ -7,6 +7,7 @@
 //
 
 import Alamofire
+import MetadataCollector
 
 /// Class containing common logic for every verification method.
 ///

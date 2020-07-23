@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B11AB75724C84F6900EAE990 /* MetadataCollector.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B11AB75624C84F6900EAE990 /* MetadataCollector.framework */; };
 		B17233E924C18E7100E35C9E /* ApiErrorData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B17233E824C18E7100E35C9E /* ApiErrorData.swift */; };
 		B17233EB24C1A4BB00E35C9E /* DataRequestsExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B17233EA24C1A4BB00E35C9E /* DataRequestsExtensions.swift */; };
 		B17233ED24C1A63B00E35C9E /* ApiResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = B17233EC24C1A63B00E35C9E /* ApiResponse.swift */; };
@@ -71,6 +72,7 @@
 		4D9D12C6207F5170C6BCFD7B /* Pods-VerificationCore.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VerificationCore.release.xcconfig"; path = "Target Support Files/Pods-VerificationCore/Pods-VerificationCore.release.xcconfig"; sourceTree = "<group>"; };
 		58D90E9974CE9D0A17C050B8 /* Pods-VerificationCoreTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VerificationCoreTests.debug.xcconfig"; path = "Target Support Files/Pods-VerificationCoreTests/Pods-VerificationCoreTests.debug.xcconfig"; sourceTree = "<group>"; };
 		A76F6B61929B0A1973F75532 /* Pods_VerificationCoreTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VerificationCoreTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B11AB75624C84F6900EAE990 /* MetadataCollector.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = MetadataCollector.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B17233E824C18E7100E35C9E /* ApiErrorData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiErrorData.swift; sourceTree = "<group>"; };
 		B17233EA24C1A4BB00E35C9E /* DataRequestsExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataRequestsExtensions.swift; sourceTree = "<group>"; };
 		B17233EC24C1A63B00E35C9E /* ApiResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiResponse.swift; sourceTree = "<group>"; };
@@ -129,6 +131,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F6F735970B502FE00A0C5944 /* Pods_VerificationCore.framework in Frameworks */,
+				B11AB75724C84F6900EAE990 /* MetadataCollector.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -147,6 +150,7 @@
 		0641B938DFCDF97A05CFCEED /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				B11AB75624C84F6900EAE990 /* MetadataCollector.framework */,
 				05C19E47C723655238A7D3D0 /* Pods_VerificationCore.framework */,
 				A76F6B61929B0A1973F75532 /* Pods_VerificationCoreTests.framework */,
 			);

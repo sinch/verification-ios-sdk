@@ -8,9 +8,11 @@ workspace 'verification-ios-sdk'
 project 'VerificationSample/VerificationSample.xcodeproj'
 project 'VerificationCore/VerificationCore.xcodeproj'
 project 'VerificationSms/VerificationSms.xcodeproj'
+project 'MetadataCollector/MetadataCollector.xcodeproj'
 
 def verification_pods
   pod 'Alamofire', '~> 5.2'
+  pod 'ReachabilitySwift'
 end
 
 target 'VerificationSample' do
@@ -28,6 +30,15 @@ target 'VerificationCore' do
   verification_pods
   
   target 'VerificationCoreTests' do
+      inherit! :search_paths
+  end
+end
+  
+target 'MetadataCollector' do
+  project 'MetadataCollector/MetadataCollector.xcodeproj'
+  verification_pods
+  
+  target 'MetadataCollectorTests' do
       inherit! :search_paths
   end
   
