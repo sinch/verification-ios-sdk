@@ -11,6 +11,8 @@
 		B17233F124C5871F00E35C9E /* VerificationDialogController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B17233F024C5871F00E35C9E /* VerificationDialogController.swift */; };
 		B17233FF24C6C4B100E35C9E /* MethodButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B17233FE24C6C4B100E35C9E /* MethodButton.swift */; };
 		B172340124C6C62300E35C9E /* UIColorExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B172340024C6C62300E35C9E /* UIColorExtensions.swift */; };
+		B1A197A424C97935001A8BF2 /* MetadataCollector.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B1A197A324C97935001A8BF2 /* MetadataCollector.framework */; };
+		B1A197A524C9796F001A8BF2 /* MetadataCollector.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B1A197A324C97935001A8BF2 /* MetadataCollector.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		B1A2ECB624B5D693005A0447 /* VerificationSms.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B1A2ECB524B5D693005A0447 /* VerificationSms.framework */; };
 		B1A2ECB724B5D693005A0447 /* VerificationSms.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B1A2ECB524B5D693005A0447 /* VerificationSms.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		B1A2ED2224BF282C005A0447 /* VerificationCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B1A2ED2124BF282C005A0447 /* VerificationCore.framework */; };
@@ -30,6 +32,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				B1A197A524C9796F001A8BF2 /* MetadataCollector.framework in Embed Frameworks */,
 				B1A2ED2324BF282C005A0447 /* VerificationCore.framework in Embed Frameworks */,
 				B1A2ECB724B5D693005A0447 /* VerificationSms.framework in Embed Frameworks */,
 			);
@@ -43,6 +46,7 @@
 		B17233F024C5871F00E35C9E /* VerificationDialogController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerificationDialogController.swift; sourceTree = "<group>"; };
 		B17233FE24C6C4B100E35C9E /* MethodButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MethodButton.swift; sourceTree = "<group>"; };
 		B172340024C6C62300E35C9E /* UIColorExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtensions.swift; sourceTree = "<group>"; };
+		B1A197A324C97935001A8BF2 /* MetadataCollector.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = MetadataCollector.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B1A2ECB524B5D693005A0447 /* VerificationSms.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = VerificationSms.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B1A2ED2124BF282C005A0447 /* VerificationCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = VerificationCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B1EF430524B46C5F009BE30C /* VerificationSample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VerificationSample.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -63,6 +67,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B1A197A424C97935001A8BF2 /* MetadataCollector.framework in Frameworks */,
 				B1A2ED2224BF282C005A0447 /* VerificationCore.framework in Frameworks */,
 				B1A2ECB624B5D693005A0447 /* VerificationSms.framework in Frameworks */,
 				875E1DDACB0A97B376431852 /* Pods_VerificationSample.framework in Frameworks */,
@@ -110,6 +115,7 @@
 		B1EF434424B59EBC009BE30C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				B1A197A324C97935001A8BF2 /* MetadataCollector.framework */,
 				B1A2ED2124BF282C005A0447 /* VerificationCore.framework */,
 				B1A2ECB524B5D693005A0447 /* VerificationSms.framework */,
 				B1EF434524B59EBC009BE30C /* VerificationCore.framework */,
@@ -393,7 +399,9 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 4A0A77DE58183A197AEF6A05 /* Pods-VerificationSample.debug.xcconfig */;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 7J28V5J56X;
 				INFOPLIST_FILE = VerificationSample/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -401,6 +409,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.sinch.VerificationSample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -410,7 +419,8 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = EE49D6251AE297B5FC6EDDD6 /* Pods-VerificationSample.release.xcconfig */;
 			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = VerificationSample/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -418,6 +428,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.sinch.VerificationSample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

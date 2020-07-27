@@ -6,6 +6,8 @@
 //  Copyright © 2020 Aleksander Wojcik. All rights reserved.
 //
 
+import MetadataCollector
+
 /// Common interface defining requirements of every initiation data different verification methods use.
 public protocol VerificationInitiationData {
     
@@ -23,5 +25,7 @@ public protocol VerificationInitiationData {
     
     /// Custom string that can be passed in the request for tracking purposes.
     var reference: String? { get }
+    
+    var metadata: PhoneMetadata? { get }
     
 }

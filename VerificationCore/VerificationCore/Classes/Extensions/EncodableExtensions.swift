@@ -54,7 +54,7 @@ public extension Encodable {
     
     private static var encoder: JSONEncoder {
         let encoder = JSONEncoder()
-        encoder.keyEncodingStrategy = .convertToSnakeCase
+        encoder.keyEncodingStrategy = .useDefaultKeys
         return encoder
     }
 }
