@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -30,7 +30,7 @@
 		B1A197AF24C9898A001A8BF2 /* Pods_MetadataCollector.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 53F500716E6E059B37035998 /* Pods_MetadataCollector.framework */; };
 		B1A197B324C9A99B001A8BF2 /* SimMetadata.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1A197B224C9A99B001A8BF2 /* SimMetadata.swift */; };
 		B1E53B1C24CAF66F00635AF0 /* ConfiguarionNameCollector.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1E53B1B24CAF66F00635AF0 /* ConfiguarionNameCollector.swift */; };
-		EC3A778D437FBDD81764EC9A /* Pods_MetadataCollectorTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49E137882CE5469980661C5C /* Pods_MetadataCollectorTests.framework */; };
+		DFA5A40C8719C6FB11C8A294 /* Pods_MetadataCollector_MetadataCollectorTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A452CAEE3942010D51B0C846 /* Pods_MetadataCollector_MetadataCollectorTests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,12 +44,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		025D306E727588B2374EE48D /* Pods-MetadataCollector-MetadataCollectorTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MetadataCollector-MetadataCollectorTests.debug.xcconfig"; path = "Target Support Files/Pods-MetadataCollector-MetadataCollectorTests/Pods-MetadataCollector-MetadataCollectorTests.debug.xcconfig"; sourceTree = "<group>"; };
 		07A32B6BF580E5F89FFB4E71 /* Pods-MetadataCollector.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MetadataCollector.release.xcconfig"; path = "Target Support Files/Pods-MetadataCollector/Pods-MetadataCollector.release.xcconfig"; sourceTree = "<group>"; };
-		49E137882CE5469980661C5C /* Pods_MetadataCollectorTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MetadataCollectorTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		53F500716E6E059B37035998 /* Pods_MetadataCollector.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MetadataCollector.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6451FAA56134DB3030A8462C /* Pods-MetadataCollectorTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MetadataCollectorTests.release.xcconfig"; path = "Target Support Files/Pods-MetadataCollectorTests/Pods-MetadataCollectorTests.release.xcconfig"; sourceTree = "<group>"; };
 		6EE39119024DFC793BB7E5DF /* Pods-MetadataCollector.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MetadataCollector.debug.xcconfig"; path = "Target Support Files/Pods-MetadataCollector/Pods-MetadataCollector.debug.xcconfig"; sourceTree = "<group>"; };
 		72ED7E65BA52E565E6782995 /* Pods-MetadataCollectorTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MetadataCollectorTests.debug.xcconfig"; path = "Target Support Files/Pods-MetadataCollectorTests/Pods-MetadataCollectorTests.debug.xcconfig"; sourceTree = "<group>"; };
+		A452CAEE3942010D51B0C846 /* Pods_MetadataCollector_MetadataCollectorTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MetadataCollector_MetadataCollectorTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B11AB74C24C844D900EAE990 /* OSMetadataCollector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OSMetadataCollector.swift; sourceTree = "<group>"; };
 		B11AB74E24C8469B00EAE990 /* DefaultLocaleCollector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultLocaleCollector.swift; sourceTree = "<group>"; };
 		B11AB75024C8497700EAE990 /* BatteryLevelCollector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BatteryLevelCollector.swift; sourceTree = "<group>"; };
@@ -75,6 +76,7 @@
 		B1A197AD24C98336001A8BF2 /* NetworkInfoCollector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkInfoCollector.swift; sourceTree = "<group>"; };
 		B1A197B224C9A99B001A8BF2 /* SimMetadata.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimMetadata.swift; sourceTree = "<group>"; };
 		B1E53B1B24CAF66F00635AF0 /* ConfiguarionNameCollector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfiguarionNameCollector.swift; sourceTree = "<group>"; };
+		E012475CF5BAD72A2E4A52A3 /* Pods-MetadataCollector-MetadataCollectorTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MetadataCollector-MetadataCollectorTests.release.xcconfig"; path = "Target Support Files/Pods-MetadataCollector-MetadataCollectorTests/Pods-MetadataCollector-MetadataCollectorTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,7 +93,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B172341624C81D2F00E35C9E /* MetadataCollector.framework in Frameworks */,
-				EC3A778D437FBDD81764EC9A /* Pods_MetadataCollectorTests.framework in Frameworks */,
+				DFA5A40C8719C6FB11C8A294 /* Pods_MetadataCollector_MetadataCollectorTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -102,7 +104,7 @@
 			isa = PBXGroup;
 			children = (
 				53F500716E6E059B37035998 /* Pods_MetadataCollector.framework */,
-				49E137882CE5469980661C5C /* Pods_MetadataCollectorTests.framework */,
+				A452CAEE3942010D51B0C846 /* Pods_MetadataCollector_MetadataCollectorTests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -114,6 +116,8 @@
 				07A32B6BF580E5F89FFB4E71 /* Pods-MetadataCollector.release.xcconfig */,
 				72ED7E65BA52E565E6782995 /* Pods-MetadataCollectorTests.debug.xcconfig */,
 				6451FAA56134DB3030A8462C /* Pods-MetadataCollectorTests.release.xcconfig */,
+				025D306E727588B2374EE48D /* Pods-MetadataCollector-MetadataCollectorTests.debug.xcconfig */,
+				E012475CF5BAD72A2E4A52A3 /* Pods-MetadataCollector-MetadataCollectorTests.release.xcconfig */,
 			);
 			name = Pods;
 			path = ../Pods;
@@ -273,6 +277,7 @@
 				B172341124C81D2F00E35C9E /* Sources */,
 				B172341224C81D2F00E35C9E /* Frameworks */,
 				B172341324C81D2F00E35C9E /* Resources */,
+				83DF2F893E660C65AC77D0E8 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -377,11 +382,28 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-MetadataCollectorTests-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-MetadataCollector-MetadataCollectorTests-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		83DF2F893E660C65AC77D0E8 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MetadataCollector-MetadataCollectorTests/Pods-MetadataCollector-MetadataCollectorTests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MetadataCollector-MetadataCollectorTests/Pods-MetadataCollector-MetadataCollectorTests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-MetadataCollector-MetadataCollectorTests/Pods-MetadataCollector-MetadataCollectorTests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -605,9 +627,9 @@
 		};
 		B172342424C81D2F00E35C9E /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 72ED7E65BA52E565E6782995 /* Pods-MetadataCollectorTests.debug.xcconfig */;
+			baseConfigurationReference = 025D306E727588B2374EE48D /* Pods-MetadataCollector-MetadataCollectorTests.debug.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = MetadataCollectorTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -624,9 +646,9 @@
 		};
 		B172342524C81D2F00E35C9E /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 6451FAA56134DB3030A8462C /* Pods-MetadataCollectorTests.release.xcconfig */;
+			baseConfigurationReference = E012475CF5BAD72A2E4A52A3 /* Pods-MetadataCollector-MetadataCollectorTests.release.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = MetadataCollectorTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (

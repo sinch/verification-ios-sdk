@@ -23,6 +23,10 @@ end
 target 'VerificationSms' do
   project 'VerificationSms/VerificationSms.xcodeproj'
   verification_pods
+  
+  target 'VerificationSmsTests' do
+      inherit! :complete
+  end
 end
 
 target 'VerificationCore' do
@@ -30,7 +34,7 @@ target 'VerificationCore' do
   verification_pods
   
   target 'VerificationCoreTests' do
-      inherit! :search_paths
+      inherit! :complete
   end
 end
   
@@ -39,7 +43,7 @@ target 'MetadataCollector' do
   verification_pods
   
   target 'MetadataCollectorTests' do
-      inherit! :search_paths
+      inherit! :complete
   end
   
 end
