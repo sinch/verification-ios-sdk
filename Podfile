@@ -29,6 +29,15 @@ target 'VerificationSms' do
   end
 end
 
+target 'VerificationFlashcall' do
+  project 'VerificationFlashcall/VerificationFlashcall.xcodeproj'
+  verification_pods
+  
+  target 'VerificationFlashcallTests' do
+      inherit! :complete
+  end
+end
+
 target 'VerificationCore' do
   project 'VerificationCore/VerificationCore.xcodeproj'
   verification_pods

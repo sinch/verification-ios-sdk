@@ -1,45 +1,43 @@
 //
-//  SmsVerificationMethod.swift
-//  VerificationSms
+//  FlashcallVerificationMethod.swift
+//  VerificationFlashcall
 //
-//  Created by Aleksander Wojcik on 15/07/2020.
-//  Copyright © 2020 Aleksander Wojcik. All rights reserved.
+//  Created by Aleksander Wojcik on 29/07/2020.
+//  Copyright © 2020 Sinch. All rights reserved.
 //
 
 import VerificationCore
 import Alamofire
 
-/// [Verification](x-source-tag://[Verification]) that uses sms messages to verify user's phone number.
+/// [Verification](x-source-tag://[Verification]) that uses flashcalls to verify user's phone number.
 ///
-/// The code that is received must be manually typed by the user. Use [SmsVerificationMethod.Builder] to create an instance
+/// The incoming phone number must be manually typed by the user. Use [FlashcallVerificationMethod.Builder] to create an instance
 /// of the verification.
-/// - TAG: SmsVerificationMethod
-public class SmsVerificationMethod: VerificationMethod<SmsInitiationResponseData> {
+/// - TAG: FlashcallVerificationMethod
+public class FlashcallVerificationMethod: VerificationMethod<FlashcallInitiationResponseData> {
     
-    private(set) public weak var initiationListener: SmsInitiationListener?
+    private(set) public weak var initiationListener: FlashcallInitiationListener?
     
     private init(
         verificationMethodConfig: VerificationMethodConfiguration,
-        initiationListener: SmsInitiationListener? = nil,
+        initiationListener: FlashcallInitiationListener? = nil,
         verificationListener: VerificationListener? = nil)
     {
         self.initiationListener = initiationListener
         super.init(verificationMethodConfig: verificationMethodConfig, verificationListener: verificationListener)
     }
     
-    private var initiationData: SmsVerificationInitiationData {
-        return SmsVerificationInitiationData(basedOnConfiguration: self.verificationMethodConfig)
+    private var initiationData: FlashcallVerificationInitiationData {
+        return FlashcallVerificationInitiationData(basedOnConfiguration: self.verificationMethodConfig)
     }
     
     public override func onInitiate() {
         self.service
-            .request(SmsVerificationRouter.initiateVerification(data: initiationData))
-            .sinchResponse { [weak self] (result: ApiResponse<SmsInitiationResponseData>) -> Void in
+            .request(FlashcallVerificationRouter.initiateVerification(data: initiationData))
+            .sinchResponse { [weak self] (result: ApiResponse<FlashcallInitiationResponseData>) -> Void in
                 switch result {
-                case .success(let data, let headers):
-                    self?.initiationListener?.onInitiated(
-                        data.withContentLanguage(headers["Content-Language"])
-                    )
+                case .success(let data, _):
+                    self?.initiationListener?.onInitiated(data)
                 case .failure(let error):
                     self?.initiationListener?.onInitiationFailed(e: error)
                 }
@@ -48,9 +46,9 @@ public class SmsVerificationMethod: VerificationMethod<SmsInitiationResponseData
     
     public override func onVerify(_ verificationCode: String, fromSource sourceType: VerificationSourceType) {
         self.service
-            .request(SmsVerificationRouter.verifyCode(
+            .request(FlashcallVerificationRouter.verifyCode(
                 number: initiationData.identity.endpoint,
-                data: SmsVerificationData(details: SmsVerificationDetails(code: verificationCode), source: sourceType)))
+                data: FlashcallVerificationData(details: FlashcallVerificationDetails(cli: verificationCode), source: sourceType)))
             .sinchResponse { [weak self] (result: ApiResponse<VerificationResponseData>) in
                 switch result {
                 case .success:
@@ -61,48 +59,48 @@ public class SmsVerificationMethod: VerificationMethod<SmsInitiationResponseData
         }
     }
     
-    /// Builder implementing fluent builder pattern to create [SmsVerificationMethod](x-source-tag://[SmsVerificationMethod]) objects.
-    /// - TAG: SmsVerificationMethodBuilder
-    public class Builder: SmsVerificationConfigSetter, SmsVerificationMethodCreator  {
+    /// Builder implementing fluent builder pattern to create [FlashcallVerificationMethod](x-source-tag://[FlashcallVerificationMethod]) objects.
+    /// - TAG: FlashcallVerificationMethodBuilder
+    public class Builder: FlashcallVerificationConfigSetter, FlashcallVerificationMethodCreator  {
         
-        private var config: SmsVerificationConfig!
+        private var config: FlashcallVerificationConfig!
         
-        private var initiationListener: SmsInitiationListener?
+        private var initiationListener: FlashcallInitiationListener?
         private var verificationListener: VerificationListener?
-                
+        
         private init() { }
         
         /// Creates an instance of the builder.
         /// - Returns: Instance of the builder.
-        public static func instance() -> SmsVerificationConfigSetter {
+        public static func instance() -> FlashcallVerificationConfigSetter {
             return Builder()
         }
         
         /// Assigns config to the builder.
-        /// - Parameter config: Reference to SMS configuration object.
+        /// - Parameter config: Reference to Flashcall configuration object.
         /// - Returns: Instance of builder with assigned configuration.
-        public func config(_ config: SmsVerificationConfig) -> SmsVerificationMethodCreator {
+        public func config(_ config: FlashcallVerificationConfig) -> FlashcallVerificationMethodCreator {
             return apply { $0.config = config }
         }
         
         /// Assigns initiation listener to the builder.
         /// - Parameter initiationListener: Listener to be notified about verification initiation result.
         /// - Returns: Instance of builder with assigned initiation listener.
-        public func initiationListener(_ initiationListener: SmsInitiationListener?) -> SmsVerificationMethodCreator {
+        public func initiationListener(_ initiationListener: FlashcallInitiationListener?) -> FlashcallVerificationMethodCreator {
             return apply { $0.initiationListener = initiationListener }
         }
         
         /// Assigns verification listener to the builder.
         /// - Parameter verificationListener: Listener to be notified about the verification process result.
         /// - Returns: Instance of builder with assigned verification listener.
-        public func verificationListener(_ verificationListener: VerificationListener?) -> SmsVerificationMethodCreator {
+        public func verificationListener(_ verificationListener: VerificationListener?) -> FlashcallVerificationMethodCreator {
             return apply { $0.verificationListener = verificationListener }
         }
         
-        /// Builds [SmsVerificationMethod](x-source-tag://[SmsVerificationMethod]) instance.
+        /// Builds [FlashcallVerificationMethod](x-source-tag://[FlashcallVerificationMethod]) instance.
         /// - Returns: [Verification](x-source-tag://[Verification]) instance with previously defined parameters.
         public func build() -> Verification {
-            return SmsVerificationMethod(
+            return FlashcallVerificationMethod(
                 verificationMethodConfig: self.config,
                 initiationListener: initiationListener,
                 verificationListener: verificationListener
@@ -110,6 +108,7 @@ public class SmsVerificationMethod: VerificationMethod<SmsInitiationResponseData
         }
         
     }
+    
 }
 
-extension SmsVerificationMethod.Builder: HasApply {}
+extension FlashcallVerificationMethod.Builder: HasApply {}

@@ -26,6 +26,21 @@ public protocol VerificationInitiationData {
     /// Custom string that can be passed in the request for tracking purposes.
     var reference: String? { get }
     
+    /// Phone Metadata collected for analytics purposes and self refejection rules
     var metadata: PhoneMetadata? { get }
+    
+    /// Initializer that creates verification initiation data based on method configuration.
+    init(basedOnConfiguration config: VerificationMethodConfiguration)
+    
+    /// Initializer that creates verification initiation data based on arguments common to every verification method..
+    init(identity: VerificationIdentity, honourEarlyReject: Bool, custom: String?, reference: String?, metadata: PhoneMetadata?)
+    
+}
+
+public extension VerificationInitiationData {
+    
+    init(basedOnConfiguration config: VerificationMethodConfiguration) {
+        self.init(identity: VerificationIdentity(endpoint: config.number), honourEarlyReject: config.honoursEarlyReject, custom: config.custom, reference: config.reference, metadata: config.metadataFactory.create())
+    }
     
 }

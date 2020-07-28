@@ -9,6 +9,7 @@
 import UIKit
 import VerificationSms
 import VerificationCore
+import VerificationFlashcall
 
 class VerificationController: UIViewController {
         
@@ -53,6 +54,16 @@ class VerificationController: UIViewController {
             .acceptedLanguages(acceptedLanguages)
             .build()
     }
+    
+    var flashcallConfiguarion: FlashcallVerificationConfig {
+        return FlashcallVerificationConfig.Builder.instance()
+            .globalConfig(self.globalConfig)
+            .number(phoneNumberTextField.text ?? "")
+            .custom(customField.text?.nilIfEmpty())
+            .reference(referenceField.text?.nilIfEmpty())
+            .honourEarlyReject(honoursEarlyRejectField.isOn)
+            .build()
+    }
 
     @IBAction func didTapInitializeButton(_ sender: Any) {
         let verificationDialogController = VerificationDialogController.instantiate()
@@ -72,8 +83,8 @@ class VerificationController: UIViewController {
     }
     
     private func buildVerification() -> Verification {
-        return SmsVerificationMethod.Builder.instance()
-            .config(self.smsConfiguarion)
+        return FlashcallVerificationMethod.Builder.instance()
+            .config(self.flashcallConfiguarion)
             .initiationListener(self)
             .verificationListener(self)
             .build()
@@ -93,9 +104,13 @@ extension VerificationController: VerificationListener {
     
 }
 
-extension VerificationController: SmsInitiationListener {
+extension VerificationController: FlashcallInitiationListener, SmsInitiationListener {
     
     func onInitiated(_ data: SmsInitiationResponseData) {
+        print("onInitiated called with \(data)")
+    }
+    
+    func onInitiated(_ data: FlashcallInitiationResponseData) {
         print("onInitiated called with \(data)")
     }
     
@@ -103,6 +118,7 @@ extension VerificationController: SmsInitiationListener {
         verificationDialogController?.showError(withMessage: e.localizedDescription)
         print("onInitationFailed with \(e)")
     }
+    
 }
 
 extension VerificationController: VerificationDialogDelegate {

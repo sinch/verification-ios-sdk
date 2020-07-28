@@ -8,6 +8,9 @@
       location = "group:VerificationSms/VerificationSms.xcodeproj">
    </FileRef>
    <FileRef
+      location = "group:VerificationFlashcall/VerificationFlashcall.xcodeproj">
+   </FileRef>
+   <FileRef
       location = "group:VerificationCore/VerificationCore.xcodeproj">
    </FileRef>
    <FileRef
