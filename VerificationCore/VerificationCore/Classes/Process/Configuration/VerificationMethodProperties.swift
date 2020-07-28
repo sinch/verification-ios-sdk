@@ -9,7 +9,7 @@
 import Foundation
 
 /// Base protocol for common properties of every verification method.
-protocol VerificationMethodProperties {
+public protocol VerificationMethodProperties {
     
     /// Number that needs be verified.
     var number: String { get }
@@ -25,4 +25,17 @@ protocol VerificationMethodProperties {
 
     /// List of languages the verification process can use during the verification process.
     var acceptedLanguages: [VerificationLanguage] { get }
+    
+}
+
+public extension VerificationMethodProperties {
+    
+    func commonPropertiesMatch(_ other: VerificationMethodProperties) -> Bool {
+        return self.number == other.number &&
+            self.custom == other.custom &&
+            self.reference == other.reference &&
+            self.honoursEarlyReject == other.honoursEarlyReject &&
+            self.acceptedLanguages == other.acceptedLanguages
+    }
+    
 }

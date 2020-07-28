@@ -14,7 +14,7 @@ import VerificationCore
 /// - TAG: SmsVerificationConfig
 public class SmsVerificationConfig: VerificationMethodConfiguration {
     
-    private init(
+    internal init(
         globalConfig: SinchGlobalConfig, number: String, custom: String? = nil,
         reference: String? = nil, honoursEarlyReject: Bool = true,
         acceptedLanguages: [VerificationLanguage] = []) {

@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -24,7 +24,9 @@
 		B1A2ED2024BF0C0B005A0447 /* SmsInitiationListener.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1A2ED1F24BF0C0B005A0447 /* SmsInitiationListener.swift */; };
 		B1A2ED2924C0561C005A0447 /* SmsConfigBuilderSetters.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1A2ED2824C0561C005A0447 /* SmsConfigBuilderSetters.swift */; };
 		B1A2ED3124C177C2005A0447 /* SmsVerificationMethodCreator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1A2ED3024C177C2005A0447 /* SmsVerificationMethodCreator.swift */; };
+		B1CA41B224CEEB4D008F6858 /* SmsVerificationConfigTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1CA41B124CEEB4D008F6858 /* SmsVerificationConfigTests.swift */; };
 		C24B87FDB090B2E61F8161F8 /* Pods_VerificationSms.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D6920974E9D85E82298727C5 /* Pods_VerificationSms.framework */; };
+		ECBC8809DF2A7B4FB3814A1A /* Pods_VerificationSms_VerificationSmsTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2EA8A3E89472AD2D149AAFCF /* Pods_VerificationSms_VerificationSmsTests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +55,8 @@
 
 /* Begin PBXFileReference section */
 		2C6067B53D9AFC881CC4A225 /* Pods-VerificationSms.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VerificationSms.debug.xcconfig"; path = "Target Support Files/Pods-VerificationSms/Pods-VerificationSms.debug.xcconfig"; sourceTree = "<group>"; };
+		2EA8A3E89472AD2D149AAFCF /* Pods_VerificationSms_VerificationSmsTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VerificationSms_VerificationSmsTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8298FD617443A41B0802958F /* Pods-VerificationSms-VerificationSmsTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VerificationSms-VerificationSmsTests.debug.xcconfig"; path = "Target Support Files/Pods-VerificationSms-VerificationSmsTests/Pods-VerificationSms-VerificationSmsTests.debug.xcconfig"; sourceTree = "<group>"; };
 		B17233E624C178D800E35C9E /* SmsVerificationConfigSetter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmsVerificationConfigSetter.swift; sourceTree = "<group>"; };
 		B17233F324C5A6E500E35C9E /* SmsVerificationDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmsVerificationDetails.swift; sourceTree = "<group>"; };
 		B17233F524C5A75C00E35C9E /* SmsVerificationData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmsVerificationData.swift; sourceTree = "<group>"; };
@@ -74,7 +78,9 @@
 		B1A2ED1F24BF0C0B005A0447 /* SmsInitiationListener.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmsInitiationListener.swift; sourceTree = "<group>"; };
 		B1A2ED2824C0561C005A0447 /* SmsConfigBuilderSetters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmsConfigBuilderSetters.swift; sourceTree = "<group>"; };
 		B1A2ED3024C177C2005A0447 /* SmsVerificationMethodCreator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmsVerificationMethodCreator.swift; sourceTree = "<group>"; };
+		B1CA41B124CEEB4D008F6858 /* SmsVerificationConfigTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmsVerificationConfigTests.swift; sourceTree = "<group>"; };
 		B6650AA195AB6F3FCE3CF200 /* Pods-VerificationSms.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VerificationSms.release.xcconfig"; path = "Target Support Files/Pods-VerificationSms/Pods-VerificationSms.release.xcconfig"; sourceTree = "<group>"; };
+		B806FDBEFB474A06F8C3710E /* Pods-VerificationSms-VerificationSmsTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VerificationSms-VerificationSmsTests.release.xcconfig"; path = "Target Support Files/Pods-VerificationSms-VerificationSmsTests/Pods-VerificationSms-VerificationSmsTests.release.xcconfig"; sourceTree = "<group>"; };
 		D6920974E9D85E82298727C5 /* Pods_VerificationSms.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VerificationSms.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -93,6 +99,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B1A2EC9524B5B004005A0447 /* VerificationSms.framework in Frameworks */,
+				ECBC8809DF2A7B4FB3814A1A /* Pods_VerificationSms_VerificationSmsTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -104,6 +111,8 @@
 			children = (
 				2C6067B53D9AFC881CC4A225 /* Pods-VerificationSms.debug.xcconfig */,
 				B6650AA195AB6F3FCE3CF200 /* Pods-VerificationSms.release.xcconfig */,
+				8298FD617443A41B0802958F /* Pods-VerificationSms-VerificationSmsTests.debug.xcconfig */,
+				B806FDBEFB474A06F8C3710E /* Pods-VerificationSms-VerificationSmsTests.release.xcconfig */,
 			);
 			name = Pods;
 			path = ../Pods;
@@ -116,6 +125,7 @@
 				B1A2ED1124BEDB68005A0447 /* VerificationCore.framework */,
 				B1A2ECB124B5D688005A0447 /* VerificationCore.framework */,
 				D6920974E9D85E82298727C5 /* Pods_VerificationSms.framework */,
+				2EA8A3E89472AD2D149AAFCF /* Pods_VerificationSms_VerificationSmsTests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -163,6 +173,7 @@
 			isa = PBXGroup;
 			children = (
 				B1A2EC9924B5B004005A0447 /* VerificationSmsTests.swift */,
+				B1CA41B124CEEB4D008F6858 /* SmsVerificationConfigTests.swift */,
 				B1A2EC9B24B5B004005A0447 /* Info.plist */,
 			);
 			path = VerificationSmsTests;
@@ -256,9 +267,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = B1A2ECA224B5B004005A0447 /* Build configuration list for PBXNativeTarget "VerificationSmsTests" */;
 			buildPhases = (
+				ADAA0556BE8FA30BA9F3AC46 /* [CP] Check Pods Manifest.lock */,
 				B1A2EC9024B5B004005A0447 /* Sources */,
 				B1A2EC9124B5B004005A0447 /* Frameworks */,
 				B1A2EC9224B5B004005A0447 /* Resources */,
+				A8593A24DA6F466E308E1EF7 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -348,6 +361,45 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		A8593A24DA6F466E308E1EF7 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-VerificationSms-VerificationSmsTests/Pods-VerificationSms-VerificationSmsTests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-VerificationSms-VerificationSmsTests/Pods-VerificationSms-VerificationSmsTests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-VerificationSms-VerificationSmsTests/Pods-VerificationSms-VerificationSmsTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		ADAA0556BE8FA30BA9F3AC46 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-VerificationSms-VerificationSmsTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -374,6 +426,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B1CA41B224CEEB4D008F6858 /* SmsVerificationConfigTests.swift in Sources */,
 				B1A2EC9A24B5B004005A0447 /* VerificationSmsTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -562,8 +615,9 @@
 		};
 		B1A2ECA324B5B004005A0447 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8298FD617443A41B0802958F /* Pods-VerificationSms-VerificationSmsTests.debug.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = VerificationSmsTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -580,8 +634,9 @@
 		};
 		B1A2ECA424B5B004005A0447 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B806FDBEFB474A06F8C3710E /* Pods-VerificationSms-VerificationSmsTests.release.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = VerificationSmsTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
