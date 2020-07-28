@@ -16,7 +16,7 @@
 		B17103E524C9AA7B004D660C /* SimCardsInfoHolder.swift in Sources */ = {isa = PBXBuildFile; fileRef = B17103E424C9AA7B004D660C /* SimCardsInfoHolder.swift */; };
 		B17103E724C9AE51004D660C /* SimCardInfoCollector.swift in Sources */ = {isa = PBXBuildFile; fileRef = B17103E624C9AE51004D660C /* SimCardInfoCollector.swift */; };
 		B172341624C81D2F00E35C9E /* MetadataCollector.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B172340C24C81D2F00E35C9E /* MetadataCollector.framework */; };
-		B172341B24C81D2F00E35C9E /* MetadataCollectorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B172341A24C81D2F00E35C9E /* MetadataCollectorTests.swift */; };
+		B172341B24C81D2F00E35C9E /* SimCardInfoHolderEncodingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B172341A24C81D2F00E35C9E /* SimCardInfoHolderEncodingTests.swift */; };
 		B172341D24C81D2F00E35C9E /* MetadataCollector.h in Headers */ = {isa = PBXBuildFile; fileRef = B172340F24C81D2F00E35C9E /* MetadataCollector.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B172342824C81FB200E35C9E /* PhoneMetadata.swift in Sources */ = {isa = PBXBuildFile; fileRef = B172342724C81FB100E35C9E /* PhoneMetadata.swift */; };
 		B172342B24C8219000E35C9E /* DeviceMetadata.swift in Sources */ = {isa = PBXBuildFile; fileRef = B172342A24C8219000E35C9E /* DeviceMetadata.swift */; };
@@ -63,7 +63,7 @@
 		B172340F24C81D2F00E35C9E /* MetadataCollector.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MetadataCollector.h; sourceTree = "<group>"; };
 		B172341024C81D2F00E35C9E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B172341524C81D2F00E35C9E /* MetadataCollectorTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MetadataCollectorTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		B172341A24C81D2F00E35C9E /* MetadataCollectorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetadataCollectorTests.swift; sourceTree = "<group>"; };
+		B172341A24C81D2F00E35C9E /* SimCardInfoHolderEncodingTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimCardInfoHolderEncodingTests.swift; sourceTree = "<group>"; };
 		B172341C24C81D2F00E35C9E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B172342724C81FB100E35C9E /* PhoneMetadata.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneMetadata.swift; sourceTree = "<group>"; };
 		B172342A24C8219000E35C9E /* DeviceMetadata.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceMetadata.swift; sourceTree = "<group>"; };
@@ -164,7 +164,7 @@
 		B172341924C81D2F00E35C9E /* MetadataCollectorTests */ = {
 			isa = PBXGroup;
 			children = (
-				B172341A24C81D2F00E35C9E /* MetadataCollectorTests.swift */,
+				B172341A24C81D2F00E35C9E /* SimCardInfoHolderEncodingTests.swift */,
 				B172341C24C81D2F00E35C9E /* Info.plist */,
 			);
 			path = MetadataCollectorTests;
@@ -439,7 +439,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B172341B24C81D2F00E35C9E /* MetadataCollectorTests.swift in Sources */,
+				B172341B24C81D2F00E35C9E /* SimCardInfoHolderEncodingTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
