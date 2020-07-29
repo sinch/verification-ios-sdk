@@ -12,7 +12,20 @@ public protocol SmsGlobalConfigSetter {
 }
 
 public protocol SmsVerificationNumberSetter {
+    func withVerificationProperties(_ verificationProperties: VerificationMethodProperties) -> SmsVerificationConfigCreator
     func number(_ number: String) -> SmsVerificationConfigCreator
+}
+
+public extension SmsVerificationNumberSetter {
+    
+    func withVerificationProperties(_ verificationProperties: VerificationMethodProperties) -> SmsVerificationConfigCreator {
+        number(verificationProperties.number)
+            .custom(verificationProperties.custom)
+            .honourEarlyReject(verificationProperties.honoursEarlyReject)
+            .reference(verificationProperties.reference)
+            .acceptedLanguages(verificationProperties.acceptedLanguages)
+    }
+    
 }
 
 public protocol SmsVerificationConfigCreator: VerificationMethodConfigCreatorParameters {
