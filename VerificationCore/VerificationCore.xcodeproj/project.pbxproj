@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		8028B1E0289D668D7E2619B6 /* Pods_VerificationCore_VerificationCoreTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F876789D25CE6032ED967D7 /* Pods_VerificationCore_VerificationCoreTests.framework */; };
 		B11AB75724C84F6900EAE990 /* MetadataCollector.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B11AB75624C84F6900EAE990 /* MetadataCollector.framework */; };
+		B15F701824D2C562009A2E40 /* VerificationInitData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B15F701724D2C562009A2E40 /* VerificationInitData.swift */; };
 		B17233E924C18E7100E35C9E /* ApiErrorData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B17233E824C18E7100E35C9E /* ApiErrorData.swift */; };
 		B17233EB24C1A4BB00E35C9E /* DataRequestsExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B17233EA24C1A4BB00E35C9E /* DataRequestsExtensions.swift */; };
 		B17233ED24C1A63B00E35C9E /* ApiResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = B17233EC24C1A63B00E35C9E /* ApiResponse.swift */; };
@@ -75,6 +76,7 @@
 		7C742B561159625A862BDF0A /* Pods-VerificationCore-VerificationCoreTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VerificationCore-VerificationCoreTests.debug.xcconfig"; path = "Target Support Files/Pods-VerificationCore-VerificationCoreTests/Pods-VerificationCore-VerificationCoreTests.debug.xcconfig"; sourceTree = "<group>"; };
 		7F876789D25CE6032ED967D7 /* Pods_VerificationCore_VerificationCoreTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VerificationCore_VerificationCoreTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B11AB75624C84F6900EAE990 /* MetadataCollector.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = MetadataCollector.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B15F701724D2C562009A2E40 /* VerificationInitData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerificationInitData.swift; sourceTree = "<group>"; };
 		B17233E824C18E7100E35C9E /* ApiErrorData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiErrorData.swift; sourceTree = "<group>"; };
 		B17233EA24C1A4BB00E35C9E /* DataRequestsExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataRequestsExtensions.swift; sourceTree = "<group>"; };
 		B17233EC24C1A63B00E35C9E /* ApiResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiResponse.swift; sourceTree = "<group>"; };
@@ -183,6 +185,7 @@
 				B1A2ECBF24B7035C005A0447 /* Global */,
 				B1A2ECC824B70D4A005A0447 /* Extensions */,
 				B1A2ECD124B71B4B005A0447 /* Constants.swift */,
+				B15F701724D2C562009A2E40 /* VerificationInitData.swift */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -563,6 +566,7 @@
 				B1A2ED0B24BED52B005A0447 /* VerificationIdentityType.swift in Sources */,
 				B1A2ECE724BC661E005A0447 /* VerificationMethodType.swift in Sources */,
 				B1A2ED2724C02CC3005A0447 /* LoggingMonitor.swift in Sources */,
+				B15F701824D2C562009A2E40 /* VerificationInitData.swift in Sources */,
 				B1A2ECE224BC6314005A0447 /* VerificationListener.swift in Sources */,
 				B1A2ED2E24C05DE4005A0447 /* BaseVerificationMethodConfigBuilder.swift in Sources */,
 				B1A2ECEE24BC71C8005A0447 /* VerificationMethodProperties.swift in Sources */,
