@@ -12,7 +12,7 @@ import VerificationCore
 import VerificationFlashcall
 
 class VerificationController: UIViewController {
-        
+    
     @IBOutlet weak var phoneNumberTextField: UITextField!
     
     @IBOutlet weak var smsButton: UIButton!
@@ -29,6 +29,14 @@ class VerificationController: UIViewController {
         return [smsButton, flashcallButton, calloutButton, seamlessButton]
     }
     
+    private lazy var buttonToMethodMap: [UIButton: VerificationMethodType] = {
+        return [smsButton: .sms, flashcallButton: .flashcall, calloutButton: .callout, seamlessButton: .seamless]
+    }()
+    
+    private var selectedMethodButton: UIButton {
+        return methodButtons.first { $0.isSelected }!
+    }
+    
     private weak var verificationDialogController: VerificationDialogController?
     private var verification: Verification?
     
@@ -38,33 +46,36 @@ class VerificationController: UIViewController {
             .build()
     }()
     
-    var smsConfiguarion: SmsVerificationConfig {
+    var initData: VerificationInitData {
         let acceptedLanguages: [VerificationLanguage]
         do {
             acceptedLanguages = try acceptedLanguagesField.text?.nilIfEmpty()?.toLocaleList() ?? []
         } catch {
             acceptedLanguages = []
         }
+        return VerificationInitData(
+            usedMethod: buttonToMethodMap[selectedMethodButton] ?? .sms,
+            number: phoneNumberTextField.text ?? "",
+            custom: customField.text?.nilIfEmpty(),
+            reference: referenceField.text?.nilIfEmpty(),
+            honoursEarlyReject: honoursEarlyRejectField.isOn,
+            acceptedLanguages: acceptedLanguages)
+    }
+    
+    var smsConfiguration: SmsVerificationConfig {
         return SmsVerificationConfig.Builder.instance()
             .globalConfig(self.globalConfig)
-            .number(phoneNumberTextField.text ?? "")
-            .custom(customField.text?.nilIfEmpty())
-            .reference(referenceField.text?.nilIfEmpty())
-            .honourEarlyReject(honoursEarlyRejectField.isOn)
-            .acceptedLanguages(acceptedLanguages)
+            .withVerificationProperties(self.initData)
             .build()
     }
     
     var flashcallConfiguarion: FlashcallVerificationConfig {
         return FlashcallVerificationConfig.Builder.instance()
             .globalConfig(self.globalConfig)
-            .number(phoneNumberTextField.text ?? "")
-            .custom(customField.text?.nilIfEmpty())
-            .reference(referenceField.text?.nilIfEmpty())
-            .honourEarlyReject(honoursEarlyRejectField.isOn)
+            .withVerificationProperties(self.initData)
             .build()
     }
-
+    
     @IBAction func didTapInitializeButton(_ sender: Any) {
         let verificationDialogController = VerificationDialogController.instantiate()
         verificationDialogController.delegate = self
@@ -83,13 +94,24 @@ class VerificationController: UIViewController {
     }
     
     private func buildVerification() -> Verification {
-        return FlashcallVerificationMethod.Builder.instance()
-            .config(self.flashcallConfiguarion)
-            .initiationListener(self)
-            .verificationListener(self)
-            .build()
+        switch selectedMethodButton {
+        case smsButton:
+            return SmsVerificationMethod.Builder.instance()
+                .config(self.smsConfiguration)
+                .initiationListener(self)
+                .verificationListener(self)
+                .build()
+        case flashcallButton:
+            return FlashcallVerificationMethod.Builder.instance()
+                .config(self.flashcallConfiguarion)
+                .initiationListener(self)
+                .verificationListener(self)
+                .build()
+        default:
+            fatalError("Selected method type not yet supported")
+        }
     }
-
+    
 }
 
 extension VerificationController: VerificationListener {
@@ -144,6 +166,6 @@ fileprivate extension String {
             .map { $0.split(separator: "-") }
             .map { substring in
                 try VerificationLanguage(language: String(substring[0]), region: String(substring[1]))
-            }
+        }
     }
 }
