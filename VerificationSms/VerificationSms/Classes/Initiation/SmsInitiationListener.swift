@@ -15,6 +15,5 @@ public protocol SmsInitiationListener: InitiationListener {
 public extension SmsInitiationListener {
     
     func onInitiated(_ data: SmsInitiationResponseData) { }
-    func onInitiationFailed(e: Error) { }
     
 }

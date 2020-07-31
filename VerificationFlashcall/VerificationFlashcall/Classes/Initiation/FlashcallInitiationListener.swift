@@ -15,6 +15,5 @@ public protocol FlashcallInitiationListener: InitiationListener {
 public extension FlashcallInitiationListener {
     
     func onInitiated(_ data: FlashcallInitiationResponseData) { }
-    func onInitiationFailed(e: Error) { }
     
 }

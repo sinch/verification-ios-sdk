@@ -69,7 +69,7 @@ public class SmsVerificationMethod: VerificationMethod<SmsInitiationResponseData
         
         private var initiationListener: SmsInitiationListener?
         private var verificationListener: VerificationListener?
-                
+        
         private init() { }
         
         /// Creates an instance of the builder.

@@ -7,9 +7,9 @@
 //
 
 import UIKit
-import VerificationSms
+import VerificationAll
 import VerificationCore
-import VerificationFlashcall
+import VerificationSms
 
 class VerificationController: UIViewController {
     
@@ -40,19 +40,20 @@ class VerificationController: UIViewController {
     private weak var verificationDialogController: VerificationDialogController?
     private var verification: Verification?
     
-    lazy var globalConfig: SinchGlobalConfig = {
+    private lazy var globalConfig: SinchGlobalConfig = {
         return SinchGlobalConfig.Builder.instance()
             .authorizationMethod(AppKeyAuthorizationMethod(appKey: "9e556452-e462-4006-aab0-8165ca04de66")) //TODO handle appkeys differently
             .build()
     }()
     
-    var initData: VerificationInitData {
+    private var initData: VerificationInitData {
         let acceptedLanguages: [VerificationLanguage]
         do {
             acceptedLanguages = try acceptedLanguagesField.text?.nilIfEmpty()?.toLocaleList() ?? []
         } catch {
             acceptedLanguages = []
         }
+        print("selected button is \(selectedMethodButton == flashcallButton)")
         return VerificationInitData(
             usedMethod: buttonToMethodMap[selectedMethodButton] ?? .sms,
             number: phoneNumberTextField.text ?? "",
@@ -62,18 +63,13 @@ class VerificationController: UIViewController {
             acceptedLanguages: acceptedLanguages)
     }
     
-    var smsConfiguration: SmsVerificationConfig {
-        return SmsVerificationConfig.Builder.instance()
-            .globalConfig(self.globalConfig)
-            .withVerificationProperties(self.initData)
-            .build()
-    }
-    
-    var flashcallConfiguarion: FlashcallVerificationConfig {
-        return FlashcallVerificationConfig.Builder.instance()
-            .globalConfig(self.globalConfig)
-            .withVerificationProperties(self.initData)
-            .build()
+    private var commonConfig: CommonVerificationInitializationParameters {
+        return CommonVerificationInitializationParameters(
+            globalConfig: self.globalConfig,
+            verificationInitData: self.initData,
+            initalizationListener: self,
+            verificationListener: self
+        )
     }
     
     @IBAction func didTapInitializeButton(_ sender: Any) {
@@ -94,22 +90,7 @@ class VerificationController: UIViewController {
     }
     
     private func buildVerification() -> Verification {
-        switch selectedMethodButton {
-        case smsButton:
-            return SmsVerificationMethod.Builder.instance()
-                .config(self.smsConfiguration)
-                .initiationListener(self)
-                .verificationListener(self)
-                .build()
-        case flashcallButton:
-            return FlashcallVerificationMethod.Builder.instance()
-                .config(self.flashcallConfiguarion)
-                .initiationListener(self)
-                .verificationListener(self)
-                .build()
-        default:
-            fatalError("Selected method type not yet supported")
-        }
+        return VerificationMethodsBuilder.createVerification(withParameters: self.commonConfig)
     }
     
 }
@@ -126,19 +107,14 @@ extension VerificationController: VerificationListener {
     
 }
 
-extension VerificationController: FlashcallInitiationListener, SmsInitiationListener {
+extension VerificationController: CommonVerificationMethodsInitiationListener {
     
     func onInitiated(_ data: SmsInitiationResponseData) {
-        print("onInitiated called with \(data)")
+        print("onInitiated for sms data called")
     }
     
-    func onInitiated(_ data: FlashcallInitiationResponseData) {
-        print("onInitiated called with \(data)")
-    }
-    
-    func onInitiationFailed(e: Error) {
-        verificationDialogController?.showError(withMessage: e.localizedDescription)
-        print("onInitationFailed with \(e)")
+    func onInitiated(_ data: InitiationResponseData) {
+        print("onInitiated for general data called")
     }
     
 }

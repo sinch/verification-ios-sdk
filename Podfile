@@ -55,4 +55,11 @@ target 'MetadataCollector' do
       inherit! :complete
   end
   
+target 'VerificationAll' do
+  project 'MetadataCollector/VerificationAll.xcodeproj'
+  
+  target 'VerificationAllTests' do
+      inherit! :complete
+  end
+  
 end
