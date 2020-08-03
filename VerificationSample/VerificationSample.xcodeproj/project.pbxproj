@@ -7,9 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		875E1DDACB0A97B376431852 /* Pods_VerificationSample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BFBFC7B91A1F1AE8FFC7A762 /* Pods_VerificationSample.framework */; };
 		B110853524D17785001FAAB7 /* VerificationFlashcall.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B110853224D1773C001FAAB7 /* VerificationFlashcall.framework */; };
 		B110853624D177B6001FAAB7 /* VerificationFlashcall.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B110853224D1773C001FAAB7 /* VerificationFlashcall.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		B15F707724D43661009A2E40 /* VerificationAll.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B15F707624D43661009A2E40 /* VerificationAll.framework */; };
+		B15F707824D436ED009A2E40 /* VerificationAll.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B15F707624D43661009A2E40 /* VerificationAll.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		B17233F124C5871F00E35C9E /* VerificationDialogController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B17233F024C5871F00E35C9E /* VerificationDialogController.swift */; };
 		B17233FF24C6C4B100E35C9E /* MethodButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B17233FE24C6C4B100E35C9E /* MethodButton.swift */; };
 		B172340124C6C62300E35C9E /* UIColorExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B172340024C6C62300E35C9E /* UIColorExtensions.swift */; };
@@ -34,6 +35,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				B15F707824D436ED009A2E40 /* VerificationAll.framework in Embed Frameworks */,
 				B110853624D177B6001FAAB7 /* VerificationFlashcall.framework in Embed Frameworks */,
 				B1A197A524C9796F001A8BF2 /* MetadataCollector.framework in Embed Frameworks */,
 				B1A2ED2324BF282C005A0447 /* VerificationCore.framework in Embed Frameworks */,
@@ -47,6 +49,7 @@
 /* Begin PBXFileReference section */
 		4A0A77DE58183A197AEF6A05 /* Pods-VerificationSample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VerificationSample.debug.xcconfig"; path = "Target Support Files/Pods-VerificationSample/Pods-VerificationSample.debug.xcconfig"; sourceTree = "<group>"; };
 		B110853224D1773C001FAAB7 /* VerificationFlashcall.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = VerificationFlashcall.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B15F707624D43661009A2E40 /* VerificationAll.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = VerificationAll.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B17233F024C5871F00E35C9E /* VerificationDialogController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerificationDialogController.swift; sourceTree = "<group>"; };
 		B17233FE24C6C4B100E35C9E /* MethodButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MethodButton.swift; sourceTree = "<group>"; };
 		B172340024C6C62300E35C9E /* UIColorExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtensions.swift; sourceTree = "<group>"; };
@@ -71,11 +74,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B15F707724D43661009A2E40 /* VerificationAll.framework in Frameworks */,
 				B110853524D17785001FAAB7 /* VerificationFlashcall.framework in Frameworks */,
 				B1A197A424C97935001A8BF2 /* MetadataCollector.framework in Frameworks */,
 				B1A2ED2224BF282C005A0447 /* VerificationCore.framework in Frameworks */,
 				B1A2ECB624B5D693005A0447 /* VerificationSms.framework in Frameworks */,
-				875E1DDACB0A97B376431852 /* Pods_VerificationSample.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -120,6 +123,7 @@
 		B1EF434424B59EBC009BE30C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				B15F707624D43661009A2E40 /* VerificationAll.framework */,
 				B110853224D1773C001FAAB7 /* VerificationFlashcall.framework */,
 				B1A197A324C97935001A8BF2 /* MetadataCollector.framework */,
 				B1A2ED2124BF282C005A0447 /* VerificationCore.framework */,

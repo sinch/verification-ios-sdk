@@ -17,6 +17,9 @@
       location = "group:MetadataCollector/MetadataCollector.xcodeproj">
    </FileRef>
    <FileRef
+      location = "group:VerificationAll/VerificationAll.xcodeproj">
+   </FileRef>
+   <FileRef
       location = "group:Pods/Pods.xcodeproj">
    </FileRef>
 </Workspace>
