@@ -53,7 +53,6 @@ class VerificationController: UIViewController {
         } catch {
             acceptedLanguages = []
         }
-        print("selected button is \(selectedMethodButton == flashcallButton)")
         return VerificationInitData(
             usedMethod: buttonToMethodMap[selectedMethodButton] ?? .sms,
             number: phoneNumberTextField.text ?? "",
@@ -70,6 +69,13 @@ class VerificationController: UIViewController {
             initalizationListener: self,
             verificationListener: self
         )
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        [phoneNumberTextField, customField, referenceField, acceptedLanguagesField].forEach {
+            $0?.delegate = self
+        }
     }
     
     @IBAction func didTapInitializeButton(_ sender: Any) {
@@ -117,6 +123,10 @@ extension VerificationController: CommonVerificationMethodsInitiationListener {
         print("onInitiated for general data called")
     }
     
+    func onInitiationFailed(e: Error) {
+        verificationDialogController?.showError(withMessage: e.localizedDescription)
+    }
+    
 }
 
 extension VerificationController: VerificationDialogDelegate {
@@ -130,6 +140,15 @@ extension VerificationController: VerificationDialogDelegate {
                             didTypeVerificationCode verificationCode: String) {
         print("Delegate passed code \(verificationCode)")
         verification?.verify(verificationCode: verificationCode)
+    }
+    
+}
+
+extension VerificationController: UITextFieldDelegate {
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
     }
     
 }

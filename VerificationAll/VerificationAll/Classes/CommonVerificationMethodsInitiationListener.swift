@@ -9,9 +9,10 @@
 import VerificationSms
 import VerificationFlashcall
 import VerificationCore
+import VerificationCallout
 
 /// Convinient initiation listener that can be used with [CommonVerificationInitializationParameters](x-source-tag://[CommonVerificationInitializationParameters]) to handle multiple initiation responses for different verification method types.
-public protocol CommonVerificationMethodsInitiationListener: SmsInitiationListener, FlashcallInitiationListener {
+public protocol CommonVerificationMethodsInitiationListener: SmsInitiationListener, FlashcallInitiationListener, CalloutInitiationListener {
     func onInitiated(_ data: InitiationResponseData)
 }
 
@@ -22,6 +23,10 @@ extension CommonVerificationMethodsInitiationListener {
     }
     
     public func onInitiated(_ data: FlashcallInitiationResponseData) {
+        onInitiated(data as InitiationResponseData)
+    }
+    
+    public func onInitiated(_ data: CalloutInitiationResponseData) {
         onInitiated(data as InitiationResponseData)
     }
     

@@ -38,6 +38,15 @@ target 'VerificationFlashcall' do
   end
 end
 
+target 'VerificationCallout' do
+  project 'VerificationCallout/VerificationCallout.xcodeproj'
+  verification_pods
+  
+  target 'VerificationCalloutTests' do
+      inherit! :complete
+  end
+end
+
 target 'VerificationCore' do
   project 'VerificationCore/VerificationCore.xcodeproj'
   verification_pods
@@ -54,9 +63,10 @@ target 'MetadataCollector' do
   target 'MetadataCollectorTests' do
       inherit! :complete
   end
+end
   
 target 'VerificationAll' do
-  project 'MetadataCollector/VerificationAll.xcodeproj'
+  project 'VerificationAll/VerificationAll.xcodeproj'
   
   target 'VerificationAllTests' do
       inherit! :complete

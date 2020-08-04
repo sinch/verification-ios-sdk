@@ -609,7 +609,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 89572640D284024AD8D2B12F /* Pods-VerificationFlashcall-VerificationFlashcallTests.debug.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = VerificationFlashcallTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -628,7 +628,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 27821A917EF41D9FFAB7E602 /* Pods-VerificationFlashcall-VerificationFlashcallTests.release.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = VerificationFlashcallTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
