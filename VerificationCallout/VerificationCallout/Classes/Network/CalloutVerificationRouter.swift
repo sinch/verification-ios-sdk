@@ -1,20 +1,20 @@
 //
-//  FlashcallVerificationRouter.swift
-//  VerificationFlashcall
+//  CalloutVerificationRouter.swift
+//  VerificationCallout
 //
-//  Created by Aleksander Wojcik on 29/07/2020.
+//  Created by Aleksander Wojcik on 03/08/2020.
 //  Copyright © 2020 Sinch. All rights reserved.
 //
 
 import VerificationCore
 import Alamofire
 
-enum FlashcallVerificationRouter {
-    case initiateVerification(data: FlashcallVerificationInitiationData)
-    case verifyCode(number: String, data: FlashcallVerificationData)
+enum CalloutVerificationRouter {
+    case initiateVerification(data: CalloutVerificationInitiationData)
+    case verifyCode(number: String, data: CalloutVerificationData)
 }
 
-extension FlashcallVerificationRouter: APIRouter {
+extension CalloutVerificationRouter: APIRouter {
     
     public var method: HTTPMethod {
         switch self {
@@ -46,8 +46,8 @@ extension FlashcallVerificationRouter: APIRouter {
         switch self {
         case .initiateVerification(let data):
             encodableData = data
-        case .verifyCode(_, let flashcallVerificationData):
-            encodableData = flashcallVerificationData
+        case .verifyCode(_, let calloutVerificationData):
+            encodableData = calloutVerificationData
         }
         return encodableData.asDictionary
     }

@@ -9,6 +9,7 @@
 import VerificationCore
 import VerificationSms
 import VerificationFlashcall
+import VerificationCallout
 
 /// Helper  Helper object creating any type of verifications based on [CommonVerificationInitializationParameters](x-source-tag://[CommonVerificationInitializationParameters]).
 public class VerificationMethodsBuilder {
@@ -22,6 +23,8 @@ public class VerificationMethodsBuilder {
             return parameters.asSmsVerification
         case .flashcall:
             return parameters.asFlashcallVerification
+        case .callout:
+            return parameters.asCalloutVerification
         default:
             fatalError("Method \(parameters.verificationInitData.usedMethod) not yet supported")
         }
@@ -52,5 +55,16 @@ extension CommonVerificationInitializationParameters {
             .verificationListener(self.verificationListener)
             .build()
     }
+    
+    var asCalloutVerification: Verification {
+         return CalloutVerificationMethod.Builder.instance().config(
+             CalloutVerificationConfig.Builder.instance()
+                 .globalConfig(self.globalConfig)
+                 .withVerificationProperties(self.verificationInitData)
+                 .build())
+             .initiationListener(self.initiationListener)
+             .verificationListener(self.verificationListener)
+             .build()
+     }
     
 }

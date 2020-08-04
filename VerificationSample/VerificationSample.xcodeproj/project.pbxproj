@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B1105C6824D8279F00788DEB /* VerificationCallout.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B1105C5D24D8268100788DEB /* VerificationCallout.framework */; };
+		B1105C6C24D8286B00788DEB /* VerificationCallout.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B1105C5D24D8268100788DEB /* VerificationCallout.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		B110853524D17785001FAAB7 /* VerificationFlashcall.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B110853224D1773C001FAAB7 /* VerificationFlashcall.framework */; };
 		B110853624D177B6001FAAB7 /* VerificationFlashcall.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B110853224D1773C001FAAB7 /* VerificationFlashcall.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		B15F707724D43661009A2E40 /* VerificationAll.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B15F707624D43661009A2E40 /* VerificationAll.framework */; };
@@ -26,6 +28,7 @@
 		B1EF431024B46C5F009BE30C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B1EF430E24B46C5F009BE30C /* Main.storyboard */; };
 		B1EF431224B46C60009BE30C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B1EF431124B46C60009BE30C /* Assets.xcassets */; };
 		B1EF431524B46C60009BE30C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B1EF431324B46C60009BE30C /* LaunchScreen.storyboard */; };
+		F45DA27586B62B181D591B95 /* Pods_VerificationSample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BFBFC7B91A1F1AE8FFC7A762 /* Pods_VerificationSample.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -35,6 +38,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				B1105C6C24D8286B00788DEB /* VerificationCallout.framework in Embed Frameworks */,
 				B15F707824D436ED009A2E40 /* VerificationAll.framework in Embed Frameworks */,
 				B110853624D177B6001FAAB7 /* VerificationFlashcall.framework in Embed Frameworks */,
 				B1A197A524C9796F001A8BF2 /* MetadataCollector.framework in Embed Frameworks */,
@@ -48,6 +52,7 @@
 
 /* Begin PBXFileReference section */
 		4A0A77DE58183A197AEF6A05 /* Pods-VerificationSample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VerificationSample.debug.xcconfig"; path = "Target Support Files/Pods-VerificationSample/Pods-VerificationSample.debug.xcconfig"; sourceTree = "<group>"; };
+		B1105C5D24D8268100788DEB /* VerificationCallout.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = VerificationCallout.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B110853224D1773C001FAAB7 /* VerificationFlashcall.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = VerificationFlashcall.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B15F707624D43661009A2E40 /* VerificationAll.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = VerificationAll.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B17233F024C5871F00E35C9E /* VerificationDialogController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerificationDialogController.swift; sourceTree = "<group>"; };
@@ -74,11 +79,13 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B1105C6824D8279F00788DEB /* VerificationCallout.framework in Frameworks */,
 				B15F707724D43661009A2E40 /* VerificationAll.framework in Frameworks */,
 				B110853524D17785001FAAB7 /* VerificationFlashcall.framework in Frameworks */,
 				B1A197A424C97935001A8BF2 /* MetadataCollector.framework in Frameworks */,
 				B1A2ED2224BF282C005A0447 /* VerificationCore.framework in Frameworks */,
 				B1A2ECB624B5D693005A0447 /* VerificationSms.framework in Frameworks */,
+				F45DA27586B62B181D591B95 /* Pods_VerificationSample.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -123,6 +130,7 @@
 		B1EF434424B59EBC009BE30C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				B1105C5D24D8268100788DEB /* VerificationCallout.framework */,
 				B15F707624D43661009A2E40 /* VerificationAll.framework */,
 				B110853224D1773C001FAAB7 /* VerificationFlashcall.framework */,
 				B1A197A324C97935001A8BF2 /* MetadataCollector.framework */,

@@ -8,7 +8,7 @@
 
 import VerificationCore
 
-/// Class containing data returned by the API in response to sms verification initiation request.
+/// Class containing data returned by the API in response to flashcall verification initiation request.
 public struct FlashcallInitiationResponseData: InitiationResponseData, Decodable {
     
     /// Id of the verification.
