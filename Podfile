@@ -47,6 +47,15 @@ target 'VerificationCallout' do
   end
 end
 
+target 'VerificationSeamless' do
+  project 'VerificationSeamless/VerificationSeamless.xcodeproj'
+  verification_pods
+  
+  target 'VerificationSeamlessTests' do
+      inherit! :complete
+  end
+end
+
 target 'VerificationCore' do
   project 'VerificationCore/VerificationCore.xcodeproj'
   verification_pods

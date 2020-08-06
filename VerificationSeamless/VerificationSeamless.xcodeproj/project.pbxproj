@@ -1,0 +1,669 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 51;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		28A00ECBAB4130CD7F7DF712 /* Pods_VerificationSeamless.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD14B535D5A776427F219DD6 /* Pods_VerificationSeamless.framework */; };
+		2C15A92BF39EAC6F7E91993D /* Pods_VerificationSeamless_VerificationSeamlessTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 174CDCF92799094C786903EC /* Pods_VerificationSeamless_VerificationSeamlessTests.framework */; };
+		B13C76A024DA6BFB00458AF9 /* VerificationSeamless.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B13C769624DA6BFB00458AF9 /* VerificationSeamless.framework */; };
+		B13C76A724DA6BFB00458AF9 /* VerificationSeamless.h in Headers */ = {isa = PBXBuildFile; fileRef = B13C769924DA6BFB00458AF9 /* VerificationSeamless.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B13C76B924DA6D2C00458AF9 /* VerificationCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B13C76B824DA6D2C00458AF9 /* VerificationCore.framework */; };
+		B13C76BA24DA6D2D00458AF9 /* VerificationCore.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B13C76B824DA6D2C00458AF9 /* VerificationCore.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		B13C76BD24DA6DFB00458AF9 /* SeamlessVerificationInitiationData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B13C76BC24DA6DFB00458AF9 /* SeamlessVerificationInitiationData.swift */; };
+		B13C76BF24DA6E3E00458AF9 /* SeamlessInitiationResponseData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B13C76BE24DA6E3E00458AF9 /* SeamlessInitiationResponseData.swift */; };
+		B13C76C124DA6E8D00458AF9 /* SeamlessInitiationListener.swift in Sources */ = {isa = PBXBuildFile; fileRef = B13C76C024DA6E8D00458AF9 /* SeamlessInitiationListener.swift */; };
+		B158991F24DA6FDC000F4133 /* SeamlessInitiationDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = B158991E24DA6FDC000F4133 /* SeamlessInitiationDetails.swift */; };
+		B158992124DA7071000F4133 /* SeamlessVerificationRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B158992024DA7071000F4133 /* SeamlessVerificationRouter.swift */; };
+		B158992324DA71C4000F4133 /* SeamlessConfigBuilderSetters.swift in Sources */ = {isa = PBXBuildFile; fileRef = B158992224DA71C4000F4133 /* SeamlessConfigBuilderSetters.swift */; };
+		B158992524DA71D4000F4133 /* SeamlessVerificationConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = B158992424DA71D4000F4133 /* SeamlessVerificationConfig.swift */; };
+		B158992724DA728A000F4133 /* SeamlessVerificationMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = B158992624DA728A000F4133 /* SeamlessVerificationMethod.swift */; };
+		B158992924DA72A4000F4133 /* SeamlessVerificationMethodCreator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B158992824DA72A4000F4133 /* SeamlessVerificationMethodCreator.swift */; };
+		B158992B24DA72B3000F4133 /* SeamlessVerificationMethodSetter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B158992A24DA72B3000F4133 /* SeamlessVerificationMethodSetter.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		B13C76A124DA6BFB00458AF9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B13C768D24DA6BFB00458AF9 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B13C769524DA6BFB00458AF9;
+			remoteInfo = VerificationSeamless;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		B13C76BB24DA6D2D00458AF9 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				B13C76BA24DA6D2D00458AF9 /* VerificationCore.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		174CDCF92799094C786903EC /* Pods_VerificationSeamless_VerificationSeamlessTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VerificationSeamless_VerificationSeamlessTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		20911E875E5459FED91A324A /* Pods-VerificationSeamless.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VerificationSeamless.release.xcconfig"; path = "Target Support Files/Pods-VerificationSeamless/Pods-VerificationSeamless.release.xcconfig"; sourceTree = "<group>"; };
+		658F162558BC07AC7DAB5CBC /* Pods-VerificationSeamless.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VerificationSeamless.debug.xcconfig"; path = "Target Support Files/Pods-VerificationSeamless/Pods-VerificationSeamless.debug.xcconfig"; sourceTree = "<group>"; };
+		77E7F592518D42677FBA8FC3 /* Pods-VerificationSeamless-VerificationSeamlessTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VerificationSeamless-VerificationSeamlessTests.debug.xcconfig"; path = "Target Support Files/Pods-VerificationSeamless-VerificationSeamlessTests/Pods-VerificationSeamless-VerificationSeamlessTests.debug.xcconfig"; sourceTree = "<group>"; };
+		B13C769624DA6BFB00458AF9 /* VerificationSeamless.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = VerificationSeamless.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B13C769924DA6BFB00458AF9 /* VerificationSeamless.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VerificationSeamless.h; sourceTree = "<group>"; };
+		B13C769A24DA6BFB00458AF9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B13C769F24DA6BFB00458AF9 /* VerificationSeamlessTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VerificationSeamlessTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		B13C76A624DA6BFB00458AF9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B13C76B824DA6D2C00458AF9 /* VerificationCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = VerificationCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B13C76BC24DA6DFB00458AF9 /* SeamlessVerificationInitiationData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeamlessVerificationInitiationData.swift; sourceTree = "<group>"; };
+		B13C76BE24DA6E3E00458AF9 /* SeamlessInitiationResponseData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeamlessInitiationResponseData.swift; sourceTree = "<group>"; };
+		B13C76C024DA6E8D00458AF9 /* SeamlessInitiationListener.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeamlessInitiationListener.swift; sourceTree = "<group>"; };
+		B158991E24DA6FDC000F4133 /* SeamlessInitiationDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeamlessInitiationDetails.swift; sourceTree = "<group>"; };
+		B158992024DA7071000F4133 /* SeamlessVerificationRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeamlessVerificationRouter.swift; sourceTree = "<group>"; };
+		B158992224DA71C4000F4133 /* SeamlessConfigBuilderSetters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeamlessConfigBuilderSetters.swift; sourceTree = "<group>"; };
+		B158992424DA71D4000F4133 /* SeamlessVerificationConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeamlessVerificationConfig.swift; sourceTree = "<group>"; };
+		B158992624DA728A000F4133 /* SeamlessVerificationMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeamlessVerificationMethod.swift; sourceTree = "<group>"; };
+		B158992824DA72A4000F4133 /* SeamlessVerificationMethodCreator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeamlessVerificationMethodCreator.swift; sourceTree = "<group>"; };
+		B158992A24DA72B3000F4133 /* SeamlessVerificationMethodSetter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeamlessVerificationMethodSetter.swift; sourceTree = "<group>"; };
+		BCECCB74791C91D7244BE584 /* Pods-VerificationSeamless-VerificationSeamlessTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VerificationSeamless-VerificationSeamlessTests.release.xcconfig"; path = "Target Support Files/Pods-VerificationSeamless-VerificationSeamlessTests/Pods-VerificationSeamless-VerificationSeamlessTests.release.xcconfig"; sourceTree = "<group>"; };
+		CD14B535D5A776427F219DD6 /* Pods_VerificationSeamless.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VerificationSeamless.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		B13C769324DA6BFB00458AF9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B13C76B924DA6D2C00458AF9 /* VerificationCore.framework in Frameworks */,
+				28A00ECBAB4130CD7F7DF712 /* Pods_VerificationSeamless.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B13C769C24DA6BFB00458AF9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B13C76A024DA6BFB00458AF9 /* VerificationSeamless.framework in Frameworks */,
+				2C15A92BF39EAC6F7E91993D /* Pods_VerificationSeamless_VerificationSeamlessTests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		7FF260DDC7721D6360D2A43C /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				658F162558BC07AC7DAB5CBC /* Pods-VerificationSeamless.debug.xcconfig */,
+				20911E875E5459FED91A324A /* Pods-VerificationSeamless.release.xcconfig */,
+				77E7F592518D42677FBA8FC3 /* Pods-VerificationSeamless-VerificationSeamlessTests.debug.xcconfig */,
+				BCECCB74791C91D7244BE584 /* Pods-VerificationSeamless-VerificationSeamlessTests.release.xcconfig */,
+			);
+			name = Pods;
+			path = ../Pods;
+			sourceTree = "<group>";
+		};
+		B13C768C24DA6BFB00458AF9 = {
+			isa = PBXGroup;
+			children = (
+				B13C769824DA6BFB00458AF9 /* VerificationSeamless */,
+				B13C76A324DA6BFB00458AF9 /* VerificationSeamlessTests */,
+				B13C769724DA6BFB00458AF9 /* Products */,
+				B13C76B724DA6D2C00458AF9 /* Frameworks */,
+				7FF260DDC7721D6360D2A43C /* Pods */,
+			);
+			sourceTree = "<group>";
+		};
+		B13C769724DA6BFB00458AF9 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				B13C769624DA6BFB00458AF9 /* VerificationSeamless.framework */,
+				B13C769F24DA6BFB00458AF9 /* VerificationSeamlessTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		B13C769824DA6BFB00458AF9 /* VerificationSeamless */ = {
+			isa = PBXGroup;
+			children = (
+				B13C76B024DA6C8900458AF9 /* Classes */,
+				B13C769924DA6BFB00458AF9 /* VerificationSeamless.h */,
+				B13C769A24DA6BFB00458AF9 /* Info.plist */,
+			);
+			path = VerificationSeamless;
+			sourceTree = "<group>";
+		};
+		B13C76A324DA6BFB00458AF9 /* VerificationSeamlessTests */ = {
+			isa = PBXGroup;
+			children = (
+				B13C76A624DA6BFB00458AF9 /* Info.plist */,
+			);
+			path = VerificationSeamlessTests;
+			sourceTree = "<group>";
+		};
+		B13C76B024DA6C8900458AF9 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				B13C76B124DA6C9500458AF9 /* Network */,
+				B13C76B324DA6CA400458AF9 /* Config */,
+				B13C76B624DA6CBF00458AF9 /* Initiation */,
+				B13C76B524DA6CB900458AF9 /* Verification */,
+				B13C76B424DA6CB400458AF9 /* Method */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		B13C76B124DA6C9500458AF9 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				B158992024DA7071000F4133 /* SeamlessVerificationRouter.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		B13C76B324DA6CA400458AF9 /* Config */ = {
+			isa = PBXGroup;
+			children = (
+				B158992224DA71C4000F4133 /* SeamlessConfigBuilderSetters.swift */,
+				B158992424DA71D4000F4133 /* SeamlessVerificationConfig.swift */,
+			);
+			path = Config;
+			sourceTree = "<group>";
+		};
+		B13C76B424DA6CB400458AF9 /* Method */ = {
+			isa = PBXGroup;
+			children = (
+				B158992624DA728A000F4133 /* SeamlessVerificationMethod.swift */,
+				B158992824DA72A4000F4133 /* SeamlessVerificationMethodCreator.swift */,
+				B158992A24DA72B3000F4133 /* SeamlessVerificationMethodSetter.swift */,
+			);
+			path = Method;
+			sourceTree = "<group>";
+		};
+		B13C76B524DA6CB900458AF9 /* Verification */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Verification;
+			sourceTree = "<group>";
+		};
+		B13C76B624DA6CBF00458AF9 /* Initiation */ = {
+			isa = PBXGroup;
+			children = (
+				B13C76BC24DA6DFB00458AF9 /* SeamlessVerificationInitiationData.swift */,
+				B13C76BE24DA6E3E00458AF9 /* SeamlessInitiationResponseData.swift */,
+				B13C76C024DA6E8D00458AF9 /* SeamlessInitiationListener.swift */,
+				B158991E24DA6FDC000F4133 /* SeamlessInitiationDetails.swift */,
+			);
+			path = Initiation;
+			sourceTree = "<group>";
+		};
+		B13C76B724DA6D2C00458AF9 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B13C76B824DA6D2C00458AF9 /* VerificationCore.framework */,
+				CD14B535D5A776427F219DD6 /* Pods_VerificationSeamless.framework */,
+				174CDCF92799094C786903EC /* Pods_VerificationSeamless_VerificationSeamlessTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		B13C769124DA6BFB00458AF9 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B13C76A724DA6BFB00458AF9 /* VerificationSeamless.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		B13C769524DA6BFB00458AF9 /* VerificationSeamless */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B13C76AA24DA6BFB00458AF9 /* Build configuration list for PBXNativeTarget "VerificationSeamless" */;
+			buildPhases = (
+				F7AE87E7C5C9B0AA61EC7D4D /* [CP] Check Pods Manifest.lock */,
+				B13C769124DA6BFB00458AF9 /* Headers */,
+				B13C769224DA6BFB00458AF9 /* Sources */,
+				B13C769324DA6BFB00458AF9 /* Frameworks */,
+				B13C769424DA6BFB00458AF9 /* Resources */,
+				B13C76BB24DA6D2D00458AF9 /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = VerificationSeamless;
+			productName = VerificationSeamless;
+			productReference = B13C769624DA6BFB00458AF9 /* VerificationSeamless.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		B13C769E24DA6BFB00458AF9 /* VerificationSeamlessTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B13C76AD24DA6BFB00458AF9 /* Build configuration list for PBXNativeTarget "VerificationSeamlessTests" */;
+			buildPhases = (
+				FB7A4C0CA232CE25EA8B7763 /* [CP] Check Pods Manifest.lock */,
+				B13C769B24DA6BFB00458AF9 /* Sources */,
+				B13C769C24DA6BFB00458AF9 /* Frameworks */,
+				B13C769D24DA6BFB00458AF9 /* Resources */,
+				34BCCDF8EF0EF7E451540856 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				B13C76A224DA6BFB00458AF9 /* PBXTargetDependency */,
+			);
+			name = VerificationSeamlessTests;
+			productName = VerificationSeamlessTests;
+			productReference = B13C769F24DA6BFB00458AF9 /* VerificationSeamlessTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		B13C768D24DA6BFB00458AF9 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1160;
+				LastUpgradeCheck = 1160;
+				ORGANIZATIONNAME = Sinch;
+				TargetAttributes = {
+					B13C769524DA6BFB00458AF9 = {
+						CreatedOnToolsVersion = 11.6;
+						LastSwiftMigration = 1160;
+					};
+					B13C769E24DA6BFB00458AF9 = {
+						CreatedOnToolsVersion = 11.6;
+					};
+				};
+			};
+			buildConfigurationList = B13C769024DA6BFB00458AF9 /* Build configuration list for PBXProject "VerificationSeamless" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = B13C768C24DA6BFB00458AF9;
+			productRefGroup = B13C769724DA6BFB00458AF9 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				B13C769524DA6BFB00458AF9 /* VerificationSeamless */,
+				B13C769E24DA6BFB00458AF9 /* VerificationSeamlessTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		B13C769424DA6BFB00458AF9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B13C769D24DA6BFB00458AF9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		34BCCDF8EF0EF7E451540856 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-VerificationSeamless-VerificationSeamlessTests/Pods-VerificationSeamless-VerificationSeamlessTests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-VerificationSeamless-VerificationSeamlessTests/Pods-VerificationSeamless-VerificationSeamlessTests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-VerificationSeamless-VerificationSeamlessTests/Pods-VerificationSeamless-VerificationSeamlessTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F7AE87E7C5C9B0AA61EC7D4D /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-VerificationSeamless-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FB7A4C0CA232CE25EA8B7763 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-VerificationSeamless-VerificationSeamlessTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		B13C769224DA6BFB00458AF9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B158992724DA728A000F4133 /* SeamlessVerificationMethod.swift in Sources */,
+				B158992124DA7071000F4133 /* SeamlessVerificationRouter.swift in Sources */,
+				B13C76BD24DA6DFB00458AF9 /* SeamlessVerificationInitiationData.swift in Sources */,
+				B158992B24DA72B3000F4133 /* SeamlessVerificationMethodSetter.swift in Sources */,
+				B158991F24DA6FDC000F4133 /* SeamlessInitiationDetails.swift in Sources */,
+				B158992924DA72A4000F4133 /* SeamlessVerificationMethodCreator.swift in Sources */,
+				B158992524DA71D4000F4133 /* SeamlessVerificationConfig.swift in Sources */,
+				B13C76C124DA6E8D00458AF9 /* SeamlessInitiationListener.swift in Sources */,
+				B13C76BF24DA6E3E00458AF9 /* SeamlessInitiationResponseData.swift in Sources */,
+				B158992324DA71C4000F4133 /* SeamlessConfigBuilderSetters.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B13C769B24DA6BFB00458AF9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		B13C76A224DA6BFB00458AF9 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B13C769524DA6BFB00458AF9 /* VerificationSeamless */;
+			targetProxy = B13C76A124DA6BFB00458AF9 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		B13C76A824DA6BFB00458AF9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		B13C76A924DA6BFB00458AF9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		B13C76AB24DA6BFB00458AF9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 658F162558BC07AC7DAB5CBC /* Pods-VerificationSeamless.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = VerificationSeamless/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.sinch.VerificationSeamless;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		B13C76AC24DA6BFB00458AF9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 20911E875E5459FED91A324A /* Pods-VerificationSeamless.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = VerificationSeamless/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.sinch.VerificationSeamless;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		B13C76AE24DA6BFB00458AF9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 77E7F592518D42677FBA8FC3 /* Pods-VerificationSeamless-VerificationSeamlessTests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = VerificationSeamlessTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.sinch.VerificationSeamlessTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		B13C76AF24DA6BFB00458AF9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = BCECCB74791C91D7244BE584 /* Pods-VerificationSeamless-VerificationSeamlessTests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = VerificationSeamlessTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.sinch.VerificationSeamlessTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		B13C769024DA6BFB00458AF9 /* Build configuration list for PBXProject "VerificationSeamless" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B13C76A824DA6BFB00458AF9 /* Debug */,
+				B13C76A924DA6BFB00458AF9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B13C76AA24DA6BFB00458AF9 /* Build configuration list for PBXNativeTarget "VerificationSeamless" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B13C76AB24DA6BFB00458AF9 /* Debug */,
+				B13C76AC24DA6BFB00458AF9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B13C76AD24DA6BFB00458AF9 /* Build configuration list for PBXNativeTarget "VerificationSeamlessTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B13C76AE24DA6BFB00458AF9 /* Debug */,
+				B13C76AF24DA6BFB00458AF9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = B13C768D24DA6BFB00458AF9 /* Project object */;
+}

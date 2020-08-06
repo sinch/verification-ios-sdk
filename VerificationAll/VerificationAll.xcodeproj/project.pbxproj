@@ -10,6 +10,8 @@
 		42E6D1BDCDBDADFD640317C9 /* Pods_VerificationAll.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FF530381340418609B1A017D /* Pods_VerificationAll.framework */; };
 		4EEFE27507372300FBDF96AD /* Pods_VerificationAll_VerificationAllTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4077CDA0D0469095F0DC7C7C /* Pods_VerificationAll_VerificationAllTests.framework */; };
 		B1105C6924D827C600788DEB /* VerificationCallout.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B1105C5F24D8269300788DEB /* VerificationCallout.framework */; };
+		B158992D24DA7375000F4133 /* VerificationSeamless.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B158992C24DA7375000F4133 /* VerificationSeamless.framework */; };
+		B158992E24DA7375000F4133 /* VerificationSeamless.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B158992C24DA7375000F4133 /* VerificationSeamless.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		B15F705A24D415F2009A2E40 /* VerificationAll.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B15F705024D415F2009A2E40 /* VerificationAll.framework */; };
 		B15F706124D415F2009A2E40 /* VerificationAll.h in Headers */ = {isa = PBXBuildFile; fileRef = B15F705324D415F2009A2E40 /* VerificationAll.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B15F706D24D4167B009A2E40 /* VerificationFlashcall.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B15F706C24D4167B009A2E40 /* VerificationFlashcall.framework */; };
@@ -30,12 +32,27 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		B158992F24DA7375000F4133 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				B158992E24DA7375000F4133 /* VerificationSeamless.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		0BC05F6CC9A672BEC63509BF /* Pods-VerificationAll.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VerificationAll.release.xcconfig"; path = "Target Support Files/Pods-VerificationAll/Pods-VerificationAll.release.xcconfig"; sourceTree = "<group>"; };
 		25389C7A94035EDF7419BFF7 /* Pods-VerificationAll-VerificationAllTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VerificationAll-VerificationAllTests.debug.xcconfig"; path = "Target Support Files/Pods-VerificationAll-VerificationAllTests/Pods-VerificationAll-VerificationAllTests.debug.xcconfig"; sourceTree = "<group>"; };
 		4077CDA0D0469095F0DC7C7C /* Pods_VerificationAll_VerificationAllTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VerificationAll_VerificationAllTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		65323FFDFFB4F8279537CDDA /* Pods-VerificationAll-VerificationAllTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VerificationAll-VerificationAllTests.release.xcconfig"; path = "Target Support Files/Pods-VerificationAll-VerificationAllTests/Pods-VerificationAll-VerificationAllTests.release.xcconfig"; sourceTree = "<group>"; };
 		B1105C5F24D8269300788DEB /* VerificationCallout.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = VerificationCallout.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B158992C24DA7375000F4133 /* VerificationSeamless.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = VerificationSeamless.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B15F705024D415F2009A2E40 /* VerificationAll.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = VerificationAll.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B15F705324D415F2009A2E40 /* VerificationAll.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VerificationAll.h; sourceTree = "<group>"; };
 		B15F705424D415F2009A2E40 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -60,6 +77,7 @@
 				B1105C6924D827C600788DEB /* VerificationCallout.framework in Frameworks */,
 				B15F706D24D4167B009A2E40 /* VerificationFlashcall.framework in Frameworks */,
 				B15F706F24D4167B009A2E40 /* VerificationSms.framework in Frameworks */,
+				B158992D24DA7375000F4133 /* VerificationSeamless.framework in Frameworks */,
 				42E6D1BDCDBDADFD640317C9 /* Pods_VerificationAll.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -127,6 +145,7 @@
 		B15F706B24D4167B009A2E40 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				B158992C24DA7375000F4133 /* VerificationSeamless.framework */,
 				B1105C5F24D8269300788DEB /* VerificationCallout.framework */,
 				B15F707224D416BF009A2E40 /* VerificationCore.framework */,
 				B15F706C24D4167B009A2E40 /* VerificationFlashcall.framework */,
@@ -172,6 +191,7 @@
 				B15F704C24D415F2009A2E40 /* Sources */,
 				B15F704D24D415F2009A2E40 /* Frameworks */,
 				B15F704E24D415F2009A2E40 /* Resources */,
+				B158992F24DA7375000F4133 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
