@@ -51,14 +51,7 @@ public class SmsVerificationMethod: VerificationMethod<SmsInitiationResponseData
             .request(SmsVerificationRouter.verifyCode(
                 number: initiationData.identity.endpoint,
                 data: SmsVerificationData(details: SmsVerificationDetails(code: verificationCode), source: sourceType)))
-            .sinchResponse { [weak self] (result: ApiResponse<VerificationResponseData>) in
-                switch result {
-                case .success:
-                    self?.verificationListener?.onVerified()
-                case .failure(let error):
-                    self?.verificationListener?.onVerificationFailed(e: error)
-                }
-        }
+            .sinchValidationResponse(VerificationApiCallback(listener: verificationListener, verificationStateListener: self))
     }
     
     /// Builder implementing fluent builder pattern to create [SmsVerificationMethod](x-source-tag://[SmsVerificationMethod]) objects.

@@ -35,4 +35,9 @@ public struct VerificationResponseData: Decodable {
         case errorReason = "reason"
         case reference
        }
+    
+    public var asSDKError: SDKError? {
+        guard status != .successful else { return nil }
+        return .apiCall(data: ApiErrorData(errorCode: nil, message: self.errorReason, reference: self.reference))
+    }
 }

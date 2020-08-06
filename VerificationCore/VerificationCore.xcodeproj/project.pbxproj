@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		8028B1E0289D668D7E2619B6 /* Pods_VerificationCore_VerificationCoreTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F876789D25CE6032ED967D7 /* Pods_VerificationCore_VerificationCoreTests.framework */; };
 		B11AB75724C84F6900EAE990 /* MetadataCollector.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B11AB75624C84F6900EAE990 /* MetadataCollector.framework */; };
+		B14B792F24DBF5AD00D649E8 /* VerificationApiCallback.swift in Sources */ = {isa = PBXBuildFile; fileRef = B14B792E24DBF5AD00D649E8 /* VerificationApiCallback.swift */; };
 		B15F701824D2C562009A2E40 /* VerificationInitData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B15F701724D2C562009A2E40 /* VerificationInitData.swift */; };
 		B17233E924C18E7100E35C9E /* ApiErrorData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B17233E824C18E7100E35C9E /* ApiErrorData.swift */; };
 		B17233EB24C1A4BB00E35C9E /* DataRequestsExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B17233EA24C1A4BB00E35C9E /* DataRequestsExtensions.swift */; };
@@ -76,6 +77,7 @@
 		7C742B561159625A862BDF0A /* Pods-VerificationCore-VerificationCoreTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VerificationCore-VerificationCoreTests.debug.xcconfig"; path = "Target Support Files/Pods-VerificationCore-VerificationCoreTests/Pods-VerificationCore-VerificationCoreTests.debug.xcconfig"; sourceTree = "<group>"; };
 		7F876789D25CE6032ED967D7 /* Pods_VerificationCore_VerificationCoreTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VerificationCore_VerificationCoreTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B11AB75624C84F6900EAE990 /* MetadataCollector.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = MetadataCollector.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B14B792E24DBF5AD00D649E8 /* VerificationApiCallback.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerificationApiCallback.swift; sourceTree = "<group>"; };
 		B15F701724D2C562009A2E40 /* VerificationInitData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerificationInitData.swift; sourceTree = "<group>"; };
 		B17233E824C18E7100E35C9E /* ApiErrorData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiErrorData.swift; sourceTree = "<group>"; };
 		B17233EA24C1A4BB00E35C9E /* DataRequestsExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataRequestsExtensions.swift; sourceTree = "<group>"; };
@@ -259,6 +261,7 @@
 				B17233F824C5A78A00E35C9E /* VerificationData.swift */,
 				B17233FA24C5ADA200E35C9E /* VerificationResponseData.swift */,
 				B17233FC24C5ADE700E35C9E /* VerificationStatus.swift */,
+				B14B792E24DBF5AD00D649E8 /* VerificationApiCallback.swift */,
 			);
 			path = Verification;
 			sourceTree = "<group>";
@@ -538,6 +541,7 @@
 				B1A2ECF024BC7361005A0447 /* VerificationLanguage.swift in Sources */,
 				B1A2ECC324B70732005A0447 /* AuthorizationMethod.swift in Sources */,
 				B1A2ECE524BC65DD005A0447 /* InitiationResponseData.swift in Sources */,
+				B14B792F24DBF5AD00D649E8 /* VerificationApiCallback.swift in Sources */,
 				B1A2ECDD24BC3002005A0447 /* VerificationStateStatus.swift in Sources */,
 				B1A2ED0324BDCAC4005A0447 /* VerificationSourceType.swift in Sources */,
 				B1A2ECC524B70865005A0447 /* SinchSessionHandler.swift in Sources */,

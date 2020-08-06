@@ -82,7 +82,7 @@ extension VerificationMethod: Verification {
 
 extension VerificationMethod: VerificationStateListener {
     
-    func update(newState: VerificationState) {
+    public func update(newState: VerificationState) {
         self.verificationState = newState
     }
     

@@ -49,14 +49,8 @@ public class FlashcallVerificationMethod: VerificationMethod<FlashcallInitiation
             .request(FlashcallVerificationRouter.verifyCode(
                 number: initiationData.identity.endpoint,
                 data: FlashcallVerificationData(details: FlashcallVerificationDetails(cli: verificationCode), source: sourceType)))
-            .sinchResponse { [weak self] (result: ApiResponse<VerificationResponseData>) in
-                switch result {
-                case .success:
-                    self?.verificationListener?.onVerified()
-                case .failure(let error):
-                    self?.verificationListener?.onVerificationFailed(e: error)
-                }
-        }
+            .sinchValidationResponse(VerificationApiCallback(listener: verificationListener, verificationStateListener: self))
+
     }
     
     /// Builder implementing fluent builder pattern to create [FlashcallVerificationMethod](x-source-tag://[FlashcallVerificationMethod]) objects.

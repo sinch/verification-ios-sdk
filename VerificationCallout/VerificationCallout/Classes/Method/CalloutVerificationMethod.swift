@@ -49,14 +49,8 @@ public class CalloutVerificationMethod: VerificationMethod<CalloutInitiationResp
             .request(CalloutVerificationRouter.verifyCode(
                 number: initiationData.identity.endpoint,
                 data: CalloutVerificationData(details: CalloutVerificationDetails(), source: sourceType)))
-            .sinchResponse { [weak self] (result: ApiResponse<VerificationResponseData>) in
-                switch result {
-                case .success:
-                    self?.verificationListener?.onVerified()
-                case .failure(let error):
-                    self?.verificationListener?.onVerificationFailed(e: error)
-                }
-        }
+            .sinchValidationResponse(VerificationApiCallback(listener: verificationListener, verificationStateListener: self))
+
     }
     
     /// Builder implementing fluent builder pattern to create [CalloutVerificationMethod](x-source-tag://[CalloutVerificationMethod]) objects.
