@@ -722,7 +722,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = E6C4F4477437276B6098E46B /* Pods-VerificationCore.debug.xcconfig */;
 			buildSettings = {
-				API_URL = "https://api.sinch.com/";
+				API_URL = "https://verificationapi-v1.sinch.com/";
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
@@ -749,7 +749,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 4D9D12C6207F5170C6BCFD7B /* Pods-VerificationCore.release.xcconfig */;
 			buildSettings = {
-				API_URL = "https://api.sinch.com/";
+				API_URL = "https://verificationapi-v1.sinch.com/";
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;

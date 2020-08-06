@@ -11,6 +11,8 @@
 		B1105C6C24D8286B00788DEB /* VerificationCallout.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B1105C5D24D8268100788DEB /* VerificationCallout.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		B110853524D17785001FAAB7 /* VerificationFlashcall.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B110853224D1773C001FAAB7 /* VerificationFlashcall.framework */; };
 		B110853624D177B6001FAAB7 /* VerificationFlashcall.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B110853224D1773C001FAAB7 /* VerificationFlashcall.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		B158993124DA7417000F4133 /* VerificationSeamless.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B158993024DA7417000F4133 /* VerificationSeamless.framework */; };
+		B158993224DA7438000F4133 /* VerificationSeamless.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B158993024DA7417000F4133 /* VerificationSeamless.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		B15F707724D43661009A2E40 /* VerificationAll.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B15F707624D43661009A2E40 /* VerificationAll.framework */; };
 		B15F707824D436ED009A2E40 /* VerificationAll.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B15F707624D43661009A2E40 /* VerificationAll.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		B17233F124C5871F00E35C9E /* VerificationDialogController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B17233F024C5871F00E35C9E /* VerificationDialogController.swift */; };
@@ -38,6 +40,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				B158993224DA7438000F4133 /* VerificationSeamless.framework in Embed Frameworks */,
 				B1105C6C24D8286B00788DEB /* VerificationCallout.framework in Embed Frameworks */,
 				B15F707824D436ED009A2E40 /* VerificationAll.framework in Embed Frameworks */,
 				B110853624D177B6001FAAB7 /* VerificationFlashcall.framework in Embed Frameworks */,
@@ -54,6 +57,7 @@
 		4A0A77DE58183A197AEF6A05 /* Pods-VerificationSample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VerificationSample.debug.xcconfig"; path = "Target Support Files/Pods-VerificationSample/Pods-VerificationSample.debug.xcconfig"; sourceTree = "<group>"; };
 		B1105C5D24D8268100788DEB /* VerificationCallout.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = VerificationCallout.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B110853224D1773C001FAAB7 /* VerificationFlashcall.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = VerificationFlashcall.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B158993024DA7417000F4133 /* VerificationSeamless.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = VerificationSeamless.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B15F707624D43661009A2E40 /* VerificationAll.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = VerificationAll.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B17233F024C5871F00E35C9E /* VerificationDialogController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerificationDialogController.swift; sourceTree = "<group>"; };
 		B17233FE24C6C4B100E35C9E /* MethodButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MethodButton.swift; sourceTree = "<group>"; };
@@ -79,6 +83,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B158993124DA7417000F4133 /* VerificationSeamless.framework in Frameworks */,
 				B1105C6824D8279F00788DEB /* VerificationCallout.framework in Frameworks */,
 				B15F707724D43661009A2E40 /* VerificationAll.framework in Frameworks */,
 				B110853524D17785001FAAB7 /* VerificationFlashcall.framework in Frameworks */,
@@ -130,6 +135,7 @@
 		B1EF434424B59EBC009BE30C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				B158993024DA7417000F4133 /* VerificationSeamless.framework */,
 				B1105C5D24D8268100788DEB /* VerificationCallout.framework */,
 				B15F707624D43661009A2E40 /* VerificationAll.framework */,
 				B110853224D1773C001FAAB7 /* VerificationFlashcall.framework */,

@@ -10,6 +10,7 @@ import VerificationCore
 import VerificationSms
 import VerificationFlashcall
 import VerificationCallout
+import VerificationSeamless
 
 /// Helper  Helper object creating any type of verifications based on [CommonVerificationInitializationParameters](x-source-tag://[CommonVerificationInitializationParameters]).
 public class VerificationMethodsBuilder {
@@ -25,8 +26,8 @@ public class VerificationMethodsBuilder {
             return parameters.asFlashcallVerification
         case .callout:
             return parameters.asCalloutVerification
-        default:
-            fatalError("Method \(parameters.verificationInitData.usedMethod) not yet supported")
+        case .seamless:
+            return parameters.asSeamlessVerification
         }
     }
     
@@ -66,5 +67,16 @@ extension CommonVerificationInitializationParameters {
              .verificationListener(self.verificationListener)
              .build()
      }
+    
+    var asSeamlessVerification: Verification {
+        return SeamlessVerificationMethod.Builder.instance().config(
+            SeamlessVerificationConfig.Builder.instance()
+                .globalConfig(self.globalConfig)
+                .withVerificationProperties(self.verificationInitData)
+                .build())
+            .initiationListener(self.initiationListener)
+            .verificationListener(self.verificationListener)
+            .build()
+    }
     
 }

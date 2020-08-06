@@ -14,6 +14,9 @@
       location = "group:VerificationCallout/VerificationCallout.xcodeproj">
    </FileRef>
    <FileRef
+      location = "group:VerificationSeamless/VerificationSeamless.xcodeproj">
+   </FileRef>
+   <FileRef
       location = "group:VerificationCore/VerificationCore.xcodeproj">
    </FileRef>
    <FileRef

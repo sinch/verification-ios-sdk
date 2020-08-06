@@ -26,9 +26,15 @@ public protocol APIRouter: URLRequestConvertible {
     
     /// Additional headers passed with a request.
     var headers: HTTPHeaders { get }
+    
+    var appendPathToBaseUrl: Bool { get }
 }
 
 public extension APIRouter {
+    
+    var appendPathToBaseUrl: Bool {
+        return true
+    }
     
     /// Sinch API base URL (differs based on used environment).
     var baseURL: URL {
@@ -39,7 +45,7 @@ public extension APIRouter {
     /// - Throws: Any `Error` produced during converting to `URLRequest`.
     /// - Returns: `URLRequest` of given route to be proceeded by Alamofire framework.
     func asURLRequest() throws -> URLRequest {
-        let url = baseURL.appendingPathComponent(path)
+        let url = appendPathToBaseUrl ? baseURL.appendingPathComponent(path) : URL(string: path)!
         var urlRequest = try URLRequest(url: url, method: method)
         headers.forEach { urlRequest.addValue($0.value, forHTTPHeaderField: $0.name) }
         return try encoding.encode(urlRequest, with: parameters)
