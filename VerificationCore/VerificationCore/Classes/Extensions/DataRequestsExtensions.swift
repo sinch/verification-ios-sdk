@@ -28,6 +28,10 @@ extension DataRequest {
         }
     }
     
+    public func sinchInitiationResponse<Data>(_ callback: InitiationApiCallback<Data>) {
+        sinchResponse(resultCallback: callback.handleResponse)
+    }
+    
     public func sinchValidationResponse(_ callback: VerificationApiCallback) {
         sinchValidationResponse(resultCallback: callback.handleResponse)
     }

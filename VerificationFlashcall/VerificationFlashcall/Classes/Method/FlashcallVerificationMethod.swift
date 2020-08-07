@@ -34,14 +34,18 @@ public class FlashcallVerificationMethod: VerificationMethod<FlashcallInitiation
     public override func onInitiate() {
         self.service
             .request(FlashcallVerificationRouter.initiateVerification(data: initiationData))
-            .sinchResponse { [weak self] (result: ApiResponse<FlashcallInitiationResponseData>) -> Void in
-                switch result {
-                case .success(let data, _):
-                    self?.initiationListener?.onInitiated(data)
-                case .failure(let error):
-                    self?.initiationListener?.onInitiationFailed(e: error)
-                }
-        }
+            .sinchInitiationResponse(InitiationApiCallback<FlashcallInitiationResponseData>(
+                    verificationStateListener: self,
+                    resultCallback: { [weak self] (result: ApiResponse<FlashcallInitiationResponseData>) -> Void in
+                        switch result {
+                        case .success(let data, _):
+                            self?.initiationListener?.onInitiated(data)
+                        case .failure(let error):
+                            self?.initiationListener?.onInitiationFailed(e: error)
+                        }
+                    }
+                )
+            )
     }
     
     public override func onVerify(_ verificationCode: String, fromSource sourceType: VerificationSourceType) {

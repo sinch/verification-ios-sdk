@@ -10,6 +10,7 @@
 		8028B1E0289D668D7E2619B6 /* Pods_VerificationCore_VerificationCoreTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F876789D25CE6032ED967D7 /* Pods_VerificationCore_VerificationCoreTests.framework */; };
 		B11AB75724C84F6900EAE990 /* MetadataCollector.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B11AB75624C84F6900EAE990 /* MetadataCollector.framework */; };
 		B14B792F24DBF5AD00D649E8 /* VerificationApiCallback.swift in Sources */ = {isa = PBXBuildFile; fileRef = B14B792E24DBF5AD00D649E8 /* VerificationApiCallback.swift */; };
+		B14B793124DC0AD500D649E8 /* InitiationApiCallback.swift in Sources */ = {isa = PBXBuildFile; fileRef = B14B793024DC0AD500D649E8 /* InitiationApiCallback.swift */; };
 		B15F701824D2C562009A2E40 /* VerificationInitData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B15F701724D2C562009A2E40 /* VerificationInitData.swift */; };
 		B17233E924C18E7100E35C9E /* ApiErrorData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B17233E824C18E7100E35C9E /* ApiErrorData.swift */; };
 		B17233EB24C1A4BB00E35C9E /* DataRequestsExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B17233EA24C1A4BB00E35C9E /* DataRequestsExtensions.swift */; };
@@ -78,6 +79,7 @@
 		7F876789D25CE6032ED967D7 /* Pods_VerificationCore_VerificationCoreTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VerificationCore_VerificationCoreTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B11AB75624C84F6900EAE990 /* MetadataCollector.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = MetadataCollector.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B14B792E24DBF5AD00D649E8 /* VerificationApiCallback.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerificationApiCallback.swift; sourceTree = "<group>"; };
+		B14B793024DC0AD500D649E8 /* InitiationApiCallback.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitiationApiCallback.swift; sourceTree = "<group>"; };
 		B15F701724D2C562009A2E40 /* VerificationInitData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerificationInitData.swift; sourceTree = "<group>"; };
 		B17233E824C18E7100E35C9E /* ApiErrorData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiErrorData.swift; sourceTree = "<group>"; };
 		B17233EA24C1A4BB00E35C9E /* DataRequestsExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataRequestsExtensions.swift; sourceTree = "<group>"; };
@@ -272,6 +274,7 @@
 				B1A2ECE424BC65DD005A0447 /* InitiationResponseData.swift */,
 				B1A2ECE824BC695B005A0447 /* InitiationListener.swift */,
 				B1A2ED0C24BED648005A0447 /* VerificationInitiationData.swift */,
+				B14B793024DC0AD500D649E8 /* InitiationApiCallback.swift */,
 			);
 			path = Initiation;
 			sourceTree = "<group>";
@@ -547,6 +550,7 @@
 				B1A2ECC524B70865005A0447 /* SinchSessionHandler.swift in Sources */,
 				B1A2ED2C24C059B1005A0447 /* VerificationMethodConfigCreatorParameters.swift in Sources */,
 				B1A2ECFA24BDA041005A0447 /* VerificationMethod.swift in Sources */,
+				B14B793124DC0AD500D649E8 /* InitiationApiCallback.swift in Sources */,
 				B1A2ECF424BD87B5005A0447 /* StringExtensions.swift in Sources */,
 				B17233E924C18E7100E35C9E /* ApiErrorData.swift in Sources */,
 				B17233F924C5A78A00E35C9E /* VerificationData.swift in Sources */,

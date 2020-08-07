@@ -34,15 +34,19 @@ public class SeamlessVerificationMethod: VerificationMethod<SeamlessInitiationRe
     public override func onInitiate() {
         self.service
             .request(SeamlessVerificationRouter.initiateVerification(data: initiationData))
-            .sinchResponse { [weak self] (result: ApiResponse<SeamlessInitiationResponseData>) -> Void in
-                switch result {
-                case .success(let data, _):
-                    self?.initiationListener?.onInitiated(data)
-                    self?.verify(verificationCode: data.details.targetUri)
-                case .failure(let error):
-                    self?.initiationListener?.onInitiationFailed(e: error)
-                }
-        }
+            .sinchInitiationResponse(InitiationApiCallback<SeamlessInitiationResponseData>(
+                    verificationStateListener: self,
+                    resultCallback: { [weak self] (result: ApiResponse<SeamlessInitiationResponseData>) -> Void in
+                        switch result {
+                        case .success(let data, _):
+                            self?.initiationListener?.onInitiated(data)
+                            self?.verify(verificationCode: data.details.targetUri)
+                        case .failure(let error):
+                            self?.initiationListener?.onInitiationFailed(e: error)
+                        }
+                    }
+                )
+            )
     }
     
     public override func onVerify(_ verificationCode: String, fromSource sourceType: VerificationSourceType) {

@@ -34,16 +34,20 @@ public class SmsVerificationMethod: VerificationMethod<SmsInitiationResponseData
     public override func onInitiate() {
         self.service
             .request(SmsVerificationRouter.initiateVerification(data: initiationData))
-            .sinchResponse { [weak self] (result: ApiResponse<SmsInitiationResponseData>) -> Void in
-                switch result {
-                case .success(let data, let headers):
-                    self?.initiationListener?.onInitiated(
-                        data.withContentLanguage(headers["Content-Language"])
-                    )
-                case .failure(let error):
-                    self?.initiationListener?.onInitiationFailed(e: error)
+            .sinchInitiationResponse(InitiationApiCallback<SmsInitiationResponseData>(
+                verificationStateListener: self,
+                resultCallback: { [weak self] (result: ApiResponse<SmsInitiationResponseData>) -> Void in
+                    switch result {
+                    case .success(let data, let headers):
+                        self?.initiationListener?.onInitiated(
+                            data.withContentLanguage(headers["Content-Language"])
+                        )
+                    case .failure(let error):
+                        self?.initiationListener?.onInitiationFailed(e: error)
+                    }
                 }
-        }
+            )
+        )
     }
     
     public override func onVerify(_ verificationCode: String, fromSource sourceType: VerificationSourceType) {
