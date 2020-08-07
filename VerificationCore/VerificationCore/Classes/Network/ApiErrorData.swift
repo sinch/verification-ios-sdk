@@ -17,4 +17,5 @@ public struct ApiErrorData: Decodable {
     
     /// Optional reference id that was passed with the request.
     let reference: String?
+    
 }

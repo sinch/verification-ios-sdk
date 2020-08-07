@@ -34,14 +34,18 @@ public class CalloutVerificationMethod: VerificationMethod<CalloutInitiationResp
     public override func onInitiate() {
         self.service
             .request(CalloutVerificationRouter.initiateVerification(data: initiationData))
-            .sinchResponse { [weak self] (result: ApiResponse<CalloutInitiationResponseData>) -> Void in
-                switch result {
-                case .success(let data, _):
-                    self?.initiationListener?.onInitiated(data)
-                case .failure(let error):
-                    self?.initiationListener?.onInitiationFailed(e: error)
-                }
-        }
+            .sinchInitiationResponse(InitiationApiCallback<CalloutInitiationResponseData>(
+                    verificationStateListener: self,
+                    resultCallback: { [weak self] (result: ApiResponse<CalloutInitiationResponseData>) -> Void in
+                        switch result {
+                        case .success(let data, _):
+                            self?.initiationListener?.onInitiated(data)
+                        case .failure(let error):
+                            self?.initiationListener?.onInitiationFailed(e: error)
+                        }
+                    }
+                )
+            )
     }
     
     public override func onVerify(_ verificationCode: String, fromSource sourceType: VerificationSourceType) {
@@ -49,14 +53,8 @@ public class CalloutVerificationMethod: VerificationMethod<CalloutInitiationResp
             .request(CalloutVerificationRouter.verifyCode(
                 number: initiationData.identity.endpoint,
                 data: CalloutVerificationData(details: CalloutVerificationDetails(), source: sourceType)))
-            .sinchResponse { [weak self] (result: ApiResponse<VerificationResponseData>) in
-                switch result {
-                case .success:
-                    self?.verificationListener?.onVerified()
-                case .failure(let error):
-                    self?.verificationListener?.onVerificationFailed(e: error)
-                }
-        }
+            .sinchValidationResponse(VerificationApiCallback(listener: verificationListener, verificationStateListener: self))
+
     }
     
     /// Builder implementing fluent builder pattern to create [CalloutVerificationMethod](x-source-tag://[CalloutVerificationMethod]) objects.

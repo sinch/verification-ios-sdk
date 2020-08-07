@@ -104,6 +104,7 @@ class VerificationController: UIViewController {
 extension VerificationController: VerificationListener {
     
     func onVerified() {
+        print("OnVerified called")
         verificationDialogController?.showVerifiedMessage()
     }
     
