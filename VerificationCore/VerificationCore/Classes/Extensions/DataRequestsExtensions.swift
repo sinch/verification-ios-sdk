@@ -22,13 +22,13 @@ extension DataRequest {
                 resultCallback(.failure(decodeErrorData(responseData)))
             } else {
                 handleSuccessfullResponse(responseData,
-                                          headers: dataResponse.request?.headers.dictionary ?? [:],
+                                          headers: dataResponse.response?.headers.dictionary ?? [:],
                                           resultCallback: resultCallback)
             }
         }
     }
     
-    public func sinchInitiationResponse<Data>(_ callback: InitiationApiCallback<Data>) {
+    public func sinchInitiationResponse(_ callback: InitiationApiCallback) {
         sinchResponse(resultCallback: callback.handleResponse)
     }
     

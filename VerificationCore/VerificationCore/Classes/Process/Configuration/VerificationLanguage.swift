@@ -9,7 +9,7 @@
 import Foundation
 
 /// Language that can be used by the verification process. Instance of this classes can be used during the initialization of verification process.
-public struct VerificationLanguage: Equatable {
+public struct VerificationLanguage: Equatable, Codable {
     
     /// Language tag (locale identifier). This consists of a 2-3 letter base language tag representing the language.
     let language: String
@@ -51,9 +51,16 @@ public struct VerificationLanguage: Equatable {
         self.region = region
         self.weight = weight
     }
+    
+    public init (contentLanguageHeader: String) {
+        let splited = contentLanguageHeader.split(separator: "-")
+        self.language = String(splited[0])
+        self.region = (splited.count > 1) ? String(splited[1]) : nil
+        self.weight = nil
+    }
 }
 
-extension Array where Element == VerificationLanguage {
+public extension Array where Element == VerificationLanguage {
     
     var asLanguageString: String? {
         if isEmpty {

@@ -10,7 +10,7 @@ import VerificationCore
 import Alamofire
 
 public enum SmsVerificationRouter {
-    case initiateVerification(data: SmsVerificationInitiationData)
+    case initiateVerification(data: SmsVerificationInitiationData, preferedLanguages: [VerificationLanguage])
     case verifyCode(number: String, data: SmsVerificationData)
 }
 
@@ -44,7 +44,7 @@ extension SmsVerificationRouter: APIRouter {
     public var parameters: Parameters {
         let encodableData: Encodable
         switch self {
-        case .initiateVerification(let data):
+        case .initiateVerification(let data, _):
             encodableData = data
         case .verifyCode(_, let smsVerificationData):
             encodableData = smsVerificationData
@@ -54,7 +54,9 @@ extension SmsVerificationRouter: APIRouter {
     
     public var headers: HTTPHeaders {
         switch self {
-        case .initiateVerification, .verifyCode:
+        case .initiateVerification(_, let preferableLanguages):
+            return ["Accept-Language": preferableLanguages.asLanguageString ?? ""]
+        case .verifyCode:
             return [:]
         }
     }

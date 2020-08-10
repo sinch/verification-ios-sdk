@@ -114,14 +114,10 @@ extension VerificationController: VerificationListener {
     
 }
 
-extension VerificationController: CommonVerificationMethodsInitiationListener {
-    
-    func onInitiated(_ data: SmsInitiationResponseData) {
-        print("onInitiated for sms data called")
-    }
+extension VerificationController: InitiationListener {
     
     func onInitiated(_ data: InitiationResponseData) {
-        print("onInitiated for general data called")
+        print("onInitiated called data is\n\(data)")
     }
     
     func onInitiationFailed(e: Error) {

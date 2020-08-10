@@ -6,6 +6,8 @@
 //  Copyright © 2020 Aleksander Wojcik. All rights reserved.
 //
 
+import VerificationCore
+
 public protocol SmsVerificationConfigSetter {
-    func config(_ config: SmsVerificationConfig) -> SmsVerificationMethodCreator
+    func config(_ config: SmsVerificationConfig) -> VerificationMethodCreator
 }

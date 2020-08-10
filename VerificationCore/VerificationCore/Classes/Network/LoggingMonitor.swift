@@ -23,6 +23,7 @@ final class LoggingMonitor: EventMonitor {
         guard let request = request as? DataRequest else { return }
         let responseBody = request.data.map { String(decoding: $0, as: UTF8.self) } ?? "No body."
         debugPrint("[Response body]: \(responseBody)")
+        debugPrint("[Response headers]: \(request.response?.headers ?? [:])")
     }
     
 }

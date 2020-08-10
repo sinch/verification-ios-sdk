@@ -19,7 +19,6 @@
 		B15F707124D416A3009A2E40 /* CommonVerificationInitializationParameters.swift in Sources */ = {isa = PBXBuildFile; fileRef = B15F707024D416A3009A2E40 /* CommonVerificationInitializationParameters.swift */; };
 		B15F707324D416BF009A2E40 /* VerificationCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B15F707224D416BF009A2E40 /* VerificationCore.framework */; };
 		B15F707524D41779009A2E40 /* VerificationMethodsBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = B15F707424D41779009A2E40 /* VerificationMethodsBuilder.swift */; };
-		B1CDF66E24D80EBB0085AC29 /* CommonVerificationMethodsInitiationListener.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1CDF66D24D80EBB0085AC29 /* CommonVerificationMethodsInitiationListener.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,7 +62,6 @@
 		B15F707024D416A3009A2E40 /* CommonVerificationInitializationParameters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonVerificationInitializationParameters.swift; sourceTree = "<group>"; };
 		B15F707224D416BF009A2E40 /* VerificationCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = VerificationCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B15F707424D41779009A2E40 /* VerificationMethodsBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerificationMethodsBuilder.swift; sourceTree = "<group>"; };
-		B1CDF66D24D80EBB0085AC29 /* CommonVerificationMethodsInitiationListener.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonVerificationMethodsInitiationListener.swift; sourceTree = "<group>"; };
 		C76B20BE19E60E2A63AC105F /* Pods-VerificationAll.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VerificationAll.debug.xcconfig"; path = "Target Support Files/Pods-VerificationAll/Pods-VerificationAll.debug.xcconfig"; sourceTree = "<group>"; };
 		FF530381340418609B1A017D /* Pods_VerificationAll.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VerificationAll.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -137,7 +135,6 @@
 			children = (
 				B15F707024D416A3009A2E40 /* CommonVerificationInitializationParameters.swift */,
 				B15F707424D41779009A2E40 /* VerificationMethodsBuilder.swift */,
-				B1CDF66D24D80EBB0085AC29 /* CommonVerificationMethodsInitiationListener.swift */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -330,7 +327,6 @@
 			files = (
 				B15F707524D41779009A2E40 /* VerificationMethodsBuilder.swift in Sources */,
 				B15F707124D416A3009A2E40 /* CommonVerificationInitializationParameters.swift in Sources */,
-				B1CDF66E24D80EBB0085AC29 /* CommonVerificationMethodsInitiationListener.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

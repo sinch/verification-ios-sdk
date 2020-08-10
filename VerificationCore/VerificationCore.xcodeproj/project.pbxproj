@@ -55,6 +55,9 @@
 		B1A2ED2C24C059B1005A0447 /* VerificationMethodConfigCreatorParameters.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1A2ED2B24C059B1005A0447 /* VerificationMethodConfigCreatorParameters.swift */; };
 		B1A2ED2E24C05DE4005A0447 /* BaseVerificationMethodConfigBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1A2ED2D24C05DE4005A0447 /* BaseVerificationMethodConfigBuilder.swift */; };
 		B1E53B2124CEAE9600635AF0 /* VerificaitonLanguageTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1E53B2024CEAE9600635AF0 /* VerificaitonLanguageTests.swift */; };
+		B1E8417F24DD62BB00C29730 /* SmsInitiationDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1E8417E24DD62BB00C29730 /* SmsInitiationDetails.swift */; };
+		B1E8418124DD635900C29730 /* SeamlessInitiationDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1E8418024DD635900C29730 /* SeamlessInitiationDetails.swift */; };
+		B1E8418324E13CDA00C29730 /* VerificationMethodCreator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1E8418224E13CDA00C29730 /* VerificationMethodCreator.swift */; };
 		B1EF433224B59D4D009BE30C /* VerificationCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B1EF432824B59D4D009BE30C /* VerificationCore.framework */; };
 		B1EF433724B59D4D009BE30C /* AppKeyAuthorizationMethodTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1EF433624B59D4D009BE30C /* AppKeyAuthorizationMethodTests.swift */; };
 		B1EF433924B59D4D009BE30C /* VerificationCore.h in Headers */ = {isa = PBXBuildFile; fileRef = B1EF432B24B59D4D009BE30C /* VerificationCore.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -124,6 +127,9 @@
 		B1A2ED2B24C059B1005A0447 /* VerificationMethodConfigCreatorParameters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerificationMethodConfigCreatorParameters.swift; sourceTree = "<group>"; };
 		B1A2ED2D24C05DE4005A0447 /* BaseVerificationMethodConfigBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseVerificationMethodConfigBuilder.swift; sourceTree = "<group>"; };
 		B1E53B2024CEAE9600635AF0 /* VerificaitonLanguageTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerificaitonLanguageTests.swift; sourceTree = "<group>"; };
+		B1E8417E24DD62BB00C29730 /* SmsInitiationDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmsInitiationDetails.swift; sourceTree = "<group>"; };
+		B1E8418024DD635900C29730 /* SeamlessInitiationDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeamlessInitiationDetails.swift; sourceTree = "<group>"; };
+		B1E8418224E13CDA00C29730 /* VerificationMethodCreator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerificationMethodCreator.swift; sourceTree = "<group>"; };
 		B1EF432824B59D4D009BE30C /* VerificationCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = VerificationCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B1EF432B24B59D4D009BE30C /* VerificationCore.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VerificationCore.h; sourceTree = "<group>"; };
 		B1EF432C24B59D4D009BE30C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -275,6 +281,8 @@
 				B1A2ECE824BC695B005A0447 /* InitiationListener.swift */,
 				B1A2ED0C24BED648005A0447 /* VerificationInitiationData.swift */,
 				B14B793024DC0AD500D649E8 /* InitiationApiCallback.swift */,
+				B1E8417E24DD62BB00C29730 /* SmsInitiationDetails.swift */,
+				B1E8418024DD635900C29730 /* SeamlessInitiationDetails.swift */,
 			);
 			path = Initiation;
 			sourceTree = "<group>";
@@ -307,6 +315,7 @@
 			children = (
 				B1A2ED2B24C059B1005A0447 /* VerificationMethodConfigCreatorParameters.swift */,
 				B1A2ED2D24C05DE4005A0447 /* BaseVerificationMethodConfigBuilder.swift */,
+				B1E8418224E13CDA00C29730 /* VerificationMethodCreator.swift */,
 			);
 			path = Method;
 			sourceTree = "<group>";
@@ -560,8 +569,10 @@
 				B1A2ECFD24BDA59D005A0447 /* VerificationStateListener.swift in Sources */,
 				B17233FB24C5ADA200E35C9E /* VerificationResponseData.swift in Sources */,
 				B1A2ECC724B70BE1005A0447 /* AppKeyAuthorizationMethod.swift in Sources */,
+				B1E8417F24DD62BB00C29730 /* SmsInitiationDetails.swift in Sources */,
 				B1A2ECCE24B71A4A005A0447 /* SinchGlobalConfig.swift in Sources */,
 				B1A2ED0924BED4F5005A0447 /* VerificationIdentity.swift in Sources */,
+				B1E8418124DD635900C29730 /* SeamlessInitiationDetails.swift in Sources */,
 				B1A2ECD924BC2FC8005A0447 /* Verification.swift in Sources */,
 				B1A2ECF224BC83ED005A0447 /* SDKError.swift in Sources */,
 				B17233EF24C1A77300E35C9E /* DecodableExtensions.swift in Sources */,
@@ -576,6 +587,7 @@
 				B1A2ED2724C02CC3005A0447 /* LoggingMonitor.swift in Sources */,
 				B15F701824D2C562009A2E40 /* VerificationInitData.swift in Sources */,
 				B1A2ECE224BC6314005A0447 /* VerificationListener.swift in Sources */,
+				B1E8418324E13CDA00C29730 /* VerificationMethodCreator.swift in Sources */,
 				B1A2ED2E24C05DE4005A0447 /* BaseVerificationMethodConfigBuilder.swift in Sources */,
 				B1A2ECEE24BC71C8005A0447 /* VerificationMethodProperties.swift in Sources */,
 				B17233ED24C1A63B00E35C9E /* ApiResponse.swift in Sources */,

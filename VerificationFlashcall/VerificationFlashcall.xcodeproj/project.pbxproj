@@ -12,14 +12,11 @@
 		B110850B24D04749001FAAB7 /* VerificationFlashcallTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B110850A24D04749001FAAB7 /* VerificationFlashcallTests.swift */; };
 		B110850D24D04749001FAAB7 /* VerificationFlashcall.h in Headers */ = {isa = PBXBuildFile; fileRef = B11084FF24D04749001FAAB7 /* VerificationFlashcall.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B110851B24D0495E001FAAB7 /* FlashcallVerificationInitiationData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B110851A24D0495E001FAAB7 /* FlashcallVerificationInitiationData.swift */; };
-		B110851D24D04B89001FAAB7 /* FlashcallInitiationResponseData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B110851C24D04B89001FAAB7 /* FlashcallInitiationResponseData.swift */; };
-		B110851F24D04C59001FAAB7 /* FlashcallInitiationListener.swift in Sources */ = {isa = PBXBuildFile; fileRef = B110851E24D04C59001FAAB7 /* FlashcallInitiationListener.swift */; };
 		B110852124D04CF2001FAAB7 /* FlashcallConfigBuilderSetters.swift in Sources */ = {isa = PBXBuildFile; fileRef = B110852024D04CF2001FAAB7 /* FlashcallConfigBuilderSetters.swift */; };
 		B110852324D04D31001FAAB7 /* FlashcallVerificationConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = B110852224D04D31001FAAB7 /* FlashcallVerificationConfig.swift */; };
 		B110852624D1695A001FAAB7 /* FlashcallVerificationDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = B110852524D1695A001FAAB7 /* FlashcallVerificationDetails.swift */; };
 		B110852824D16A7E001FAAB7 /* FlashcallVerificationData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B110852724D16A7E001FAAB7 /* FlashcallVerificationData.swift */; };
 		B110852B24D16D2C001FAAB7 /* FlashcallVerificationMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = B110852A24D16D2C001FAAB7 /* FlashcallVerificationMethod.swift */; };
-		B110852D24D16D8E001FAAB7 /* FlashcallVerificationMethodCreator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B110852C24D16D8E001FAAB7 /* FlashcallVerificationMethodCreator.swift */; };
 		B110852F24D16DD2001FAAB7 /* FlashcallVerificationConfigSetter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B110852E24D16DD2001FAAB7 /* FlashcallVerificationConfigSetter.swift */; };
 		B110853124D16E75001FAAB7 /* FlashcallVerificationRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B110853024D16E75001FAAB7 /* FlashcallVerificationRouter.swift */; };
 		B110853824D17944001FAAB7 /* VerificationCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B110853724D17944001FAAB7 /* VerificationCore.framework */; };
@@ -65,14 +62,11 @@
 		B110850A24D04749001FAAB7 /* VerificationFlashcallTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerificationFlashcallTests.swift; sourceTree = "<group>"; };
 		B110850C24D04749001FAAB7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B110851A24D0495E001FAAB7 /* FlashcallVerificationInitiationData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlashcallVerificationInitiationData.swift; sourceTree = "<group>"; };
-		B110851C24D04B89001FAAB7 /* FlashcallInitiationResponseData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlashcallInitiationResponseData.swift; sourceTree = "<group>"; };
-		B110851E24D04C59001FAAB7 /* FlashcallInitiationListener.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlashcallInitiationListener.swift; sourceTree = "<group>"; };
 		B110852024D04CF2001FAAB7 /* FlashcallConfigBuilderSetters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlashcallConfigBuilderSetters.swift; sourceTree = "<group>"; };
 		B110852224D04D31001FAAB7 /* FlashcallVerificationConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlashcallVerificationConfig.swift; sourceTree = "<group>"; };
 		B110852524D1695A001FAAB7 /* FlashcallVerificationDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlashcallVerificationDetails.swift; sourceTree = "<group>"; };
 		B110852724D16A7E001FAAB7 /* FlashcallVerificationData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlashcallVerificationData.swift; sourceTree = "<group>"; };
 		B110852A24D16D2C001FAAB7 /* FlashcallVerificationMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlashcallVerificationMethod.swift; sourceTree = "<group>"; };
-		B110852C24D16D8E001FAAB7 /* FlashcallVerificationMethodCreator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlashcallVerificationMethodCreator.swift; sourceTree = "<group>"; };
 		B110852E24D16DD2001FAAB7 /* FlashcallVerificationConfigSetter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlashcallVerificationConfigSetter.swift; sourceTree = "<group>"; };
 		B110853024D16E75001FAAB7 /* FlashcallVerificationRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlashcallVerificationRouter.swift; sourceTree = "<group>"; };
 		B110853724D17944001FAAB7 /* VerificationCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = VerificationCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -194,8 +188,6 @@
 			isa = PBXGroup;
 			children = (
 				B110851A24D0495E001FAAB7 /* FlashcallVerificationInitiationData.swift */,
-				B110851C24D04B89001FAAB7 /* FlashcallInitiationResponseData.swift */,
-				B110851E24D04C59001FAAB7 /* FlashcallInitiationListener.swift */,
 			);
 			path = Initiation;
 			sourceTree = "<group>";
@@ -213,7 +205,6 @@
 			isa = PBXGroup;
 			children = (
 				B110852A24D16D2C001FAAB7 /* FlashcallVerificationMethod.swift */,
-				B110852C24D16D8E001FAAB7 /* FlashcallVerificationMethodCreator.swift */,
 				B110852E24D16DD2001FAAB7 /* FlashcallVerificationConfigSetter.swift */,
 			);
 			path = Method;
@@ -397,11 +388,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B110852D24D16D8E001FAAB7 /* FlashcallVerificationMethodCreator.swift in Sources */,
-				B110851F24D04C59001FAAB7 /* FlashcallInitiationListener.swift in Sources */,
 				B110852324D04D31001FAAB7 /* FlashcallVerificationConfig.swift in Sources */,
 				B110852624D1695A001FAAB7 /* FlashcallVerificationDetails.swift in Sources */,
-				B110851D24D04B89001FAAB7 /* FlashcallInitiationResponseData.swift in Sources */,
 				B110851B24D0495E001FAAB7 /* FlashcallVerificationInitiationData.swift in Sources */,
 				B110852124D04CF2001FAAB7 /* FlashcallConfigBuilderSetters.swift in Sources */,
 				B110852B24D16D2C001FAAB7 /* FlashcallVerificationMethod.swift in Sources */,

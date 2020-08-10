@@ -6,6 +6,8 @@
 //  Copyright © 2020 Sinch. All rights reserved.
 //
 
+import VerificationCore
+
 public protocol CalloutVerificationConfigSetter {
-    func config(_ config: CalloutVerificationConfig) -> CalloutVerificationMethodCreator
+    func config(_ config: CalloutVerificationConfig) -> VerificationMethodCreator
 }

@@ -7,11 +7,30 @@
 //
 
 /// Interface defining common requirements for each verification method initiation response data.
-public protocol InitiationResponseData: Decodable {
+public struct InitiationResponseData: Decodable {
     
     /// ID assigned to the verification.
-    var id: String { get }
+    public let id: String
     
     /// Method of initiated verification.
-    var method: VerificationMethodType { get }
+    public let method: VerificationMethodType
+    
+    public let smsDetails: SmsInitiationDetails?
+    
+    public let seamlessDetails: SeamlessInitiationDetails?
+    
+    public let contentLanguage: VerificationLanguage?
+    
+    enum CodingKeys: String, CodingKey {
+        case id
+        case method
+        case smsDetails = "sms"
+        case seamlessDetails = "seamless"
+        case contentLanguage
+    }
+    
+    public func withContentLanguage(_ contentLanguage: VerificationLanguage?) -> InitiationResponseData {
+        return InitiationResponseData(id: self.id, method: self.method, smsDetails: self.smsDetails, seamlessDetails: self.seamlessDetails, contentLanguage: contentLanguage)
+    }
+
 }

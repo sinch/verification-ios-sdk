@@ -97,7 +97,7 @@
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits" textContentType="tel"/>
                                                     </textField>
-                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Accepted languages" textAlignment="natural" minimumFontSize="17" id="4Oi-z2-TRp" userLabel="Cust">
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="es-ES" borderStyle="roundedRect" placeholder="Accepted languages" textAlignment="natural" minimumFontSize="17" id="4Oi-z2-TRp" userLabel="Cust">
                                                         <rect key="frame" x="0.0" y="573" width="390" height="34"/>
                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
