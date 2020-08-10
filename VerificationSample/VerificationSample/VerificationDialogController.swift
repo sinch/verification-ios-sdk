@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import VerificationCore
+import Verification
 
 protocol VerificationDialogDelegate: class {
     func verificationDialog(_ verificationDialog: VerificationDialogController, didTypeVerificationCode verificationCode: String)

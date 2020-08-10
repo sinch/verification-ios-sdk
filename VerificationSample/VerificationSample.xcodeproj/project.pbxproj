@@ -7,23 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		B1105C6824D8279F00788DEB /* VerificationCallout.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B1105C5D24D8268100788DEB /* VerificationCallout.framework */; };
-		B1105C6C24D8286B00788DEB /* VerificationCallout.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B1105C5D24D8268100788DEB /* VerificationCallout.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		B110853524D17785001FAAB7 /* VerificationFlashcall.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B110853224D1773C001FAAB7 /* VerificationFlashcall.framework */; };
-		B110853624D177B6001FAAB7 /* VerificationFlashcall.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B110853224D1773C001FAAB7 /* VerificationFlashcall.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		B158993124DA7417000F4133 /* VerificationSeamless.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B158993024DA7417000F4133 /* VerificationSeamless.framework */; };
-		B158993224DA7438000F4133 /* VerificationSeamless.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B158993024DA7417000F4133 /* VerificationSeamless.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		B15F707724D43661009A2E40 /* VerificationAll.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B15F707624D43661009A2E40 /* VerificationAll.framework */; };
-		B15F707824D436ED009A2E40 /* VerificationAll.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B15F707624D43661009A2E40 /* VerificationAll.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		B17233F124C5871F00E35C9E /* VerificationDialogController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B17233F024C5871F00E35C9E /* VerificationDialogController.swift */; };
 		B17233FF24C6C4B100E35C9E /* MethodButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B17233FE24C6C4B100E35C9E /* MethodButton.swift */; };
 		B172340124C6C62300E35C9E /* UIColorExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B172340024C6C62300E35C9E /* UIColorExtensions.swift */; };
-		B1A197A424C97935001A8BF2 /* MetadataCollector.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B1A197A324C97935001A8BF2 /* MetadataCollector.framework */; };
-		B1A197A524C9796F001A8BF2 /* MetadataCollector.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B1A197A324C97935001A8BF2 /* MetadataCollector.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		B1A2ECB624B5D693005A0447 /* VerificationSms.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B1A2ECB524B5D693005A0447 /* VerificationSms.framework */; };
-		B1A2ECB724B5D693005A0447 /* VerificationSms.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B1A2ECB524B5D693005A0447 /* VerificationSms.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		B1A2ED2224BF282C005A0447 /* VerificationCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B1A2ED2124BF282C005A0447 /* VerificationCore.framework */; };
-		B1A2ED2324BF282C005A0447 /* VerificationCore.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B1A2ED2124BF282C005A0447 /* VerificationCore.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		B1E842CD24E1583B00C29730 /* Verification.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B1E842CC24E1583B00C29730 /* Verification.framework */; };
+		B1E842CE24E1583B00C29730 /* Verification.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B1E842CC24E1583B00C29730 /* Verification.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		B1EF430924B46C5F009BE30C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1EF430824B46C5F009BE30C /* AppDelegate.swift */; };
 		B1EF430B24B46C5F009BE30C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1EF430A24B46C5F009BE30C /* SceneDelegate.swift */; };
 		B1EF430D24B46C5F009BE30C /* VerificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1EF430C24B46C5F009BE30C /* VerificationController.swift */; };
@@ -34,19 +22,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		B1A2ECB824B5D693005A0447 /* Embed Frameworks */ = {
+		B1E842CF24E1583C00C29730 /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				B158993224DA7438000F4133 /* VerificationSeamless.framework in Embed Frameworks */,
-				B1105C6C24D8286B00788DEB /* VerificationCallout.framework in Embed Frameworks */,
-				B15F707824D436ED009A2E40 /* VerificationAll.framework in Embed Frameworks */,
-				B110853624D177B6001FAAB7 /* VerificationFlashcall.framework in Embed Frameworks */,
-				B1A197A524C9796F001A8BF2 /* MetadataCollector.framework in Embed Frameworks */,
-				B1A2ED2324BF282C005A0447 /* VerificationCore.framework in Embed Frameworks */,
-				B1A2ECB724B5D693005A0447 /* VerificationSms.framework in Embed Frameworks */,
+				B1E842CE24E1583B00C29730 /* Verification.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -65,6 +47,7 @@
 		B1A197A324C97935001A8BF2 /* MetadataCollector.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = MetadataCollector.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B1A2ECB524B5D693005A0447 /* VerificationSms.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = VerificationSms.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B1A2ED2124BF282C005A0447 /* VerificationCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = VerificationCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B1E842CC24E1583B00C29730 /* Verification.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Verification.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B1EF430524B46C5F009BE30C /* VerificationSample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VerificationSample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B1EF430824B46C5F009BE30C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B1EF430A24B46C5F009BE30C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -83,14 +66,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B158993124DA7417000F4133 /* VerificationSeamless.framework in Frameworks */,
-				B1105C6824D8279F00788DEB /* VerificationCallout.framework in Frameworks */,
-				B15F707724D43661009A2E40 /* VerificationAll.framework in Frameworks */,
-				B110853524D17785001FAAB7 /* VerificationFlashcall.framework in Frameworks */,
-				B1A197A424C97935001A8BF2 /* MetadataCollector.framework in Frameworks */,
-				B1A2ED2224BF282C005A0447 /* VerificationCore.framework in Frameworks */,
-				B1A2ECB624B5D693005A0447 /* VerificationSms.framework in Frameworks */,
 				F45DA27586B62B181D591B95 /* Pods_VerificationSample.framework in Frameworks */,
+				B1E842CD24E1583B00C29730 /* Verification.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -135,6 +112,7 @@
 		B1EF434424B59EBC009BE30C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				B1E842CC24E1583B00C29730 /* Verification.framework */,
 				B158993024DA7417000F4133 /* VerificationSeamless.framework */,
 				B1105C5D24D8268100788DEB /* VerificationCallout.framework */,
 				B15F707624D43661009A2E40 /* VerificationAll.framework */,
@@ -169,8 +147,8 @@
 				B1EF430124B46C5F009BE30C /* Sources */,
 				B1EF430224B46C5F009BE30C /* Frameworks */,
 				B1EF430324B46C5F009BE30C /* Resources */,
-				B1A2ECB824B5D693005A0447 /* Embed Frameworks */,
 				9ACA4AE6B17FF202A02F0FF8 /* [CP] Embed Pods Frameworks */,
+				B1E842CF24E1583C00C29730 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);

@@ -6,9 +6,7 @@ use_frameworks!
 
 workspace 'verification-ios-sdk'
 project 'VerificationSample/VerificationSample.xcodeproj'
-project 'VerificationCore/VerificationCore.xcodeproj'
-project 'VerificationSms/VerificationSms.xcodeproj'
-project 'MetadataCollector/MetadataCollector.xcodeproj'
+project 'Verification/Verification.xcodeproj'
 
 def verification_pods
   pod 'Alamofire', '~> 5.2'
@@ -19,65 +17,11 @@ target 'VerificationSample' do
   project 'VerificationSample/VerificationSample.xcodeproj'
   verification_pods
 end
-
-target 'VerificationSms' do
-  project 'VerificationSms/VerificationSms.xcodeproj'
+  
+target 'Verification' do
+  project 'Verification/Verification.xcodeproj'
   verification_pods
-  
-  target 'VerificationSmsTests' do
-      inherit! :complete
-  end
-end
-
-target 'VerificationFlashcall' do
-  project 'VerificationFlashcall/VerificationFlashcall.xcodeproj'
-  verification_pods
-  
-  target 'VerificationFlashcallTests' do
-      inherit! :complete
-  end
-end
-
-target 'VerificationCallout' do
-  project 'VerificationCallout/VerificationCallout.xcodeproj'
-  verification_pods
-  
-  target 'VerificationCalloutTests' do
-      inherit! :complete
-  end
-end
-
-target 'VerificationSeamless' do
-  project 'VerificationSeamless/VerificationSeamless.xcodeproj'
-  verification_pods
-  
-  target 'VerificationSeamlessTests' do
-      inherit! :complete
-  end
-end
-
-target 'VerificationCore' do
-  project 'VerificationCore/VerificationCore.xcodeproj'
-  verification_pods
-  
-  target 'VerificationCoreTests' do
-      inherit! :complete
-  end
-end
-  
-target 'MetadataCollector' do
-  project 'MetadataCollector/MetadataCollector.xcodeproj'
-  verification_pods
-  
-  target 'MetadataCollectorTests' do
-      inherit! :complete
-  end
-end
-  
-target 'VerificationAll' do
-  project 'VerificationAll/VerificationAll.xcodeproj'
-  
-  target 'VerificationAllTests' do
+  target 'VerificationTests' do
       inherit! :complete
   end
   
