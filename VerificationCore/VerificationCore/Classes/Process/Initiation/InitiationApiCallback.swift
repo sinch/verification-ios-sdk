@@ -6,12 +6,11 @@
 //  Copyright © 2020 Aleksander Wojcik. All rights reserved.
 //
 
-public class InitiationApiCallback<Data: InitiationResponseData> {
+public class InitiationApiCallback {
     
     private weak var verificationStateListener: VerificationStateListener?
-    
-    private var resultCallback: (ApiResponse<Data>) -> Void
-    
+    private weak var initiationListener: InitiationListener?
+        
     private var notManuallyStopped: Bool {
         guard let verificationStateListener = verificationStateListener else {
             return false
@@ -20,19 +19,26 @@ public class InitiationApiCallback<Data: InitiationResponseData> {
     }
     
     public init (verificationStateListener: VerificationStateListener?,
-                 resultCallback: @escaping (ApiResponse<Data>) -> Void) {
+                 initiationListener: InitiationListener?) {
         self.verificationStateListener = verificationStateListener
-        self.resultCallback = resultCallback
+        self.initiationListener = initiationListener
     }
     
-    internal func handleResponse(_ response: ApiResponse<Data>) {
+    internal func handleResponse(_ response: ApiResponse<InitiationResponseData>) {
         guard notManuallyStopped else { return }
         switch response {
-        case .success:
+        case .success(let data, let headers):
             verificationStateListener?.update(newState: .initialization(status: .success))
-        case .failure:
+            let modifiedData: InitiationResponseData
+            if let contentLanguageHeader = headers["Content-Language"] {
+                modifiedData = data.withContentLanguage(VerificationLanguage(contentLanguageHeader: contentLanguageHeader))
+            } else {
+                modifiedData = data
+            }
+            initiationListener?.onInitiated(modifiedData)
+        case .failure(let error):
             verificationStateListener?.update(newState: .initialization(status: .error))
+            initiationListener?.onInitiationFailed(e: error)
         }
-        resultCallback(response)
     }
 }

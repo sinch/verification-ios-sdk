@@ -1,8 +1,8 @@
 //
 //  SmsInitiationDetails.swift
-//  VerificationSms
+//  VerificationCore
 //
-//  Created by Aleksander Wojcik on 15/07/2020.
+//  Created by Aleksander Wojcik on 07/08/2020.
 //  Copyright © 2020 Aleksander Wojcik. All rights reserved.
 //
 

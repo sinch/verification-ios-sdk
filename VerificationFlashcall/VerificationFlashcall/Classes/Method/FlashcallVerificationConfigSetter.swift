@@ -6,6 +6,8 @@
 //  Copyright © 2020 Sinch. All rights reserved.
 //
 
+import VerificationCore
+
 public protocol FlashcallVerificationConfigSetter {
-    func config(_ config: FlashcallVerificationConfig) -> FlashcallVerificationMethodCreator
+    func config(_ config: FlashcallVerificationConfig) -> VerificationMethodCreator
 }

@@ -14,17 +14,16 @@ import Alamofire
 /// The code  spoken by text-to-speech must be manually typed by the user. Use [CalloutVerificationMethod.Builder] to create an instance
 /// of the verification.
 /// - TAG: CalloutVerificationMethod
-public class CalloutVerificationMethod: VerificationMethod<CalloutInitiationResponseData> {
+public class CalloutVerificationMethod: VerificationMethod {
     
-    private(set) public weak var initiationListener: CalloutInitiationListener?
-    
-    private init(
+    private override init(
         verificationMethodConfig: VerificationMethodConfiguration,
-        initiationListener: CalloutInitiationListener? = nil,
+        initiationListener: InitiationListener? = nil,
         verificationListener: VerificationListener? = nil)
     {
-        self.initiationListener = initiationListener
-        super.init(verificationMethodConfig: verificationMethodConfig, verificationListener: verificationListener)
+        super.init(verificationMethodConfig: verificationMethodConfig,
+                   initiationListener: initiationListener,
+                   verificationListener: verificationListener)
     }
     
     private var initiationData: CalloutVerificationInitiationData {
@@ -34,16 +33,9 @@ public class CalloutVerificationMethod: VerificationMethod<CalloutInitiationResp
     public override func onInitiate() {
         self.service
             .request(CalloutVerificationRouter.initiateVerification(data: initiationData))
-            .sinchInitiationResponse(InitiationApiCallback<CalloutInitiationResponseData>(
+            .sinchInitiationResponse(InitiationApiCallback(
                     verificationStateListener: self,
-                    resultCallback: { [weak self] (result: ApiResponse<CalloutInitiationResponseData>) -> Void in
-                        switch result {
-                        case .success(let data, _):
-                            self?.initiationListener?.onInitiated(data)
-                        case .failure(let error):
-                            self?.initiationListener?.onInitiationFailed(e: error)
-                        }
-                    }
+                    initiationListener: initiationListener
                 )
             )
     }
@@ -59,11 +51,11 @@ public class CalloutVerificationMethod: VerificationMethod<CalloutInitiationResp
     
     /// Builder implementing fluent builder pattern to create [CalloutVerificationMethod](x-source-tag://[CalloutVerificationMethod]) objects.
     /// - TAG: CalloutVerificationMethodBuilder
-    public class Builder: CalloutVerificationConfigSetter, CalloutVerificationMethodCreator  {
+    public class Builder: CalloutVerificationConfigSetter, VerificationMethodCreator  {
         
         private var config: CalloutVerificationConfig!
         
-        private var initiationListener: CalloutInitiationListener?
+        private var initiationListener: InitiationListener?
         private var verificationListener: VerificationListener?
         
         private init() { }
@@ -77,21 +69,21 @@ public class CalloutVerificationMethod: VerificationMethod<CalloutInitiationResp
         /// Assigns config to the builder.
         /// - Parameter config: Reference to Callout configuration object.
         /// - Returns: Instance of builder with assigned configuration.
-        public func config(_ config: CalloutVerificationConfig) -> CalloutVerificationMethodCreator {
+        public func config(_ config: CalloutVerificationConfig) -> VerificationMethodCreator {
             return apply { $0.config = config }
         }
         
         /// Assigns initiation listener to the builder.
         /// - Parameter initiationListener: Listener to be notified about verification initiation result.
         /// - Returns: Instance of builder with assigned initiation listener.
-        public func initiationListener(_ initiationListener: CalloutInitiationListener?) -> CalloutVerificationMethodCreator {
+        public func initiationListener(_ initiationListener: InitiationListener?) -> VerificationMethodCreator {
             return apply { $0.initiationListener = initiationListener }
         }
         
         /// Assigns verification listener to the builder.
         /// - Parameter verificationListener: Listener to be notified about the verification process result.
         /// - Returns: Instance of builder with assigned verification listener.
-        public func verificationListener(_ verificationListener: VerificationListener?) -> CalloutVerificationMethodCreator {
+        public func verificationListener(_ verificationListener: VerificationListener?) -> VerificationMethodCreator {
             return apply { $0.verificationListener = verificationListener }
         }
         

@@ -6,6 +6,8 @@
 //  Copyright © 2020 Sinch. All rights reserved.
 //
 
+import VerificationCore
+
 public protocol SeamlessVerificationConfigSetter {
-    func config(_ config: SeamlessVerificationConfig) -> SeamlessVerificationMethodCreator
+    func config(_ config: SeamlessVerificationConfig) -> VerificationMethodCreator
 }

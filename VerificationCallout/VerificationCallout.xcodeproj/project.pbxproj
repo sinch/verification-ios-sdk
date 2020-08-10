@@ -12,13 +12,10 @@
 		B1105C3424D8205300788DEB /* VerificationCalloutTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1105C3324D8205300788DEB /* VerificationCalloutTests.swift */; };
 		B1105C3624D8205300788DEB /* VerificationCallout.h in Headers */ = {isa = PBXBuildFile; fileRef = B1105C2824D8205300788DEB /* VerificationCallout.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B1105C4224D820CF00788DEB /* CalloutVerificationInitiationData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1105C4124D820CF00788DEB /* CalloutVerificationInitiationData.swift */; };
-		B1105C4424D821D900788DEB /* CalloutInitiationResponseData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1105C4324D821D900788DEB /* CalloutInitiationResponseData.swift */; };
-		B1105C4624D8220E00788DEB /* CalloutInitiationListener.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1105C4524D8220E00788DEB /* CalloutInitiationListener.swift */; };
 		B1105C4A24D8229C00788DEB /* CalloutVerificationData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1105C4924D8229C00788DEB /* CalloutVerificationData.swift */; };
 		B1105C4C24D822C200788DEB /* CalloutVerificationDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1105C4B24D822C200788DEB /* CalloutVerificationDetails.swift */; };
 		B1105C5124D823B200788DEB /* CalloutVerificationRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1105C5024D823B200788DEB /* CalloutVerificationRouter.swift */; };
 		B1105C5324D8242400788DEB /* CalloutVerificationMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1105C5224D8242400788DEB /* CalloutVerificationMethod.swift */; };
-		B1105C5524D8243C00788DEB /* CalloutVerificationMethodCreator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1105C5424D8243C00788DEB /* CalloutVerificationMethodCreator.swift */; };
 		B1105C5724D8244B00788DEB /* CalloutVerificationMethodSetter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1105C5624D8244B00788DEB /* CalloutVerificationMethodSetter.swift */; };
 		B1105C5A24D825D500788DEB /* VerificationCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B1105C5924D825D500788DEB /* VerificationCore.framework */; };
 		B1105C5B24D825D500788DEB /* VerificationCore.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B1105C5924D825D500788DEB /* VerificationCore.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -62,13 +59,10 @@
 		B1105C3324D8205300788DEB /* VerificationCalloutTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerificationCalloutTests.swift; sourceTree = "<group>"; };
 		B1105C3524D8205300788DEB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B1105C4124D820CF00788DEB /* CalloutVerificationInitiationData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalloutVerificationInitiationData.swift; sourceTree = "<group>"; };
-		B1105C4324D821D900788DEB /* CalloutInitiationResponseData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalloutInitiationResponseData.swift; sourceTree = "<group>"; };
-		B1105C4524D8220E00788DEB /* CalloutInitiationListener.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalloutInitiationListener.swift; sourceTree = "<group>"; };
 		B1105C4924D8229C00788DEB /* CalloutVerificationData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalloutVerificationData.swift; sourceTree = "<group>"; };
 		B1105C4B24D822C200788DEB /* CalloutVerificationDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalloutVerificationDetails.swift; sourceTree = "<group>"; };
 		B1105C5024D823B200788DEB /* CalloutVerificationRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalloutVerificationRouter.swift; sourceTree = "<group>"; };
 		B1105C5224D8242400788DEB /* CalloutVerificationMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalloutVerificationMethod.swift; sourceTree = "<group>"; };
-		B1105C5424D8243C00788DEB /* CalloutVerificationMethodCreator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalloutVerificationMethodCreator.swift; sourceTree = "<group>"; };
 		B1105C5624D8244B00788DEB /* CalloutVerificationMethodSetter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalloutVerificationMethodSetter.swift; sourceTree = "<group>"; };
 		B1105C5924D825D500788DEB /* VerificationCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = VerificationCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B1105C6424D826E300788DEB /* CalloutConfigBuilderSetters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalloutConfigBuilderSetters.swift; sourceTree = "<group>"; };
@@ -167,8 +161,6 @@
 			isa = PBXGroup;
 			children = (
 				B1105C4124D820CF00788DEB /* CalloutVerificationInitiationData.swift */,
-				B1105C4324D821D900788DEB /* CalloutInitiationResponseData.swift */,
-				B1105C4524D8220E00788DEB /* CalloutInitiationListener.swift */,
 			);
 			path = Initiation;
 			sourceTree = "<group>";
@@ -186,7 +178,6 @@
 			isa = PBXGroup;
 			children = (
 				B1105C5224D8242400788DEB /* CalloutVerificationMethod.swift */,
-				B1105C5424D8243C00788DEB /* CalloutVerificationMethodCreator.swift */,
 				B1105C5624D8244B00788DEB /* CalloutVerificationMethodSetter.swift */,
 			);
 			path = Method;
@@ -399,11 +390,8 @@
 			files = (
 				B1105C5324D8242400788DEB /* CalloutVerificationMethod.swift in Sources */,
 				B1105C5724D8244B00788DEB /* CalloutVerificationMethodSetter.swift in Sources */,
-				B1105C5524D8243C00788DEB /* CalloutVerificationMethodCreator.swift in Sources */,
 				B1105C4224D820CF00788DEB /* CalloutVerificationInitiationData.swift in Sources */,
 				B1105C4A24D8229C00788DEB /* CalloutVerificationData.swift in Sources */,
-				B1105C4424D821D900788DEB /* CalloutInitiationResponseData.swift in Sources */,
-				B1105C4624D8220E00788DEB /* CalloutInitiationListener.swift in Sources */,
 				B1105C5124D823B200788DEB /* CalloutVerificationRouter.swift in Sources */,
 				B1105C4C24D822C200788DEB /* CalloutVerificationDetails.swift in Sources */,
 				B1105C6724D826ED00788DEB /* CalloutVerificationConfig.swift in Sources */,

@@ -14,11 +14,11 @@ public struct CommonVerificationInitializationParameters {
     
     let globalConfig: SinchGlobalConfig
     let verificationInitData: VerificationInitData
-    let initiationListener: CommonVerificationMethodsInitiationListener?
+    let initiationListener: InitiationListener?
     let verificationListener: VerificationListener?
     
     public init(globalConfig: SinchGlobalConfig, verificationInitData: VerificationInitData,
-         initalizationListener: CommonVerificationMethodsInitiationListener? = nil, verificationListener: VerificationListener? = nil) {
+         initalizationListener: InitiationListener? = nil, verificationListener: VerificationListener? = nil) {
         self.globalConfig = globalConfig
         self.verificationInitData = verificationInitData
         self.initiationListener = initalizationListener

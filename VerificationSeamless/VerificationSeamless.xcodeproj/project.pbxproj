@@ -14,14 +14,10 @@
 		B13C76B924DA6D2C00458AF9 /* VerificationCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B13C76B824DA6D2C00458AF9 /* VerificationCore.framework */; };
 		B13C76BA24DA6D2D00458AF9 /* VerificationCore.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B13C76B824DA6D2C00458AF9 /* VerificationCore.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		B13C76BD24DA6DFB00458AF9 /* SeamlessVerificationInitiationData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B13C76BC24DA6DFB00458AF9 /* SeamlessVerificationInitiationData.swift */; };
-		B13C76BF24DA6E3E00458AF9 /* SeamlessInitiationResponseData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B13C76BE24DA6E3E00458AF9 /* SeamlessInitiationResponseData.swift */; };
-		B13C76C124DA6E8D00458AF9 /* SeamlessInitiationListener.swift in Sources */ = {isa = PBXBuildFile; fileRef = B13C76C024DA6E8D00458AF9 /* SeamlessInitiationListener.swift */; };
-		B158991F24DA6FDC000F4133 /* SeamlessInitiationDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = B158991E24DA6FDC000F4133 /* SeamlessInitiationDetails.swift */; };
 		B158992124DA7071000F4133 /* SeamlessVerificationRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B158992024DA7071000F4133 /* SeamlessVerificationRouter.swift */; };
 		B158992324DA71C4000F4133 /* SeamlessConfigBuilderSetters.swift in Sources */ = {isa = PBXBuildFile; fileRef = B158992224DA71C4000F4133 /* SeamlessConfigBuilderSetters.swift */; };
 		B158992524DA71D4000F4133 /* SeamlessVerificationConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = B158992424DA71D4000F4133 /* SeamlessVerificationConfig.swift */; };
 		B158992724DA728A000F4133 /* SeamlessVerificationMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = B158992624DA728A000F4133 /* SeamlessVerificationMethod.swift */; };
-		B158992924DA72A4000F4133 /* SeamlessVerificationMethodCreator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B158992824DA72A4000F4133 /* SeamlessVerificationMethodCreator.swift */; };
 		B158992B24DA72B3000F4133 /* SeamlessVerificationMethodSetter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B158992A24DA72B3000F4133 /* SeamlessVerificationMethodSetter.swift */; };
 /* End PBXBuildFile section */
 
@@ -61,14 +57,10 @@
 		B13C76A624DA6BFB00458AF9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B13C76B824DA6D2C00458AF9 /* VerificationCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = VerificationCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B13C76BC24DA6DFB00458AF9 /* SeamlessVerificationInitiationData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeamlessVerificationInitiationData.swift; sourceTree = "<group>"; };
-		B13C76BE24DA6E3E00458AF9 /* SeamlessInitiationResponseData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeamlessInitiationResponseData.swift; sourceTree = "<group>"; };
-		B13C76C024DA6E8D00458AF9 /* SeamlessInitiationListener.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeamlessInitiationListener.swift; sourceTree = "<group>"; };
-		B158991E24DA6FDC000F4133 /* SeamlessInitiationDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeamlessInitiationDetails.swift; sourceTree = "<group>"; };
 		B158992024DA7071000F4133 /* SeamlessVerificationRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeamlessVerificationRouter.swift; sourceTree = "<group>"; };
 		B158992224DA71C4000F4133 /* SeamlessConfigBuilderSetters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeamlessConfigBuilderSetters.swift; sourceTree = "<group>"; };
 		B158992424DA71D4000F4133 /* SeamlessVerificationConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeamlessVerificationConfig.swift; sourceTree = "<group>"; };
 		B158992624DA728A000F4133 /* SeamlessVerificationMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeamlessVerificationMethod.swift; sourceTree = "<group>"; };
-		B158992824DA72A4000F4133 /* SeamlessVerificationMethodCreator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeamlessVerificationMethodCreator.swift; sourceTree = "<group>"; };
 		B158992A24DA72B3000F4133 /* SeamlessVerificationMethodSetter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeamlessVerificationMethodSetter.swift; sourceTree = "<group>"; };
 		BCECCB74791C91D7244BE584 /* Pods-VerificationSeamless-VerificationSeamlessTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VerificationSeamless-VerificationSeamlessTests.release.xcconfig"; path = "Target Support Files/Pods-VerificationSeamless-VerificationSeamlessTests/Pods-VerificationSeamless-VerificationSeamlessTests.release.xcconfig"; sourceTree = "<group>"; };
 		CD14B535D5A776427F219DD6 /* Pods_VerificationSeamless.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VerificationSeamless.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -179,7 +171,6 @@
 			isa = PBXGroup;
 			children = (
 				B158992624DA728A000F4133 /* SeamlessVerificationMethod.swift */,
-				B158992824DA72A4000F4133 /* SeamlessVerificationMethodCreator.swift */,
 				B158992A24DA72B3000F4133 /* SeamlessVerificationMethodSetter.swift */,
 			);
 			path = Method;
@@ -196,9 +187,6 @@
 			isa = PBXGroup;
 			children = (
 				B13C76BC24DA6DFB00458AF9 /* SeamlessVerificationInitiationData.swift */,
-				B13C76BE24DA6E3E00458AF9 /* SeamlessInitiationResponseData.swift */,
-				B13C76C024DA6E8D00458AF9 /* SeamlessInitiationListener.swift */,
-				B158991E24DA6FDC000F4133 /* SeamlessInitiationDetails.swift */,
 			);
 			path = Initiation;
 			sourceTree = "<group>";
@@ -395,11 +383,7 @@
 				B158992124DA7071000F4133 /* SeamlessVerificationRouter.swift in Sources */,
 				B13C76BD24DA6DFB00458AF9 /* SeamlessVerificationInitiationData.swift in Sources */,
 				B158992B24DA72B3000F4133 /* SeamlessVerificationMethodSetter.swift in Sources */,
-				B158991F24DA6FDC000F4133 /* SeamlessInitiationDetails.swift in Sources */,
-				B158992924DA72A4000F4133 /* SeamlessVerificationMethodCreator.swift in Sources */,
 				B158992524DA71D4000F4133 /* SeamlessVerificationConfig.swift in Sources */,
-				B13C76C124DA6E8D00458AF9 /* SeamlessInitiationListener.swift in Sources */,
-				B13C76BF24DA6E3E00458AF9 /* SeamlessInitiationResponseData.swift in Sources */,
 				B158992324DA71C4000F4133 /* SeamlessConfigBuilderSetters.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

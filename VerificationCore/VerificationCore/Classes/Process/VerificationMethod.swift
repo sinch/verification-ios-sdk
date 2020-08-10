@@ -12,13 +12,14 @@ import MetadataCollector
 /// Class containing common logic for every verification method.
 ///
 /// Every specific verification method should inherit from this class.
-open class VerificationMethod<InitData: InitiationResponseData>: VerificationMethodCallbacks {
+open class VerificationMethod: VerificationMethodCallbacks {
         
     public let verificationMethodConfig: VerificationMethodConfiguration
-    private var initiationResponseData: InitData?
-        
+    private var initiationResponseData: InitiationResponseData?
+
+    private(set) public weak var initiationListener: InitiationListener?
     private(set) public weak var verificationListener: VerificationListener?
-    
+
     private(set) public var verificationState: VerificationState = .idle
         
     var id: String? {
@@ -35,9 +36,11 @@ open class VerificationMethod<InitData: InitiationResponseData>: VerificationMet
     ///   - verificationListener: Verification listener to be notified about verification process.
     public init(
         verificationMethodConfig: VerificationMethodConfiguration,
+        initiationListener: InitiationListener? = nil,
         verificationListener: VerificationListener? = nil
     ) {
         self.verificationMethodConfig = verificationMethodConfig
+        self.initiationListener = initiationListener
         self.verificationListener = verificationListener
     }
     
