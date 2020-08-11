@@ -2,28 +2,10 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:Verification/Verification.xcodeproj">
+   </FileRef>
+   <FileRef
       location = "group:VerificationSample/VerificationSample.xcodeproj">
-   </FileRef>
-   <FileRef
-      location = "group:VerificationSms/VerificationSms.xcodeproj">
-   </FileRef>
-   <FileRef
-      location = "group:VerificationFlashcall/VerificationFlashcall.xcodeproj">
-   </FileRef>
-   <FileRef
-      location = "group:VerificationCallout/VerificationCallout.xcodeproj">
-   </FileRef>
-   <FileRef
-      location = "group:VerificationSeamless/VerificationSeamless.xcodeproj">
-   </FileRef>
-   <FileRef
-      location = "group:VerificationCore/VerificationCore.xcodeproj">
-   </FileRef>
-   <FileRef
-      location = "group:MetadataCollector/MetadataCollector.xcodeproj">
-   </FileRef>
-   <FileRef
-      location = "group:VerificationAll/VerificationAll.xcodeproj">
    </FileRef>
    <FileRef
       location = "group:Pods/Pods.xcodeproj">
