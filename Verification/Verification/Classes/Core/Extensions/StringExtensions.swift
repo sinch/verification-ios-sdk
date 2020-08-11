@@ -6,7 +6,7 @@
 //  Copyright © 2020 Aleksander Wojcik. All rights reserved.
 //
 
-extension String {
+public extension String {
     
     func prefixed(with prefix: String) -> String {
         return prefix + self

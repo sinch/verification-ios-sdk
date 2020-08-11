@@ -9,15 +9,34 @@
 /// Base class for all the verification method configuraiton builders.
 ///
 /// This class acts as simple storage for properties common for every verificaiton method builder.
-public class BaseVerificationMethodConfigBuilder {
+public class BaseVerificationMethodConfigBuilder: VerificationMethodConfigCreatorParameters {
     
-    public var globalConfig: SinchGlobalConfig!
-    public var number: String!
+    var globalConfig: SinchGlobalConfig!
+    var number: String!
     
-    public var honourEarlyReject: Bool = true
-    public var custom: String?
-    public var reference: String?
-    public var acceptedLanguages: [VerificationLanguage] = []
+    private(set) var honourEarlyReject: Bool = true
+    private(set) var custom: String?
+    private(set) var reference: String?
+    private(set) var acceptedLanguages: [VerificationLanguage] = []
     
-    public init() {}
+    init() {}
+    
+    public func honourEarlyReject(_ honourEarlyReject: Bool) -> Self {
+        return self.apply { $0.honourEarlyReject = honourEarlyReject }
+    }
+    
+    public func custom(_ custom: String?) -> Self {
+        return self.apply { $0.custom = custom }
+    }
+    
+    public func reference(_ reference: String?) -> Self {
+        return self.apply { $0.reference = reference }
+    }
+    
+    public func acceptedLanguages(_ acceptedLanguages: [VerificationLanguage]) -> Self {
+        return self.apply { $0.acceptedLanguages = acceptedLanguages }
+    }
+    
 }
+
+extension BaseVerificationMethodConfigBuilder: HasApply {}
