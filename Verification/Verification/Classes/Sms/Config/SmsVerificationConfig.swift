@@ -50,34 +50,6 @@ public class SmsVerificationConfig: VerificationMethodConfiguration {
             return self.apply { $0.number = number }
         }
         
-        /// Assigns honourEarlyReject flag to the builder.
-        /// - Parameter honourEarlyReject: Flag indicating if the verification process should honour early rejection rules.
-        /// - Returns: Instance of builder with assigned honourEarlyReject flag.
-        public func honourEarlyReject(_ honourEarlyReject: Bool) -> Self {
-            return self.apply { $0.honourEarlyReject = honourEarlyReject }
-        }
-        
-        /// Assigns custom string to the builder.
-        /// - Parameter custom: Custom string that is passed with the initiation request.
-        /// - Returns: Instance of builder with assigned custom field.
-        public func custom(_ custom: String?) -> Self {
-            return self.apply { $0.custom = custom }
-        }
-        
-        /// Assigns reference string to the builder.
-        /// - Parameter reference: Reference string that is passed with the initiation request for tracking purposes.
-        /// - Returns: Instance of builder with assigned reference field.
-        public func reference(_ reference: String?) -> Self {
-            return self.apply { $0.reference = reference }
-        }
-        
-        /// Assigns acceptedLanguages value to the builder.
-        /// - Parameter acceptedLanguages: List of languages the sms message with the verification code will be written in. Backend chooses the first one it can handle.
-        /// - Returns: Instance of builder with assigned acceptedLanguages field.
-        public func acceptedLanguages(_ acceptedLanguages: [VerificationLanguage]) -> Self {
-            return self.apply { $0.acceptedLanguages = acceptedLanguages }
-        }
-        
         /// Builds [SmsVerificationConfig](x-source-tag://[SmsVerificationConfig]) instance.
         /// - Returns: SmsVerificationConfig  instance with previously defined parameters.
         public func build() -> SmsVerificationConfig {
@@ -89,5 +61,3 @@ public class SmsVerificationConfig: VerificationMethodConfiguration {
         
     }
 }
-
-extension SmsVerificationConfig.Builder: HasApply {}

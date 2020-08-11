@@ -71,7 +71,6 @@ class VerificationController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-]
         [phoneNumberTextField, customField, referenceField, acceptedLanguagesField].forEach {
             $0?.delegate = self
         }

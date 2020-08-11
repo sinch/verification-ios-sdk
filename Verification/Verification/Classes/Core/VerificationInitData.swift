@@ -18,7 +18,7 @@ public struct VerificationInitData: VerificationMethodProperties {
     public let honoursEarlyReject: Bool
     public let acceptedLanguages: [VerificationLanguage]
     
-    init(usedMethod: VerificationMethodType, number: String, custom: String?, reference: String?, honoursEarlyReject: Bool, acceptedLanguages: [VerificationLanguage]){
+    public init(usedMethod: VerificationMethodType, number: String, custom: String?, reference: String?, honoursEarlyReject: Bool, acceptedLanguages: [VerificationLanguage]){
         self.usedMethod = usedMethod
         self.number = number
         self.custom = custom
