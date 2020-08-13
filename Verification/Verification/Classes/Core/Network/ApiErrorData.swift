@@ -7,7 +7,7 @@
 //
 
 /// Class containing detailed information about what went wrong during the API call. (Server did not return 2xx status).
-public struct ApiErrorData: Decodable {
+public struct ApiErrorData: Codable, Equatable {
     
     /// Integer defining specific error.
     let errorCode: Int?

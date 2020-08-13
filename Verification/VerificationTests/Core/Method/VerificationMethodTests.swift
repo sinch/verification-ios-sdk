@@ -65,3 +65,13 @@ class VerificationMethodTests: XCTestCase {
     }
     
 }
+
+extension VerificationResponseData {
+    
+    static func correctVerificationResponse(
+        fromSource source: VerificationSourceType,
+        method: VerificationMethodType) -> VerificationResponseData {
+        return VerificationResponseData(id: "", source: source, status: .successful, method: method, errorReason: nil, reference: nil)
+    }
+    
+}

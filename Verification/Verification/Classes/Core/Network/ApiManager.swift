@@ -13,16 +13,22 @@ import Alamofire
 class ApiManager {
     
     private let authMethod: AuthorizationMethod
+    private let protocolClass: AnyClass?
     
     /// Default initializer.
     /// - Parameter authMethod: [AuthorizationMethod](x-source-tag://[AuthorizationMethod]) used for veryfing API requests.
-    init(authMethod: AuthorizationMethod) {
+    init(authMethod: AuthorizationMethod, protocolClass: AnyClass? = nil) {
         self.authMethod = authMethod
+        self.protocolClass = protocolClass
     }
     
     /// Specific session instance that should be used for interacting with SINCH API (making HTTP calls).
     lazy var session: Session = {
-        return Session(interceptor: SinchSessionHandler(authorizationMethod: authMethod), eventMonitors: [LoggingMonitor()])
+        let configuration = URLSessionConfiguration.af.default
+        if let protocolClass = protocolClass {
+            configuration.protocolClasses = [protocolClass]
+        }
+        return Session(configuration: configuration, interceptor: SinchSessionHandler(authorizationMethod: authMethod), eventMonitors: [LoggingMonitor()])
     }()
 
 }

@@ -17,7 +17,7 @@ public class SinchGlobalConfig {
     
     let apiManager: ApiManager
     
-    private init(apiManager: ApiManager){
+    init(apiManager: ApiManager){
         self.apiManager = apiManager
     }
     

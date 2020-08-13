@@ -7,6 +7,6 @@
 //
 
 /// Class containing details (returned by the API) about the initiated sms verification process.
-public struct SmsInitiationDetails: Decodable {
+public struct SmsInitiationDetails: Codable, Equatable {
     let template: String
 }

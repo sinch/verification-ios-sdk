@@ -23,6 +23,7 @@ target 'Verification' do
   verification_pods
   target 'VerificationTests' do
       inherit! :complete
+      pod 'Mocker', '~> 2.2.0'
   end
   
 end
