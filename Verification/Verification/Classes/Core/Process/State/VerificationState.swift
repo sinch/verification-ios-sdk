@@ -45,7 +45,7 @@ public enum VerificationState: Equatable {
     var canVerify: Bool {
         switch self {
         case .verification(let status):
-            return status != .success
+            return status == .error
         default:
             return true
         }

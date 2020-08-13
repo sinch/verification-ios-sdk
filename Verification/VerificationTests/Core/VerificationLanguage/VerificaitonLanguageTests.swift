@@ -43,6 +43,33 @@ class VerificaitonLanguageTests: XCTestCase {
         XCTAssertEqual(weight, verLanguage.weight)
     }
     
+    func testContentLanguageOnlyLanguage() throws {
+        let header = "pl"
+        let verLanguage = VerificationLanguage(contentLanguageHeader: header)
+        
+        XCTAssertEqual("pl", verLanguage.language)
+        XCTAssertEqual(nil, verLanguage.region)
+        XCTAssertEqual(nil, verLanguage.weight)
+    }
+    
+    func testContentLanguageFull() throws {
+        let header = "pl-PL"
+        let verLanguage = VerificationLanguage(contentLanguageHeader: header)
+        
+        XCTAssertEqual("pl", verLanguage.language)
+        XCTAssertEqual("PL", verLanguage.region)
+        XCTAssertEqual(nil, verLanguage.weight)
+    }
+    
+    func testWrongContentLanguageParsedAsExpected() throws {
+        let header = "pl-PL-AAA"
+        let verLanguage = try VerificationLanguage(contentLanguageHeader: header)
+        
+        XCTAssertEqual("pl", verLanguage.language)
+        XCTAssertEqual("PL", verLanguage.region)
+        XCTAssertEqual(nil, verLanguage.weight)
+    }
+    
     func testWeightDigitsMax() throws {
         let language = "pl"
         let weight = 0.3333333
