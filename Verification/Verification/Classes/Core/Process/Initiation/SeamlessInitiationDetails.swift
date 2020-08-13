@@ -7,7 +7,7 @@
 //
 
 /// Class containing details (returned by the API) about the initiated seamless verification process.
-public struct SeamlessInitiationDetails: Decodable {
+public struct SeamlessInitiationDetails: Codable, Equatable {
     
     /// URI address at which the client has to make a GET call.
     public let targetUri: String

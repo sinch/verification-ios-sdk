@@ -7,7 +7,7 @@
 //
 
 /// Interface defining common requirements for each verification method initiation response data.
-public struct InitiationResponseData: Decodable {
+public struct InitiationResponseData: Equatable, Codable {
     
     /// ID assigned to the verification.
     public let id: String

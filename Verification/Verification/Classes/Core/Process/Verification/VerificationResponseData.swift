@@ -7,7 +7,7 @@
 //
 
 /// Class holding data about the initiated verification.
-public struct VerificationResponseData: Decodable {
+public struct VerificationResponseData: Codable {
     
     /// Id of the verification process.
     let id: String

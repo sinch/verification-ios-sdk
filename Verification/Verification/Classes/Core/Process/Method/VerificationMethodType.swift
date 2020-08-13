@@ -8,7 +8,7 @@
 
 /// Enum defining specific type of the verification.
 /// - Tag: VerificationMethodType
-public enum VerificationMethodType: String, Codable {
+public enum VerificationMethodType: String, Codable, Equatable {
     
     /// SMS verification. [More](https://www.sinch.com/products/apis/verification/sms/)
     case sms

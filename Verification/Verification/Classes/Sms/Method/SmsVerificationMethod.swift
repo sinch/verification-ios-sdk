@@ -15,8 +15,8 @@ import Alamofire
 /// - TAG: SmsVerificationMethod
 public class SmsVerificationMethod: VerificationMethod {
         
-    private override init(
-        verificationMethodConfig: VerificationMethodConfiguration,
+    init(
+        verificationMethodConfig: SmsVerificationConfig,
         initiationListener: InitiationListener? = nil,
         verificationListener: VerificationListener? = nil)
     {
