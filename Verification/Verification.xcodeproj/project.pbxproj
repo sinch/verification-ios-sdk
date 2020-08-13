@@ -15,6 +15,8 @@
 		B197B94B24E16E3100889BD0 /* AcceptedLanguagesParsingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B197B94424E16E3000889BD0 /* AcceptedLanguagesParsingTests.swift */; };
 		B197B94C24E16E3100889BD0 /* AppKeyAuthorizationMethodTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B197B94524E16E3000889BD0 /* AppKeyAuthorizationMethodTests.swift */; };
 		B197B94D24E16E3100889BD0 /* SimCardInfoHolderEncodingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B197B94724E16E3100889BD0 /* SimCardInfoHolderEncodingTests.swift */; };
+		B1D698A324E3DFA500AC4CA8 /* VerificationMethodTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1D698A224E3DFA500AC4CA8 /* VerificationMethodTests.swift */; };
+		B1D698A524E3E5AD00AC4CA8 /* MockedVerificationMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1D698A424E3E5AD00AC4CA8 /* MockedVerificationMethod.swift */; };
 		B1E8419824E1527900C29730 /* Verification.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B1E8418E24E1527900C29730 /* Verification.framework */; };
 		B1E8419F24E1527900C29730 /* Verification.h in Headers */ = {isa = PBXBuildFile; fileRef = B1E8419124E1527900C29730 /* Verification.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B1E841EB24E153BD00C29730 /* SmsVerificationRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1E841DF24E153BC00C29730 /* SmsVerificationRouter.swift */; };
@@ -138,6 +140,8 @@
 		B197B94424E16E3000889BD0 /* AcceptedLanguagesParsingTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AcceptedLanguagesParsingTests.swift; sourceTree = "<group>"; };
 		B197B94524E16E3000889BD0 /* AppKeyAuthorizationMethodTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppKeyAuthorizationMethodTests.swift; sourceTree = "<group>"; };
 		B197B94724E16E3100889BD0 /* SimCardInfoHolderEncodingTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SimCardInfoHolderEncodingTests.swift; sourceTree = "<group>"; };
+		B1D698A224E3DFA500AC4CA8 /* VerificationMethodTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerificationMethodTests.swift; sourceTree = "<group>"; };
+		B1D698A424E3E5AD00AC4CA8 /* MockedVerificationMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockedVerificationMethod.swift; sourceTree = "<group>"; };
 		B1E8418E24E1527900C29730 /* Verification.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Verification.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B1E8419124E1527900C29730 /* Verification.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Verification.h; sourceTree = "<group>"; };
 		B1E8419224E1527900C29730 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -298,6 +302,7 @@
 		B197B94024E16E3000889BD0 /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				B1D698A624E5056300AC4CA8 /* Method */,
 				B197B94224E16E3000889BD0 /* VerificationLanguage */,
 				B197B94524E16E3000889BD0 /* AppKeyAuthorizationMethodTests.swift */,
 				B197B94124E16E3000889BD0 /* VerificationStatesTests.swift */,
@@ -320,6 +325,15 @@
 				B197B94724E16E3100889BD0 /* SimCardInfoHolderEncodingTests.swift */,
 			);
 			path = MetadataCollector;
+			sourceTree = "<group>";
+		};
+		B1D698A624E5056300AC4CA8 /* Method */ = {
+			isa = PBXGroup;
+			children = (
+				B1D698A224E3DFA500AC4CA8 /* VerificationMethodTests.swift */,
+				B1D698A424E3E5AD00AC4CA8 /* MockedVerificationMethod.swift */,
+			);
+			path = Method;
 			sourceTree = "<group>";
 		};
 		B1E8418424E1527900C29730 = {
@@ -1101,8 +1115,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B1D698A524E3E5AD00AC4CA8 /* MockedVerificationMethod.swift in Sources */,
 				B197B94C24E16E3100889BD0 /* AppKeyAuthorizationMethodTests.swift in Sources */,
 				B197B94924E16E3100889BD0 /* VerificationStatesTests.swift in Sources */,
+				B1D698A324E3DFA500AC4CA8 /* VerificationMethodTests.swift in Sources */,
 				B197B94D24E16E3100889BD0 /* SimCardInfoHolderEncodingTests.swift in Sources */,
 				B197B94B24E16E3100889BD0 /* AcceptedLanguagesParsingTests.swift in Sources */,
 				B197B94A24E16E3100889BD0 /* VerificaitonLanguageTests.swift in Sources */,
