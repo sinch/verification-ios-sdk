@@ -15,7 +15,7 @@ import Alamofire
 /// - TAG: FlashcallVerificationMethod
 public class FlashcallVerificationMethod: VerificationMethod {
         
-    private override init(
+    override init(
         verificationMethodConfig: VerificationMethodConfiguration,
         initiationListener: InitiationListener? = nil,
         verificationListener: VerificationListener? = nil)
