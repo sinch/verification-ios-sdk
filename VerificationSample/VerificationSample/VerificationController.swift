@@ -12,6 +12,7 @@ import Verification
 class VerificationController: UIViewController {
     
     @IBOutlet weak var phoneNumberTextField: UITextField!
+    @IBOutlet weak var envNameLabel: UILabel!
     
     @IBOutlet weak var smsButton: UIButton!
     @IBOutlet weak var flashcallButton: UIButton!
@@ -37,12 +38,18 @@ class VerificationController: UIViewController {
     
     private weak var verificationDialogController: VerificationDialogController?
     private var verification: Verification?
+    private var selectedEnv: Environment = Environments[0] {
+        didSet {
+            envNameLabel.text = selectedEnv.name
+            Constants.Api.userDefinedDomain = selectedEnv.domain
+        }
+    }
     
-    private lazy var globalConfig: SinchGlobalConfig = {
+    private var globalConfig: SinchGlobalConfig {
         return SinchGlobalConfig.Builder.instance()
-            .authorizationMethod(AppKeyAuthorizationMethod(appKey: "9e556452-e462-4006-aab0-8165ca04de66")) //TODO handle appkeys differently
+            .authorizationMethod(AppKeyAuthorizationMethod(appKey: selectedEnv.appKey))
             .build()
-    }()
+    }
     
     private var initData: VerificationInitData {
         let acceptedLanguages: [VerificationLanguage]
@@ -74,6 +81,7 @@ class VerificationController: UIViewController {
         [phoneNumberTextField, customField, referenceField, acceptedLanguagesField].forEach {
             $0?.delegate = self
         }
+        envNameLabel.addInteraction(UIContextMenuInteraction(delegate: self))
     }
     
     @IBAction func didTapInitializeButton(_ sender: Any) {
@@ -97,6 +105,19 @@ class VerificationController: UIViewController {
         return VerificationMethodsBuilder.createVerification(withParameters: self.commonConfig)
     }
     
+}
+
+extension VerificationController: UIContextMenuInteractionDelegate {
+    
+    func contextMenuInteraction(_ interaction: UIContextMenuInteraction, configurationForMenuAtLocation location: CGPoint) -> UIContextMenuConfiguration? {
+        
+        return UIContextMenuConfiguration(identifier: nil, previewProvider: nil, actionProvider: { elem in
+            let children = Environments.map { item in
+                UIAction(title: item.name, state: (self.selectedEnv == item) ? .on : .off, handler: { _ in self.selectedEnv = item })
+            }
+            return UIMenu(title: "Envirnoments", options: .displayInline, children: children)
+        })
+    }
 }
 
 extension VerificationController: VerificationListener {
