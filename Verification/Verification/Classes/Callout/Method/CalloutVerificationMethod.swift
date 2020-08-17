@@ -15,7 +15,7 @@ import Alamofire
 /// - TAG: CalloutVerificationMethod
 public class CalloutVerificationMethod: VerificationMethod {
     
-    private override init(
+    override init(
         verificationMethodConfig: VerificationMethodConfiguration,
         initiationListener: InitiationListener? = nil,
         verificationListener: VerificationListener? = nil)

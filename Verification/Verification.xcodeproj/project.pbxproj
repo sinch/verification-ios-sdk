@@ -19,6 +19,10 @@
 		B1D698A524E3E5AD00AC4CA8 /* MockedVerificationMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1D698A424E3E5AD00AC4CA8 /* MockedVerificationMethod.swift */; };
 		B1D698A824E512C600AC4CA8 /* SmsVerificationMethodTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1D698A724E512C600AC4CA8 /* SmsVerificationMethodTests.swift */; };
 		B1D698AA24E518D400AC4CA8 /* MockedManagerGlobalConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1D698A924E518D400AC4CA8 /* MockedManagerGlobalConfig.swift */; };
+		B1D698AD24E694D600AC4CA8 /* SeamlessVerificationMethodTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1D698AC24E694D600AC4CA8 /* SeamlessVerificationMethodTests.swift */; };
+		B1D698AF24E6965400AC4CA8 /* CommonVerificationMethodsTestsHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1D698AE24E6965400AC4CA8 /* CommonVerificationMethodsTestsHelper.swift */; };
+		B1D698B324E6B24700AC4CA8 /* FlashcallVerificationMethodTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1D698B224E6B24700AC4CA8 /* FlashcallVerificationMethodTests.swift */; };
+		B1D698B524E6B37500AC4CA8 /* CalloutVerificationMethodTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1D698B424E6B37500AC4CA8 /* CalloutVerificationMethodTests.swift */; };
 		B1E8419824E1527900C29730 /* Verification.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B1E8418E24E1527900C29730 /* Verification.framework */; };
 		B1E8419F24E1527900C29730 /* Verification.h in Headers */ = {isa = PBXBuildFile; fileRef = B1E8419124E1527900C29730 /* Verification.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B1E841EB24E153BD00C29730 /* SmsVerificationRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1E841DF24E153BC00C29730 /* SmsVerificationRouter.swift */; };
@@ -146,6 +150,10 @@
 		B1D698A424E3E5AD00AC4CA8 /* MockedVerificationMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockedVerificationMethod.swift; sourceTree = "<group>"; };
 		B1D698A724E512C600AC4CA8 /* SmsVerificationMethodTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmsVerificationMethodTests.swift; sourceTree = "<group>"; };
 		B1D698A924E518D400AC4CA8 /* MockedManagerGlobalConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockedManagerGlobalConfig.swift; sourceTree = "<group>"; };
+		B1D698AC24E694D600AC4CA8 /* SeamlessVerificationMethodTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeamlessVerificationMethodTests.swift; sourceTree = "<group>"; };
+		B1D698AE24E6965400AC4CA8 /* CommonVerificationMethodsTestsHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonVerificationMethodsTestsHelper.swift; sourceTree = "<group>"; };
+		B1D698B224E6B24700AC4CA8 /* FlashcallVerificationMethodTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlashcallVerificationMethodTests.swift; sourceTree = "<group>"; };
+		B1D698B424E6B37500AC4CA8 /* CalloutVerificationMethodTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalloutVerificationMethodTests.swift; sourceTree = "<group>"; };
 		B1E8418E24E1527900C29730 /* Verification.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Verification.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B1E8419124E1527900C29730 /* Verification.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Verification.h; sourceTree = "<group>"; };
 		B1E8419224E1527900C29730 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -341,6 +349,30 @@
 			path = Method;
 			sourceTree = "<group>";
 		};
+		B1D698AB24E694BB00AC4CA8 /* Seamless */ = {
+			isa = PBXGroup;
+			children = (
+				B1D698AC24E694D600AC4CA8 /* SeamlessVerificationMethodTests.swift */,
+			);
+			path = Seamless;
+			sourceTree = "<group>";
+		};
+		B1D698B024E6B21500AC4CA8 /* Flashcall */ = {
+			isa = PBXGroup;
+			children = (
+				B1D698B224E6B24700AC4CA8 /* FlashcallVerificationMethodTests.swift */,
+			);
+			path = Flashcall;
+			sourceTree = "<group>";
+		};
+		B1D698B124E6B22400AC4CA8 /* Callout */ = {
+			isa = PBXGroup;
+			children = (
+				B1D698B424E6B37500AC4CA8 /* CalloutVerificationMethodTests.swift */,
+			);
+			path = Callout;
+			sourceTree = "<group>";
+		};
 		B1E8418424E1527900C29730 = {
 			isa = PBXGroup;
 			children = (
@@ -378,7 +410,11 @@
 				B197B94024E16E3000889BD0 /* Core */,
 				B197B94624E16E3100889BD0 /* MetadataCollector */,
 				B197B93E24E16E3000889BD0 /* Sms */,
+				B1D698AB24E694BB00AC4CA8 /* Seamless */,
+				B1D698B024E6B21500AC4CA8 /* Flashcall */,
+				B1D698B124E6B22400AC4CA8 /* Callout */,
 				B1E8419E24E1527900C29730 /* Info.plist */,
+				B1D698AE24E6965400AC4CA8 /* CommonVerificationMethodsTestsHelper.swift */,
 			);
 			path = VerificationTests;
 			sourceTree = "<group>";
@@ -1125,9 +1161,13 @@
 				B197B94C24E16E3100889BD0 /* AppKeyAuthorizationMethodTests.swift in Sources */,
 				B197B94924E16E3100889BD0 /* VerificationStatesTests.swift in Sources */,
 				B1D698A324E3DFA500AC4CA8 /* VerificationMethodTests.swift in Sources */,
+				B1D698AF24E6965400AC4CA8 /* CommonVerificationMethodsTestsHelper.swift in Sources */,
 				B1D698A824E512C600AC4CA8 /* SmsVerificationMethodTests.swift in Sources */,
+				B1D698B524E6B37500AC4CA8 /* CalloutVerificationMethodTests.swift in Sources */,
 				B1D698AA24E518D400AC4CA8 /* MockedManagerGlobalConfig.swift in Sources */,
 				B197B94D24E16E3100889BD0 /* SimCardInfoHolderEncodingTests.swift in Sources */,
+				B1D698AD24E694D600AC4CA8 /* SeamlessVerificationMethodTests.swift in Sources */,
+				B1D698B324E6B24700AC4CA8 /* FlashcallVerificationMethodTests.swift in Sources */,
 				B197B94B24E16E3100889BD0 /* AcceptedLanguagesParsingTests.swift in Sources */,
 				B197B94A24E16E3100889BD0 /* VerificaitonLanguageTests.swift in Sources */,
 				B197B94824E16E3100889BD0 /* SmsVerificationConfigTests.swift in Sources */,
