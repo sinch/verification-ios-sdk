@@ -20,7 +20,9 @@ public class FlashcallVerificationMethod: VerificationMethod {
         initiationListener: InitiationListener? = nil,
         verificationListener: VerificationListener? = nil)
     {
-        super.init(verificationMethodConfig: verificationMethodConfig, verificationListener: verificationListener)
+        super.init(verificationMethodConfig: verificationMethodConfig,
+                   initiationListener: initiationListener,
+                   verificationListener: verificationListener)
     }
     
     private var initiationData: FlashcallVerificationInitiationData {
