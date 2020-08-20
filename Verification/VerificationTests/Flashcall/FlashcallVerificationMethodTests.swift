@@ -14,6 +14,7 @@ class FlashcallVerificationMethodTests: XCTestCase {
     
     func testCorrectFlashcallInitiationResponseNotifiesListener() throws {
         try createHelperWithFlashcallMethod().testCorrectInitiationResponseNotifiesInitListenerWithProperData()
+        
     }
     
     func testErrorResponseNotifiesInitListenerWithApiError() throws {
