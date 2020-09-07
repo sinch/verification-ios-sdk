@@ -11,7 +11,7 @@ import Verification
 
 class VerificationController: UIViewController {
     
-    @IBOutlet weak var phoneNumberTextField: UITextField!
+    @IBOutlet weak var phoneNumberTextField: PhoneNumberUITextField!
     @IBOutlet weak var envNameLabel: UILabel!
     
     @IBOutlet weak var smsButton: UIButton!
@@ -60,7 +60,7 @@ class VerificationController: UIViewController {
         }
         return VerificationInitData(
             usedMethod: buttonToMethodMap[selectedMethodButton] ?? .sms,
-            number: phoneNumberTextField.text ?? "",
+            number: phoneNumberTextField.e164Number ?? "",
             custom: customField.text?.nilIfEmpty(),
             reference: referenceField.text?.nilIfEmpty(),
             honoursEarlyReject: honoursEarlyRejectField.isOn,

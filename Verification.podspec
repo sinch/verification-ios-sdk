@@ -128,5 +128,6 @@ Pod::Spec.new do |spec|
   # spec.xcconfig = { "HEADER_SEARCH_PATHS" => "$(SDKROOT)/usr/include/libxml2" }
   spec.dependency "Alamofire", "~> 5.2"
   spec.dependency "ReachabilitySwift"
+  spec.dependency "PhoneNumberKit", "~> 3.1"
 
 end
