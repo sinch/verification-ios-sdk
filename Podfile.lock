@@ -1,24 +1,33 @@
 PODS:
   - Alamofire (5.2.1)
   - Mocker (2.2.0)
+  - PhoneNumberKit (3.2.0):
+    - PhoneNumberKit/PhoneNumberKitCore (= 3.2.0)
+    - PhoneNumberKit/UIKit (= 3.2.0)
+  - PhoneNumberKit/PhoneNumberKitCore (3.2.0)
+  - PhoneNumberKit/UIKit (3.2.0):
+    - PhoneNumberKit/PhoneNumberKitCore
   - ReachabilitySwift (5.0.0)
 
 DEPENDENCIES:
   - Alamofire (~> 5.2)
   - Mocker (~> 2.2.0)
+  - PhoneNumberKit (~> 3.1)
   - ReachabilitySwift
 
 SPEC REPOS:
   trunk:
     - Alamofire
     - Mocker
+    - PhoneNumberKit
     - ReachabilitySwift
 
 SPEC CHECKSUMS:
   Alamofire: e911732990610fe89af59ac0077f923d72dc3dfd
   Mocker: d0ceb340eddd5c28539a691ce67d068674cef9a0
+  PhoneNumberKit: df411d46177d1492da84e10b6c093846dd861452
   ReachabilitySwift: 985039c6f7b23a1da463388634119492ff86c825
 
-PODFILE CHECKSUM: e0cd66ccccdcce662f18249c54226e78eda5682f
+PODFILE CHECKSUM: 765ccd46e41704be663f3f0997cb2be55bede942
 
 COCOAPODS: 1.9.3

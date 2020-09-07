@@ -11,6 +11,7 @@ project 'Verification/Verification.xcodeproj'
 def verification_pods
   pod 'Alamofire', '~> 5.2'
   pod 'ReachabilitySwift'
+  pod 'PhoneNumberKit', '~> 3.1'
 end
 
 target 'VerificationSample' do
