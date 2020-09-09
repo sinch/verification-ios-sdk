@@ -52,19 +52,13 @@ class VerificationController: UIViewController {
     }
     
     private var initData: VerificationInitData {
-        let acceptedLanguages: [VerificationLanguage]
-        do {
-            acceptedLanguages = try acceptedLanguagesField.text?.nilIfEmpty()?.toLocaleList() ?? []
-        } catch {
-            acceptedLanguages = []
-        }
         return VerificationInitData(
             usedMethod: buttonToMethodMap[selectedMethodButton] ?? .sms,
             number: phoneNumberTextField.e164Number ?? "",
             custom: customField.text?.nilIfEmpty(),
             reference: referenceField.text?.nilIfEmpty(),
             honoursEarlyReject: honoursEarlyRejectField.isOn,
-            acceptedLanguages: acceptedLanguages)
+            acceptedLanguages: (try? acceptedLanguagesField.text?.nilIfEmpty()?.toLocaleList()) ?? [])
     }
     
     private var commonConfig: CommonVerificationInitializationParameters {
@@ -90,6 +84,8 @@ class VerificationController: UIViewController {
         
         self.verificationDialogController = verificationDialogController
         self.verification = buildVerification()
+        //If you use only single method of verification using specific builder might be more readable
+        //self.verification = buildVerificationBuilderSpecific()
         self.present(verificationDialogController, animated: true, completion: nil)
         self.verification?.initiate()
     }
@@ -105,6 +101,96 @@ class VerificationController: UIViewController {
         return VerificationMethodsBuilder.createVerification(withParameters: self.commonConfig)
     }
     
+    private func buildVerificationBuilderSpecific() -> Verification {
+        switch self.buttonToMethodMap[selectedMethodButton] {
+        case .sms:
+            return buildSmsVerification()
+        case .callout:
+            return buildCalloutVerification()
+        case .flashcall:
+            return buildFlashcallVerification()
+        case .seamless:
+            return buildSeamlessVerification()
+        default:
+            fatalError()
+        }
+    }
+    
+    private func buildSmsVerification() -> Verification {
+        let smsConfiguration = SmsVerificationConfig.Builder.instance()
+            .globalConfig(globalConfig)
+            .number(self.phoneNumberTextField.e164Number ?? "")
+            .acceptedLanguages((try? self.acceptedLanguagesField.text?.toLocaleList()) ?? [])
+            .custom(self.customField.text)
+            .honourEarlyReject(self.honoursEarlyRejectField.isSelected)
+            .reference(self.referenceField.text)
+            .build()
+        
+        let smsVerification = SmsVerificationMethod.Builder.instance()
+            .config(smsConfiguration)
+            .initiationListener(self)
+            .verificationListener(self)
+            .build()
+        
+        return smsVerification
+    }
+    
+    private func buildFlashcallVerification() -> Verification {
+        let flashcallConfiguration = FlashcallVerificationConfig.Builder.instance()
+            .globalConfig(globalConfig)
+            .number(self.phoneNumberTextField.e164Number ?? "")
+            .acceptedLanguages((try? self.acceptedLanguagesField.text?.toLocaleList()) ?? [])
+            .custom(self.customField.text)
+            .honourEarlyReject(self.honoursEarlyRejectField.isSelected)
+            .reference(self.referenceField.text)
+            .build()
+        
+        let flashcallVerification = FlashcallVerificationMethod.Builder.instance()
+            .config(flashcallConfiguration)
+            .initiationListener(self)
+            .verificationListener(self)
+            .build()
+        
+        return flashcallVerification
+    }
+    
+    private func buildCalloutVerification() -> Verification {
+        let calloutConfiguration = CalloutVerificationConfig.Builder.instance()
+            .globalConfig(globalConfig)
+            .number(self.phoneNumberTextField.e164Number ?? "")
+            .acceptedLanguages((try? self.acceptedLanguagesField.text?.toLocaleList()) ?? [])
+            .custom(self.customField.text)
+            .honourEarlyReject(self.honoursEarlyRejectField.isSelected)
+            .reference(self.referenceField.text)
+            .build()
+        
+        let calloutVerification = CalloutVerificationMethod.Builder.instance()
+            .config(calloutConfiguration)
+            .initiationListener(self)
+            .verificationListener(self)
+            .build()
+        
+        return calloutVerification
+    }
+    
+    private func buildSeamlessVerification() -> Verification {
+        let seamlessConfiguration = SeamlessVerificationConfig.Builder.instance()
+            .globalConfig(globalConfig)
+            .number(self.phoneNumberTextField.e164Number ?? "")
+            .acceptedLanguages((try? self.acceptedLanguagesField.text?.toLocaleList()) ?? [])
+            .custom(self.customField.text)
+            .honourEarlyReject(self.honoursEarlyRejectField.isSelected)
+            .reference(self.referenceField.text)
+            .build()
+        
+        let seamlessVerification = SeamlessVerificationMethod.Builder.instance()
+            .config(seamlessConfiguration)
+            .initiationListener(self)
+            .verificationListener(self)
+            .build()
+        
+        return seamlessVerification
+    }
 }
 
 extension VerificationController: UIContextMenuInteractionDelegate {
