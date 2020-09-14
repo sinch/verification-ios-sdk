@@ -34,7 +34,7 @@ public class FlashcallVerificationMethod: VerificationMethod {
             .request(FlashcallVerificationRouter.initiateVerification(data: initiationData))
             .sinchInitiationResponse(InitiationApiCallback(
                     verificationStateListener: self,
-                    initiationListener: initiationListener
+                    initiationListener: self
                 )
             )
     }
@@ -44,7 +44,7 @@ public class FlashcallVerificationMethod: VerificationMethod {
             .request(FlashcallVerificationRouter.verifyCode(
                 number: initiationData.identity.endpoint,
                 data: FlashcallVerificationData(details: FlashcallVerificationDetails(cli: verificationCode), source: sourceType)))
-            .sinchValidationResponse(VerificationApiCallback(listener: verificationListener, verificationStateListener: self))
+            .sinchValidationResponse(VerificationApiCallback(listener: self, verificationStateListener: self))
 
     }
     

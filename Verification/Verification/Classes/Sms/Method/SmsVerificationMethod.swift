@@ -34,7 +34,7 @@ public class SmsVerificationMethod: VerificationMethod {
             .request(SmsVerificationRouter.initiateVerification(data: initiationData, preferedLanguages: verificationMethodConfig.acceptedLanguages))
             .sinchInitiationResponse(InitiationApiCallback(
                 verificationStateListener: self,
-                initiationListener: initiationListener
+                initiationListener: self
             )
         )
     }
@@ -44,7 +44,7 @@ public class SmsVerificationMethod: VerificationMethod {
             .request(SmsVerificationRouter.verifyCode(
                 number: initiationData.identity.endpoint,
                 data: SmsVerificationData(details: SmsVerificationDetails(code: verificationCode), source: sourceType)))
-            .sinchValidationResponse(VerificationApiCallback(listener: verificationListener, verificationStateListener: self))
+            .sinchValidationResponse(VerificationApiCallback(listener: self, verificationStateListener: self))
     }
     
     /// Builder implementing fluent builder pattern to create [SmsVerificationMethod](x-source-tag://[SmsVerificationMethod]) objects.

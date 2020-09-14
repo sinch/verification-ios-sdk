@@ -11,7 +11,7 @@ import Alamofire
 /// Class containing common logic for every verification method.
 ///
 /// Every specific verification method should inherit from this class.
-public class VerificationMethod: VerificationMethodCallbacks {
+public class VerificationMethod: VerificationMethodCallbacks, InitiationListener, VerificationListener {
         
     let verificationMethodConfig: VerificationMethodConfiguration
     private var initiationResponseData: InitiationResponseData?
@@ -20,6 +20,11 @@ public class VerificationMethod: VerificationMethodCallbacks {
     private(set) weak var verificationListener: VerificationListener?
 
     private(set) public var verificationState: VerificationState = .idle
+    
+    private lazy var interceptionTimeoutReachedDispatchItem = DispatchWorkItem { [weak self] in
+        self?.update(newState: .verification(status: .error))
+        self?.verificationListener?.onVerificationFailed(e: SDKError.timeoutException)
+    }
         
     var id: String? {
         return initiationResponseData?.id
@@ -60,6 +65,38 @@ public class VerificationMethod: VerificationMethodCallbacks {
     
     func onVerify(_ verificationCode: String, fromSource sourceType: VerificationSourceType) { }
     
+    public func onInitiated(_ data: InitiationResponseData) {
+        self.initiationResponseData = data
+        self.initiationListener?.onInitiated(data)
+        self.initializeInterceptionTimeoutCallback()
+    }
+    
+    public func onInitiationFailed(e: Error) {
+        self.initiationListener?.onInitiationFailed(e: e)
+    }
+    
+    public func onVerified() {
+        self.cancelInterceptionTimeoutCallback()
+        self.verificationListener?.onVerified()
+    }
+    
+    public func onVerificationFailed(e: Error) {
+        self.verificationListener?.onVerificationFailed(e: e)
+    }
+    
+    private func initializeInterceptionTimeoutCallback() {
+        guard let interceptionTimeoutDate = initiationResponseData?.initiationDataTimeoutDate else { return }
+        let dispatchTimeInterval = interceptionTimeoutDate.timeIntervalSinceNow
+        DispatchQueue.main.asyncAfter(
+            deadline: .now() + dispatchTimeInterval,
+            execute: interceptionTimeoutReachedDispatchItem
+        )
+    }
+    
+    private func cancelInterceptionTimeoutCallback() {
+        interceptionTimeoutReachedDispatchItem.cancel()
+    }
+    
 }
 
 extension VerificationMethod: Verification {
@@ -76,6 +113,7 @@ extension VerificationMethod: Verification {
     }
     
     public func stop() {
+        cancelInterceptionTimeoutCallback()
         guard !verificationState.isVerificationProcessFinished else { return }
         update(newState: .manuallyStopped)
     }
