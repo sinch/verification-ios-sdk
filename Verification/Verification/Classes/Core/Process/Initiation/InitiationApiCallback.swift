@@ -29,16 +29,39 @@ class InitiationApiCallback {
         switch response {
         case .success(let data, let headers):
             verificationStateListener?.update(newState: .initialization(status: .success))
-            let modifiedData: InitiationResponseData
-            if let contentLanguageHeader = headers["Content-Language"] {
-                modifiedData = data.withContentLanguage(VerificationLanguage(contentLanguageHeader: contentLanguageHeader))
-            } else {
-                modifiedData = data
-            }
+            let contentLanguageHeader = headers["Content-Language"]
+            let dateHeader = headers["Date"]
+            let modifiedData = data.withHeadersData(
+                contentLanguage: contentLanguageHeader.asContentLanguage(),
+                dateOfGeneration: dateHeader.asGenerationDate()
+            )
             initiationListener?.onInitiated(modifiedData)
         case .failure(let error):
             verificationStateListener?.update(newState: .initialization(status: .error))
             initiationListener?.onInitiationFailed(e: error)
         }
     }
+}
+
+fileprivate extension Optional where Wrapped == String {
+    
+    func asContentLanguage() -> VerificationLanguage? {
+        if let contentLanguage = self {
+            return VerificationLanguage(contentLanguageHeader: contentLanguage)
+        } else {
+            return nil
+        }
+    }
+    
+    func asGenerationDate() -> Date {
+        if let generationDate = self {
+            let formatter = DateFormatter().apply {
+                $0.dateFormat = "E, dd MMM y HH:mm:ss zzz"
+            }
+            return formatter.date(from: generationDate) ?? Date()
+        } else {
+            return Date()
+        }
+    }
+    
 }

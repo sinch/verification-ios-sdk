@@ -12,6 +12,7 @@
 		B1578A96250608CC00E2068D /* PhoneNumberUITextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1578A95250608CC00E2068D /* PhoneNumberUITextField.swift */; };
 		B1578A98250612AD00E2068D /* SinchPhoneNumberUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1578A97250612AD00E2068D /* SinchPhoneNumberUtils.swift */; };
 		B1578A9B2506372300E2068D /* SinchPhoneNumberUtilsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1578A9A2506372300E2068D /* SinchPhoneNumberUtilsTests.swift */; };
+		B1761075250F6158000C5EC1 /* FlashcallInitiationDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1761074250F6158000C5EC1 /* FlashcallInitiationDetails.swift */; };
 		B197B94824E16E3100889BD0 /* SmsVerificationConfigTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B197B93F24E16E3000889BD0 /* SmsVerificationConfigTests.swift */; };
 		B197B94924E16E3100889BD0 /* VerificationStatesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B197B94124E16E3000889BD0 /* VerificationStatesTests.swift */; };
 		B197B94A24E16E3100889BD0 /* VerificaitonLanguageTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B197B94324E16E3000889BD0 /* VerificaitonLanguageTests.swift */; };
@@ -146,6 +147,7 @@
 		B1578A95250608CC00E2068D /* PhoneNumberUITextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneNumberUITextField.swift; sourceTree = "<group>"; };
 		B1578A97250612AD00E2068D /* SinchPhoneNumberUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SinchPhoneNumberUtils.swift; sourceTree = "<group>"; };
 		B1578A9A2506372300E2068D /* SinchPhoneNumberUtilsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SinchPhoneNumberUtilsTests.swift; sourceTree = "<group>"; };
+		B1761074250F6158000C5EC1 /* FlashcallInitiationDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlashcallInitiationDetails.swift; sourceTree = "<group>"; };
 		B197B93F24E16E3000889BD0 /* SmsVerificationConfigTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SmsVerificationConfigTests.swift; sourceTree = "<group>"; };
 		B197B94124E16E3000889BD0 /* VerificationStatesTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VerificationStatesTests.swift; sourceTree = "<group>"; };
 		B197B94324E16E3000889BD0 /* VerificaitonLanguageTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VerificaitonLanguageTests.swift; sourceTree = "<group>"; };
@@ -636,6 +638,7 @@
 				B1E8422424E154A900C29730 /* SeamlessInitiationDetails.swift */,
 				B1E8422524E154A900C29730 /* InitiationListener.swift */,
 				B1E8422624E154A900C29730 /* InitiationResponseData.swift */,
+				B1761074250F6158000C5EC1 /* FlashcallInitiationDetails.swift */,
 			);
 			path = Initiation;
 			sourceTree = "<group>";
@@ -1101,6 +1104,7 @@
 				B1E841F124E153BD00C29730 /* SmsVerificationDetails.swift in Sources */,
 				B1E8425E24E154A900C29730 /* VerificationApiCallback.swift in Sources */,
 				B1E841F224E153BD00C29730 /* SmsVerificationData.swift in Sources */,
+				B1761075250F6158000C5EC1 /* FlashcallInitiationDetails.swift in Sources */,
 				B1E8420624E1546200C29730 /* FlashcallConfigBuilderSetters.swift in Sources */,
 				B1E8424424E154A900C29730 /* SinchGlobalConfig.swift in Sources */,
 				B1E8426C24E154A900C29730 /* VerificationInitData.swift in Sources */,

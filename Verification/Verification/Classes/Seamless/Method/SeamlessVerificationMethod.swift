@@ -42,7 +42,7 @@ public class SeamlessVerificationMethod: VerificationMethod {
     override func onVerify(_ verificationCode: String, fromSource sourceType: VerificationSourceType) {
         self.service
             .request(SeamlessVerificationRouter.verify(targetUri: verificationCode))
-            .sinchValidationResponse(VerificationApiCallback(listener: verificationListener, verificationStateListener: self))
+            .sinchValidationResponse(VerificationApiCallback(listener: self, verificationStateListener: self))
     }
     
     /// Builder implementing fluent builder pattern to create [SeamlessVerificationMethod](x-source-tag://[SeamlessVerificationMethod]) objects.
@@ -78,16 +78,9 @@ public class SeamlessVerificationMethod: VerificationMethod {
         
     }
     
-}
-
-extension SeamlessVerificationMethod: InitiationListener {
-    
-    public func onInitiated(_ data: InitiationResponseData) {
-        initiationListener?.onInitiated(data)
+    public override func onInitiated(_ data: InitiationResponseData) {
+        super.onInitiated(data)
         verify(verificationCode: data.seamlessDetails?.targetUri ?? "")
     }
     
-    public func onInitiationFailed(e: Error) {
-        initiationListener?.onInitiationFailed(e: e)
-    }
 }

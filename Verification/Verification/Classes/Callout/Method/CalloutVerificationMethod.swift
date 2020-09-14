@@ -34,7 +34,7 @@ public class CalloutVerificationMethod: VerificationMethod {
             .request(CalloutVerificationRouter.initiateVerification(data: initiationData))
             .sinchInitiationResponse(InitiationApiCallback(
                     verificationStateListener: self,
-                    initiationListener: initiationListener
+                    initiationListener: self
                 )
             )
     }
@@ -44,7 +44,7 @@ public class CalloutVerificationMethod: VerificationMethod {
             .request(CalloutVerificationRouter.verifyCode(
                 number: initiationData.identity.endpoint,
                 data: CalloutVerificationData(details: CalloutVerificationDetails(), source: sourceType)))
-            .sinchValidationResponse(VerificationApiCallback(listener: verificationListener, verificationStateListener: self))
+            .sinchValidationResponse(VerificationApiCallback(listener: self, verificationStateListener: self))
 
     }
     

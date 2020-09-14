@@ -18,9 +18,12 @@ public enum SDKError: LocalizedError {
     /// SDK representation of Sinch REST API error response.
     case apiCall(data: ApiErrorData)
     
+    /// Error indicating that verification has not been completed after interception timeout and is in expired state.
+    case timeoutException
+    
     /// Unexpected error
     case unexpected(message: String)
-    
+        
     public var errorDescription: String? {
         switch self {
         case .illegalArgument(let message):
@@ -29,6 +32,8 @@ public enum SDKError: LocalizedError {
             return "Encoding of \(encodable) failed"
         case .apiCall(let data):
             return data.message ?? "Sinch api returned an error without message"
+        case .timeoutException:
+            return "Verification process has not been completed within interception timeout"
         case .unexpected(let message):
             return message
         }
