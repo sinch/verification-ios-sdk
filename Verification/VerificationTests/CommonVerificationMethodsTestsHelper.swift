@@ -122,9 +122,11 @@ class CommonVerificationMethodsTestsHelper {
         return InitiationResponseData(
             id: "id",
             method: self.verificationMethodType,
-            smsDetails: SmsInitiationDetails(template: ""),
+            smsDetails: SmsInitiationDetails(template: "", interceptionTimeout: 60),
+            flashcallDetails: FlashcallInitiationDetails(interceptionTimeout: 60),
             seamlessDetails: SeamlessInitiationDetails(targetUri: "http://example.com"),
-            contentLanguage: contentLanguage
+            contentLanguage: contentLanguage,
+            dateOfGeneration: Date()
         )
     }
     
