@@ -16,7 +16,8 @@ class VerificationApiCallback {
         guard let verificationStateListener = verificationStateListener else {
             return false
         }
-        return !verificationStateListener.verificationState.isVerified
+        return !verificationStateListener.verificationState.isVerified &&
+            !(verificationStateListener.verificationState == VerificationState.manuallyStopped)
     }
     
     init (listener: VerificationListener?, verificationStateListener: VerificationStateListener?) {
