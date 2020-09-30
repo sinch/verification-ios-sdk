@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 51;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -16,6 +16,9 @@
 		B17610792510A843000C5EC1 /* ResponseHeadersExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B17610782510A843000C5EC1 /* ResponseHeadersExtensions.swift */; };
 		B176107B2510AD97000C5EC1 /* ResponseHeadersExtensionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B176107A2510AD97000C5EC1 /* ResponseHeadersExtensionTests.swift */; };
 		B176107D2510B84F000C5EC1 /* InitiationResponseDataTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B176107C2510B84F000C5EC1 /* InitiationResponseDataTests.swift */; };
+		B1767DF5252481BA00E5C386 /* PhoneNumberKit in Frameworks */ = {isa = PBXBuildFile; productRef = B1767DF4252481BA00E5C386 /* PhoneNumberKit */; };
+		B1767DFA252481EB00E5C386 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = B1767DF9252481EB00E5C386 /* Alamofire */; };
+		B1767DFF2524820B00E5C386 /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1767DFE2524820B00E5C386 /* Reachability.swift */; };
 		B197B94824E16E3100889BD0 /* SmsVerificationConfigTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B197B93F24E16E3000889BD0 /* SmsVerificationConfigTests.swift */; };
 		B197B94924E16E3100889BD0 /* VerificationStatesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B197B94124E16E3000889BD0 /* VerificationStatesTests.swift */; };
 		B197B94A24E16E3100889BD0 /* VerificaitonLanguageTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B197B94324E16E3000889BD0 /* VerificaitonLanguageTests.swift */; };
@@ -154,6 +157,7 @@
 		B17610782510A843000C5EC1 /* ResponseHeadersExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseHeadersExtensions.swift; sourceTree = "<group>"; };
 		B176107A2510AD97000C5EC1 /* ResponseHeadersExtensionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseHeadersExtensionTests.swift; sourceTree = "<group>"; };
 		B176107C2510B84F000C5EC1 /* InitiationResponseDataTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitiationResponseDataTests.swift; sourceTree = "<group>"; };
+		B1767DFE2524820B00E5C386 /* Reachability.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
 		B197B93F24E16E3000889BD0 /* SmsVerificationConfigTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SmsVerificationConfigTests.swift; sourceTree = "<group>"; };
 		B197B94124E16E3000889BD0 /* VerificationStatesTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VerificationStatesTests.swift; sourceTree = "<group>"; };
 		B197B94324E16E3000889BD0 /* VerificaitonLanguageTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VerificaitonLanguageTests.swift; sourceTree = "<group>"; };
@@ -280,7 +284,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B1767DFA252481EB00E5C386 /* Alamofire in Frameworks */,
 				1D925759BC10BA4E754F0CE6 /* Pods_Verification.framework in Frameworks */,
+				B1767DF5252481BA00E5C386 /* PhoneNumberKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -323,6 +329,14 @@
 				B1578A9A2506372300E2068D /* SinchPhoneNumberUtilsTests.swift */,
 			);
 			path = Helper;
+			sourceTree = "<group>";
+		};
+		B1767DFD252481F600E5C386 /* Reachability */ = {
+			isa = PBXGroup;
+			children = (
+				B1767DFE2524820B00E5C386 /* Reachability.swift */,
+			);
+			path = Reachability;
 			sourceTree = "<group>";
 		};
 		B197B93E24E16E3000889BD0 /* Sms */ = {
@@ -401,6 +415,7 @@
 			isa = PBXGroup;
 			children = (
 				B1E8419024E1527900C29730 /* Verification */,
+				B1767DFD252481F600E5C386 /* Reachability */,
 				B1E8419B24E1527900C29730 /* VerificationTests */,
 				B1E8418F24E1527900C29730 /* Products */,
 				0D015060F58013D6F3A7F04C /* Pods */,
@@ -571,12 +586,12 @@
 		B1E8420924E1548500C29730 /* Core */ = {
 			isa = PBXGroup;
 			children = (
-				B1E8420A24E154A800C29730 /* Constants.swift */,
 				B1E8423D24E154A900C29730 /* Extensions */,
 				B1E8420B24E154A800C29730 /* Global */,
 				B1E8423224E154A900C29730 /* Network */,
 				B1E8420F24E154A800C29730 /* Process */,
 				B1E8423C24E154A900C29730 /* VerificationInitData.swift */,
+				B1E8420A24E154A800C29730 /* Constants.swift */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -934,6 +949,10 @@
 			dependencies = (
 			);
 			name = Verification;
+			packageProductDependencies = (
+				B1767DF4252481BA00E5C386 /* PhoneNumberKit */,
+				B1767DF9252481EB00E5C386 /* Alamofire */,
+			);
 			productName = Verification;
 			productReference = B1E8418E24E1527900C29730 /* Verification.framework */;
 			productType = "com.apple.product-type.framework";
@@ -985,6 +1004,10 @@
 				Base,
 			);
 			mainGroup = B1E8418424E1527900C29730;
+			packageReferences = (
+				B1767DF3252481BA00E5C386 /* XCRemoteSwiftPackageReference "PhoneNumberKit" */,
+				B1767DF8252481EB00E5C386 /* XCRemoteSwiftPackageReference "Alamofire" */,
+			);
 			productRefGroup = B1E8418F24E1527900C29730 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -1092,6 +1115,7 @@
 				B1E8424324E154A900C29730 /* Constants.swift in Sources */,
 				B1E842B424E1572300C29730 /* CalloutVerificationMethod.swift in Sources */,
 				B1E8429624E156CF00C29730 /* DeviceModel.swift in Sources */,
+				B1767DFF2524820B00E5C386 /* Reachability.swift in Sources */,
 				B1E8420824E1546200C29730 /* FlashcallVerificationData.swift in Sources */,
 				B1E8425624E154A900C29730 /* InitiationApiCallback.swift in Sources */,
 				B1E841EC24E153BD00C29730 /* SmsVerificationInitiationData.swift in Sources */,
@@ -1361,7 +1385,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.sinch.Verification;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SKIP_INSTALL = YES;
+				SKIP_INSTALL = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -1387,7 +1411,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.sinch.Verification;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SKIP_INSTALL = YES;
+				SKIP_INSTALL = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -1462,6 +1486,38 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		B1767DF3252481BA00E5C386 /* XCRemoteSwiftPackageReference "PhoneNumberKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/marmelroy/PhoneNumberKit";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.3.1;
+			};
+		};
+		B1767DF8252481EB00E5C386 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.2.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		B1767DF4252481BA00E5C386 /* PhoneNumberKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B1767DF3252481BA00E5C386 /* XCRemoteSwiftPackageReference "PhoneNumberKit" */;
+			productName = PhoneNumberKit;
+		};
+		B1767DF9252481EB00E5C386 /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B1767DF8252481EB00E5C386 /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = B1E8418524E1527900C29730 /* Project object */;
 }

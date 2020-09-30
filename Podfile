@@ -21,7 +21,6 @@ end
   
 target 'Verification' do
   project 'Verification/Verification.xcodeproj'
-  verification_pods
   target 'VerificationTests' do
       inherit! :complete
       pod 'Mocker', '~> 2.2.0'

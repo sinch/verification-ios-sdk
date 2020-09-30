@@ -28,7 +28,7 @@ class ApiManager {
         if let protocolClass = protocolClass {
             configuration.protocolClasses = [protocolClass]
         }
-        return Session(configuration: configuration, interceptor: SinchSessionHandler(authorizationMethod: authMethod), eventMonitors: [LoggingMonitor()])
+        return Session(configuration: configuration, interceptor: SinchSessionHandler(authorizationMethod: authMethod), eventMonitors: [])
     }()
 
 }
