@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 52;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -16,8 +16,6 @@
 		B17610792510A843000C5EC1 /* ResponseHeadersExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B17610782510A843000C5EC1 /* ResponseHeadersExtensions.swift */; };
 		B176107B2510AD97000C5EC1 /* ResponseHeadersExtensionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B176107A2510AD97000C5EC1 /* ResponseHeadersExtensionTests.swift */; };
 		B176107D2510B84F000C5EC1 /* InitiationResponseDataTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B176107C2510B84F000C5EC1 /* InitiationResponseDataTests.swift */; };
-		B1767DF5252481BA00E5C386 /* PhoneNumberKit in Frameworks */ = {isa = PBXBuildFile; productRef = B1767DF4252481BA00E5C386 /* PhoneNumberKit */; };
-		B1767DFA252481EB00E5C386 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = B1767DF9252481EB00E5C386 /* Alamofire */; };
 		B1767DFF2524820B00E5C386 /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1767DFE2524820B00E5C386 /* Reachability.swift */; };
 		B197B94824E16E3100889BD0 /* SmsVerificationConfigTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B197B93F24E16E3000889BD0 /* SmsVerificationConfigTests.swift */; };
 		B197B94924E16E3100889BD0 /* VerificationStatesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B197B94124E16E3000889BD0 /* VerificationStatesTests.swift */; };
@@ -284,9 +282,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B1767DFA252481EB00E5C386 /* Alamofire in Frameworks */,
 				1D925759BC10BA4E754F0CE6 /* Pods_Verification.framework in Frameworks */,
-				B1767DF5252481BA00E5C386 /* PhoneNumberKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -950,8 +946,6 @@
 			);
 			name = Verification;
 			packageProductDependencies = (
-				B1767DF4252481BA00E5C386 /* PhoneNumberKit */,
-				B1767DF9252481EB00E5C386 /* Alamofire */,
 			);
 			productName = Verification;
 			productReference = B1E8418E24E1527900C29730 /* Verification.framework */;
@@ -1005,8 +999,6 @@
 			);
 			mainGroup = B1E8418424E1527900C29730;
 			packageReferences = (
-				B1767DF3252481BA00E5C386 /* XCRemoteSwiftPackageReference "PhoneNumberKit" */,
-				B1767DF8252481EB00E5C386 /* XCRemoteSwiftPackageReference "Alamofire" */,
 			);
 			productRefGroup = B1E8418F24E1527900C29730 /* Products */;
 			projectDirPath = "";
@@ -1486,38 +1478,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCRemoteSwiftPackageReference section */
-		B1767DF3252481BA00E5C386 /* XCRemoteSwiftPackageReference "PhoneNumberKit" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/marmelroy/PhoneNumberKit";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 3.3.1;
-			};
-		};
-		B1767DF8252481EB00E5C386 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 5.2.0;
-			};
-		};
-/* End XCRemoteSwiftPackageReference section */
-
-/* Begin XCSwiftPackageProductDependency section */
-		B1767DF4252481BA00E5C386 /* PhoneNumberKit */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = B1767DF3252481BA00E5C386 /* XCRemoteSwiftPackageReference "PhoneNumberKit" */;
-			productName = PhoneNumberKit;
-		};
-		B1767DF9252481EB00E5C386 /* Alamofire */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = B1767DF8252481EB00E5C386 /* XCRemoteSwiftPackageReference "Alamofire" */;
-			productName = Alamofire;
-		};
-/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = B1E8418524E1527900C29730 /* Project object */;
 }
