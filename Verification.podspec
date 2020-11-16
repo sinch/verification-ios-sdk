@@ -8,7 +8,7 @@ Pod::Spec.new do |spec|
                    DESC
 
   spec.homepage     = "https://www.sinch.com/products/apis/verification/"
-  spec.license      = { :type => "Commercial" }
+  spec.license      = "Apache 2.0"
 
   spec.author             = { "Aleksander Wójcik" => "aleksander.wojcik@sinch.com" }
   spec.social_media_url   = "https://twitter.com/wearesinch"
@@ -17,7 +17,7 @@ Pod::Spec.new do |spec|
   spec.ios.deployment_target = "13.0"
   spec.swift_version = '5.0'
 
-  spec.source       = { :git => "git@git.sinch.se:client-sdk/verification-ios-sdk.git", :tag => "#{spec.version}" }
+  spec.source       = { :git => "https://github.com/sinch/verification-ios-sdk.git", :branch => "develop" }
 
   spec.source_files  = "Verification/Verification/Classes", "Verification/Verification/Classes/**/*.{h,m,swift}"
   spec.exclude_files = "Verification/Verification/Classes/Exclude"

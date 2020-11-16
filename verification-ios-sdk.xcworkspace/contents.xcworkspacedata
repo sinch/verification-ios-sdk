@@ -5,9 +5,6 @@
       location = "group:Pods/../Verification.podspec">
    </FileRef>
    <FileRef
-      location = "group:LICENSE.txt">
-   </FileRef>
-   <FileRef
       location = "group:Verification/Verification.xcodeproj">
    </FileRef>
    <FileRef

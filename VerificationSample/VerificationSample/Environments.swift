@@ -20,5 +20,5 @@ let Environments: [Environment] = [
     Environment(domain: "https://verificationapi-v1-01.sinchlab.com/", name: "Ftest1", appKey: "***"),
     Environment(domain: "https://ft1-verification.api.sinchlab.com/", name: "Ftest1 BROK", appKey: "***"),
     Environment(domain: "https://verificationapi-v1-02.sinchlab.com/", name: "Ftest2", appKey: "***"),
-    Environment(domain: "https://ft2-verification.api.sinchlab.com/", name: "Ftest2 BROK", appKey: "***")
+    Environment(domain: "https://ft2-verification.api.sinchlab.com/", name: "Ftest2 BROK", appKey: "*** ")
 ]
