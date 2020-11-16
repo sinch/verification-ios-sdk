@@ -16,7 +16,6 @@
 		B17610792510A843000C5EC1 /* ResponseHeadersExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B17610782510A843000C5EC1 /* ResponseHeadersExtensions.swift */; };
 		B176107B2510AD97000C5EC1 /* ResponseHeadersExtensionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B176107A2510AD97000C5EC1 /* ResponseHeadersExtensionTests.swift */; };
 		B176107D2510B84F000C5EC1 /* InitiationResponseDataTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B176107C2510B84F000C5EC1 /* InitiationResponseDataTests.swift */; };
-		B1767DFF2524820B00E5C386 /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1767DFE2524820B00E5C386 /* Reachability.swift */; };
 		B197B94824E16E3100889BD0 /* SmsVerificationConfigTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B197B93F24E16E3000889BD0 /* SmsVerificationConfigTests.swift */; };
 		B197B94924E16E3100889BD0 /* VerificationStatesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B197B94124E16E3000889BD0 /* VerificationStatesTests.swift */; };
 		B197B94A24E16E3100889BD0 /* VerificaitonLanguageTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B197B94324E16E3000889BD0 /* VerificaitonLanguageTests.swift */; };
@@ -155,7 +154,6 @@
 		B17610782510A843000C5EC1 /* ResponseHeadersExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseHeadersExtensions.swift; sourceTree = "<group>"; };
 		B176107A2510AD97000C5EC1 /* ResponseHeadersExtensionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseHeadersExtensionTests.swift; sourceTree = "<group>"; };
 		B176107C2510B84F000C5EC1 /* InitiationResponseDataTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitiationResponseDataTests.swift; sourceTree = "<group>"; };
-		B1767DFE2524820B00E5C386 /* Reachability.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
 		B197B93F24E16E3000889BD0 /* SmsVerificationConfigTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SmsVerificationConfigTests.swift; sourceTree = "<group>"; };
 		B197B94124E16E3000889BD0 /* VerificationStatesTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VerificationStatesTests.swift; sourceTree = "<group>"; };
 		B197B94324E16E3000889BD0 /* VerificaitonLanguageTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VerificaitonLanguageTests.swift; sourceTree = "<group>"; };
@@ -327,14 +325,6 @@
 			path = Helper;
 			sourceTree = "<group>";
 		};
-		B1767DFD252481F600E5C386 /* Reachability */ = {
-			isa = PBXGroup;
-			children = (
-				B1767DFE2524820B00E5C386 /* Reachability.swift */,
-			);
-			path = Reachability;
-			sourceTree = "<group>";
-		};
 		B197B93E24E16E3000889BD0 /* Sms */ = {
 			isa = PBXGroup;
 			children = (
@@ -411,7 +401,6 @@
 			isa = PBXGroup;
 			children = (
 				B1E8419024E1527900C29730 /* Verification */,
-				B1767DFD252481F600E5C386 /* Reachability */,
 				B1E8419B24E1527900C29730 /* VerificationTests */,
 				B1E8418F24E1527900C29730 /* Products */,
 				0D015060F58013D6F3A7F04C /* Pods */,
@@ -1107,7 +1096,6 @@
 				B1E8424324E154A900C29730 /* Constants.swift in Sources */,
 				B1E842B424E1572300C29730 /* CalloutVerificationMethod.swift in Sources */,
 				B1E8429624E156CF00C29730 /* DeviceModel.swift in Sources */,
-				B1767DFF2524820B00E5C386 /* Reachability.swift in Sources */,
 				B1E8420824E1546200C29730 /* FlashcallVerificationData.swift in Sources */,
 				B1E8425624E154A900C29730 /* InitiationApiCallback.swift in Sources */,
 				B1E841EC24E153BD00C29730 /* SmsVerificationInitiationData.swift in Sources */,
