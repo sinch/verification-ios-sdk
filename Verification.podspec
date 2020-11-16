@@ -17,7 +17,7 @@ Pod::Spec.new do |spec|
   spec.ios.deployment_target = "13.0"
   spec.swift_version = '5.0'
 
-  spec.source       = { :git => "git@git.sinch.se:client-sdk/verification-ios-sdk.git", :tag => "#{spec.version}" }
+  spec.source       = { :git => "https://github.com/sinch/verification-ios-sdk.git", :tag => "#{spec.version}" }
 
   spec.source_files  = "Verification/Verification/Classes", "Verification/Verification/Classes/**/*.{h,m,swift}"
   spec.exclude_files = "Verification/Verification/Classes/Exclude"
