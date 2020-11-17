@@ -1,6 +1,6 @@
 Pod::Spec.new do |spec|
 
-  spec.name         = "Verification"
+  spec.name         = "SinchVerificationSDK"
   spec.version      = "3.0.0"
   spec.summary      = "Official Sinch Verification SDK for iOS makes verifying phone numbers easy."
   spec.description  = <<-DESC
