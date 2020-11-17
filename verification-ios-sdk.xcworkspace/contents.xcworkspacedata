@@ -2,10 +2,10 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:Pods/../Verification.podspec">
+      location = "group:LICENSE.txt">
    </FileRef>
    <FileRef
-      location = "group:LICENSE.txt">
+      location = "group:SinchVerificationSDK.podspec">
    </FileRef>
    <FileRef
       location = "group:Verification/Verification.xcodeproj">
