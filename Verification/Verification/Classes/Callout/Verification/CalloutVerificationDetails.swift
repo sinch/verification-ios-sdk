@@ -10,4 +10,11 @@ import Foundation
 
 /// Class containing detailed information for the actual verification API request for callout verification.
 struct CalloutVerificationDetails: Codable {
+    
+    let code: String
+    
+    enum CodingKeys: String, CodingKey {
+        case code = "code"
+    }
+    
 }
