@@ -43,7 +43,7 @@ public class CalloutVerificationMethod: VerificationMethod {
         self.service
             .request(CalloutVerificationRouter.verifyCode(
                 number: initiationData.identity.endpoint,
-                data: CalloutVerificationData(details: CalloutVerificationDetails(), source: sourceType)))
+                data: CalloutVerificationData(details: CalloutVerificationDetails(code: verificationCode), source: sourceType)))
             .sinchValidationResponse(VerificationApiCallback(listener: self, verificationStateListener: self))
 
     }
