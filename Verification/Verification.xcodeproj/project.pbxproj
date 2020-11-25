@@ -1,0 +1,1473 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 51;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		1D925759BC10BA4E754F0CE6 /* Pods_Verification.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 30BC95CAA38FB91215C425F8 /* Pods_Verification.framework */; };
+		46BC720D1E7F9270BAFAD983 /* Pods_Verification_VerificationTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 522340C046E2AB95BDA9196B /* Pods_Verification_VerificationTests.framework */; };
+		B1578A96250608CC00E2068D /* PhoneNumberUITextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1578A95250608CC00E2068D /* PhoneNumberUITextField.swift */; };
+		B1578A98250612AD00E2068D /* SinchPhoneNumberUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1578A97250612AD00E2068D /* SinchPhoneNumberUtils.swift */; };
+		B1578A9B2506372300E2068D /* SinchPhoneNumberUtilsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1578A9A2506372300E2068D /* SinchPhoneNumberUtilsTests.swift */; };
+		B1761075250F6158000C5EC1 /* FlashcallInitiationDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1761074250F6158000C5EC1 /* FlashcallInitiationDetails.swift */; };
+		B17610792510A843000C5EC1 /* ResponseHeadersExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B17610782510A843000C5EC1 /* ResponseHeadersExtensions.swift */; };
+		B176107B2510AD97000C5EC1 /* ResponseHeadersExtensionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B176107A2510AD97000C5EC1 /* ResponseHeadersExtensionTests.swift */; };
+		B176107D2510B84F000C5EC1 /* InitiationResponseDataTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B176107C2510B84F000C5EC1 /* InitiationResponseDataTests.swift */; };
+		B197B94824E16E3100889BD0 /* SmsVerificationConfigTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B197B93F24E16E3000889BD0 /* SmsVerificationConfigTests.swift */; };
+		B197B94924E16E3100889BD0 /* VerificationStatesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B197B94124E16E3000889BD0 /* VerificationStatesTests.swift */; };
+		B197B94A24E16E3100889BD0 /* VerificaitonLanguageTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B197B94324E16E3000889BD0 /* VerificaitonLanguageTests.swift */; };
+		B197B94B24E16E3100889BD0 /* AcceptedLanguagesParsingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B197B94424E16E3000889BD0 /* AcceptedLanguagesParsingTests.swift */; };
+		B197B94C24E16E3100889BD0 /* AppKeyAuthorizationMethodTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B197B94524E16E3000889BD0 /* AppKeyAuthorizationMethodTests.swift */; };
+		B197B94D24E16E3100889BD0 /* SimCardInfoHolderEncodingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B197B94724E16E3100889BD0 /* SimCardInfoHolderEncodingTests.swift */; };
+		B1D698A324E3DFA500AC4CA8 /* VerificationMethodTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1D698A224E3DFA500AC4CA8 /* VerificationMethodTests.swift */; };
+		B1D698A524E3E5AD00AC4CA8 /* MockedVerificationMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1D698A424E3E5AD00AC4CA8 /* MockedVerificationMethod.swift */; };
+		B1D698A824E512C600AC4CA8 /* SmsVerificationMethodTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1D698A724E512C600AC4CA8 /* SmsVerificationMethodTests.swift */; };
+		B1D698AA24E518D400AC4CA8 /* MockedManagerGlobalConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1D698A924E518D400AC4CA8 /* MockedManagerGlobalConfig.swift */; };
+		B1D698AD24E694D600AC4CA8 /* SeamlessVerificationMethodTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1D698AC24E694D600AC4CA8 /* SeamlessVerificationMethodTests.swift */; };
+		B1D698AF24E6965400AC4CA8 /* CommonVerificationMethodsTestsHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1D698AE24E6965400AC4CA8 /* CommonVerificationMethodsTestsHelper.swift */; };
+		B1D698B324E6B24700AC4CA8 /* FlashcallVerificationMethodTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1D698B224E6B24700AC4CA8 /* FlashcallVerificationMethodTests.swift */; };
+		B1D698B524E6B37500AC4CA8 /* CalloutVerificationMethodTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1D698B424E6B37500AC4CA8 /* CalloutVerificationMethodTests.swift */; };
+		B1E8419824E1527900C29730 /* Verification.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B1E8418E24E1527900C29730 /* Verification.framework */; };
+		B1E8419F24E1527900C29730 /* Verification.h in Headers */ = {isa = PBXBuildFile; fileRef = B1E8419124E1527900C29730 /* Verification.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B1E841EB24E153BD00C29730 /* SmsVerificationRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1E841DF24E153BC00C29730 /* SmsVerificationRouter.swift */; };
+		B1E841EC24E153BD00C29730 /* SmsVerificationInitiationData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1E841E124E153BC00C29730 /* SmsVerificationInitiationData.swift */; };
+		B1E841ED24E153BD00C29730 /* SmsVerificationConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1E841E324E153BC00C29730 /* SmsVerificationConfig.swift */; };
+		B1E841EE24E153BD00C29730 /* SmsConfigBuilderSetters.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1E841E424E153BC00C29730 /* SmsConfigBuilderSetters.swift */; };
+		B1E841EF24E153BD00C29730 /* SmsVerificationConfigSetter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1E841E624E153BC00C29730 /* SmsVerificationConfigSetter.swift */; };
+		B1E841F024E153BD00C29730 /* SmsVerificationMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1E841E724E153BC00C29730 /* SmsVerificationMethod.swift */; };
+		B1E841F124E153BD00C29730 /* SmsVerificationDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1E841E924E153BD00C29730 /* SmsVerificationDetails.swift */; };
+		B1E841F224E153BD00C29730 /* SmsVerificationData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1E841EA24E153BD00C29730 /* SmsVerificationData.swift */; };
+		B1E8420124E1546200C29730 /* FlashcallVerificationMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1E841F524E1546200C29730 /* FlashcallVerificationMethod.swift */; };
+		B1E8420224E1546200C29730 /* FlashcallVerificationConfigSetter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1E841F624E1546200C29730 /* FlashcallVerificationConfigSetter.swift */; };
+		B1E8420324E1546200C29730 /* FlashcallVerificationInitiationData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1E841F824E1546200C29730 /* FlashcallVerificationInitiationData.swift */; };
+		B1E8420424E1546200C29730 /* FlashcallVerificationRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1E841FA24E1546200C29730 /* FlashcallVerificationRouter.swift */; };
+		B1E8420524E1546200C29730 /* FlashcallVerificationConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1E841FC24E1546200C29730 /* FlashcallVerificationConfig.swift */; };
+		B1E8420624E1546200C29730 /* FlashcallConfigBuilderSetters.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1E841FD24E1546200C29730 /* FlashcallConfigBuilderSetters.swift */; };
+		B1E8420724E1546200C29730 /* FlashcallVerificationDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1E841FF24E1546200C29730 /* FlashcallVerificationDetails.swift */; };
+		B1E8420824E1546200C29730 /* FlashcallVerificationData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1E8420024E1546200C29730 /* FlashcallVerificationData.swift */; };
+		B1E8424324E154A900C29730 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1E8420A24E154A800C29730 /* Constants.swift */; };
+		B1E8424424E154A900C29730 /* SinchGlobalConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1E8420C24E154A800C29730 /* SinchGlobalConfig.swift */; };
+		B1E8424524E154A900C29730 /* GlobalConfigCreator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1E8420D24E154A800C29730 /* GlobalConfigCreator.swift */; };
+		B1E8424624E154A900C29730 /* AuthorizationMethodSetter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1E8420E24E154A800C29730 /* AuthorizationMethodSetter.swift */; };
+		B1E8424724E154A900C29730 /* VerificationIdentityType.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1E8421124E154A800C29730 /* VerificationIdentityType.swift */; };
+		B1E8424824E154A900C29730 /* VerificationMethodProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1E8421224E154A800C29730 /* VerificationMethodProperties.swift */; };
+		B1E8424924E154A900C29730 /* VerificationLanguage.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1E8421324E154A800C29730 /* VerificationLanguage.swift */; };
+		B1E8424A24E154A900C29730 /* VerificationMethodConfigCreatorParameters.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1E8421524E154A800C29730 /* VerificationMethodConfigCreatorParameters.swift */; };
+		B1E8424B24E154A900C29730 /* VerificationMethodCreator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1E8421624E154A800C29730 /* VerificationMethodCreator.swift */; };
+		B1E8424C24E154A900C29730 /* BaseVerificationMethodConfigBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1E8421724E154A800C29730 /* BaseVerificationMethodConfigBuilder.swift */; };
+		B1E8424D24E154A900C29730 /* VerificationIdentity.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1E8421824E154A800C29730 /* VerificationIdentity.swift */; };
+		B1E8424E24E154A900C29730 /* VerificationMethodConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1E8421924E154A800C29730 /* VerificationMethodConfiguration.swift */; };
+		B1E8424F24E154A900C29730 /* VerificationMethodCallbacks.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1E8421A24E154A900C29730 /* VerificationMethodCallbacks.swift */; };
+		B1E8425024E154A900C29730 /* VerificationMethodType.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1E8421B24E154A900C29730 /* VerificationMethodType.swift */; };
+		B1E8425124E154A900C29730 /* VerificationStateStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1E8421D24E154A900C29730 /* VerificationStateStatus.swift */; };
+		B1E8425224E154A900C29730 /* VerificationState.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1E8421E24E154A900C29730 /* VerificationState.swift */; };
+		B1E8425324E154A900C29730 /* VerificationStateListener.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1E8421F24E154A900C29730 /* VerificationStateListener.swift */; };
+		B1E8425424E154A900C29730 /* VerificationInitiationData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1E8422124E154A900C29730 /* VerificationInitiationData.swift */; };
+		B1E8425524E154A900C29730 /* SmsInitiationDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1E8422224E154A900C29730 /* SmsInitiationDetails.swift */; };
+		B1E8425624E154A900C29730 /* InitiationApiCallback.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1E8422324E154A900C29730 /* InitiationApiCallback.swift */; };
+		B1E8425724E154A900C29730 /* SeamlessInitiationDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1E8422424E154A900C29730 /* SeamlessInitiationDetails.swift */; };
+		B1E8425824E154A900C29730 /* InitiationListener.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1E8422524E154A900C29730 /* InitiationListener.swift */; };
+		B1E8425924E154A900C29730 /* InitiationResponseData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1E8422624E154A900C29730 /* InitiationResponseData.swift */; };
+		B1E8425A24E154A900C29730 /* VerificationListener.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1E8422824E154A900C29730 /* VerificationListener.swift */; };
+		B1E8425B24E154A900C29730 /* VerificationSourceType.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1E8422924E154A900C29730 /* VerificationSourceType.swift */; };
+		B1E8425C24E154A900C29730 /* VerificationData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1E8422A24E154A900C29730 /* VerificationData.swift */; };
+		B1E8425D24E154A900C29730 /* VerificationResponseData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1E8422B24E154A900C29730 /* VerificationResponseData.swift */; };
+		B1E8425E24E154A900C29730 /* VerificationApiCallback.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1E8422C24E154A900C29730 /* VerificationApiCallback.swift */; };
+		B1E8425F24E154A900C29730 /* VerificationStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1E8422D24E154A900C29730 /* VerificationStatus.swift */; };
+		B1E8426024E154A900C29730 /* Verification.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1E8422E24E154A900C29730 /* Verification.swift */; };
+		B1E8426124E154A900C29730 /* VerificationMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1E8422F24E154A900C29730 /* VerificationMethod.swift */; };
+		B1E8426224E154A900C29730 /* SDKError.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1E8423024E154A900C29730 /* SDKError.swift */; };
+		B1E8426424E154A900C29730 /* AuthorizationMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1E8423424E154A900C29730 /* AuthorizationMethod.swift */; };
+		B1E8426524E154A900C29730 /* SinchSessionHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1E8423524E154A900C29730 /* SinchSessionHandler.swift */; };
+		B1E8426624E154A900C29730 /* AppKeyAuthorizationMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1E8423624E154A900C29730 /* AppKeyAuthorizationMethod.swift */; };
+		B1E8426724E154A900C29730 /* ApiManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1E8423724E154A900C29730 /* ApiManager.swift */; };
+		B1E8426824E154A900C29730 /* ApiRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1E8423824E154A900C29730 /* ApiRouter.swift */; };
+		B1E8426924E154A900C29730 /* LoggingMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1E8423924E154A900C29730 /* LoggingMonitor.swift */; };
+		B1E8426A24E154A900C29730 /* ApiErrorData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1E8423A24E154A900C29730 /* ApiErrorData.swift */; };
+		B1E8426B24E154A900C29730 /* ApiResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1E8423B24E154A900C29730 /* ApiResponse.swift */; };
+		B1E8426C24E154A900C29730 /* VerificationInitData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1E8423C24E154A900C29730 /* VerificationInitData.swift */; };
+		B1E8426D24E154A900C29730 /* StringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1E8423E24E154A900C29730 /* StringExtensions.swift */; };
+		B1E8426E24E154A900C29730 /* DecodableExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1E8423F24E154A900C29730 /* DecodableExtensions.swift */; };
+		B1E8426F24E154A900C29730 /* EncodableExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1E8424024E154A900C29730 /* EncodableExtensions.swift */; };
+		B1E8427024E154A900C29730 /* HasApply.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1E8424124E154A900C29730 /* HasApply.swift */; };
+		B1E8427124E154A900C29730 /* DataRequestsExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1E8424224E154A900C29730 /* DataRequestsExtensions.swift */; };
+		B1E8428C24E156CF00C29730 /* MetadataCollector.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1E8427424E156CF00C29730 /* MetadataCollector.swift */; };
+		B1E8428D24E156CF00C29730 /* BatteryLevelCollector.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1E8427524E156CF00C29730 /* BatteryLevelCollector.swift */; };
+		B1E8428E24E156CF00C29730 /* DefaultLocaleCollector.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1E8427624E156CF00C29730 /* DefaultLocaleCollector.swift */; };
+		B1E8428F24E156CF00C29730 /* ConfiguarionNameCollector.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1E8427724E156CF00C29730 /* ConfiguarionNameCollector.swift */; };
+		B1E8429024E156CF00C29730 /* OSMetadataCollector.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1E8427824E156CF00C29730 /* OSMetadataCollector.swift */; };
+		B1E8429124E156CF00C29730 /* DeviceMetadataCollector.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1E8427A24E156CF00C29730 /* DeviceMetadataCollector.swift */; };
+		B1E8429224E156CF00C29730 /* SimCardInfoCollector.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1E8427C24E156CF00C29730 /* SimCardInfoCollector.swift */; };
+		B1E8429324E156CF00C29730 /* NetworkInfoCollector.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1E8427D24E156CF00C29730 /* NetworkInfoCollector.swift */; };
+		B1E8429424E156CF00C29730 /* PhoneMetadataFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1E8427E24E156CF00C29730 /* PhoneMetadataFactory.swift */; };
+		B1E8429524E156CF00C29730 /* PhoneMetadata.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1E8428024E156CF00C29730 /* PhoneMetadata.swift */; };
+		B1E8429624E156CF00C29730 /* DeviceModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1E8428124E156CF00C29730 /* DeviceModel.swift */; };
+		B1E8429724E156CF00C29730 /* NetworkType.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1E8428324E156CF00C29730 /* NetworkType.swift */; };
+		B1E8429824E156CF00C29730 /* NetworkInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1E8428424E156CF00C29730 /* NetworkInfo.swift */; };
+		B1E8429924E156CF00C29730 /* NetworkData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1E8428524E156CF00C29730 /* NetworkData.swift */; };
+		B1E8429A24E156CF00C29730 /* DeviceMetadata.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1E8428624E156CF00C29730 /* DeviceMetadata.swift */; };
+		B1E8429B24E156CF00C29730 /* SimCardsInfoHolder.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1E8428824E156CF00C29730 /* SimCardsInfoHolder.swift */; };
+		B1E8429C24E156CF00C29730 /* SimMetadata.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1E8428924E156CF00C29730 /* SimMetadata.swift */; };
+		B1E8429D24E156CF00C29730 /* SimCardInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1E8428A24E156CF00C29730 /* SimCardInfo.swift */; };
+		B1E8429E24E156CF00C29730 /* IOSMetadataFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1E8428B24E156CF00C29730 /* IOSMetadataFactory.swift */; };
+		B1E842AD24E1572300C29730 /* CalloutVerificationConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1E842A124E1572300C29730 /* CalloutVerificationConfig.swift */; };
+		B1E842AE24E1572300C29730 /* CalloutConfigBuilderSetters.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1E842A224E1572300C29730 /* CalloutConfigBuilderSetters.swift */; };
+		B1E842AF24E1572300C29730 /* CalloutVerificationRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1E842A424E1572300C29730 /* CalloutVerificationRouter.swift */; };
+		B1E842B024E1572300C29730 /* CalloutVerificationInitiationData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1E842A624E1572300C29730 /* CalloutVerificationInitiationData.swift */; };
+		B1E842B124E1572300C29730 /* CalloutVerificationData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1E842A824E1572300C29730 /* CalloutVerificationData.swift */; };
+		B1E842B224E1572300C29730 /* CalloutVerificationDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1E842A924E1572300C29730 /* CalloutVerificationDetails.swift */; };
+		B1E842B324E1572300C29730 /* CalloutVerificationMethodSetter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1E842AB24E1572300C29730 /* CalloutVerificationMethodSetter.swift */; };
+		B1E842B424E1572300C29730 /* CalloutVerificationMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1E842AC24E1572300C29730 /* CalloutVerificationMethod.swift */; };
+		B1E842C124E1578B00C29730 /* SeamlessVerificationConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1E842B724E1578B00C29730 /* SeamlessVerificationConfig.swift */; };
+		B1E842C224E1578B00C29730 /* SeamlessConfigBuilderSetters.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1E842B824E1578B00C29730 /* SeamlessConfigBuilderSetters.swift */; };
+		B1E842C324E1578B00C29730 /* SeamlessVerificationRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1E842BA24E1578B00C29730 /* SeamlessVerificationRouter.swift */; };
+		B1E842C424E1578B00C29730 /* SeamlessVerificationInitiationData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1E842BC24E1578B00C29730 /* SeamlessVerificationInitiationData.swift */; };
+		B1E842C524E1578B00C29730 /* SeamlessVerificationMethodSetter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1E842BF24E1578B00C29730 /* SeamlessVerificationMethodSetter.swift */; };
+		B1E842C624E1578B00C29730 /* SeamlessVerificationMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1E842C024E1578B00C29730 /* SeamlessVerificationMethod.swift */; };
+		B1E842CA24E157CA00C29730 /* CommonVerificationInitializationParameters.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1E842C824E157CA00C29730 /* CommonVerificationInitializationParameters.swift */; };
+		B1E842CB24E157CA00C29730 /* VerificationMethodsBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1E842C924E157CA00C29730 /* VerificationMethodsBuilder.swift */; };
+		B1E842D224E15FDF00C29730 /* BaseVerificationMethodBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1E842D124E15FDF00C29730 /* BaseVerificationMethodBuilder.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		B1E8419924E1527900C29730 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B1E8418524E1527900C29730 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B1E8418D24E1527900C29730;
+			remoteInfo = Verification;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		30BC95CAA38FB91215C425F8 /* Pods_Verification.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Verification.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		522340C046E2AB95BDA9196B /* Pods_Verification_VerificationTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Verification_VerificationTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		708378DAF96DEE26452BFC2A /* Pods-Verification-VerificationTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Verification-VerificationTests.debug.xcconfig"; path = "Target Support Files/Pods-Verification-VerificationTests/Pods-Verification-VerificationTests.debug.xcconfig"; sourceTree = "<group>"; };
+		81958E9236C92FA63FA25DAE /* Pods-Verification-VerificationTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Verification-VerificationTests.release.xcconfig"; path = "Target Support Files/Pods-Verification-VerificationTests/Pods-Verification-VerificationTests.release.xcconfig"; sourceTree = "<group>"; };
+		B1578A95250608CC00E2068D /* PhoneNumberUITextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneNumberUITextField.swift; sourceTree = "<group>"; };
+		B1578A97250612AD00E2068D /* SinchPhoneNumberUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SinchPhoneNumberUtils.swift; sourceTree = "<group>"; };
+		B1578A9A2506372300E2068D /* SinchPhoneNumberUtilsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SinchPhoneNumberUtilsTests.swift; sourceTree = "<group>"; };
+		B1761074250F6158000C5EC1 /* FlashcallInitiationDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlashcallInitiationDetails.swift; sourceTree = "<group>"; };
+		B17610782510A843000C5EC1 /* ResponseHeadersExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseHeadersExtensions.swift; sourceTree = "<group>"; };
+		B176107A2510AD97000C5EC1 /* ResponseHeadersExtensionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseHeadersExtensionTests.swift; sourceTree = "<group>"; };
+		B176107C2510B84F000C5EC1 /* InitiationResponseDataTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitiationResponseDataTests.swift; sourceTree = "<group>"; };
+		B197B93F24E16E3000889BD0 /* SmsVerificationConfigTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SmsVerificationConfigTests.swift; sourceTree = "<group>"; };
+		B197B94124E16E3000889BD0 /* VerificationStatesTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VerificationStatesTests.swift; sourceTree = "<group>"; };
+		B197B94324E16E3000889BD0 /* VerificaitonLanguageTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VerificaitonLanguageTests.swift; sourceTree = "<group>"; };
+		B197B94424E16E3000889BD0 /* AcceptedLanguagesParsingTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AcceptedLanguagesParsingTests.swift; sourceTree = "<group>"; };
+		B197B94524E16E3000889BD0 /* AppKeyAuthorizationMethodTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppKeyAuthorizationMethodTests.swift; sourceTree = "<group>"; };
+		B197B94724E16E3100889BD0 /* SimCardInfoHolderEncodingTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SimCardInfoHolderEncodingTests.swift; sourceTree = "<group>"; };
+		B1D698A224E3DFA500AC4CA8 /* VerificationMethodTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerificationMethodTests.swift; sourceTree = "<group>"; };
+		B1D698A424E3E5AD00AC4CA8 /* MockedVerificationMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockedVerificationMethod.swift; sourceTree = "<group>"; };
+		B1D698A724E512C600AC4CA8 /* SmsVerificationMethodTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmsVerificationMethodTests.swift; sourceTree = "<group>"; };
+		B1D698A924E518D400AC4CA8 /* MockedManagerGlobalConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockedManagerGlobalConfig.swift; sourceTree = "<group>"; };
+		B1D698AC24E694D600AC4CA8 /* SeamlessVerificationMethodTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeamlessVerificationMethodTests.swift; sourceTree = "<group>"; };
+		B1D698AE24E6965400AC4CA8 /* CommonVerificationMethodsTestsHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonVerificationMethodsTestsHelper.swift; sourceTree = "<group>"; };
+		B1D698B224E6B24700AC4CA8 /* FlashcallVerificationMethodTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlashcallVerificationMethodTests.swift; sourceTree = "<group>"; };
+		B1D698B424E6B37500AC4CA8 /* CalloutVerificationMethodTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalloutVerificationMethodTests.swift; sourceTree = "<group>"; };
+		B1E8418E24E1527900C29730 /* Verification.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Verification.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B1E8419124E1527900C29730 /* Verification.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Verification.h; sourceTree = "<group>"; };
+		B1E8419224E1527900C29730 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B1E8419724E1527900C29730 /* VerificationTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VerificationTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		B1E8419E24E1527900C29730 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B1E841DF24E153BC00C29730 /* SmsVerificationRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SmsVerificationRouter.swift; sourceTree = "<group>"; };
+		B1E841E124E153BC00C29730 /* SmsVerificationInitiationData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SmsVerificationInitiationData.swift; sourceTree = "<group>"; };
+		B1E841E324E153BC00C29730 /* SmsVerificationConfig.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SmsVerificationConfig.swift; sourceTree = "<group>"; };
+		B1E841E424E153BC00C29730 /* SmsConfigBuilderSetters.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SmsConfigBuilderSetters.swift; sourceTree = "<group>"; };
+		B1E841E624E153BC00C29730 /* SmsVerificationConfigSetter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SmsVerificationConfigSetter.swift; sourceTree = "<group>"; };
+		B1E841E724E153BC00C29730 /* SmsVerificationMethod.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SmsVerificationMethod.swift; sourceTree = "<group>"; };
+		B1E841E924E153BD00C29730 /* SmsVerificationDetails.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SmsVerificationDetails.swift; sourceTree = "<group>"; };
+		B1E841EA24E153BD00C29730 /* SmsVerificationData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SmsVerificationData.swift; sourceTree = "<group>"; };
+		B1E841F524E1546200C29730 /* FlashcallVerificationMethod.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlashcallVerificationMethod.swift; sourceTree = "<group>"; };
+		B1E841F624E1546200C29730 /* FlashcallVerificationConfigSetter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlashcallVerificationConfigSetter.swift; sourceTree = "<group>"; };
+		B1E841F824E1546200C29730 /* FlashcallVerificationInitiationData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlashcallVerificationInitiationData.swift; sourceTree = "<group>"; };
+		B1E841FA24E1546200C29730 /* FlashcallVerificationRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlashcallVerificationRouter.swift; sourceTree = "<group>"; };
+		B1E841FC24E1546200C29730 /* FlashcallVerificationConfig.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlashcallVerificationConfig.swift; sourceTree = "<group>"; };
+		B1E841FD24E1546200C29730 /* FlashcallConfigBuilderSetters.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlashcallConfigBuilderSetters.swift; sourceTree = "<group>"; };
+		B1E841FF24E1546200C29730 /* FlashcallVerificationDetails.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlashcallVerificationDetails.swift; sourceTree = "<group>"; };
+		B1E8420024E1546200C29730 /* FlashcallVerificationData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlashcallVerificationData.swift; sourceTree = "<group>"; };
+		B1E8420A24E154A800C29730 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		B1E8420C24E154A800C29730 /* SinchGlobalConfig.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SinchGlobalConfig.swift; sourceTree = "<group>"; };
+		B1E8420D24E154A800C29730 /* GlobalConfigCreator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GlobalConfigCreator.swift; sourceTree = "<group>"; };
+		B1E8420E24E154A800C29730 /* AuthorizationMethodSetter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthorizationMethodSetter.swift; sourceTree = "<group>"; };
+		B1E8421124E154A800C29730 /* VerificationIdentityType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VerificationIdentityType.swift; sourceTree = "<group>"; };
+		B1E8421224E154A800C29730 /* VerificationMethodProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VerificationMethodProperties.swift; sourceTree = "<group>"; };
+		B1E8421324E154A800C29730 /* VerificationLanguage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VerificationLanguage.swift; sourceTree = "<group>"; };
+		B1E8421524E154A800C29730 /* VerificationMethodConfigCreatorParameters.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VerificationMethodConfigCreatorParameters.swift; sourceTree = "<group>"; };
+		B1E8421624E154A800C29730 /* VerificationMethodCreator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VerificationMethodCreator.swift; sourceTree = "<group>"; };
+		B1E8421724E154A800C29730 /* BaseVerificationMethodConfigBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseVerificationMethodConfigBuilder.swift; sourceTree = "<group>"; };
+		B1E8421824E154A800C29730 /* VerificationIdentity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VerificationIdentity.swift; sourceTree = "<group>"; };
+		B1E8421924E154A800C29730 /* VerificationMethodConfiguration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VerificationMethodConfiguration.swift; sourceTree = "<group>"; };
+		B1E8421A24E154A900C29730 /* VerificationMethodCallbacks.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VerificationMethodCallbacks.swift; sourceTree = "<group>"; };
+		B1E8421B24E154A900C29730 /* VerificationMethodType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VerificationMethodType.swift; sourceTree = "<group>"; };
+		B1E8421D24E154A900C29730 /* VerificationStateStatus.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VerificationStateStatus.swift; sourceTree = "<group>"; };
+		B1E8421E24E154A900C29730 /* VerificationState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VerificationState.swift; sourceTree = "<group>"; };
+		B1E8421F24E154A900C29730 /* VerificationStateListener.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VerificationStateListener.swift; sourceTree = "<group>"; };
+		B1E8422124E154A900C29730 /* VerificationInitiationData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VerificationInitiationData.swift; sourceTree = "<group>"; };
+		B1E8422224E154A900C29730 /* SmsInitiationDetails.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SmsInitiationDetails.swift; sourceTree = "<group>"; };
+		B1E8422324E154A900C29730 /* InitiationApiCallback.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InitiationApiCallback.swift; sourceTree = "<group>"; };
+		B1E8422424E154A900C29730 /* SeamlessInitiationDetails.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SeamlessInitiationDetails.swift; sourceTree = "<group>"; };
+		B1E8422524E154A900C29730 /* InitiationListener.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InitiationListener.swift; sourceTree = "<group>"; };
+		B1E8422624E154A900C29730 /* InitiationResponseData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InitiationResponseData.swift; sourceTree = "<group>"; };
+		B1E8422824E154A900C29730 /* VerificationListener.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VerificationListener.swift; sourceTree = "<group>"; };
+		B1E8422924E154A900C29730 /* VerificationSourceType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VerificationSourceType.swift; sourceTree = "<group>"; };
+		B1E8422A24E154A900C29730 /* VerificationData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VerificationData.swift; sourceTree = "<group>"; };
+		B1E8422B24E154A900C29730 /* VerificationResponseData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VerificationResponseData.swift; sourceTree = "<group>"; };
+		B1E8422C24E154A900C29730 /* VerificationApiCallback.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VerificationApiCallback.swift; sourceTree = "<group>"; };
+		B1E8422D24E154A900C29730 /* VerificationStatus.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VerificationStatus.swift; sourceTree = "<group>"; };
+		B1E8422E24E154A900C29730 /* Verification.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Verification.swift; sourceTree = "<group>"; };
+		B1E8422F24E154A900C29730 /* VerificationMethod.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VerificationMethod.swift; sourceTree = "<group>"; };
+		B1E8423024E154A900C29730 /* SDKError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SDKError.swift; sourceTree = "<group>"; };
+		B1E8423424E154A900C29730 /* AuthorizationMethod.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthorizationMethod.swift; sourceTree = "<group>"; };
+		B1E8423524E154A900C29730 /* SinchSessionHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SinchSessionHandler.swift; sourceTree = "<group>"; };
+		B1E8423624E154A900C29730 /* AppKeyAuthorizationMethod.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppKeyAuthorizationMethod.swift; sourceTree = "<group>"; };
+		B1E8423724E154A900C29730 /* ApiManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiManager.swift; sourceTree = "<group>"; };
+		B1E8423824E154A900C29730 /* ApiRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiRouter.swift; sourceTree = "<group>"; };
+		B1E8423924E154A900C29730 /* LoggingMonitor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoggingMonitor.swift; sourceTree = "<group>"; };
+		B1E8423A24E154A900C29730 /* ApiErrorData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiErrorData.swift; sourceTree = "<group>"; };
+		B1E8423B24E154A900C29730 /* ApiResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiResponse.swift; sourceTree = "<group>"; };
+		B1E8423C24E154A900C29730 /* VerificationInitData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VerificationInitData.swift; sourceTree = "<group>"; };
+		B1E8423E24E154A900C29730 /* StringExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringExtensions.swift; sourceTree = "<group>"; };
+		B1E8423F24E154A900C29730 /* DecodableExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DecodableExtensions.swift; sourceTree = "<group>"; };
+		B1E8424024E154A900C29730 /* EncodableExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EncodableExtensions.swift; sourceTree = "<group>"; };
+		B1E8424124E154A900C29730 /* HasApply.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HasApply.swift; sourceTree = "<group>"; };
+		B1E8424224E154A900C29730 /* DataRequestsExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataRequestsExtensions.swift; sourceTree = "<group>"; };
+		B1E8427424E156CF00C29730 /* MetadataCollector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MetadataCollector.swift; sourceTree = "<group>"; };
+		B1E8427524E156CF00C29730 /* BatteryLevelCollector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BatteryLevelCollector.swift; sourceTree = "<group>"; };
+		B1E8427624E156CF00C29730 /* DefaultLocaleCollector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DefaultLocaleCollector.swift; sourceTree = "<group>"; };
+		B1E8427724E156CF00C29730 /* ConfiguarionNameCollector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfiguarionNameCollector.swift; sourceTree = "<group>"; };
+		B1E8427824E156CF00C29730 /* OSMetadataCollector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OSMetadataCollector.swift; sourceTree = "<group>"; };
+		B1E8427A24E156CF00C29730 /* DeviceMetadataCollector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeviceMetadataCollector.swift; sourceTree = "<group>"; };
+		B1E8427C24E156CF00C29730 /* SimCardInfoCollector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SimCardInfoCollector.swift; sourceTree = "<group>"; };
+		B1E8427D24E156CF00C29730 /* NetworkInfoCollector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkInfoCollector.swift; sourceTree = "<group>"; };
+		B1E8427E24E156CF00C29730 /* PhoneMetadataFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhoneMetadataFactory.swift; sourceTree = "<group>"; };
+		B1E8428024E156CF00C29730 /* PhoneMetadata.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhoneMetadata.swift; sourceTree = "<group>"; };
+		B1E8428124E156CF00C29730 /* DeviceModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeviceModel.swift; sourceTree = "<group>"; };
+		B1E8428324E156CF00C29730 /* NetworkType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkType.swift; sourceTree = "<group>"; };
+		B1E8428424E156CF00C29730 /* NetworkInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkInfo.swift; sourceTree = "<group>"; };
+		B1E8428524E156CF00C29730 /* NetworkData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkData.swift; sourceTree = "<group>"; };
+		B1E8428624E156CF00C29730 /* DeviceMetadata.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeviceMetadata.swift; sourceTree = "<group>"; };
+		B1E8428824E156CF00C29730 /* SimCardsInfoHolder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SimCardsInfoHolder.swift; sourceTree = "<group>"; };
+		B1E8428924E156CF00C29730 /* SimMetadata.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SimMetadata.swift; sourceTree = "<group>"; };
+		B1E8428A24E156CF00C29730 /* SimCardInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SimCardInfo.swift; sourceTree = "<group>"; };
+		B1E8428B24E156CF00C29730 /* IOSMetadataFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IOSMetadataFactory.swift; sourceTree = "<group>"; };
+		B1E842A124E1572300C29730 /* CalloutVerificationConfig.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalloutVerificationConfig.swift; sourceTree = "<group>"; };
+		B1E842A224E1572300C29730 /* CalloutConfigBuilderSetters.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalloutConfigBuilderSetters.swift; sourceTree = "<group>"; };
+		B1E842A424E1572300C29730 /* CalloutVerificationRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalloutVerificationRouter.swift; sourceTree = "<group>"; };
+		B1E842A624E1572300C29730 /* CalloutVerificationInitiationData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalloutVerificationInitiationData.swift; sourceTree = "<group>"; };
+		B1E842A824E1572300C29730 /* CalloutVerificationData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalloutVerificationData.swift; sourceTree = "<group>"; };
+		B1E842A924E1572300C29730 /* CalloutVerificationDetails.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalloutVerificationDetails.swift; sourceTree = "<group>"; };
+		B1E842AB24E1572300C29730 /* CalloutVerificationMethodSetter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalloutVerificationMethodSetter.swift; sourceTree = "<group>"; };
+		B1E842AC24E1572300C29730 /* CalloutVerificationMethod.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalloutVerificationMethod.swift; sourceTree = "<group>"; };
+		B1E842B724E1578B00C29730 /* SeamlessVerificationConfig.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SeamlessVerificationConfig.swift; sourceTree = "<group>"; };
+		B1E842B824E1578B00C29730 /* SeamlessConfigBuilderSetters.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SeamlessConfigBuilderSetters.swift; sourceTree = "<group>"; };
+		B1E842BA24E1578B00C29730 /* SeamlessVerificationRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SeamlessVerificationRouter.swift; sourceTree = "<group>"; };
+		B1E842BC24E1578B00C29730 /* SeamlessVerificationInitiationData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SeamlessVerificationInitiationData.swift; sourceTree = "<group>"; };
+		B1E842BF24E1578B00C29730 /* SeamlessVerificationMethodSetter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SeamlessVerificationMethodSetter.swift; sourceTree = "<group>"; };
+		B1E842C024E1578B00C29730 /* SeamlessVerificationMethod.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SeamlessVerificationMethod.swift; sourceTree = "<group>"; };
+		B1E842C824E157CA00C29730 /* CommonVerificationInitializationParameters.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommonVerificationInitializationParameters.swift; sourceTree = "<group>"; };
+		B1E842C924E157CA00C29730 /* VerificationMethodsBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VerificationMethodsBuilder.swift; sourceTree = "<group>"; };
+		B1E842D124E15FDF00C29730 /* BaseVerificationMethodBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseVerificationMethodBuilder.swift; sourceTree = "<group>"; };
+		CB66CBA28D723E2B2EF086B6 /* Pods-Verification.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Verification.debug.xcconfig"; path = "Target Support Files/Pods-Verification/Pods-Verification.debug.xcconfig"; sourceTree = "<group>"; };
+		FE30DF4B845BBE4B9A1BC28D /* Pods-Verification.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Verification.release.xcconfig"; path = "Target Support Files/Pods-Verification/Pods-Verification.release.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		B1E8418B24E1527900C29730 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1D925759BC10BA4E754F0CE6 /* Pods_Verification.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B1E8419424E1527900C29730 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B1E8419824E1527900C29730 /* Verification.framework in Frameworks */,
+				46BC720D1E7F9270BAFAD983 /* Pods_Verification_VerificationTests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		0D015060F58013D6F3A7F04C /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				CB66CBA28D723E2B2EF086B6 /* Pods-Verification.debug.xcconfig */,
+				FE30DF4B845BBE4B9A1BC28D /* Pods-Verification.release.xcconfig */,
+				708378DAF96DEE26452BFC2A /* Pods-Verification-VerificationTests.debug.xcconfig */,
+				81958E9236C92FA63FA25DAE /* Pods-Verification-VerificationTests.release.xcconfig */,
+			);
+			name = Pods;
+			path = ../Pods;
+			sourceTree = "<group>";
+		};
+		AC06FF8E5233AF3AC0146297 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				30BC95CAA38FB91215C425F8 /* Pods_Verification.framework */,
+				522340C046E2AB95BDA9196B /* Pods_Verification_VerificationTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		B1578A99250636D600E2068D /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				B1578A9A2506372300E2068D /* SinchPhoneNumberUtilsTests.swift */,
+			);
+			path = Helper;
+			sourceTree = "<group>";
+		};
+		B197B93E24E16E3000889BD0 /* Sms */ = {
+			isa = PBXGroup;
+			children = (
+				B197B93F24E16E3000889BD0 /* SmsVerificationConfigTests.swift */,
+				B1D698A724E512C600AC4CA8 /* SmsVerificationMethodTests.swift */,
+			);
+			path = Sms;
+			sourceTree = "<group>";
+		};
+		B197B94024E16E3000889BD0 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				B1D698A624E5056300AC4CA8 /* Method */,
+				B197B94224E16E3000889BD0 /* VerificationLanguage */,
+				B197B94524E16E3000889BD0 /* AppKeyAuthorizationMethodTests.swift */,
+				B197B94124E16E3000889BD0 /* VerificationStatesTests.swift */,
+				B176107A2510AD97000C5EC1 /* ResponseHeadersExtensionTests.swift */,
+				B176107C2510B84F000C5EC1 /* InitiationResponseDataTests.swift */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		B197B94224E16E3000889BD0 /* VerificationLanguage */ = {
+			isa = PBXGroup;
+			children = (
+				B197B94324E16E3000889BD0 /* VerificaitonLanguageTests.swift */,
+				B197B94424E16E3000889BD0 /* AcceptedLanguagesParsingTests.swift */,
+			);
+			path = VerificationLanguage;
+			sourceTree = "<group>";
+		};
+		B197B94624E16E3100889BD0 /* MetadataCollector */ = {
+			isa = PBXGroup;
+			children = (
+				B197B94724E16E3100889BD0 /* SimCardInfoHolderEncodingTests.swift */,
+			);
+			path = MetadataCollector;
+			sourceTree = "<group>";
+		};
+		B1D698A624E5056300AC4CA8 /* Method */ = {
+			isa = PBXGroup;
+			children = (
+				B1D698A224E3DFA500AC4CA8 /* VerificationMethodTests.swift */,
+				B1D698A424E3E5AD00AC4CA8 /* MockedVerificationMethod.swift */,
+			);
+			path = Method;
+			sourceTree = "<group>";
+		};
+		B1D698AB24E694BB00AC4CA8 /* Seamless */ = {
+			isa = PBXGroup;
+			children = (
+				B1D698AC24E694D600AC4CA8 /* SeamlessVerificationMethodTests.swift */,
+			);
+			path = Seamless;
+			sourceTree = "<group>";
+		};
+		B1D698B024E6B21500AC4CA8 /* Flashcall */ = {
+			isa = PBXGroup;
+			children = (
+				B1D698B224E6B24700AC4CA8 /* FlashcallVerificationMethodTests.swift */,
+			);
+			path = Flashcall;
+			sourceTree = "<group>";
+		};
+		B1D698B124E6B22400AC4CA8 /* Callout */ = {
+			isa = PBXGroup;
+			children = (
+				B1D698B424E6B37500AC4CA8 /* CalloutVerificationMethodTests.swift */,
+			);
+			path = Callout;
+			sourceTree = "<group>";
+		};
+		B1E8418424E1527900C29730 = {
+			isa = PBXGroup;
+			children = (
+				B1E8419024E1527900C29730 /* Verification */,
+				B1E8419B24E1527900C29730 /* VerificationTests */,
+				B1E8418F24E1527900C29730 /* Products */,
+				0D015060F58013D6F3A7F04C /* Pods */,
+				AC06FF8E5233AF3AC0146297 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		B1E8418F24E1527900C29730 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				B1E8418E24E1527900C29730 /* Verification.framework */,
+				B1E8419724E1527900C29730 /* VerificationTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		B1E8419024E1527900C29730 /* Verification */ = {
+			isa = PBXGroup;
+			children = (
+				B1E841A824E1527F00C29730 /* Classes */,
+				B1E8419124E1527900C29730 /* Verification.h */,
+				B1E8419224E1527900C29730 /* Info.plist */,
+			);
+			path = Verification;
+			sourceTree = "<group>";
+		};
+		B1E8419B24E1527900C29730 /* VerificationTests */ = {
+			isa = PBXGroup;
+			children = (
+				B1D698A924E518D400AC4CA8 /* MockedManagerGlobalConfig.swift */,
+				B1578A99250636D600E2068D /* Helper */,
+				B197B94024E16E3000889BD0 /* Core */,
+				B197B94624E16E3100889BD0 /* MetadataCollector */,
+				B197B93E24E16E3000889BD0 /* Sms */,
+				B1D698AB24E694BB00AC4CA8 /* Seamless */,
+				B1D698B024E6B21500AC4CA8 /* Flashcall */,
+				B1D698B124E6B22400AC4CA8 /* Callout */,
+				B1E8419E24E1527900C29730 /* Info.plist */,
+				B1D698AE24E6965400AC4CA8 /* CommonVerificationMethodsTestsHelper.swift */,
+			);
+			path = VerificationTests;
+			sourceTree = "<group>";
+		};
+		B1E841A824E1527F00C29730 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				B1E842C724E157AB00C29730 /* Helper */,
+				B1E842B524E1577C00C29730 /* Seamless */,
+				B1E841A924E1528A00C29730 /* Sms */,
+				B1E841F324E1543100C29730 /* Flashcall */,
+				B1E8429F24E156E400C29730 /* Callout */,
+				B1E8427224E156CF00C29730 /* MatadataCollector */,
+				B1E8420924E1548500C29730 /* Core */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		B1E841A924E1528A00C29730 /* Sms */ = {
+			isa = PBXGroup;
+			children = (
+				B1E841E224E153BC00C29730 /* Config */,
+				B1E841E024E153BC00C29730 /* Initiation */,
+				B1E841E524E153BC00C29730 /* Method */,
+				B1E841DE24E153BC00C29730 /* Network */,
+				B1E841E824E153BD00C29730 /* Verification */,
+			);
+			path = Sms;
+			sourceTree = "<group>";
+		};
+		B1E841DE24E153BC00C29730 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				B1E841DF24E153BC00C29730 /* SmsVerificationRouter.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		B1E841E024E153BC00C29730 /* Initiation */ = {
+			isa = PBXGroup;
+			children = (
+				B1E841E124E153BC00C29730 /* SmsVerificationInitiationData.swift */,
+			);
+			path = Initiation;
+			sourceTree = "<group>";
+		};
+		B1E841E224E153BC00C29730 /* Config */ = {
+			isa = PBXGroup;
+			children = (
+				B1E841E324E153BC00C29730 /* SmsVerificationConfig.swift */,
+				B1E841E424E153BC00C29730 /* SmsConfigBuilderSetters.swift */,
+			);
+			path = Config;
+			sourceTree = "<group>";
+		};
+		B1E841E524E153BC00C29730 /* Method */ = {
+			isa = PBXGroup;
+			children = (
+				B1E841E624E153BC00C29730 /* SmsVerificationConfigSetter.swift */,
+				B1E841E724E153BC00C29730 /* SmsVerificationMethod.swift */,
+			);
+			path = Method;
+			sourceTree = "<group>";
+		};
+		B1E841E824E153BD00C29730 /* Verification */ = {
+			isa = PBXGroup;
+			children = (
+				B1E841E924E153BD00C29730 /* SmsVerificationDetails.swift */,
+				B1E841EA24E153BD00C29730 /* SmsVerificationData.swift */,
+			);
+			path = Verification;
+			sourceTree = "<group>";
+		};
+		B1E841F324E1543100C29730 /* Flashcall */ = {
+			isa = PBXGroup;
+			children = (
+				B1E841FB24E1546200C29730 /* Config */,
+				B1E841F724E1546200C29730 /* Initiation */,
+				B1E841F424E1546200C29730 /* Method */,
+				B1E841F924E1546200C29730 /* Network */,
+				B1E841FE24E1546200C29730 /* Verification */,
+			);
+			path = Flashcall;
+			sourceTree = "<group>";
+		};
+		B1E841F424E1546200C29730 /* Method */ = {
+			isa = PBXGroup;
+			children = (
+				B1E841F524E1546200C29730 /* FlashcallVerificationMethod.swift */,
+				B1E841F624E1546200C29730 /* FlashcallVerificationConfigSetter.swift */,
+			);
+			path = Method;
+			sourceTree = "<group>";
+		};
+		B1E841F724E1546200C29730 /* Initiation */ = {
+			isa = PBXGroup;
+			children = (
+				B1E841F824E1546200C29730 /* FlashcallVerificationInitiationData.swift */,
+			);
+			path = Initiation;
+			sourceTree = "<group>";
+		};
+		B1E841F924E1546200C29730 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				B1E841FA24E1546200C29730 /* FlashcallVerificationRouter.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		B1E841FB24E1546200C29730 /* Config */ = {
+			isa = PBXGroup;
+			children = (
+				B1E841FC24E1546200C29730 /* FlashcallVerificationConfig.swift */,
+				B1E841FD24E1546200C29730 /* FlashcallConfigBuilderSetters.swift */,
+			);
+			path = Config;
+			sourceTree = "<group>";
+		};
+		B1E841FE24E1546200C29730 /* Verification */ = {
+			isa = PBXGroup;
+			children = (
+				B1E841FF24E1546200C29730 /* FlashcallVerificationDetails.swift */,
+				B1E8420024E1546200C29730 /* FlashcallVerificationData.swift */,
+			);
+			path = Verification;
+			sourceTree = "<group>";
+		};
+		B1E8420924E1548500C29730 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				B1E8423D24E154A900C29730 /* Extensions */,
+				B1E8420B24E154A800C29730 /* Global */,
+				B1E8423224E154A900C29730 /* Network */,
+				B1E8420F24E154A800C29730 /* Process */,
+				B1E8423C24E154A900C29730 /* VerificationInitData.swift */,
+				B1E8420A24E154A800C29730 /* Constants.swift */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		B1E8420B24E154A800C29730 /* Global */ = {
+			isa = PBXGroup;
+			children = (
+				B1E8420C24E154A800C29730 /* SinchGlobalConfig.swift */,
+				B1E8420D24E154A800C29730 /* GlobalConfigCreator.swift */,
+				B1E8420E24E154A800C29730 /* AuthorizationMethodSetter.swift */,
+			);
+			path = Global;
+			sourceTree = "<group>";
+		};
+		B1E8420F24E154A800C29730 /* Process */ = {
+			isa = PBXGroup;
+			children = (
+				B1E842D024E15F7500C29730 /* Method */,
+				B1E8421024E154A800C29730 /* Configuration */,
+				B1E8421C24E154A900C29730 /* State */,
+				B1E8422024E154A900C29730 /* Initiation */,
+				B1E8422724E154A900C29730 /* Verification */,
+				B1E8422E24E154A900C29730 /* Verification.swift */,
+				B1E8423024E154A900C29730 /* SDKError.swift */,
+			);
+			path = Process;
+			sourceTree = "<group>";
+		};
+		B1E8421024E154A800C29730 /* Configuration */ = {
+			isa = PBXGroup;
+			children = (
+				B1E8421124E154A800C29730 /* VerificationIdentityType.swift */,
+				B1E8421224E154A800C29730 /* VerificationMethodProperties.swift */,
+				B1E8421324E154A800C29730 /* VerificationLanguage.swift */,
+				B1E8421424E154A800C29730 /* Method */,
+				B1E8421824E154A800C29730 /* VerificationIdentity.swift */,
+				B1E8421924E154A800C29730 /* VerificationMethodConfiguration.swift */,
+			);
+			path = Configuration;
+			sourceTree = "<group>";
+		};
+		B1E8421424E154A800C29730 /* Method */ = {
+			isa = PBXGroup;
+			children = (
+				B1E8421524E154A800C29730 /* VerificationMethodConfigCreatorParameters.swift */,
+				B1E8421724E154A800C29730 /* BaseVerificationMethodConfigBuilder.swift */,
+			);
+			path = Method;
+			sourceTree = "<group>";
+		};
+		B1E8421C24E154A900C29730 /* State */ = {
+			isa = PBXGroup;
+			children = (
+				B1E8421D24E154A900C29730 /* VerificationStateStatus.swift */,
+				B1E8421E24E154A900C29730 /* VerificationState.swift */,
+				B1E8421F24E154A900C29730 /* VerificationStateListener.swift */,
+			);
+			path = State;
+			sourceTree = "<group>";
+		};
+		B1E8422024E154A900C29730 /* Initiation */ = {
+			isa = PBXGroup;
+			children = (
+				B1E8422124E154A900C29730 /* VerificationInitiationData.swift */,
+				B1E8422224E154A900C29730 /* SmsInitiationDetails.swift */,
+				B1E8422324E154A900C29730 /* InitiationApiCallback.swift */,
+				B1E8422424E154A900C29730 /* SeamlessInitiationDetails.swift */,
+				B1E8422524E154A900C29730 /* InitiationListener.swift */,
+				B1E8422624E154A900C29730 /* InitiationResponseData.swift */,
+				B1761074250F6158000C5EC1 /* FlashcallInitiationDetails.swift */,
+			);
+			path = Initiation;
+			sourceTree = "<group>";
+		};
+		B1E8422724E154A900C29730 /* Verification */ = {
+			isa = PBXGroup;
+			children = (
+				B1E8422824E154A900C29730 /* VerificationListener.swift */,
+				B1E8422924E154A900C29730 /* VerificationSourceType.swift */,
+				B1E8422A24E154A900C29730 /* VerificationData.swift */,
+				B1E8422B24E154A900C29730 /* VerificationResponseData.swift */,
+				B1E8422C24E154A900C29730 /* VerificationApiCallback.swift */,
+				B1E8422D24E154A900C29730 /* VerificationStatus.swift */,
+			);
+			path = Verification;
+			sourceTree = "<group>";
+		};
+		B1E8423224E154A900C29730 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				B1E8423324E154A900C29730 /* Auth */,
+				B1E8423724E154A900C29730 /* ApiManager.swift */,
+				B1E8423824E154A900C29730 /* ApiRouter.swift */,
+				B1E8423924E154A900C29730 /* LoggingMonitor.swift */,
+				B1E8423A24E154A900C29730 /* ApiErrorData.swift */,
+				B1E8423B24E154A900C29730 /* ApiResponse.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		B1E8423324E154A900C29730 /* Auth */ = {
+			isa = PBXGroup;
+			children = (
+				B1E8423424E154A900C29730 /* AuthorizationMethod.swift */,
+				B1E8423524E154A900C29730 /* SinchSessionHandler.swift */,
+				B1E8423624E154A900C29730 /* AppKeyAuthorizationMethod.swift */,
+			);
+			path = Auth;
+			sourceTree = "<group>";
+		};
+		B1E8423D24E154A900C29730 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				B1E8423E24E154A900C29730 /* StringExtensions.swift */,
+				B1E8423F24E154A900C29730 /* DecodableExtensions.swift */,
+				B1E8424024E154A900C29730 /* EncodableExtensions.swift */,
+				B1E8424124E154A900C29730 /* HasApply.swift */,
+				B1E8424224E154A900C29730 /* DataRequestsExtensions.swift */,
+				B17610782510A843000C5EC1 /* ResponseHeadersExtensions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		B1E8427224E156CF00C29730 /* MatadataCollector */ = {
+			isa = PBXGroup;
+			children = (
+				B1E8427324E156CF00C29730 /* Collector */,
+				B1E8427E24E156CF00C29730 /* PhoneMetadataFactory.swift */,
+				B1E8427F24E156CF00C29730 /* Model */,
+				B1E8428B24E156CF00C29730 /* IOSMetadataFactory.swift */,
+			);
+			path = MatadataCollector;
+			sourceTree = "<group>";
+		};
+		B1E8427324E156CF00C29730 /* Collector */ = {
+			isa = PBXGroup;
+			children = (
+				B1E8427424E156CF00C29730 /* MetadataCollector.swift */,
+				B1E8427524E156CF00C29730 /* BatteryLevelCollector.swift */,
+				B1E8427624E156CF00C29730 /* DefaultLocaleCollector.swift */,
+				B1E8427724E156CF00C29730 /* ConfiguarionNameCollector.swift */,
+				B1E8427824E156CF00C29730 /* OSMetadataCollector.swift */,
+				B1E8427924E156CF00C29730 /* Device */,
+				B1E8427B24E156CF00C29730 /* Sim */,
+				B1E8427D24E156CF00C29730 /* NetworkInfoCollector.swift */,
+			);
+			path = Collector;
+			sourceTree = "<group>";
+		};
+		B1E8427924E156CF00C29730 /* Device */ = {
+			isa = PBXGroup;
+			children = (
+				B1E8427A24E156CF00C29730 /* DeviceMetadataCollector.swift */,
+			);
+			path = Device;
+			sourceTree = "<group>";
+		};
+		B1E8427B24E156CF00C29730 /* Sim */ = {
+			isa = PBXGroup;
+			children = (
+				B1E8427C24E156CF00C29730 /* SimCardInfoCollector.swift */,
+			);
+			path = Sim;
+			sourceTree = "<group>";
+		};
+		B1E8427F24E156CF00C29730 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				B1E8428024E156CF00C29730 /* PhoneMetadata.swift */,
+				B1E8428124E156CF00C29730 /* DeviceModel.swift */,
+				B1E8428224E156CF00C29730 /* Network */,
+				B1E8428624E156CF00C29730 /* DeviceMetadata.swift */,
+				B1E8428724E156CF00C29730 /* Sim */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		B1E8428224E156CF00C29730 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				B1E8428324E156CF00C29730 /* NetworkType.swift */,
+				B1E8428424E156CF00C29730 /* NetworkInfo.swift */,
+				B1E8428524E156CF00C29730 /* NetworkData.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		B1E8428724E156CF00C29730 /* Sim */ = {
+			isa = PBXGroup;
+			children = (
+				B1E8428824E156CF00C29730 /* SimCardsInfoHolder.swift */,
+				B1E8428924E156CF00C29730 /* SimMetadata.swift */,
+				B1E8428A24E156CF00C29730 /* SimCardInfo.swift */,
+			);
+			path = Sim;
+			sourceTree = "<group>";
+		};
+		B1E8429F24E156E400C29730 /* Callout */ = {
+			isa = PBXGroup;
+			children = (
+				B1E842A024E1572300C29730 /* Config */,
+				B1E842A524E1572300C29730 /* Initiation */,
+				B1E842AA24E1572300C29730 /* Method */,
+				B1E842A324E1572300C29730 /* Network */,
+				B1E842A724E1572300C29730 /* Verification */,
+			);
+			path = Callout;
+			sourceTree = "<group>";
+		};
+		B1E842A024E1572300C29730 /* Config */ = {
+			isa = PBXGroup;
+			children = (
+				B1E842A124E1572300C29730 /* CalloutVerificationConfig.swift */,
+				B1E842A224E1572300C29730 /* CalloutConfigBuilderSetters.swift */,
+			);
+			path = Config;
+			sourceTree = "<group>";
+		};
+		B1E842A324E1572300C29730 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				B1E842A424E1572300C29730 /* CalloutVerificationRouter.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		B1E842A524E1572300C29730 /* Initiation */ = {
+			isa = PBXGroup;
+			children = (
+				B1E842A624E1572300C29730 /* CalloutVerificationInitiationData.swift */,
+			);
+			path = Initiation;
+			sourceTree = "<group>";
+		};
+		B1E842A724E1572300C29730 /* Verification */ = {
+			isa = PBXGroup;
+			children = (
+				B1E842A824E1572300C29730 /* CalloutVerificationData.swift */,
+				B1E842A924E1572300C29730 /* CalloutVerificationDetails.swift */,
+			);
+			path = Verification;
+			sourceTree = "<group>";
+		};
+		B1E842AA24E1572300C29730 /* Method */ = {
+			isa = PBXGroup;
+			children = (
+				B1E842AB24E1572300C29730 /* CalloutVerificationMethodSetter.swift */,
+				B1E842AC24E1572300C29730 /* CalloutVerificationMethod.swift */,
+			);
+			path = Method;
+			sourceTree = "<group>";
+		};
+		B1E842B524E1577C00C29730 /* Seamless */ = {
+			isa = PBXGroup;
+			children = (
+				B1E842B624E1578B00C29730 /* Config */,
+				B1E842BB24E1578B00C29730 /* Initiation */,
+				B1E842BE24E1578B00C29730 /* Method */,
+				B1E842B924E1578B00C29730 /* Network */,
+				B1E842BD24E1578B00C29730 /* Verification */,
+			);
+			path = Seamless;
+			sourceTree = "<group>";
+		};
+		B1E842B624E1578B00C29730 /* Config */ = {
+			isa = PBXGroup;
+			children = (
+				B1E842B724E1578B00C29730 /* SeamlessVerificationConfig.swift */,
+				B1E842B824E1578B00C29730 /* SeamlessConfigBuilderSetters.swift */,
+			);
+			path = Config;
+			sourceTree = "<group>";
+		};
+		B1E842B924E1578B00C29730 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				B1E842BA24E1578B00C29730 /* SeamlessVerificationRouter.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		B1E842BB24E1578B00C29730 /* Initiation */ = {
+			isa = PBXGroup;
+			children = (
+				B1E842BC24E1578B00C29730 /* SeamlessVerificationInitiationData.swift */,
+			);
+			path = Initiation;
+			sourceTree = "<group>";
+		};
+		B1E842BD24E1578B00C29730 /* Verification */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Verification;
+			sourceTree = "<group>";
+		};
+		B1E842BE24E1578B00C29730 /* Method */ = {
+			isa = PBXGroup;
+			children = (
+				B1E842BF24E1578B00C29730 /* SeamlessVerificationMethodSetter.swift */,
+				B1E842C024E1578B00C29730 /* SeamlessVerificationMethod.swift */,
+			);
+			path = Method;
+			sourceTree = "<group>";
+		};
+		B1E842C724E157AB00C29730 /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				B1E842C824E157CA00C29730 /* CommonVerificationInitializationParameters.swift */,
+				B1E842C924E157CA00C29730 /* VerificationMethodsBuilder.swift */,
+				B1578A95250608CC00E2068D /* PhoneNumberUITextField.swift */,
+				B1578A97250612AD00E2068D /* SinchPhoneNumberUtils.swift */,
+			);
+			path = Helper;
+			sourceTree = "<group>";
+		};
+		B1E842D024E15F7500C29730 /* Method */ = {
+			isa = PBXGroup;
+			children = (
+				B1E8421B24E154A900C29730 /* VerificationMethodType.swift */,
+				B1E8421A24E154A900C29730 /* VerificationMethodCallbacks.swift */,
+				B1E8422F24E154A900C29730 /* VerificationMethod.swift */,
+				B1E8421624E154A800C29730 /* VerificationMethodCreator.swift */,
+				B1E842D124E15FDF00C29730 /* BaseVerificationMethodBuilder.swift */,
+			);
+			path = Method;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		B1E8418924E1527900C29730 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B1E8419F24E1527900C29730 /* Verification.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		B1E8418D24E1527900C29730 /* Verification */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B1E841A224E1527900C29730 /* Build configuration list for PBXNativeTarget "Verification" */;
+			buildPhases = (
+				1B64294829AD4FED687CE8A3 /* [CP] Check Pods Manifest.lock */,
+				B1E8418924E1527900C29730 /* Headers */,
+				B1E8418A24E1527900C29730 /* Sources */,
+				B1E8418B24E1527900C29730 /* Frameworks */,
+				B1E8418C24E1527900C29730 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Verification;
+			packageProductDependencies = (
+			);
+			productName = Verification;
+			productReference = B1E8418E24E1527900C29730 /* Verification.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		B1E8419624E1527900C29730 /* VerificationTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B1E841A524E1527900C29730 /* Build configuration list for PBXNativeTarget "VerificationTests" */;
+			buildPhases = (
+				F5718CCF825E3F7B624E15EB /* [CP] Check Pods Manifest.lock */,
+				B1E8419324E1527900C29730 /* Sources */,
+				B1E8419424E1527900C29730 /* Frameworks */,
+				B1E8419524E1527900C29730 /* Resources */,
+				3755C0214A1C1664158144FE /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				B1E8419A24E1527900C29730 /* PBXTargetDependency */,
+			);
+			name = VerificationTests;
+			productName = VerificationTests;
+			productReference = B1E8419724E1527900C29730 /* VerificationTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		B1E8418524E1527900C29730 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1160;
+				LastUpgradeCheck = 1160;
+				ORGANIZATIONNAME = Sinch;
+				TargetAttributes = {
+					B1E8418D24E1527900C29730 = {
+						CreatedOnToolsVersion = 11.6;
+					};
+					B1E8419624E1527900C29730 = {
+						CreatedOnToolsVersion = 11.6;
+					};
+				};
+			};
+			buildConfigurationList = B1E8418824E1527900C29730 /* Build configuration list for PBXProject "Verification" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = B1E8418424E1527900C29730;
+			packageReferences = (
+			);
+			productRefGroup = B1E8418F24E1527900C29730 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				B1E8418D24E1527900C29730 /* Verification */,
+				B1E8419624E1527900C29730 /* VerificationTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		B1E8418C24E1527900C29730 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B1E8419524E1527900C29730 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		1B64294829AD4FED687CE8A3 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Verification-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		3755C0214A1C1664158144FE /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Verification-VerificationTests/Pods-Verification-VerificationTests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Verification-VerificationTests/Pods-Verification-VerificationTests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Verification-VerificationTests/Pods-Verification-VerificationTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F5718CCF825E3F7B624E15EB /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Verification-VerificationTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		B1E8418A24E1527900C29730 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B1E8424A24E154A900C29730 /* VerificationMethodConfigCreatorParameters.swift in Sources */,
+				B1E8428E24E156CF00C29730 /* DefaultLocaleCollector.swift in Sources */,
+				B1E842B124E1572300C29730 /* CalloutVerificationData.swift in Sources */,
+				B1E8420124E1546200C29730 /* FlashcallVerificationMethod.swift in Sources */,
+				B1E8424D24E154A900C29730 /* VerificationIdentity.swift in Sources */,
+				B1E8426F24E154A900C29730 /* EncodableExtensions.swift in Sources */,
+				B1E842C324E1578B00C29730 /* SeamlessVerificationRouter.swift in Sources */,
+				B1E8425824E154A900C29730 /* InitiationListener.swift in Sources */,
+				B1E8424324E154A900C29730 /* Constants.swift in Sources */,
+				B1E842B424E1572300C29730 /* CalloutVerificationMethod.swift in Sources */,
+				B1E8429624E156CF00C29730 /* DeviceModel.swift in Sources */,
+				B1E8420824E1546200C29730 /* FlashcallVerificationData.swift in Sources */,
+				B1E8425624E154A900C29730 /* InitiationApiCallback.swift in Sources */,
+				B1E841EC24E153BD00C29730 /* SmsVerificationInitiationData.swift in Sources */,
+				B1E842C224E1578B00C29730 /* SeamlessConfigBuilderSetters.swift in Sources */,
+				B1E8429024E156CF00C29730 /* OSMetadataCollector.swift in Sources */,
+				B1E8420424E1546200C29730 /* FlashcallVerificationRouter.swift in Sources */,
+				B1E8424524E154A900C29730 /* GlobalConfigCreator.swift in Sources */,
+				B1E8428F24E156CF00C29730 /* ConfiguarionNameCollector.swift in Sources */,
+				B1E842AF24E1572300C29730 /* CalloutVerificationRouter.swift in Sources */,
+				B1E8429124E156CF00C29730 /* DeviceMetadataCollector.swift in Sources */,
+				B1E8427024E154A900C29730 /* HasApply.swift in Sources */,
+				B1E841EB24E153BD00C29730 /* SmsVerificationRouter.swift in Sources */,
+				B1E842C524E1578B00C29730 /* SeamlessVerificationMethodSetter.swift in Sources */,
+				B1E841EF24E153BD00C29730 /* SmsVerificationConfigSetter.swift in Sources */,
+				B1E8426124E154A900C29730 /* VerificationMethod.swift in Sources */,
+				B1E8425C24E154A900C29730 /* VerificationData.swift in Sources */,
+				B17610792510A843000C5EC1 /* ResponseHeadersExtensions.swift in Sources */,
+				B1E8426424E154A900C29730 /* AuthorizationMethod.swift in Sources */,
+				B1E842B224E1572300C29730 /* CalloutVerificationDetails.swift in Sources */,
+				B1E841F124E153BD00C29730 /* SmsVerificationDetails.swift in Sources */,
+				B1E8425E24E154A900C29730 /* VerificationApiCallback.swift in Sources */,
+				B1E841F224E153BD00C29730 /* SmsVerificationData.swift in Sources */,
+				B1761075250F6158000C5EC1 /* FlashcallInitiationDetails.swift in Sources */,
+				B1E8420624E1546200C29730 /* FlashcallConfigBuilderSetters.swift in Sources */,
+				B1E8424424E154A900C29730 /* SinchGlobalConfig.swift in Sources */,
+				B1E8426C24E154A900C29730 /* VerificationInitData.swift in Sources */,
+				B1E8425924E154A900C29730 /* InitiationResponseData.swift in Sources */,
+				B1E8424F24E154A900C29730 /* VerificationMethodCallbacks.swift in Sources */,
+				B1E8426E24E154A900C29730 /* DecodableExtensions.swift in Sources */,
+				B1E8426224E154A900C29730 /* SDKError.swift in Sources */,
+				B1E8425524E154A900C29730 /* SmsInitiationDetails.swift in Sources */,
+				B1E8425B24E154A900C29730 /* VerificationSourceType.swift in Sources */,
+				B1E8425F24E154A900C29730 /* VerificationStatus.swift in Sources */,
+				B1E8425024E154A900C29730 /* VerificationMethodType.swift in Sources */,
+				B1E8426A24E154A900C29730 /* ApiErrorData.swift in Sources */,
+				B1E8424724E154A900C29730 /* VerificationIdentityType.swift in Sources */,
+				B1E8424B24E154A900C29730 /* VerificationMethodCreator.swift in Sources */,
+				B1E8424E24E154A900C29730 /* VerificationMethodConfiguration.swift in Sources */,
+				B1E8426524E154A900C29730 /* SinchSessionHandler.swift in Sources */,
+				B1E8425D24E154A900C29730 /* VerificationResponseData.swift in Sources */,
+				B1E841EE24E153BD00C29730 /* SmsConfigBuilderSetters.swift in Sources */,
+				B1E8424824E154A900C29730 /* VerificationMethodProperties.swift in Sources */,
+				B1E842B024E1572300C29730 /* CalloutVerificationInitiationData.swift in Sources */,
+				B1E8428D24E156CF00C29730 /* BatteryLevelCollector.swift in Sources */,
+				B1E8429B24E156CF00C29730 /* SimCardsInfoHolder.swift in Sources */,
+				B1E8424924E154A900C29730 /* VerificationLanguage.swift in Sources */,
+				B1E8425324E154A900C29730 /* VerificationStateListener.swift in Sources */,
+				B1E842C624E1578B00C29730 /* SeamlessVerificationMethod.swift in Sources */,
+				B1E8425224E154A900C29730 /* VerificationState.swift in Sources */,
+				B1E8420524E1546200C29730 /* FlashcallVerificationConfig.swift in Sources */,
+				B1E841ED24E153BD00C29730 /* SmsVerificationConfig.swift in Sources */,
+				B1E8426924E154A900C29730 /* LoggingMonitor.swift in Sources */,
+				B1E842AD24E1572300C29730 /* CalloutVerificationConfig.swift in Sources */,
+				B1E842CA24E157CA00C29730 /* CommonVerificationInitializationParameters.swift in Sources */,
+				B1E842B324E1572300C29730 /* CalloutVerificationMethodSetter.swift in Sources */,
+				B1578A96250608CC00E2068D /* PhoneNumberUITextField.swift in Sources */,
+				B1E8425A24E154A900C29730 /* VerificationListener.swift in Sources */,
+				B1E8424C24E154A900C29730 /* BaseVerificationMethodConfigBuilder.swift in Sources */,
+				B1E842CB24E157CA00C29730 /* VerificationMethodsBuilder.swift in Sources */,
+				B1E8429C24E156CF00C29730 /* SimMetadata.swift in Sources */,
+				B1E842D224E15FDF00C29730 /* BaseVerificationMethodBuilder.swift in Sources */,
+				B1E8429D24E156CF00C29730 /* SimCardInfo.swift in Sources */,
+				B1E8425124E154A900C29730 /* VerificationStateStatus.swift in Sources */,
+				B1E8429824E156CF00C29730 /* NetworkInfo.swift in Sources */,
+				B1E8426624E154A900C29730 /* AppKeyAuthorizationMethod.swift in Sources */,
+				B1E8427124E154A900C29730 /* DataRequestsExtensions.swift in Sources */,
+				B1578A98250612AD00E2068D /* SinchPhoneNumberUtils.swift in Sources */,
+				B1E8426724E154A900C29730 /* ApiManager.swift in Sources */,
+				B1E8425424E154A900C29730 /* VerificationInitiationData.swift in Sources */,
+				B1E842C424E1578B00C29730 /* SeamlessVerificationInitiationData.swift in Sources */,
+				B1E8429524E156CF00C29730 /* PhoneMetadata.swift in Sources */,
+				B1E8429924E156CF00C29730 /* NetworkData.swift in Sources */,
+				B1E8429224E156CF00C29730 /* SimCardInfoCollector.swift in Sources */,
+				B1E8424624E154A900C29730 /* AuthorizationMethodSetter.swift in Sources */,
+				B1E8426B24E154A900C29730 /* ApiResponse.swift in Sources */,
+				B1E8426D24E154A900C29730 /* StringExtensions.swift in Sources */,
+				B1E842AE24E1572300C29730 /* CalloutConfigBuilderSetters.swift in Sources */,
+				B1E8426024E154A900C29730 /* Verification.swift in Sources */,
+				B1E8420224E1546200C29730 /* FlashcallVerificationConfigSetter.swift in Sources */,
+				B1E8429324E156CF00C29730 /* NetworkInfoCollector.swift in Sources */,
+				B1E8429424E156CF00C29730 /* PhoneMetadataFactory.swift in Sources */,
+				B1E842C124E1578B00C29730 /* SeamlessVerificationConfig.swift in Sources */,
+				B1E841F024E153BD00C29730 /* SmsVerificationMethod.swift in Sources */,
+				B1E8429A24E156CF00C29730 /* DeviceMetadata.swift in Sources */,
+				B1E8428C24E156CF00C29730 /* MetadataCollector.swift in Sources */,
+				B1E8426824E154A900C29730 /* ApiRouter.swift in Sources */,
+				B1E8429E24E156CF00C29730 /* IOSMetadataFactory.swift in Sources */,
+				B1E8425724E154A900C29730 /* SeamlessInitiationDetails.swift in Sources */,
+				B1E8429724E156CF00C29730 /* NetworkType.swift in Sources */,
+				B1E8420324E1546200C29730 /* FlashcallVerificationInitiationData.swift in Sources */,
+				B1E8420724E1546200C29730 /* FlashcallVerificationDetails.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B1E8419324E1527900C29730 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B1D698A524E3E5AD00AC4CA8 /* MockedVerificationMethod.swift in Sources */,
+				B176107B2510AD97000C5EC1 /* ResponseHeadersExtensionTests.swift in Sources */,
+				B197B94C24E16E3100889BD0 /* AppKeyAuthorizationMethodTests.swift in Sources */,
+				B176107D2510B84F000C5EC1 /* InitiationResponseDataTests.swift in Sources */,
+				B197B94924E16E3100889BD0 /* VerificationStatesTests.swift in Sources */,
+				B1D698A324E3DFA500AC4CA8 /* VerificationMethodTests.swift in Sources */,
+				B1D698AF24E6965400AC4CA8 /* CommonVerificationMethodsTestsHelper.swift in Sources */,
+				B1D698A824E512C600AC4CA8 /* SmsVerificationMethodTests.swift in Sources */,
+				B1D698B524E6B37500AC4CA8 /* CalloutVerificationMethodTests.swift in Sources */,
+				B1D698AA24E518D400AC4CA8 /* MockedManagerGlobalConfig.swift in Sources */,
+				B197B94D24E16E3100889BD0 /* SimCardInfoHolderEncodingTests.swift in Sources */,
+				B1D698AD24E694D600AC4CA8 /* SeamlessVerificationMethodTests.swift in Sources */,
+				B1D698B324E6B24700AC4CA8 /* FlashcallVerificationMethodTests.swift in Sources */,
+				B1578A9B2506372300E2068D /* SinchPhoneNumberUtilsTests.swift in Sources */,
+				B197B94B24E16E3100889BD0 /* AcceptedLanguagesParsingTests.swift in Sources */,
+				B197B94A24E16E3100889BD0 /* VerificaitonLanguageTests.swift in Sources */,
+				B197B94824E16E3100889BD0 /* SmsVerificationConfigTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		B1E8419A24E1527900C29730 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B1E8418D24E1527900C29730 /* Verification */;
+			targetProxy = B1E8419924E1527900C29730 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		B1E841A024E1527900C29730 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		B1E841A124E1527900C29730 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		B1E841A324E1527900C29730 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = CB66CBA28D723E2B2EF086B6 /* Pods-Verification.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
+				API_URL = "https://verificationapi-v1.sinch.com/";
+				CODE_SIGN_STYLE = Automatic;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = Verification/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 3.0.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.sinch.Verification;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		B1E841A424E1527900C29730 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = FE30DF4B845BBE4B9A1BC28D /* Pods-Verification.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
+				API_URL = "https://verificationapi-v1.sinch.com/";
+				CODE_SIGN_STYLE = Automatic;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = Verification/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 3.0.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.sinch.Verification;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		B1E841A624E1527900C29730 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 708378DAF96DEE26452BFC2A /* Pods-Verification-VerificationTests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = VerificationTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.sinch.VerificationTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		B1E841A724E1527900C29730 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 81958E9236C92FA63FA25DAE /* Pods-Verification-VerificationTests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = VerificationTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.sinch.VerificationTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		B1E8418824E1527900C29730 /* Build configuration list for PBXProject "Verification" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B1E841A024E1527900C29730 /* Debug */,
+				B1E841A124E1527900C29730 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B1E841A224E1527900C29730 /* Build configuration list for PBXNativeTarget "Verification" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B1E841A324E1527900C29730 /* Debug */,
+				B1E841A424E1527900C29730 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B1E841A524E1527900C29730 /* Build configuration list for PBXNativeTarget "VerificationTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B1E841A624E1527900C29730 /* Debug */,
+				B1E841A724E1527900C29730 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = B1E8418524E1527900C29730 /* Project object */;
+}
