@@ -7,7 +7,8 @@
 //
 
 /// Class containing details (returned by the API) about the initiated sms verification process.
-public struct SmsInitiationDetails: Codable, Equatable {
+public struct SmsInitiationDetails: Codable, Equatable, InitiationDetails {
+    let subVerificationId: String?
     let template: String
     let interceptionTimeout: TimeInterval
 }

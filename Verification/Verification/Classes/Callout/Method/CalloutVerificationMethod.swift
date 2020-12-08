@@ -39,11 +39,13 @@ public class CalloutVerificationMethod: VerificationMethod {
             )
     }
     
-    public override func onVerify(_ verificationCode: String, fromSource sourceType: VerificationSourceType) {
+    public override func onVerify(_ verificationCode: String,
+                                  fromSource sourceType: VerificationSourceType,
+                                  usingMethod method: VerificationMethodType?) {
         self.service
             .request(CalloutVerificationRouter.verifyCode(
                 number: initiationData.identity.endpoint,
-                data: CalloutVerificationData(details: CalloutVerificationDetails(code: verificationCode), source: sourceType)))
+                        data: CalloutVerificationData(calloutDetails: CalloutVerificationDetails(code: verificationCode), source: sourceType)))
             .sinchValidationResponse(VerificationApiCallback(listener: self, verificationStateListener: self))
 
     }

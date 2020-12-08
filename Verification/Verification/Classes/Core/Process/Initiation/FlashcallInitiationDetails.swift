@@ -7,6 +7,7 @@
 //
 
 /// Class containing details (returned by the API) about the initiated flashcall verification process.
-public struct FlashcallInitiationDetails: Codable, Equatable {
+public struct FlashcallInitiationDetails: Codable, Equatable, InitiationDetails {
+    let subVerificationId: String?
     let interceptionTimeout: TimeInterval
 }

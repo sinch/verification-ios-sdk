@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -60,7 +60,7 @@
                                                         <rect key="frame" x="0.0" y="57" width="390" height="28"/>
                                                         <subviews>
                                                             <button opaque="NO" contentMode="scaleToFill" selected="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SIo-6w-MCu" customClass="MethodButton" customModule="VerificationSample" customModuleProvider="target">
-                                                                <rect key="frame" x="0.0" y="0.0" width="97.5" height="28"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="78" height="28"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                                                 <state key="normal" title="SMS"/>
                                                                 <connections>
@@ -68,7 +68,7 @@
                                                                 </connections>
                                                             </button>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tYD-Q7-3jo" customClass="MethodButton" customModule="VerificationSample" customModuleProvider="target">
-                                                                <rect key="frame" x="97.5" y="0.0" width="97.5" height="28"/>
+                                                                <rect key="frame" x="78" y="0.0" width="78" height="28"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                                                 <state key="normal" title="FLASHCALL"/>
                                                                 <connections>
@@ -76,7 +76,7 @@
                                                                 </connections>
                                                             </button>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KJ8-6y-zgI" customClass="MethodButton" customModule="VerificationSample" customModuleProvider="target">
-                                                                <rect key="frame" x="195" y="0.0" width="97.5" height="28"/>
+                                                                <rect key="frame" x="156" y="0.0" width="78" height="28"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                                                 <state key="normal" title="CALLOUT"/>
                                                                 <connections>
@@ -84,11 +84,20 @@
                                                                 </connections>
                                                             </button>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OH6-bS-9Jv" customClass="MethodButton" customModule="VerificationSample" customModuleProvider="target">
-                                                                <rect key="frame" x="292.5" y="0.0" width="97.5" height="28"/>
+                                                                <rect key="frame" x="234" y="0.0" width="78" height="28"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                                                 <state key="normal" title="SEAMLESS"/>
                                                                 <connections>
                                                                     <action selector="didTapMethodButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="qx3-75-E4N"/>
+                                                                </connections>
+                                                            </button>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="qov-Z0-ivP" userLabel="Auto" customClass="MethodButton" customModule="VerificationSample" customModuleProvider="target">
+                                                                <rect key="frame" x="312" y="0.0" width="78" height="28"/>
+                                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                                                <state key="normal" title="AUTO"/>
+                                                                <connections>
+                                                                    <action selector="didTapMethodButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ykB-Ye-IVJ"/>
                                                                 </connections>
                                                             </button>
                                                         </subviews>
@@ -117,7 +126,7 @@
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits" textContentType="tel"/>
                                                     </textField>
-                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="es-ES" borderStyle="roundedRect" placeholder="Accepted languages" textAlignment="natural" minimumFontSize="17" id="4Oi-z2-TRp" userLabel="Cust">
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Accepted languages" textAlignment="natural" minimumFontSize="17" id="4Oi-z2-TRp" userLabel="Cust">
                                                         <rect key="frame" x="0.0" y="573" width="390" height="34"/>
                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -186,6 +195,7 @@
                     </view>
                     <connections>
                         <outlet property="acceptedLanguagesField" destination="4Oi-z2-TRp" id="aR9-zL-Fan"/>
+                        <outlet property="autoButton" destination="qov-Z0-ivP" id="VQZ-gb-1Qy"/>
                         <outlet property="calloutButton" destination="KJ8-6y-zgI" id="4Fz-Ud-cIz"/>
                         <outlet property="customField" destination="nEG-V9-oO4" id="vlb-cA-Z4q"/>
                         <outlet property="envNameLabel" destination="Z8T-4d-GlX" id="FBP-a2-QBJ"/>
@@ -205,21 +215,21 @@
         <scene sceneID="SEZ-Yv-Uag">
             <objects>
                 <viewController storyboardIdentifier="VerificationDialogController" id="mWP-DG-COH" customClass="VerificationDialogController" customModule="VerificationSample" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" ambiguous="YES" id="Dr8-mV-zsF" userLabel="ContentView">
+                    <view key="view" contentMode="scaleToFill" id="Dr8-mV-zsF" userLabel="ContentView">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ftd-vl-U0D" userLabel="StackContainer">
-                                <rect key="frame" x="52" y="374" width="310.5" height="148"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ftd-vl-U0D" userLabel="StackContainer">
+                                <rect key="frame" x="52" y="271" width="310.5" height="354.5"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Qh3-5U-NTO">
-                                        <rect key="frame" x="8" y="8" width="137" height="132"/>
+                                        <rect key="frame" x="8" y="8" width="0.0" height="338.5"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gXJ-Eh-adT">
-                                                <rect key="frame" x="0.0" y="0.0" width="137" height="20"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="0.0" height="34.5"/>
                                                 <subviews>
                                                     <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" ambiguous="YES" animating="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="Jbt-8r-Jus">
-                                                        <rect key="frame" x="50" y="0.0" width="37" height="20"/>
+                                                        <rect key="frame" x="-18.5" y="0.0" width="37" height="50"/>
                                                     </activityIndicatorView>
                                                 </subviews>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -230,7 +240,7 @@
                                                 </constraints>
                                             </view>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Verification in progress" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YXz-hU-2K4">
-                                                <rect key="frame" x="0.0" y="28" width="137" height="20"/>
+                                                <rect key="frame" x="0.0" y="42.5" width="0.0" height="20"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="20" id="PT6-kg-eLr"/>
                                                 </constraints>
@@ -238,13 +248,28 @@
                                                 <color key="textColor" systemColor="secondaryLabelColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <textField opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Verification code" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bFM-2F-LPK">
-                                                <rect key="frame" x="0.0" y="56" width="137" height="0.0"/>
+                                            <textField opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Sms code" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bFM-2F-LPK">
+                                                <rect key="frame" x="0.0" y="70.5" width="0.0" height="0.0"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                                <connections>
+                                                    <action selector="inputCodeDidChange:" destination="mWP-DG-COH" eventType="editingChanged" id="hIP-ui-1BT"/>
+                                                </connections>
+                                            </textField>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Flashcall number" textAlignment="natural" minimumFontSize="17" id="QWi-oC-9RX">
+                                                <rect key="frame" x="0.0" y="78.5" width="0.0" height="34"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Callout code" textAlignment="natural" minimumFontSize="17" id="hxk-DB-wvR">
+                                                <rect key="frame" x="0.0" y="120.5" width="0.0" height="34"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="GkM-PA-AD9">
-                                                <rect key="frame" x="0.0" y="64" width="137" height="30"/>
+                                                <rect key="frame" x="0.0" y="162.5" width="0.0" height="30"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <color key="backgroundColor" red="0.33333333329999998" green="0.1333333333" blue="0.55294117649999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <state key="normal" title="Verify">
@@ -259,7 +284,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="8zZ-v6-pxg">
-                                                <rect key="frame" x="0.0" y="102" width="137" height="30"/>
+                                                <rect key="frame" x="0.0" y="200.5" width="0.0" height="30"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <state key="normal" title="Cancel">
@@ -275,7 +300,43 @@
                                                     <action selector="didTapCancelButton:" destination="mWP-DG-COH" eventType="touchUpInside" id="xhE-Hp-4Rq"/>
                                                 </connections>
                                             </button>
+                                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2ZU-bM-JDF">
+                                                <rect key="frame" x="0.0" y="238.5" width="0.0" height="100"/>
+                                                <subviews>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0DI-C5-iHK">
+                                                        <rect key="frame" x="0.0" y="0.0" width="0.0" height="14.5"/>
+                                                        <subviews>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ytf-Xd-JnM">
+                                                                <rect key="frame" x="0.0" y="0.0" width="0.0" height="14.5"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                                <nil key="textColor"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                        </subviews>
+                                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                        <constraints>
+                                                            <constraint firstItem="Ytf-Xd-JnM" firstAttribute="top" secondItem="0DI-C5-iHK" secondAttribute="top" id="17d-34-lWp"/>
+                                                            <constraint firstAttribute="bottom" secondItem="Ytf-Xd-JnM" secondAttribute="bottom" id="GjX-SD-AiJ"/>
+                                                            <constraint firstAttribute="trailing" secondItem="Ytf-Xd-JnM" secondAttribute="trailing" id="SLe-ph-JfY"/>
+                                                            <constraint firstItem="Ytf-Xd-JnM" firstAttribute="leading" secondItem="0DI-C5-iHK" secondAttribute="leading" id="o95-Em-534"/>
+                                                        </constraints>
+                                                    </view>
+                                                </subviews>
+                                                <constraints>
+                                                    <constraint firstItem="0DI-C5-iHK" firstAttribute="trailing" secondItem="kve-fF-rqz" secondAttribute="trailing" id="Fdh-Sv-iLn"/>
+                                                    <constraint firstAttribute="height" constant="100" id="QyM-gf-Edb"/>
+                                                    <constraint firstItem="0DI-C5-iHK" firstAttribute="bottom" secondItem="kve-fF-rqz" secondAttribute="bottom" id="aih-cd-N5I"/>
+                                                    <constraint firstItem="0DI-C5-iHK" firstAttribute="leading" secondItem="kve-fF-rqz" secondAttribute="leading" id="oD7-0a-K8H"/>
+                                                    <constraint firstItem="0DI-C5-iHK" firstAttribute="width" secondItem="fn6-c0-ZLD" secondAttribute="width" id="roq-Qp-yyb"/>
+                                                    <constraint firstItem="kve-fF-rqz" firstAttribute="top" secondItem="0DI-C5-iHK" secondAttribute="top" id="x3S-gq-Hac"/>
+                                                </constraints>
+                                                <viewLayoutGuide key="contentLayoutGuide" id="kve-fF-rqz"/>
+                                                <viewLayoutGuide key="frameLayoutGuide" id="fn6-c0-ZLD"/>
+                                            </scrollView>
                                         </subviews>
+                                        <constraints>
+                                            <constraint firstItem="2ZU-bM-JDF" firstAttribute="width" secondItem="8zZ-v6-pxg" secondAttribute="width" id="Wku-2B-13x"/>
+                                        </constraints>
                                     </stackView>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -296,11 +357,14 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="calloutCodeField" destination="hxk-DB-wvR" id="gVk-y4-ffh"/>
                         <outlet property="cancelButton" destination="8zZ-v6-pxg" id="zJ4-OD-3br"/>
+                        <outlet property="flashcallCodeField" destination="QWi-oC-9RX" id="9C0-nB-BUD"/>
                         <outlet property="loader" destination="Jbt-8r-Jus" id="Jld-2h-IbB"/>
                         <outlet property="loaderContainer" destination="gXJ-Eh-adT" id="lTT-JE-E3U"/>
+                        <outlet property="loggingLabel" destination="Ytf-Xd-JnM" id="seU-yZ-xoH"/>
                         <outlet property="messageLabel" destination="YXz-hU-2K4" id="Rjp-5T-M9X"/>
-                        <outlet property="verificationCodeTextField" destination="bFM-2F-LPK" id="yAI-Ng-Vvh"/>
+                        <outlet property="smsCodeField" destination="bFM-2F-LPK" id="yAI-Ng-Vvh"/>
                         <outlet property="verificationInProgressLabel" destination="YXz-hU-2K4" id="pYN-zK-Xxy"/>
                         <outlet property="verifyButton" destination="GkM-PA-AD9" id="ZLp-0z-7I4"/>
                     </connections>
@@ -319,6 +383,9 @@
         </designable>
         <designable name="SIo-6w-MCu">
             <size key="intrinsicContentSize" width="30" height="28"/>
+        </designable>
+        <designable name="qov-Z0-ivP">
+            <size key="intrinsicContentSize" width="36" height="28"/>
         </designable>
         <designable name="tYD-Q7-3jo">
             <size key="intrinsicContentSize" width="74" height="28"/>

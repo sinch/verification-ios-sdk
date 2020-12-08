@@ -7,8 +7,10 @@
 //
 
 /// Class containing details (returned by the API) about the initiated seamless verification process.
-public struct SeamlessInitiationDetails: Codable, Equatable {
+public struct SeamlessInitiationDetails: Codable, Equatable, InitiationDetails {
     
+    let subVerificationId: String?
+
     /// URI address at which the client has to make a GET call.
     public let targetUri: String
 }

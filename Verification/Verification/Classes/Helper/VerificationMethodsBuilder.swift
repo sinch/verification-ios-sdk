@@ -22,6 +22,8 @@ public class VerificationMethodsBuilder {
             return parameters.asCalloutVerification
         case .seamless:
             return parameters.asSeamlessVerification
+        case .auto:
+            return parameters.asAutoVerification
         }
     }
     
@@ -65,6 +67,17 @@ extension CommonVerificationInitializationParameters {
     var asSeamlessVerification: Verification {
         return SeamlessVerificationMethod.Builder.instance().config(
             SeamlessVerificationConfig.Builder.instance()
+                .globalConfig(self.globalConfig)
+                .withVerificationProperties(self.verificationInitData)
+                .build())
+            .initiationListener(self.initiationListener)
+            .verificationListener(self.verificationListener)
+            .build()
+    }
+    
+    var asAutoVerification: Verification {
+        return AutoVerificationMethod.Builder.instance().config(
+            AutoVerificationConfig.Builder.instance()
                 .globalConfig(self.globalConfig)
                 .withVerificationProperties(self.verificationInitData)
                 .build())

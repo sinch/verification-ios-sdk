@@ -1,33 +1,52 @@
 PODS:
-  - Alamofire (5.2.1)
+  - Alamofire (5.4.0)
+  - CocoaLumberjack/Core (3.7.0)
+  - CocoaLumberjack/Swift (3.7.0):
+    - CocoaLumberjack/Core
   - Mocker (2.2.0)
-  - PhoneNumberKit (3.2.0):
-    - PhoneNumberKit/PhoneNumberKitCore (= 3.2.0)
-    - PhoneNumberKit/UIKit (= 3.2.0)
-  - PhoneNumberKit/PhoneNumberKitCore (3.2.0)
-  - PhoneNumberKit/UIKit (3.2.0):
+  - PhoneNumberKit (3.3.1):
+    - PhoneNumberKit/PhoneNumberKitCore (= 3.3.1)
+    - PhoneNumberKit/UIKit (= 3.3.1)
+  - PhoneNumberKit/PhoneNumberKitCore (3.3.1)
+  - PhoneNumberKit/UIKit (3.3.1):
     - PhoneNumberKit/PhoneNumberKitCore
   - ReachabilitySwift (5.0.0)
+  - SwiftEventBus (5.0.0)
 
 DEPENDENCIES:
   - Alamofire (~> 5.2)
+  - CocoaLumberjack/Swift (~> 3.7.0)
   - Mocker (~> 2.2.0)
   - PhoneNumberKit (~> 3.1)
   - ReachabilitySwift
+  - SwiftEventBus (from `https://github.com/cesarferreira/SwiftEventBus.git`, tag `5.0.1`)
 
 SPEC REPOS:
   trunk:
     - Alamofire
+    - CocoaLumberjack
     - Mocker
     - PhoneNumberKit
     - ReachabilitySwift
 
+EXTERNAL SOURCES:
+  SwiftEventBus:
+    :git: https://github.com/cesarferreira/SwiftEventBus.git
+    :tag: 5.0.1
+
+CHECKOUT OPTIONS:
+  SwiftEventBus:
+    :git: https://github.com/cesarferreira/SwiftEventBus.git
+    :tag: 5.0.1
+
 SPEC CHECKSUMS:
-  Alamofire: e911732990610fe89af59ac0077f923d72dc3dfd
+  Alamofire: 3b6a534a3df22db367e4dedeeca73d1ddfcf0e2f
+  CocoaLumberjack: e8955b9d337ac307103b0a34fd141c32f27e53c5
   Mocker: d0ceb340eddd5c28539a691ce67d068674cef9a0
-  PhoneNumberKit: df411d46177d1492da84e10b6c093846dd861452
+  PhoneNumberKit: ff153d5e299f6da566cb73c6aa71e354933b2932
   ReachabilitySwift: 985039c6f7b23a1da463388634119492ff86c825
+  SwiftEventBus: b30f617a6aca5a9336464b4d3f5931034762f2d5
 
-PODFILE CHECKSUM: 765ccd46e41704be663f3f0997cb2be55bede942
+PODFILE CHECKSUM: 520b33103aad83ad2b78db9f32527dadbd6837f9
 
-COCOAPODS: 1.9.3
+COCOAPODS: 1.10.0

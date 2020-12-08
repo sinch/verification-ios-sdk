@@ -39,11 +39,13 @@ public class SmsVerificationMethod: VerificationMethod {
         )
     }
     
-    public override func onVerify(_ verificationCode: String, fromSource sourceType: VerificationSourceType) {
+    public override func onVerify(_ verificationCode: String,
+                                  fromSource sourceType: VerificationSourceType,
+                                  usingMethod method: VerificationMethodType?) {
         self.service
             .request(SmsVerificationRouter.verifyCode(
                 number: initiationData.identity.endpoint,
-                data: SmsVerificationData(details: SmsVerificationDetails(code: verificationCode), source: sourceType)))
+                        data: SmsVerificationData(smsDetails: SmsVerificationDetails(code: verificationCode), source: sourceType)))
             .sinchValidationResponse(VerificationApiCallback(listener: self, verificationStateListener: self))
     }
     

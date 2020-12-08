@@ -8,12 +8,12 @@
 
 /// Class containing data that is passed to the backend as the actual verification code check (phone number).
 struct FlashcallVerificationData: VerificationData, Encodable {
-
+    
     /// Method of the verificaiton. Always .flashcall.
     let method: VerificationMethodType = .flashcall
 
     /// Details of the verification request containing actual code - in case of flashcall incoming phone number.
-    let details: FlashcallVerificationDetails
+    let flashcallDetails: FlashcallVerificationDetails?
     
     /// Source of the verification. For now on iOS only manual verification is supported.
     let source: VerificationSourceType
@@ -21,7 +21,7 @@ struct FlashcallVerificationData: VerificationData, Encodable {
     enum CodingKeys: String, CodingKey {
         case source
         case method
-        case details = "flashcall"
+        case flashcallDetails = "flashcall"
     }
     
 }

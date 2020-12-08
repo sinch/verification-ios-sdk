@@ -17,9 +17,14 @@ public protocol VerificationListener: class {
     /// - Parameter e: Error describing the reason why the process has failed.
     func onVerificationFailed(e: Error)
     
+    /// Called when the verification process completed a certain step or wants to pass debug information to the client.
+    /// - Parameter event: Error describing the reason why the process has failed.
+    func onVerificationEvent(event: VerificationEvent)
+    
 }
 
 public extension VerificationListener {
     func onVerified() {}
     func onVerificationFailed(e: Error) {}
+    func onVerificationEvent(event: VerificationEvent) {}
 }
