@@ -18,6 +18,7 @@ class VerificationController: UIViewController {
     @IBOutlet weak var flashcallButton: UIButton!
     @IBOutlet weak var calloutButton: UIButton!
     @IBOutlet weak var seamlessButton: UIButton!
+    @IBOutlet weak var autoButton: UIButton!
     
     @IBOutlet weak var customField: UITextField!
     @IBOutlet weak var referenceField: UITextField!
@@ -25,11 +26,11 @@ class VerificationController: UIViewController {
     @IBOutlet weak var honoursEarlyRejectField: UISwitch!
     
     private var methodButtons: [UIButton] {
-        return [smsButton, flashcallButton, calloutButton, seamlessButton]
+        return [smsButton, flashcallButton, calloutButton, seamlessButton, autoButton]
     }
     
     private lazy var buttonToMethodMap: [UIButton: VerificationMethodType] = {
-        return [smsButton: .sms, flashcallButton: .flashcall, calloutButton: .callout, seamlessButton: .seamless]
+        return [smsButton: .sms, flashcallButton: .flashcall, calloutButton: .callout, seamlessButton: .seamless, autoButton: .auto]
     }()
     
     private var selectedMethodButton: UIButton {
@@ -87,6 +88,9 @@ class VerificationController: UIViewController {
         //If you use only single method of verification using specific builder might be more readable
         //self.verification = buildVerificationBuilderSpecific()
         self.present(verificationDialogController, animated: true, completion: nil)
+        self.verificationDialogController?.adjustInitialInputsVisibility(
+            forMethod: buttonToMethodMap[selectedMethodButton] ?? VerificationMethodType.auto
+        )
         self.verification?.initiate()
     }
     
@@ -223,6 +227,7 @@ extension VerificationController: InitiationListener {
     
     func onInitiated(_ data: InitiationResponseData) {
         print("onInitiated called data is\n\(data)")
+        verificationDialogController?.adjustInputsVisibility(usingInitiationResponseDetails: data)
     }
     
     func onInitiationFailed(e: Error) {
@@ -238,10 +243,9 @@ extension VerificationController: VerificationDialogDelegate {
         verificationDialog.dismiss(animated: true, completion: nil)
     }
     
-    func verificationDialog(_ verificationDialog: VerificationDialogController,
-                            didTypeVerificationCode verificationCode: String) {
+    func verificationDialog(_ verificationDialog: VerificationDialogController, didTypeVerificationCode verificationCode: String, forMethod method: VerificationMethodType?) {
         print("Delegate passed code \(verificationCode)")
-        verification?.verify(verificationCode: verificationCode)
+        verification?.verify(verificationCode: verificationCode, method: method)
     }
     
 }

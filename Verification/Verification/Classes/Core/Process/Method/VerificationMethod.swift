@@ -7,6 +7,7 @@
 //
 
 import Alamofire
+import CocoaLumberjack
 
 /// Class containing common logic for every verification method.
 ///
@@ -14,7 +15,7 @@ import Alamofire
 public class VerificationMethod: VerificationMethodCallbacks, InitiationListener, VerificationListener {
         
     let verificationMethodConfig: VerificationMethodConfiguration
-    private var initiationResponseData: InitiationResponseData?
+    var initiationResponseData: InitiationResponseData?
 
     private(set) weak var initiationListener: InitiationListener?
     private(set) weak var verificationListener: VerificationListener?
@@ -48,10 +49,11 @@ public class VerificationMethod: VerificationMethodCallbacks, InitiationListener
         self.verificationListener = verificationListener
     }
     
-    private func verify(_ verificationCode: String, fromSource sourceType: VerificationSourceType) {
+    private func verify(_ verificationCode: String, fromSource sourceType: VerificationSourceType, usingMethod method: VerificationMethodType?) {
         if verificationState.canVerify {
             update(newState: .verification(status: .ongoing))
-            onVerify(verificationCode, fromSource: sourceType)
+            DDLogDebug("Verification trying to verify code \(verificationCode) fromSource: \(sourceType) with \(String(describing: method))")
+            onVerify(verificationCode, fromSource: sourceType, usingMethod: method)
         }
     }
     
@@ -63,7 +65,7 @@ public class VerificationMethod: VerificationMethodCallbacks, InitiationListener
     
     func onInitiate() { }
     
-    func onVerify(_ verificationCode: String, fromSource sourceType: VerificationSourceType) { }
+    func onVerify(_ verificationCode: String, fromSource sourceType: VerificationSourceType, usingMethod method: VerificationMethodType?) { }
     
     public func onInitiated(_ data: InitiationResponseData) {
         self.initiationResponseData = data
@@ -76,11 +78,13 @@ public class VerificationMethod: VerificationMethodCallbacks, InitiationListener
     }
     
     public func onVerified() {
+        DDLogDebug("Verification successfull")
         self.cancelInterceptionTimeoutCallback()
         self.verificationListener?.onVerified()
     }
     
     public func onVerificationFailed(e: Error) {
+        DDLogDebug("Verificaiton failed with error: \(e.localizedDescription)")
         self.verificationListener?.onVerificationFailed(e: e)
     }
     
@@ -108,8 +112,8 @@ extension VerificationMethod: Verification {
         }
     }
     
-    final public func verify(verificationCode: String) {
-        verify(verificationCode, fromSource: .manual)
+    final public func verify(verificationCode: String, method: VerificationMethodType?) {
+        verify(verificationCode, fromSource: .manual, usingMethod: method)
     }
     
     public func stop() {

@@ -39,7 +39,9 @@ public class SeamlessVerificationMethod: VerificationMethod {
             )
     }
     
-    override func onVerify(_ verificationCode: String, fromSource sourceType: VerificationSourceType) {
+    override func onVerify(_ verificationCode: String,
+                           fromSource sourceType: VerificationSourceType,
+                           usingMethod method: VerificationMethodType?) {
         self.service
             .request(SeamlessVerificationRouter.verify(targetUri: verificationCode))
             .sinchValidationResponse(VerificationApiCallback(listener: self, verificationStateListener: self))

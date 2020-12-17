@@ -7,11 +7,34 @@
 //
 
 /// Common fields of verification data that is passed to the backend with the verification request.
-public protocol VerificationData {
+protocol VerificationData: Encodable {
     
     /// Method of the verification.
     var method: VerificationMethodType { get }
     
     /// Source of the verification code.
     var source: VerificationSourceType { get }
+    
+    var smsDetails: SmsVerificationDetails? { get }
+    
+    var calloutDetails: CalloutVerificationDetails? { get }
+    
+    var flashcallDetails: FlashcallVerificationDetails? { get }
+    
+}
+
+extension VerificationData {
+    
+    var smsDetails: SmsVerificationDetails? {
+        return nil
+    }
+    
+    var calloutDetails: CalloutVerificationDetails? {
+        return nil
+    }
+    
+    var flashcallDetails: FlashcallVerificationDetails? {
+        return nil
+    }
+    
 }
