@@ -1,7 +1,7 @@
 Pod::Spec.new do |spec|
 
   spec.name         = "SinchVerificationSDK"
-  spec.version      = "3.0.3"
+  spec.version      = "3.1.0"
   spec.summary      = "Official Sinch Verification SDK for iOS makes verifying phone numbers easy."
   spec.description  = <<-DESC
   Library allows clients to verify phone numbers via sms, flashcall, callout and seamless methods easly.
@@ -25,5 +25,6 @@ Pod::Spec.new do |spec|
   spec.dependency "Alamofire", "~> 5.2"
   spec.dependency "ReachabilitySwift"
   spec.dependency "PhoneNumberKit", "~> 3.1"
+  spec.dependency "CocoaLumberjack/Swift", "~> 3.7.0"
 
 end

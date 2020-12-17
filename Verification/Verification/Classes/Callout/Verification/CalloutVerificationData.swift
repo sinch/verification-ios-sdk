@@ -13,7 +13,7 @@ struct CalloutVerificationData: VerificationData, Encodable {
     let method: VerificationMethodType = .callout
 
     /// Details of the verification request containing actual code.
-    let details: CalloutVerificationDetails
+    let calloutDetails: CalloutVerificationDetails?
     
     /// Source of the verification. For now on iOS only manual verification is supported.
     let source: VerificationSourceType
@@ -21,7 +21,7 @@ struct CalloutVerificationData: VerificationData, Encodable {
     enum CodingKeys: String, CodingKey {
         case source
         case method
-        case details = "callout"
+        case calloutDetails = "callout"
     }
     
 }

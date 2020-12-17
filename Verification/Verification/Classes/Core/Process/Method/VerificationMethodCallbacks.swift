@@ -22,7 +22,8 @@ protocol VerificationMethodCallbacks {
     /// Function called when code needs to be verified. Verification method specific API calls should be implemented here.
     /// - Parameters:
     ///   - verificationCode: Code to be verified.
-    ///   - sourceType: Source of the verification code.
-    func onVerify(_ verificationCode: String, fromSource sourceType: VerificationSourceType)
+    ///   - sourceType: Source of the verification code
+    ///   - method: Submethod of the verification in case of automatic verification process.
+    func onVerify(_ verificationCode: String, fromSource sourceType: VerificationSourceType, usingMethod method: VerificationMethodType?)
         
 }

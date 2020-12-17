@@ -39,11 +39,13 @@ public class FlashcallVerificationMethod: VerificationMethod {
             )
     }
     
-    override func onVerify(_ verificationCode: String, fromSource sourceType: VerificationSourceType) {
+    override func onVerify(_ verificationCode: String,
+                           fromSource sourceType: VerificationSourceType,
+                           usingMethod method: VerificationMethodType?) {
         self.service
             .request(FlashcallVerificationRouter.verifyCode(
                 number: initiationData.identity.endpoint,
-                data: FlashcallVerificationData(details: FlashcallVerificationDetails(cli: verificationCode), source: sourceType)))
+                        data: FlashcallVerificationData(flashcallDetails: FlashcallVerificationDetails(cli: verificationCode), source: sourceType)))
             .sinchValidationResponse(VerificationApiCallback(listener: self, verificationStateListener: self))
 
     }

@@ -16,12 +16,21 @@
 		B17610792510A843000C5EC1 /* ResponseHeadersExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B17610782510A843000C5EC1 /* ResponseHeadersExtensions.swift */; };
 		B176107B2510AD97000C5EC1 /* ResponseHeadersExtensionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B176107A2510AD97000C5EC1 /* ResponseHeadersExtensionTests.swift */; };
 		B176107D2510B84F000C5EC1 /* InitiationResponseDataTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B176107C2510B84F000C5EC1 /* InitiationResponseDataTests.swift */; };
+		B194B128257F7F48002018BC /* AutoVerificationRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B194B127257F7F48002018BC /* AutoVerificationRouter.swift */; };
+		B194B12C257F8799002018BC /* InitiationDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = B194B12B257F8799002018BC /* InitiationDetails.swift */; };
+		B194B130257F8995002018BC /* CalloutInitiationDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = B194B12F257F8995002018BC /* CalloutInitiationDetails.swift */; };
+		B194B134257FA36C002018BC /* VerificationRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B194B133257FA36C002018BC /* VerificationRouter.swift */; };
 		B197B94824E16E3100889BD0 /* SmsVerificationConfigTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B197B93F24E16E3000889BD0 /* SmsVerificationConfigTests.swift */; };
 		B197B94924E16E3100889BD0 /* VerificationStatesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B197B94124E16E3000889BD0 /* VerificationStatesTests.swift */; };
 		B197B94A24E16E3100889BD0 /* VerificaitonLanguageTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B197B94324E16E3000889BD0 /* VerificaitonLanguageTests.swift */; };
 		B197B94B24E16E3100889BD0 /* AcceptedLanguagesParsingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B197B94424E16E3000889BD0 /* AcceptedLanguagesParsingTests.swift */; };
 		B197B94C24E16E3100889BD0 /* AppKeyAuthorizationMethodTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B197B94524E16E3000889BD0 /* AppKeyAuthorizationMethodTests.swift */; };
 		B197B94D24E16E3100889BD0 /* SimCardInfoHolderEncodingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B197B94724E16E3100889BD0 /* SimCardInfoHolderEncodingTests.swift */; };
+		B1CA8194257F74340097B625 /* AutoVerificationInitiationData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1CA8193257F74340097B625 /* AutoVerificationInitiationData.swift */; };
+		B1CA8198257F74E20097B625 /* AutoVerificationConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1CA8197257F74E20097B625 /* AutoVerificationConfig.swift */; };
+		B1CA819C257F750F0097B625 /* AutoConfigBuilderSetters.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1CA819B257F750F0097B625 /* AutoConfigBuilderSetters.swift */; };
+		B1CA81A1257F76A00097B625 /* AutoVerificationConfigSetter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1CA81A0257F76A00097B625 /* AutoVerificationConfigSetter.swift */; };
+		B1CA81A7257F76CD0097B625 /* AutoVerificationMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1CA81A6257F76CD0097B625 /* AutoVerificationMethod.swift */; };
 		B1D698A324E3DFA500AC4CA8 /* VerificationMethodTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1D698A224E3DFA500AC4CA8 /* VerificationMethodTests.swift */; };
 		B1D698A524E3E5AD00AC4CA8 /* MockedVerificationMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1D698A424E3E5AD00AC4CA8 /* MockedVerificationMethod.swift */; };
 		B1D698A824E512C600AC4CA8 /* SmsVerificationMethodTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1D698A724E512C600AC4CA8 /* SmsVerificationMethodTests.swift */; };
@@ -130,6 +139,8 @@
 		B1E842CA24E157CA00C29730 /* CommonVerificationInitializationParameters.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1E842C824E157CA00C29730 /* CommonVerificationInitializationParameters.swift */; };
 		B1E842CB24E157CA00C29730 /* VerificationMethodsBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1E842C924E157CA00C29730 /* VerificationMethodsBuilder.swift */; };
 		B1E842D224E15FDF00C29730 /* BaseVerificationMethodBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1E842D124E15FDF00C29730 /* BaseVerificationMethodBuilder.swift */; };
+		B1FC6CA1258B4AFD008D1017 /* VerificationEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1FC6CA0258B4AFD008D1017 /* VerificationEvent.swift */; };
+		B1FC6CA5258B4CB6008D1017 /* AutoVerificationEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1FC6CA4258B4CB6008D1017 /* AutoVerificationEvent.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -154,12 +165,21 @@
 		B17610782510A843000C5EC1 /* ResponseHeadersExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseHeadersExtensions.swift; sourceTree = "<group>"; };
 		B176107A2510AD97000C5EC1 /* ResponseHeadersExtensionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseHeadersExtensionTests.swift; sourceTree = "<group>"; };
 		B176107C2510B84F000C5EC1 /* InitiationResponseDataTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitiationResponseDataTests.swift; sourceTree = "<group>"; };
+		B194B127257F7F48002018BC /* AutoVerificationRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutoVerificationRouter.swift; sourceTree = "<group>"; };
+		B194B12B257F8799002018BC /* InitiationDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitiationDetails.swift; sourceTree = "<group>"; };
+		B194B12F257F8995002018BC /* CalloutInitiationDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalloutInitiationDetails.swift; sourceTree = "<group>"; };
+		B194B133257FA36C002018BC /* VerificationRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerificationRouter.swift; sourceTree = "<group>"; };
 		B197B93F24E16E3000889BD0 /* SmsVerificationConfigTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SmsVerificationConfigTests.swift; sourceTree = "<group>"; };
 		B197B94124E16E3000889BD0 /* VerificationStatesTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VerificationStatesTests.swift; sourceTree = "<group>"; };
 		B197B94324E16E3000889BD0 /* VerificaitonLanguageTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VerificaitonLanguageTests.swift; sourceTree = "<group>"; };
 		B197B94424E16E3000889BD0 /* AcceptedLanguagesParsingTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AcceptedLanguagesParsingTests.swift; sourceTree = "<group>"; };
 		B197B94524E16E3000889BD0 /* AppKeyAuthorizationMethodTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppKeyAuthorizationMethodTests.swift; sourceTree = "<group>"; };
 		B197B94724E16E3100889BD0 /* SimCardInfoHolderEncodingTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SimCardInfoHolderEncodingTests.swift; sourceTree = "<group>"; };
+		B1CA8193257F74340097B625 /* AutoVerificationInitiationData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutoVerificationInitiationData.swift; sourceTree = "<group>"; };
+		B1CA8197257F74E20097B625 /* AutoVerificationConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutoVerificationConfig.swift; sourceTree = "<group>"; };
+		B1CA819B257F750F0097B625 /* AutoConfigBuilderSetters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutoConfigBuilderSetters.swift; sourceTree = "<group>"; };
+		B1CA81A0257F76A00097B625 /* AutoVerificationConfigSetter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutoVerificationConfigSetter.swift; sourceTree = "<group>"; };
+		B1CA81A6257F76CD0097B625 /* AutoVerificationMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutoVerificationMethod.swift; sourceTree = "<group>"; };
 		B1D698A224E3DFA500AC4CA8 /* VerificationMethodTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerificationMethodTests.swift; sourceTree = "<group>"; };
 		B1D698A424E3E5AD00AC4CA8 /* MockedVerificationMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockedVerificationMethod.swift; sourceTree = "<group>"; };
 		B1D698A724E512C600AC4CA8 /* SmsVerificationMethodTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmsVerificationMethodTests.swift; sourceTree = "<group>"; };
@@ -271,6 +291,8 @@
 		B1E842C824E157CA00C29730 /* CommonVerificationInitializationParameters.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommonVerificationInitializationParameters.swift; sourceTree = "<group>"; };
 		B1E842C924E157CA00C29730 /* VerificationMethodsBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VerificationMethodsBuilder.swift; sourceTree = "<group>"; };
 		B1E842D124E15FDF00C29730 /* BaseVerificationMethodBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseVerificationMethodBuilder.swift; sourceTree = "<group>"; };
+		B1FC6CA0258B4AFD008D1017 /* VerificationEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerificationEvent.swift; sourceTree = "<group>"; };
+		B1FC6CA4258B4CB6008D1017 /* AutoVerificationEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutoVerificationEvent.swift; sourceTree = "<group>"; };
 		CB66CBA28D723E2B2EF086B6 /* Pods-Verification.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Verification.debug.xcconfig"; path = "Target Support Files/Pods-Verification/Pods-Verification.debug.xcconfig"; sourceTree = "<group>"; };
 		FE30DF4B845BBE4B9A1BC28D /* Pods-Verification.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Verification.release.xcconfig"; path = "Target Support Files/Pods-Verification/Pods-Verification.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -325,6 +347,14 @@
 			path = Helper;
 			sourceTree = "<group>";
 		};
+		B194B126257F7F2A002018BC /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				B194B127257F7F48002018BC /* AutoVerificationRouter.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
 		B197B93E24E16E3000889BD0 /* Sms */ = {
 			isa = PBXGroup;
 			children = (
@@ -362,6 +392,44 @@
 				B197B94724E16E3100889BD0 /* SimCardInfoHolderEncodingTests.swift */,
 			);
 			path = MetadataCollector;
+			sourceTree = "<group>";
+		};
+		B1CA818E257F73A20097B625 /* Auto */ = {
+			isa = PBXGroup;
+			children = (
+				B1CA818F257F73BE0097B625 /* Config */,
+				B1CA8192257F740D0097B625 /* Initiation */,
+				B1CA819F257F767F0097B625 /* Method */,
+				B194B126257F7F2A002018BC /* Network */,
+			);
+			path = Auto;
+			sourceTree = "<group>";
+		};
+		B1CA818F257F73BE0097B625 /* Config */ = {
+			isa = PBXGroup;
+			children = (
+				B1CA8197257F74E20097B625 /* AutoVerificationConfig.swift */,
+				B1CA819B257F750F0097B625 /* AutoConfigBuilderSetters.swift */,
+			);
+			path = Config;
+			sourceTree = "<group>";
+		};
+		B1CA8192257F740D0097B625 /* Initiation */ = {
+			isa = PBXGroup;
+			children = (
+				B1CA8193257F74340097B625 /* AutoVerificationInitiationData.swift */,
+			);
+			path = Initiation;
+			sourceTree = "<group>";
+		};
+		B1CA819F257F767F0097B625 /* Method */ = {
+			isa = PBXGroup;
+			children = (
+				B1CA81A0257F76A00097B625 /* AutoVerificationConfigSetter.swift */,
+				B1CA81A6257F76CD0097B625 /* AutoVerificationMethod.swift */,
+				B1FC6CA4258B4CB6008D1017 /* AutoVerificationEvent.swift */,
+			);
+			path = Method;
 			sourceTree = "<group>";
 		};
 		B1D698A624E5056300AC4CA8 /* Method */ = {
@@ -447,6 +515,7 @@
 		B1E841A824E1527F00C29730 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				B1CA818E257F73A20097B625 /* Auto */,
 				B1E842C724E157AB00C29730 /* Helper */,
 				B1E842B524E1577C00C29730 /* Seamless */,
 				B1E841A924E1528A00C29730 /* Sms */,
@@ -601,6 +670,7 @@
 				B1E8422724E154A900C29730 /* Verification */,
 				B1E8422E24E154A900C29730 /* Verification.swift */,
 				B1E8423024E154A900C29730 /* SDKError.swift */,
+				B194B12B257F8799002018BC /* InitiationDetails.swift */,
 			);
 			path = Process;
 			sourceTree = "<group>";
@@ -647,6 +717,7 @@
 				B1E8422524E154A900C29730 /* InitiationListener.swift */,
 				B1E8422624E154A900C29730 /* InitiationResponseData.swift */,
 				B1761074250F6158000C5EC1 /* FlashcallInitiationDetails.swift */,
+				B194B12F257F8995002018BC /* CalloutInitiationDetails.swift */,
 			);
 			path = Initiation;
 			sourceTree = "<group>";
@@ -660,6 +731,7 @@
 				B1E8422B24E154A900C29730 /* VerificationResponseData.swift */,
 				B1E8422C24E154A900C29730 /* VerificationApiCallback.swift */,
 				B1E8422D24E154A900C29730 /* VerificationStatus.swift */,
+				B1FC6CA0258B4AFD008D1017 /* VerificationEvent.swift */,
 			);
 			path = Verification;
 			sourceTree = "<group>";
@@ -673,6 +745,7 @@
 				B1E8423924E154A900C29730 /* LoggingMonitor.swift */,
 				B1E8423A24E154A900C29730 /* ApiErrorData.swift */,
 				B1E8423B24E154A900C29730 /* ApiResponse.swift */,
+				B194B133257FA36C002018BC /* VerificationRouter.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -1089,6 +1162,8 @@
 				B1E8428E24E156CF00C29730 /* DefaultLocaleCollector.swift in Sources */,
 				B1E842B124E1572300C29730 /* CalloutVerificationData.swift in Sources */,
 				B1E8420124E1546200C29730 /* FlashcallVerificationMethod.swift in Sources */,
+				B194B128257F7F48002018BC /* AutoVerificationRouter.swift in Sources */,
+				B1CA81A1257F76A00097B625 /* AutoVerificationConfigSetter.swift in Sources */,
 				B1E8424D24E154A900C29730 /* VerificationIdentity.swift in Sources */,
 				B1E8426F24E154A900C29730 /* EncodableExtensions.swift in Sources */,
 				B1E842C324E1578B00C29730 /* SeamlessVerificationRouter.swift in Sources */,
@@ -1106,6 +1181,7 @@
 				B1E8428F24E156CF00C29730 /* ConfiguarionNameCollector.swift in Sources */,
 				B1E842AF24E1572300C29730 /* CalloutVerificationRouter.swift in Sources */,
 				B1E8429124E156CF00C29730 /* DeviceMetadataCollector.swift in Sources */,
+				B194B12C257F8799002018BC /* InitiationDetails.swift in Sources */,
 				B1E8427024E154A900C29730 /* HasApply.swift in Sources */,
 				B1E841EB24E153BD00C29730 /* SmsVerificationRouter.swift in Sources */,
 				B1E842C524E1578B00C29730 /* SeamlessVerificationMethodSetter.swift in Sources */,
@@ -1120,11 +1196,13 @@
 				B1E841F224E153BD00C29730 /* SmsVerificationData.swift in Sources */,
 				B1761075250F6158000C5EC1 /* FlashcallInitiationDetails.swift in Sources */,
 				B1E8420624E1546200C29730 /* FlashcallConfigBuilderSetters.swift in Sources */,
+				B1CA8194257F74340097B625 /* AutoVerificationInitiationData.swift in Sources */,
 				B1E8424424E154A900C29730 /* SinchGlobalConfig.swift in Sources */,
 				B1E8426C24E154A900C29730 /* VerificationInitData.swift in Sources */,
 				B1E8425924E154A900C29730 /* InitiationResponseData.swift in Sources */,
 				B1E8424F24E154A900C29730 /* VerificationMethodCallbacks.swift in Sources */,
 				B1E8426E24E154A900C29730 /* DecodableExtensions.swift in Sources */,
+				B1CA8198257F74E20097B625 /* AutoVerificationConfig.swift in Sources */,
 				B1E8426224E154A900C29730 /* SDKError.swift in Sources */,
 				B1E8425524E154A900C29730 /* SmsInitiationDetails.swift in Sources */,
 				B1E8425B24E154A900C29730 /* VerificationSourceType.swift in Sources */,
@@ -1137,6 +1215,7 @@
 				B1E8426524E154A900C29730 /* SinchSessionHandler.swift in Sources */,
 				B1E8425D24E154A900C29730 /* VerificationResponseData.swift in Sources */,
 				B1E841EE24E153BD00C29730 /* SmsConfigBuilderSetters.swift in Sources */,
+				B1CA81A7257F76CD0097B625 /* AutoVerificationMethod.swift in Sources */,
 				B1E8424824E154A900C29730 /* VerificationMethodProperties.swift in Sources */,
 				B1E842B024E1572300C29730 /* CalloutVerificationInitiationData.swift in Sources */,
 				B1E8428D24E156CF00C29730 /* BatteryLevelCollector.swift in Sources */,
@@ -1160,15 +1239,18 @@
 				B1E8429D24E156CF00C29730 /* SimCardInfo.swift in Sources */,
 				B1E8425124E154A900C29730 /* VerificationStateStatus.swift in Sources */,
 				B1E8429824E156CF00C29730 /* NetworkInfo.swift in Sources */,
+				B194B130257F8995002018BC /* CalloutInitiationDetails.swift in Sources */,
 				B1E8426624E154A900C29730 /* AppKeyAuthorizationMethod.swift in Sources */,
 				B1E8427124E154A900C29730 /* DataRequestsExtensions.swift in Sources */,
 				B1578A98250612AD00E2068D /* SinchPhoneNumberUtils.swift in Sources */,
 				B1E8426724E154A900C29730 /* ApiManager.swift in Sources */,
 				B1E8425424E154A900C29730 /* VerificationInitiationData.swift in Sources */,
+				B1FC6CA1258B4AFD008D1017 /* VerificationEvent.swift in Sources */,
 				B1E842C424E1578B00C29730 /* SeamlessVerificationInitiationData.swift in Sources */,
 				B1E8429524E156CF00C29730 /* PhoneMetadata.swift in Sources */,
 				B1E8429924E156CF00C29730 /* NetworkData.swift in Sources */,
 				B1E8429224E156CF00C29730 /* SimCardInfoCollector.swift in Sources */,
+				B194B134257FA36C002018BC /* VerificationRouter.swift in Sources */,
 				B1E8424624E154A900C29730 /* AuthorizationMethodSetter.swift in Sources */,
 				B1E8426B24E154A900C29730 /* ApiResponse.swift in Sources */,
 				B1E8426D24E154A900C29730 /* StringExtensions.swift in Sources */,
@@ -1177,10 +1259,12 @@
 				B1E8420224E1546200C29730 /* FlashcallVerificationConfigSetter.swift in Sources */,
 				B1E8429324E156CF00C29730 /* NetworkInfoCollector.swift in Sources */,
 				B1E8429424E156CF00C29730 /* PhoneMetadataFactory.swift in Sources */,
+				B1FC6CA5258B4CB6008D1017 /* AutoVerificationEvent.swift in Sources */,
 				B1E842C124E1578B00C29730 /* SeamlessVerificationConfig.swift in Sources */,
 				B1E841F024E153BD00C29730 /* SmsVerificationMethod.swift in Sources */,
 				B1E8429A24E156CF00C29730 /* DeviceMetadata.swift in Sources */,
 				B1E8428C24E156CF00C29730 /* MetadataCollector.swift in Sources */,
+				B1CA819C257F750F0097B625 /* AutoConfigBuilderSetters.swift in Sources */,
 				B1E8426824E154A900C29730 /* ApiRouter.swift in Sources */,
 				B1E8429E24E156CF00C29730 /* IOSMetadataFactory.swift in Sources */,
 				B1E8425724E154A900C29730 /* SeamlessInitiationDetails.swift in Sources */,

@@ -22,6 +22,9 @@ public enum VerificationMethodType: String, Codable, Equatable {
     /// Seamless verification.
     case seamless
     
+    /// Seamless verification.
+    case auto
+    
     /// Flag indicating if given method allows typing the verification code manually.
     var allowsManualVerification: Bool {
         return self != .seamless

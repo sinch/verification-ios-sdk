@@ -10,6 +10,7 @@
 		B17233F124C5871F00E35C9E /* VerificationDialogController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B17233F024C5871F00E35C9E /* VerificationDialogController.swift */; };
 		B17233FF24C6C4B100E35C9E /* MethodButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B17233FE24C6C4B100E35C9E /* MethodButton.swift */; };
 		B172340124C6C62300E35C9E /* UIColorExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B172340024C6C62300E35C9E /* UIColorExtensions.swift */; };
+		B1B07BC225877419002F55B9 /* SwiftEventBusLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1B07BC125877419002F55B9 /* SwiftEventBusLogger.swift */; };
 		B1D698B724EA86FF00AC4CA8 /* Environments.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1D698B624EA86FF00AC4CA8 /* Environments.swift */; };
 		B1E842CD24E1583B00C29730 /* Verification.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B1E842CC24E1583B00C29730 /* Verification.framework */; };
 		B1E842CE24E1583B00C29730 /* Verification.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B1E842CC24E1583B00C29730 /* Verification.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -48,6 +49,7 @@
 		B1A197A324C97935001A8BF2 /* MetadataCollector.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = MetadataCollector.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B1A2ECB524B5D693005A0447 /* VerificationSms.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = VerificationSms.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B1A2ED2124BF282C005A0447 /* VerificationCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = VerificationCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B1B07BC125877419002F55B9 /* SwiftEventBusLogger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftEventBusLogger.swift; sourceTree = "<group>"; };
 		B1D698B624EA86FF00AC4CA8 /* Environments.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Environments.swift; sourceTree = "<group>"; };
 		B1E842CC24E1583B00C29730 /* Verification.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Verification.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B1EF430524B46C5F009BE30C /* VerificationSample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VerificationSample.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -108,6 +110,7 @@
 				B17233FE24C6C4B100E35C9E /* MethodButton.swift */,
 				B172340024C6C62300E35C9E /* UIColorExtensions.swift */,
 				B1D698B624EA86FF00AC4CA8 /* Environments.swift */,
+				B1B07BC125877419002F55B9 /* SwiftEventBusLogger.swift */,
 			);
 			path = VerificationSample;
 			sourceTree = "<group>";
@@ -260,6 +263,7 @@
 				B1EF430D24B46C5F009BE30C /* VerificationController.swift in Sources */,
 				B172340124C6C62300E35C9E /* UIColorExtensions.swift in Sources */,
 				B1EF430924B46C5F009BE30C /* AppDelegate.swift in Sources */,
+				B1B07BC225877419002F55B9 /* SwiftEventBusLogger.swift in Sources */,
 				B1D698B724EA86FF00AC4CA8 /* Environments.swift in Sources */,
 				B1EF430B24B46C5F009BE30C /* SceneDelegate.swift in Sources */,
 			);

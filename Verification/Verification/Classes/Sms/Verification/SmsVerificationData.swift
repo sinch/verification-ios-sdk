@@ -8,13 +8,13 @@
 
 struct SmsVerificationData: VerificationData, Encodable {
     
-    let details: SmsVerificationDetails
+    let smsDetails: SmsVerificationDetails?
     let source: VerificationSourceType
     let method: VerificationMethodType = .sms
     
     enum CodingKeys: String, CodingKey {
         case source
         case method
-        case details = "sms"
+        case smsDetails = "sms"
     }
 }

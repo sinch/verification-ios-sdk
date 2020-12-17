@@ -28,7 +28,24 @@ class ApiManager {
         if let protocolClass = protocolClass {
             configuration.protocolClasses = [protocolClass]
         }
-        return Session(configuration: configuration, interceptor: SinchSessionHandler(authorizationMethod: authMethod), eventMonitors: [])
+        return Session(configuration: configuration, interceptor: SinchSessionHandler(authorizationMethod: authMethod), eventMonitors: [AlamofireLogger()])
     }()
 
+}
+
+final class AlamofireLogger: EventMonitor {
+    func requestDidResume(_ request: Request) {
+        let body = request.request.flatMap { $0.httpBody.map { String(decoding: $0, as: UTF8.self) } } ?? "None"
+        let message = """
+        ⚡️ Request Started: \(request)
+        ⚡️ Body Data: \(body)
+        """
+        NSLog(message)
+    }
+
+    func request<Value>(_ request: DataRequest, didParseResponse response: AFDataResponse<Value>) {
+        let body = response.data.map { String(decoding: $0, as: UTF8.self)  } ?? "None"
+        NSLog("\n⚡️ Response Received: \(response.debugDescription)")
+        NSLog("\n⚡️ Response Body: \(body)")
+    }
 }

@@ -12,11 +12,13 @@ def verification_pods
   pod 'Alamofire', '~> 5.2'
   pod 'ReachabilitySwift'
   pod 'PhoneNumberKit', '~> 3.1'
+  pod 'CocoaLumberjack/Swift', '~> 3.7.0'
 end
 
 target 'VerificationSample' do
   project 'VerificationSample/VerificationSample.xcodeproj'
   verification_pods
+  pod 'SwiftEventBus', :tag => '5.0.1', :git => 'https://github.com/cesarferreira/SwiftEventBus.git'
 end
   
 target 'Verification' do

@@ -8,6 +8,7 @@
 
 /// Class containing detailed information for the actual verification API request.
 struct SmsVerificationDetails: Codable {
+        
     /// Verification code received in the SMS message.
     let code: String
 }

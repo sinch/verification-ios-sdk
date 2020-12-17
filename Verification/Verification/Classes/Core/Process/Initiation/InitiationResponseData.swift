@@ -21,6 +21,8 @@ public struct InitiationResponseData: Equatable, Codable {
     
     public let seamlessDetails: SeamlessInitiationDetails?
     
+    public let calloutDetails: CalloutInitiationDetails?
+    
     public let contentLanguage: VerificationLanguage?
     
     let dateOfGeneration: Date?
@@ -31,6 +33,21 @@ public struct InitiationResponseData: Equatable, Codable {
             return smsDetails?.interceptionTimeout
         case .flashcall:
             return flashcallDetails?.interceptionTimeout
+        default:
+            return nil
+        }
+    }
+    
+    func details(ofMethod method: VerificationMethodType) -> InitiationDetails? {
+        switch method {
+        case .sms:
+            return self.smsDetails
+        case .flashcall:
+            return self.flashcallDetails
+        case .seamless:
+            return self.seamlessDetails
+        case .callout:
+            return self.calloutDetails
         default:
             return nil
         }
@@ -47,13 +64,14 @@ public struct InitiationResponseData: Equatable, Codable {
         case smsDetails = "sms"
         case seamlessDetails = "seamless"
         case flashcallDetails = "flashCall"
+        case calloutDetails = "callout"
         case contentLanguage
         case dateOfGeneration
     }
     
     func withHeadersData(contentLanguage: VerificationLanguage?, dateOfGeneration: Date) -> InitiationResponseData {
         return InitiationResponseData(id: self.id, method: self.method, smsDetails: self.smsDetails,
-                                      flashcallDetails: self.flashcallDetails, seamlessDetails: self.seamlessDetails, contentLanguage: contentLanguage, dateOfGeneration: dateOfGeneration)
+                                      flashcallDetails: self.flashcallDetails, seamlessDetails: self.seamlessDetails, calloutDetails: self.calloutDetails, contentLanguage: contentLanguage, dateOfGeneration: dateOfGeneration)
     }
 
 }

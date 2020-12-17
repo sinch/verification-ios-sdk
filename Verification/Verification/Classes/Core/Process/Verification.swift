@@ -22,6 +22,18 @@ public protocol Verification {
     /// - Parameter verificationCode: Code to be verified.
     func verify(verificationCode: String)
     
+    /// Verifies if provided code is correct.
+    /// - Parameter verificationCode: Code to be verified.
+    func verify(verificationCode: String, method: VerificationMethodType?)
+    
     /// Stops the verification process. You can still verify the code manually for given verification.
     func stop()
+}
+
+extension Verification {
+    
+    public func verify(verificationCode: String) {
+        verify(verificationCode: verificationCode, method: nil)
+    }
+    
 }
