@@ -14,12 +14,15 @@ class ApiManager {
     
     private let authMethod: AuthorizationMethod
     private let protocolClass: AnyClass?
+    private let customInterceptors: [RequestInterceptor]
     
     /// Default initializer.
     /// - Parameter authMethod: [AuthorizationMethod](x-source-tag://[AuthorizationMethod]) used for veryfing API requests.
-    init(authMethod: AuthorizationMethod, protocolClass: AnyClass? = nil) {
+    /// - Parameter customInterceptors: Additional Alamofire interceptors that can modify the request just before passed to Sinch REST API.
+    init(authMethod: AuthorizationMethod, protocolClass: AnyClass? = nil, customInterceptors: [RequestInterceptor] = []) {
         self.authMethod = authMethod
         self.protocolClass = protocolClass
+        self.customInterceptors = customInterceptors
     }
     
     /// Specific session instance that should be used for interacting with SINCH API (making HTTP calls).
@@ -28,7 +31,13 @@ class ApiManager {
         if let protocolClass = protocolClass {
             configuration.protocolClasses = [protocolClass]
         }
-        return Session(configuration: configuration, interceptor: SinchSessionHandler(authorizationMethod: authMethod), eventMonitors: [AlamofireLogger()])
+        return Session(configuration: configuration,
+                       interceptor: Interceptor(
+                            adapters: [],
+                            retriers: [],
+                            interceptors: [SinchSessionHandler(authorizationMethod: authMethod)] + customInterceptors
+                       ),
+                       eventMonitors: [AlamofireLogger()])
     }()
 
 }

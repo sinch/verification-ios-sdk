@@ -20,6 +20,7 @@
 		B1EF431024B46C5F009BE30C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B1EF430E24B46C5F009BE30C /* Main.storyboard */; };
 		B1EF431224B46C60009BE30C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B1EF431124B46C60009BE30C /* Assets.xcassets */; };
 		B1EF431524B46C60009BE30C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B1EF431324B46C60009BE30C /* LaunchScreen.storyboard */; };
+		B1FE5B74259B3D3600069DA2 /* CustomInterceptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1FE5B73259B3D3600069DA2 /* CustomInterceptor.swift */; };
 		F45DA27586B62B181D591B95 /* Pods_VerificationSample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BFBFC7B91A1F1AE8FFC7A762 /* Pods_VerificationSample.framework */; };
 /* End PBXBuildFile section */
 
@@ -61,6 +62,7 @@
 		B1EF431424B46C60009BE30C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B1EF431624B46C60009BE30C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B1EF434524B59EBC009BE30C /* VerificationCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = VerificationCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B1FE5B73259B3D3600069DA2 /* CustomInterceptor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomInterceptor.swift; sourceTree = "<group>"; };
 		BFBFC7B91A1F1AE8FFC7A762 /* Pods_VerificationSample.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VerificationSample.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EE49D6251AE297B5FC6EDDD6 /* Pods-VerificationSample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VerificationSample.release.xcconfig"; path = "Target Support Files/Pods-VerificationSample/Pods-VerificationSample.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -111,6 +113,7 @@
 				B172340024C6C62300E35C9E /* UIColorExtensions.swift */,
 				B1D698B624EA86FF00AC4CA8 /* Environments.swift */,
 				B1B07BC125877419002F55B9 /* SwiftEventBusLogger.swift */,
+				B1FE5B73259B3D3600069DA2 /* CustomInterceptor.swift */,
 			);
 			path = VerificationSample;
 			sourceTree = "<group>";
@@ -263,6 +266,7 @@
 				B1EF430D24B46C5F009BE30C /* VerificationController.swift in Sources */,
 				B172340124C6C62300E35C9E /* UIColorExtensions.swift in Sources */,
 				B1EF430924B46C5F009BE30C /* AppDelegate.swift in Sources */,
+				B1FE5B74259B3D3600069DA2 /* CustomInterceptor.swift in Sources */,
 				B1B07BC225877419002F55B9 /* SwiftEventBusLogger.swift in Sources */,
 				B1D698B724EA86FF00AC4CA8 /* Environments.swift in Sources */,
 				B1EF430B24B46C5F009BE30C /* SceneDelegate.swift in Sources */,
