@@ -6,8 +6,9 @@
 //  Copyright © 2020 Aleksander Wojcik. All rights reserved.
 //
 
-import Foundation
+import Alamofire
 
 public protocol GlobalConfigCreator {
+    func interceptors(_ interceptors: [RequestInterceptor]) -> GlobalConfigCreator
     func build() -> SinchGlobalConfig
 }
