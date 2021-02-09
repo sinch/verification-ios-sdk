@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import Alamofire
 
 /**
  Global Sinch SDK configuration required by all verification methods.
@@ -36,6 +37,7 @@ public class SinchGlobalConfig {
         }
         
         private var authorizationMethod: AuthorizationMethod!
+        private var customInterceptors: [RequestInterceptor] = []
         
         /// Assigns authorization method to the builder.
         /// - Parameter authorizationMethod: [AuthorizationMethod](x-source-tag://[AuthorizationMethod]) used for veryfing API requests.
@@ -44,10 +46,17 @@ public class SinchGlobalConfig {
             return apply { $0.authorizationMethod = authorizationMethod }
         }
         
+        /// Assigns additional Alamofire Interceptors that will be fired whenever making http calls to Sinch REST API.
+        /// - Parameter interceptors: Additional Alamofire Interceptors that will be fired whenever making http calls to Sinch REST API.
+        /// - Returns: Builder with assigned interceptors.
+        public func interceptors(_ interceptors: [RequestInterceptor]) -> GlobalConfigCreator {
+            return apply { $0.customInterceptors = interceptors }
+        }
+        
         /// Builds global config instance.
         /// - Returns: Sinch global config instance with previously defined parameters.
         public func build() -> SinchGlobalConfig {
-            return SinchGlobalConfig(apiManager: ApiManager(authMethod: self.authorizationMethod))
+            return SinchGlobalConfig(apiManager: ApiManager(authMethod: self.authorizationMethod, customInterceptors: self.customInterceptors))
         }
         
     }
