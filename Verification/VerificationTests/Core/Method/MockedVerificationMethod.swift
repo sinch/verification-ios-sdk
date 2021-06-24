@@ -38,7 +38,7 @@ class MockedVerificationMethod: VerificationMethod {
         numberOfOnInitiateCalls += 1
     }
     
-    override func onVerify(_ verificationCode: String, fromSource sourceType: VerificationSourceType) {
+    override func onVerify(_ verificationCode: String, fromSource sourceType: VerificationSourceType, usingMethod method: VerificationMethodType?) {
         numberOfOnVerifyCalls += 1
         source = sourceType
     }

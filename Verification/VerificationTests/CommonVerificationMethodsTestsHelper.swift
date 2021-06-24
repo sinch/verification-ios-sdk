@@ -53,7 +53,7 @@ class CommonVerificationMethodsTestsHelper {
         self.expectation = testCase.expectation(description: "onInitiated listener callback called")
         
         self.onInitiatedCallback = { [weak self] data in
-            XCTAssertEqual(expectedResponse, data)
+            XCTAssertEqual(expectedResponse.withDateOfGeneration(data.dateOfGeneration), data)
             self?.expectation.fulfill()
         }
         
@@ -122,11 +122,12 @@ class CommonVerificationMethodsTestsHelper {
         return InitiationResponseData(
             id: "id",
             method: self.verificationMethodType,
-            smsDetails: SmsInitiationDetails(template: "", interceptionTimeout: 60),
-            flashcallDetails: FlashcallInitiationDetails(interceptionTimeout: 60),
-            seamlessDetails: SeamlessInitiationDetails(targetUri: "http://example.com"),
+            smsDetails: SmsInitiationDetails(subVerificationId: nil, template: "", interceptionTimeout: 60),
+            flashcallDetails: FlashcallInitiationDetails(subVerificationId: nil, interceptionTimeout: 60),
+            seamlessDetails: SeamlessInitiationDetails(subVerificationId: nil, targetUri: "http://example.com"),
+            calloutDetails: CalloutInitiationDetails(subVerificationId: nil),
             contentLanguage: contentLanguage,
-            dateOfGeneration: Date()
+            dateOfGeneration: Date(timeIntervalSince1970: 0)
         )
     }
     

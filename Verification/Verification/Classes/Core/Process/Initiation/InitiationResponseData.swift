@@ -73,5 +73,10 @@ public struct InitiationResponseData: Equatable, Codable {
         return InitiationResponseData(id: self.id, method: self.method, smsDetails: self.smsDetails,
                                       flashcallDetails: self.flashcallDetails, seamlessDetails: self.seamlessDetails, calloutDetails: self.calloutDetails, contentLanguage: contentLanguage, dateOfGeneration: dateOfGeneration)
     }
+    
+    func withDateOfGeneration(_ date: Date?) -> InitiationResponseData {
+        return InitiationResponseData(id: self.id, method: self.method, smsDetails: self.smsDetails,
+                                      flashcallDetails: self.flashcallDetails, seamlessDetails: self.seamlessDetails, calloutDetails: self.calloutDetails, contentLanguage: self.contentLanguage, dateOfGeneration: date)
+    }
 
 }
