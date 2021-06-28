@@ -60,7 +60,7 @@ class CommonVerificationMethodsTestsHelper {
         Mock(url: initiationUrlCreator(), dataType: .json, statusCode: 200, data: [.post: expectedResponse.asData!]).register()
 
         method?.initiate()
-        testCase.waitForExpectations(timeout: 0.5)
+        testCase.waitForExpectations(timeout: 1)
     }
     
     func testErrorResponseNotifiesInitListenerWithApiError() throws {
