@@ -7,6 +7,7 @@
 //
 
 import Alamofire
+import Combine
 
 /// [Verification](x-source-tag://[Verification]) that uses Seamlesss to verify user's phone number.
 ///
@@ -15,7 +16,7 @@ import Alamofire
 /// - TAG: SeamlessVerificationMethod
 public class SeamlessVerificationMethod: VerificationMethod {
   
-  var socket:NetworkSocket!
+  private var seamlessExecutor: SeamlessVerificationExecutor?
         
     override init(
         verificationMethodConfig: VerificationMethodConfiguration,
@@ -44,21 +45,47 @@ public class SeamlessVerificationMethod: VerificationMethod {
     override func onVerify(_ verificationCode: String,
                            fromSource sourceType: VerificationSourceType,
                            usingMethod method: VerificationMethodType?) {
-//      print("MY VERIFICATION CODE IS:")
-//      print(verificationCode)
-      guard let urlComponents = URLComponents(string: verificationCode) else {
-        return
-      }
-      socket = NetworkSocket(endpoint: urlComponents)
-      do {
-        try socket.connect()
-      } catch {
+      executeSeamlessVerificationCall(targetURI: verificationCode)
+//              self.service
+//                  .request(SeamlessVerificationRouter.verify(targetUri: verificationCode))
+//                  .sinchValidationResponse(VerificationApiCallback(listener: self, verificationStateListener: self))
 
-      }
-//        self.service
-//            .request(SeamlessVerificationRouter.verify(targetUri: verificationCode))
-//            .sinchValidationResponse(VerificationApiCallback(listener: self, verificationStateListener: self))
     }
+  
+  private func executeSeamlessVerificationCall(targetURI: String) {
+    guard let urlComponents = URLComponents(string: targetURI) else {
+      return
+    }
+    seamlessExecutor = SeamlessVerificationExecutor(endpoint: urlComponents)
+    seamlessExecutor?.delegate = self
+    do {
+      try seamlessExecutor?.connect()
+    } catch {
+      deinitExecutor()
+      print("Error while trying to connect to executor \(error)")
+    }
+  }
+  
+  fileprivate func extractRedirectLocation(rawResponse: String) -> String? {
+    let locationHeaderName = "Location:"
+    
+    let headers = rawResponse.components(separatedBy: "\n")
+    let locationHeader = headers.first { item in
+      item.starts(with: locationHeaderName)
+    }
+    
+    if let locationHeader = locationHeader {
+      guard let range = locationHeader.range(of: locationHeaderName) else { return nil }
+      return locationHeader[range.upperBound...].trimmingCharacters(in: .whitespacesAndNewlines)
+    } else {
+      return nil
+    }
+
+  }
+  
+  private func deinitExecutor() {
+    self.seamlessExecutor = nil
+  }
     
     /// Builder implementing fluent builder pattern to create [SeamlessVerificationMethod](x-source-tag://[SeamlessVerificationMethod]) objects.
     /// - TAG: SeamlessVerificationMethodBuilder
@@ -98,4 +125,27 @@ public class SeamlessVerificationMethod: VerificationMethod {
         verify(verificationCode: data.seamlessDetails?.targetUri ?? "")
     }
     
+}
+
+extension SeamlessVerificationMethod: SeamlessVerificationExecutorDelegate {
+  
+  func onResponseReceived(data: Data) {
+    let rawStringResponse = String(decoding: data, as: UTF8.self)
+    print("RAW RESPONSE START")
+    print(rawStringResponse)
+    print("RAW RESPONSE END")
+    if let redirectUrl = extractRedirectLocation(rawResponse: rawStringResponse) {
+      executeSeamlessVerificationCall(targetURI: redirectUrl)
+    } else {
+      print("Error or success!!!")
+    }
+
+  }
+  
+  func onError(error: Error) {
+    print("Delegate returned error: \(error)")
+    verificationListener?.onVerificationFailed(e: error)
+  }
+  
+  
 }

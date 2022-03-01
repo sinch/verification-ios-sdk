@@ -9,45 +9,58 @@
 import Foundation
 import Network
 
-internal class NetworkSocket {
+protocol SeamlessVerificationExecutorDelegate: AnyObject {
   
-  let endpoint: URLComponents
-  let dispatchQueue = DispatchQueue.global(qos: .background)
+  func onResponseReceived(data: Data)
   
-  var connection:NWConnection!
-  var socket:NetworkSocket!
+  func onError(error: Error)
+  
+}
 
+internal class SeamlessVerificationExecutor {
+  
+  private let endpoint: URLComponents
+  private let dispatchQueue = DispatchQueue.global(qos: .background)
+  private let connection: NWConnection
+  
+  weak var delegate: SeamlessVerificationExecutorDelegate?
+    
   init(endpoint: URLComponents) {
     self.endpoint = endpoint
-  }
-  
-  func connect() throws {
-    
     let tlsOptions = NWProtocolTLS.Options()
     let tcpOptions = NWProtocolTCP.Options()
     let port = endpoint.scheme == "http" ? NWEndpoint.Port.http : NWEndpoint.Port.https
-
-    tcpOptions.noDelay = true
-    tcpOptions.connectionTimeout = 1
-    
     let params = NWParameters(tls: port == NWEndpoint.Port.https ? tlsOptions : nil, tcp: tcpOptions)
     params.requiredInterfaceType = .cellular
     let host = NWEndpoint.Host(endpoint.host!)
     
     self.connection =  NWConnection(host: host, port: port, using: params)
-    connection.stateUpdateHandler = {(newState) in
+    self.connection.stateUpdateHandler = { [weak self] newState in
       print("TCP state change to: \(newState)")
       switch newState {
       case .ready:
-        self.executeGET()
+        self?.executeGET()
         break
+      case .waiting(let error), .failed(let error):
+        self?.onDelegateThread {
+          self?.delegate?.onError(error: error)
+        }
+        self?.disconnect(withErrorCause: error)
       default:
         break
-    }
+      }
     }
     
+  }
+  
+  func connect() throws {
     connection.start(queue: dispatchQueue)
-    
+  }
+  
+  func disconnect(withErrorCause error: Error?) {
+    if connection.state != .cancelled {
+      connection.cancel()
+    }
   }
   
   func executeGET() {
@@ -55,7 +68,7 @@ internal class NetworkSocket {
     let path = endpoint.path != "" ? endpoint.path : "/"
     let query = endpoint.query != nil ? "?" + endpoint.query! : ""
     let body =  String(format: requestStrFrmt, String(path + query).addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!.trimmingCharacters(in: .whitespacesAndNewlines) , "", endpoint.host!)
-
+    
     print(body)
     let data = body.data(using: .utf8)
     connection.send(content: data, completion: NWConnection.SendCompletion.contentProcessed {
@@ -63,42 +76,26 @@ internal class NetworkSocket {
     }
     )
     
-    
     self.connection.receive(minimumIncompleteLength: 1, maximumLength: 8192) {  completeContent, contentContext, isComplete, error in
-      let stringResponse = String(decoding: completeContent!, as: UTF8.self)
-      print("RESPONSE START \(contentContext) \(isComplete) \(error)")
-      print("---------")
-      print(stringResponse)
-      let headers = stringResponse.components(separatedBy: "\n")
-      let locationHeader = headers.first { item in
-        item.starts(with: "Location:")
-      }
-      
-      if let locationHeader = locationHeader {
-        let range = locationHeader.range(of: "Location:")!
-        let redirect = locationHeader[range.upperBound...].trimmingCharacters(in: .whitespacesAndNewlines)
-        print("REDIRECT")
-        print(redirect)
-        print("REDIRECT DONE")
-
-        let a = 0
-        let c = a
-        guard let urlComponents = URLComponents(string: redirect) else {
-          return
-        }
-        self.socket = NetworkSocket(endpoint: urlComponents)
-        do {
-          try self.socket.connect()
-        } catch {
-
+      self.onDelegateThread {
+        if let error = error {
+          self.delegate?.onError(error: error)
+        } else {
+          self.delegate?.onResponseReceived(data: completeContent!)
         }
       }
-      print("---------")
-      print("RESPONSE END")
     }
     
-    
-      
+  }
+  
+  private func onDelegateThread(_ f: ()->Void) {
+    DispatchQueue.main.sync {
+      f()
+    }
+  }
+  
+  deinit {
+    disconnect(withErrorCause: nil)
   }
   
 }
