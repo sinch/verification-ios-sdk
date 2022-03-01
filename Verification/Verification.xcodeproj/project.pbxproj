@@ -27,6 +27,7 @@
 		B197B94B24E16E3100889BD0 /* AcceptedLanguagesParsingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B197B94424E16E3000889BD0 /* AcceptedLanguagesParsingTests.swift */; };
 		B197B94C24E16E3100889BD0 /* AppKeyAuthorizationMethodTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B197B94524E16E3000889BD0 /* AppKeyAuthorizationMethodTests.swift */; };
 		B197B94D24E16E3100889BD0 /* SimCardInfoHolderEncodingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B197B94724E16E3100889BD0 /* SimCardInfoHolderEncodingTests.swift */; };
+		B1C3C0AE27CE35D60021A0EC /* HttpRawResponseHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1C3C0AD27CE35D60021A0EC /* HttpRawResponseHandler.swift */; };
 		B1CA8194257F74340097B625 /* AutoVerificationInitiationData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1CA8193257F74340097B625 /* AutoVerificationInitiationData.swift */; };
 		B1CA8198257F74E20097B625 /* AutoVerificationConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1CA8197257F74E20097B625 /* AutoVerificationConfig.swift */; };
 		B1CA819C257F750F0097B625 /* AutoConfigBuilderSetters.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1CA819B257F750F0097B625 /* AutoConfigBuilderSetters.swift */; };
@@ -177,6 +178,7 @@
 		B197B94424E16E3000889BD0 /* AcceptedLanguagesParsingTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AcceptedLanguagesParsingTests.swift; sourceTree = "<group>"; };
 		B197B94524E16E3000889BD0 /* AppKeyAuthorizationMethodTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppKeyAuthorizationMethodTests.swift; sourceTree = "<group>"; };
 		B197B94724E16E3100889BD0 /* SimCardInfoHolderEncodingTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SimCardInfoHolderEncodingTests.swift; sourceTree = "<group>"; };
+		B1C3C0AD27CE35D60021A0EC /* HttpRawResponseHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpRawResponseHandler.swift; sourceTree = "<group>"; };
 		B1CA8193257F74340097B625 /* AutoVerificationInitiationData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutoVerificationInitiationData.swift; sourceTree = "<group>"; };
 		B1CA8197257F74E20097B625 /* AutoVerificationConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutoVerificationConfig.swift; sourceTree = "<group>"; };
 		B1CA819B257F750F0097B625 /* AutoConfigBuilderSetters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutoConfigBuilderSetters.swift; sourceTree = "<group>"; };
@@ -929,6 +931,7 @@
 			isa = PBXGroup;
 			children = (
 				B1E842BA24E1578B00C29730 /* SeamlessVerificationRouter.swift */,
+				B1C3C0AD27CE35D60021A0EC /* HttpRawResponseHandler.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -1169,6 +1172,7 @@
 				B1CA81A1257F76A00097B625 /* AutoVerificationConfigSetter.swift in Sources */,
 				B1E8424D24E154A900C29730 /* VerificationIdentity.swift in Sources */,
 				B1E8426F24E154A900C29730 /* EncodableExtensions.swift in Sources */,
+				B1C3C0AE27CE35D60021A0EC /* HttpRawResponseHandler.swift in Sources */,
 				B1E842C324E1578B00C29730 /* SeamlessVerificationRouter.swift in Sources */,
 				B1E8425824E154A900C29730 /* InitiationListener.swift in Sources */,
 				B1E8424324E154A900C29730 /* Constants.swift in Sources */,

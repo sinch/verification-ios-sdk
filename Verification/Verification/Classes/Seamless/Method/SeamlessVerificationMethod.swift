@@ -137,7 +137,8 @@ extension SeamlessVerificationMethod: SeamlessVerificationExecutorDelegate {
     if let redirectUrl = extractRedirectLocation(rawResponse: rawStringResponse) {
       executeSeamlessVerificationCall(targetURI: redirectUrl)
     } else {
-      print("Error or success!!!")
+      let responseHandler = HttpRawResponseHandler(rawStringResponse)
+      print("Error or success!!! code: \(responseHandler.responseCode)")
     }
 
   }
