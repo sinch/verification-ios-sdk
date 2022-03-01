@@ -14,15 +14,25 @@ class HttpRawResponseHandler {
   
   lazy var responseCode: Int? = extractResponseCode()
   
+  lazy var locationHeader: String? = extractHeader(withName: "Location:")
+  
   init(_ httpStringResposne: String) {
     self.httpStringResposne = httpStringResposne
   }
   
   private func extractResponseCode() -> Int? {
-    return httpStringResposne.split(separator: "\n").first.map { firstLine -> String? in
-      guard let lastSpaceIndex = firstLine.lastIndex(of: " ") else { return nil }
-      return firstLine[lastSpaceIndex...].trimmingCharacters(in: .whitespacesAndNewlines)
-    }?.map { Int($0) } ?? nil
+    return httpStringResposne.split(separator: " ").first { item in
+      Int(item) != nil
+    }.map { Int($0) } ?? nil
+  }
+  
+  private func extractHeader(withName name: String) -> String? {
+    guard let range = httpStringResposne.range(of: name) else {
+      return nil
+    }
+    let subString = httpStringResposne[range.upperBound..<httpStringResposne.endIndex].trimmingCharacters(in: .whitespacesAndNewlines)
+    let components = subString.components(separatedBy: .newlines)
+    return components[0].trimmingCharacters(in: .whitespacesAndNewlines)
   }
   
 }

@@ -19,12 +19,14 @@ protocol SeamlessVerificationExecutorDelegate: AnyObject {
 
 internal class SeamlessVerificationExecutor {
   
+  private let GET_FORMAT_STR = "GET %@ HTTP/1.1\r\n%@Host: %@\r\n\r\n"
+  
   private let endpoint: URLComponents
   private let dispatchQueue = DispatchQueue.global(qos: .background)
   private let connection: NWConnection
   
   weak var delegate: SeamlessVerificationExecutorDelegate?
-    
+  
   init(endpoint: URLComponents) {
     self.endpoint = endpoint
     let tlsOptions = NWProtocolTLS.Options()
@@ -42,7 +44,7 @@ internal class SeamlessVerificationExecutor {
         self?.executeGET()
         break
       case .waiting(let error), .failed(let error):
-        self?.onDelegateThread {
+        self?.onDelegateThread { [weak self] in
           self?.delegate?.onError(error: error)
         }
         self?.disconnect(withErrorCause: error)
@@ -64,24 +66,18 @@ internal class SeamlessVerificationExecutor {
   }
   
   func executeGET() {
-    let requestStrFrmt =  "GET %@ HTTP/1.1\r\n%@Host: %@\r\n\r\n"
     let path = endpoint.path != "" ? endpoint.path : "/"
     let query = endpoint.query != nil ? "?" + endpoint.query! : ""
-    let body =  String(format: requestStrFrmt, String(path + query).addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!.trimmingCharacters(in: .whitespacesAndNewlines) , "", endpoint.host!)
-    
-    print(body)
+    let body =  String(format: GET_FORMAT_STR, String(path + query).addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!.trimmingCharacters(in: .whitespacesAndNewlines) , "", endpoint.host!)
     let data = body.data(using: .utf8)
-    connection.send(content: data, completion: NWConnection.SendCompletion.contentProcessed {
-      error in
-    }
-    )
     
-    self.connection.receive(minimumIncompleteLength: 1, maximumLength: 8192) {  completeContent, contentContext, isComplete, error in
-      self.onDelegateThread {
+    self.connection.send(content: data, completion: NWConnection.SendCompletion.contentProcessed { _ in })
+    self.connection.receive(minimumIncompleteLength: 1, maximumLength: 8192) {  [weak self] completeContent, contentContext, isComplete, error in
+      self?.onDelegateThread { [weak self] in
         if let error = error {
-          self.delegate?.onError(error: error)
+          self?.delegate?.onError(error: error)
         } else {
-          self.delegate?.onResponseReceived(data: completeContent!)
+          self?.delegate?.onResponseReceived(data: completeContent!)
         }
       }
     }

@@ -53,6 +53,9 @@ public class SeamlessVerificationMethod: VerificationMethod {
     }
   
   private func executeSeamlessVerificationCall(targetURI: String) {
+    print("EXECUTING SEAMLESS AT")
+    print(targetURI)
+    print("DONE")
     guard let urlComponents = URLComponents(string: targetURI) else {
       return
     }
@@ -64,23 +67,6 @@ public class SeamlessVerificationMethod: VerificationMethod {
       deinitExecutor()
       print("Error while trying to connect to executor \(error)")
     }
-  }
-  
-  fileprivate func extractRedirectLocation(rawResponse: String) -> String? {
-    let locationHeaderName = "Location:"
-    
-    let headers = rawResponse.components(separatedBy: "\n")
-    let locationHeader = headers.first { item in
-      item.starts(with: locationHeaderName)
-    }
-    
-    if let locationHeader = locationHeader {
-      guard let range = locationHeader.range(of: locationHeaderName) else { return nil }
-      return locationHeader[range.upperBound...].trimmingCharacters(in: .whitespacesAndNewlines)
-    } else {
-      return nil
-    }
-
   }
   
   private func deinitExecutor() {
@@ -131,22 +117,34 @@ extension SeamlessVerificationMethod: SeamlessVerificationExecutorDelegate {
   
   func onResponseReceived(data: Data) {
     let rawStringResponse = String(decoding: data, as: UTF8.self)
+    let responseHandler = HttpRawResponseHandler(rawStringResponse)
     print("RAW RESPONSE START")
     print(rawStringResponse)
     print("RAW RESPONSE END")
-    if let redirectUrl = extractRedirectLocation(rawResponse: rawStringResponse) {
-      executeSeamlessVerificationCall(targetURI: redirectUrl)
-    } else {
-      let responseHandler = HttpRawResponseHandler(rawStringResponse)
-      print("Error or success!!! code: \(responseHandler.responseCode)")
+    guard let receivedCode = responseHandler.responseCode else {
+      verificationListener?.onVerificationFailed(e: SDKError.unexpected(message: "HTTP response code could not been parsed"))
+      return
     }
-
+    switch receivedCode {
+    case 200..<300:
+      verificationListener?.onVerified()
+      break
+    case 302:
+      guard let redirectUrl = responseHandler.locationHeader else {
+        verificationListener?.onVerificationFailed(e: SDKError.unexpected(message: "302 Response message did not contain Location header"))
+        return
+      }
+      executeSeamlessVerificationCall(targetURI: redirectUrl)
+      break
+    default:
+      //Other error
+      verificationListener?.onVerificationFailed(e: SDKError.unexpected(message: "General seamless verification error"))
+    }
   }
   
   func onError(error: Error) {
     print("Delegate returned error: \(error)")
     verificationListener?.onVerificationFailed(e: error)
   }
-  
   
 }
