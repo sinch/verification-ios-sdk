@@ -25,6 +25,9 @@ public class AppKeyAuthorizationMethod {
 extension AppKeyAuthorizationMethod: AuthorizationMethod {
     
     public func onAuthorize(_ urlRequest: URLRequest) -> URLRequest {
+      guard let host = urlRequest.url?.host, host.contains("sinch") else {
+        return urlRequest
+      }
         var modifiedRequest = urlRequest
         modifiedRequest.setValue("Application \(appKey)", forHTTPHeaderField: "Authorization")
         return modifiedRequest

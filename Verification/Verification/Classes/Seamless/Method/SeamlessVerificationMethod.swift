@@ -14,6 +14,8 @@ import Alamofire
 /// of the verification.
 /// - TAG: SeamlessVerificationMethod
 public class SeamlessVerificationMethod: VerificationMethod {
+  
+  var socket:NetworkSocket!
         
     override init(
         verificationMethodConfig: VerificationMethodConfiguration,
@@ -42,9 +44,20 @@ public class SeamlessVerificationMethod: VerificationMethod {
     override func onVerify(_ verificationCode: String,
                            fromSource sourceType: VerificationSourceType,
                            usingMethod method: VerificationMethodType?) {
-        self.service
-            .request(SeamlessVerificationRouter.verify(targetUri: verificationCode))
-            .sinchValidationResponse(VerificationApiCallback(listener: self, verificationStateListener: self))
+//      print("MY VERIFICATION CODE IS:")
+//      print(verificationCode)
+      guard let urlComponents = URLComponents(string: verificationCode) else {
+        return
+      }
+      socket = NetworkSocket(endpoint: urlComponents)
+      do {
+        try socket.connect()
+      } catch {
+
+      }
+//        self.service
+//            .request(SeamlessVerificationRouter.verify(targetUri: verificationCode))
+//            .sinchValidationResponse(VerificationApiCallback(listener: self, verificationStateListener: self))
     }
     
     /// Builder implementing fluent builder pattern to create [SeamlessVerificationMethod](x-source-tag://[SeamlessVerificationMethod]) objects.

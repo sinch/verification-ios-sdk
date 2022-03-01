@@ -415,7 +415,7 @@
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 7J28V5J56X;
+				DEVELOPMENT_TEAM = J38B8DW54U;
 				INFOPLIST_FILE = VerificationSample/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -433,7 +433,8 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = EE49D6251AE297B5FC6EDDD6 /* Pods-VerificationSample.release.xcconfig */;
 			buildSettings = {
-				CODE_SIGN_STYLE = Manual;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = VerificationSample/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
