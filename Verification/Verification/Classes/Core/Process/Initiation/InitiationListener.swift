@@ -11,7 +11,7 @@
 
 /// Interface defining methods notifying about verification initiation process result.
 /// - TAG: InitiationListener
-public protocol InitiationListener: class {
+public protocol InitiationListener: AnyObject {
     
     /// Called when the initiation process has completed successfully.
     /// - Parameter data: Object containing detailed information about instantiated verification.
