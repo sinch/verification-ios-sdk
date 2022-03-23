@@ -156,7 +156,6 @@
 				B1EF430124B46C5F009BE30C /* Sources */,
 				B1EF430224B46C5F009BE30C /* Frameworks */,
 				B1EF430324B46C5F009BE30C /* Resources */,
-				B121409127EB5B48001F31BE /* ShellScript */,
 				9ACA4AE6B17FF202A02F0FF8 /* [CP] Embed Pods Frameworks */,
 				B1E842CF24E1583C00C29730 /* Embed Frameworks */,
 			);
@@ -254,23 +253,6 @@
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
-		};
-		B121409127EB5B48001F31BE /* ShellScript */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-			);
-			outputFileListPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "# # This script is used to fix a deploy process crash by commenting a line of code in Pods-AppName-frameworks.sh that was causing archiving process to fail\necho \"Fixing Pods-VerificationSample-frameworks.sh\"\nSRC_STR=' source=\"$(readlink \"${source}\")\"'\nDST_STR=' #source=\"$(readlink \"${source}\")\"'\n\nsed -i -e \"s/${SRC_STR}/${DST_STR}/g\" ${PODS_ROOT}\"/Target Support Files/Pods-VerificationSample/Pods-VerificationSample-frameworks.sh\"\necho \"Done Fixing Pods-VerificationSample-frameworks.sh\"\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
