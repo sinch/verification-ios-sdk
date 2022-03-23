@@ -37,6 +37,11 @@
                BlueprintName = "VerificationTests"
                ReferencedContainer = "container:Verification.xcodeproj">
             </BuildableReference>
+            <SkippedTests>
+               <Test
+                  Identifier = "SeamlessVerificationMethodTests/testCorrentInitiationAutomaticallyCallsVerify()">
+               </Test>
+            </SkippedTests>
             <LocationScenarioReference
                identifier = "com.apple.dt.IDEFoundation.CurrentLocationScenarioIdentifier"
                referenceType = "1">
