@@ -46,16 +46,10 @@ public class SeamlessVerificationMethod: VerificationMethod {
                            fromSource sourceType: VerificationSourceType,
                            usingMethod method: VerificationMethodType?) {
       executeSeamlessVerificationCall(targetURI: verificationCode)
-//              self.service
-//                  .request(SeamlessVerificationRouter.verify(targetUri: verificationCode))
-//                  .sinchValidationResponse(VerificationApiCallback(listener: self, verificationStateListener: self))
 
     }
   
   private func executeSeamlessVerificationCall(targetURI: String) {
-    print("EXECUTING SEAMLESS AT")
-    print(targetURI)
-    print("DONE")
     guard let urlComponents = URLComponents(string: targetURI) else {
       return
     }
@@ -118,9 +112,6 @@ extension SeamlessVerificationMethod: SeamlessVerificationExecutorDelegate {
   func onResponseReceived(data: Data) {
     let rawStringResponse = String(decoding: data, as: UTF8.self)
     let responseHandler = HttpRawResponseHandler(rawStringResponse)
-    print("RAW RESPONSE START")
-    print(rawStringResponse)
-    print("RAW RESPONSE END")
     guard let receivedCode = responseHandler.responseCode else {
       verificationListener?.onVerificationFailed(e: SDKError.unexpected(message: "HTTP response code could not been parsed"))
       return
