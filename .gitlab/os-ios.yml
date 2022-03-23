@@ -64,7 +64,7 @@
         - echo 'Building sample'
         - pod install
         - mkdir artifacts
-        - xcodebuild -workspace verification-ios-sdk.xcworkspace -scheme VerificationSample archive -archivePath artifacts/VerificationSample.xcarchive
+        - xcodebuild -workspace verification-ios-sdk.xcworkspace -scheme VerificationSample archive -derivedDataPath artifacts -archivePath artifacts/VerificationSample.xcarchive
 
     interruptible: true
 
