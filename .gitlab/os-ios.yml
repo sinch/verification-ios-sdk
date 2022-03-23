@@ -65,7 +65,6 @@
         - pod install
         - mkdir artifacts
         - xcodebuild -workspace verification-ios-sdk.xcworkspace -scheme VerificationSample archive -allowProvisioningUpdates -archivePath artifacts/VerificationSample.xcarchive
-        - xcodebuild -exportArchive -archivePath artifacts/VerificationSample.xcarchive -exportOptionsPlist VerificationSample/exportOptionsAdHoc.plist -allowProvisioningUpdates -exportPath artifacts
 
     interruptible: true
 
