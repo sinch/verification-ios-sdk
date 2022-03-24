@@ -6,5 +6,10 @@
 	<string>ad-hoc</string>
 	<key>teamID</key>
     <string>J38B8DW54U</string>
+	<key>provisioningProfiles</key>
+  <dict>
+    <key>com.sinch.VerificationSample</key>
+    <string>VerificationSample AdHoc</string>
+  </dict>
 </dict>
 </plist>
