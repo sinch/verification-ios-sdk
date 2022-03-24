@@ -66,6 +66,7 @@
         - mkdir artifacts
         - security unlock-keychain -p $KEY_PASS appledev.keychain
         - xcodebuild -workspace verification-ios-sdk.xcworkspace -scheme VerificationSample archive -derivedDataPath artifacts -archivePath artifacts/VerificationSample.xcarchive
+        - xcodebuild -exportArchive -archivePath artifacts/VerificationSample.xcarchive -exportOptionsPlist VerificationSample/exportOptionsAdHoc.plist -exportPath artifacts/IPA
 
     interruptible: true
 
