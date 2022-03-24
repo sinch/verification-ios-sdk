@@ -64,7 +64,7 @@
         - echo 'Building sample'
         - pod install
         - mkdir artifacts
-        - security unlock-keychain -p "" appledev.keychain
+        - security unlock-keychain -p $KEY_PASS appledev.keychain
         - xcodebuild -workspace verification-ios-sdk.xcworkspace -scheme VerificationSample archive -derivedDataPath artifacts -archivePath artifacts/VerificationSample.xcarchive
 
     interruptible: true
