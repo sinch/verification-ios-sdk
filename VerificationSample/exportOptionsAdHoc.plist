@@ -9,7 +9,7 @@
 	<key>provisioningProfiles</key>
   <dict>
     <key>com.sinch.VerificationSample</key>
-    <string>VerificationSample AdHoc</string>
+    <string>VerificationSample AdHoc2</string>
   </dict>
   <key>signingCertificate</key>
 	<string>Apple Distribution</string>

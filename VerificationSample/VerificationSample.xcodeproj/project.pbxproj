@@ -423,7 +423,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.sinch.VerificationSample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "VerificationSample AdHoc";
+				PROVISIONING_PROFILE_SPECIFIER = "VerificationSample AdHoc2";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -443,7 +443,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.sinch.VerificationSample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "VerificationSample AdHoc";
+				PROVISIONING_PROFILE_SPECIFIER = "VerificationSample AdHoc2";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
