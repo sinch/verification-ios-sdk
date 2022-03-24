@@ -11,9 +11,9 @@
     <key>com.sinch.VerificationSample</key>
     <string>VerificationSample AdHoc</string>
   </dict>
-  <key>signingStyle</key>
+  <key>signingCertificate</key>
+	<string>Apple Distribution</string>
+	<key>signingStyle</key>
 	<string>manual</string>
-	<key>signingCertificate</key>
-	<string>iPhone Distribution: Sinch AB</string>
 </dict>
 </plist>
