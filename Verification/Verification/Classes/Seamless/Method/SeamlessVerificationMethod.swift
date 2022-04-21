@@ -110,6 +110,7 @@ public class SeamlessVerificationMethod: VerificationMethod {
 extension SeamlessVerificationMethod: SeamlessVerificationExecutorDelegate {
   
   func onResponseReceived(data: Data) {
+    deinitExecutor()
     let rawStringResponse = String(decoding: data, as: UTF8.self)
     let responseHandler = HttpRawResponseHandler(rawStringResponse)
     guard let receivedCode = responseHandler.responseCode else {
@@ -135,6 +136,7 @@ extension SeamlessVerificationMethod: SeamlessVerificationExecutorDelegate {
   
   func onError(error: Error) {
     print("Delegate returned error: \(error)")
+    deinitExecutor()
     verificationListener?.onVerificationFailed(e: error)
   }
   
