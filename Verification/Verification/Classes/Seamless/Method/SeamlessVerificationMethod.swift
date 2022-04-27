@@ -8,6 +8,7 @@
 
 import Alamofire
 import Combine
+import CocoaLumberjack
 
 /// [Verification](x-source-tag://[Verification]) that uses Seamlesss to verify user's phone number.
 ///
@@ -112,6 +113,9 @@ extension SeamlessVerificationMethod: SeamlessVerificationExecutorDelegate {
   func onResponseReceived(data: Data) {
     deinitExecutor()
     let rawStringResponse = String(decoding: data, as: UTF8.self)
+    let rawTargetUriResposne = "\n\n----RAW TARGET URI RESPONSE---\n\n: \(rawStringResponse)\n\n----RAW TARGET URI RESPONSE END---"
+    print(rawTargetUriResposne)
+    DDLogDebug(rawTargetUriResposne)
     let responseHandler = HttpRawResponseHandler(rawStringResponse)
     guard let receivedCode = responseHandler.responseCode else {
       verificationListener?.onVerificationFailed(e: SDKError.unexpected(message: "HTTP response code could not been parsed"))
@@ -121,16 +125,16 @@ extension SeamlessVerificationMethod: SeamlessVerificationExecutorDelegate {
     case 200..<300:
       verificationListener?.onVerified()
       break
-    case 302:
+    case 300..<400:
       guard let redirectUrl = responseHandler.locationHeader else {
-        verificationListener?.onVerificationFailed(e: SDKError.unexpected(message: "302 Response message did not contain Location header"))
+        verificationListener?.onVerificationFailed(e: SDKError.unexpected(message: "300 Response message did not contain Location header"))
         return
       }
       executeSeamlessVerificationCall(targetURI: redirectUrl)
       break
     default:
       //Other error
-      verificationListener?.onVerificationFailed(e: SDKError.unexpected(message: "General seamless verification error"))
+      verificationListener?.onVerificationFailed(e: SDKError.unexpected(message: "Seamless verification error while executing http request"))
     }
   }
   
