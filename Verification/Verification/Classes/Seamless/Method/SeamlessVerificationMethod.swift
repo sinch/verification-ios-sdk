@@ -17,6 +17,8 @@ import CocoaLumberjack
 /// - TAG: SeamlessVerificationMethod
 public class SeamlessVerificationMethod: VerificationMethod {
   
+  static let EXTRA_CHECK_SUCCESSFUL_KEY = "SUCCESSFUL"
+  
   private var seamlessExecutor: SeamlessVerificationExecutor?
         
     override init(
@@ -123,7 +125,11 @@ extension SeamlessVerificationMethod: SeamlessVerificationExecutorDelegate {
     }
     switch receivedCode {
     case 200..<300:
-      verificationListener?.onVerified()
+      if rawStringResponse.contains(SeamlessVerificationMethod.EXTRA_CHECK_SUCCESSFUL_KEY) {
+        verificationListener?.onVerified()
+      } else {
+        verificationListener?.onVerificationFailed(e: SDKError.unexpected(message: "Seamless verification provider returned 200 but response body did not contain proper data"))
+      }
       break
     case 300..<400:
       guard let redirectUrl = responseHandler.locationHeader else {
