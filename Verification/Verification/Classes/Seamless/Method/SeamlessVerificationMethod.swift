@@ -7,6 +7,8 @@
 //
 
 import Alamofire
+import Combine
+import CocoaLumberjack
 
 /// [Verification](x-source-tag://[Verification]) that uses Seamlesss to verify user's phone number.
 ///
@@ -14,6 +16,10 @@ import Alamofire
 /// of the verification.
 /// - TAG: SeamlessVerificationMethod
 public class SeamlessVerificationMethod: VerificationMethod {
+  
+  static let EXTRA_CHECK_SUCCESSFUL_KEY = "SUCCESSFUL"
+  
+  private var seamlessExecutor: SeamlessVerificationExecutor?
         
     override init(
         verificationMethodConfig: VerificationMethodConfiguration,
@@ -42,10 +48,27 @@ public class SeamlessVerificationMethod: VerificationMethod {
     override func onVerify(_ verificationCode: String,
                            fromSource sourceType: VerificationSourceType,
                            usingMethod method: VerificationMethodType?) {
-        self.service
-            .request(SeamlessVerificationRouter.verify(targetUri: verificationCode))
-            .sinchValidationResponse(VerificationApiCallback(listener: self, verificationStateListener: self))
+      executeSeamlessVerificationCall(targetURI: verificationCode)
+
     }
+  
+  private func executeSeamlessVerificationCall(targetURI: String) {
+    guard let urlComponents = URLComponents(string: targetURI) else {
+      return
+    }
+    seamlessExecutor = SeamlessVerificationExecutor(endpoint: urlComponents)
+    seamlessExecutor?.delegate = self
+    do {
+      try seamlessExecutor?.connect()
+    } catch {
+      deinitExecutor()
+      print("Error while trying to connect to executor \(error)")
+    }
+  }
+  
+  private func deinitExecutor() {
+    self.seamlessExecutor = nil
+  }
     
     /// Builder implementing fluent builder pattern to create [SeamlessVerificationMethod](x-source-tag://[SeamlessVerificationMethod]) objects.
     /// - TAG: SeamlessVerificationMethodBuilder
@@ -85,4 +108,46 @@ public class SeamlessVerificationMethod: VerificationMethod {
         verify(verificationCode: data.seamlessDetails?.targetUri ?? "")
     }
     
+}
+
+extension SeamlessVerificationMethod: SeamlessVerificationExecutorDelegate {
+  
+  func onResponseReceived(data: Data) {
+    deinitExecutor()
+    let rawStringResponse = String(decoding: data, as: UTF8.self)
+    let rawTargetUriResposne = "\n\n----RAW TARGET URI RESPONSE---\n\n: \(rawStringResponse)\n\n----RAW TARGET URI RESPONSE END---"
+    print(rawTargetUriResposne)
+    DDLogDebug(rawTargetUriResposne)
+    let responseHandler = HttpRawResponseHandler(rawStringResponse)
+    guard let receivedCode = responseHandler.responseCode else {
+      verificationListener?.onVerificationFailed(e: SDKError.unexpected(message: "HTTP response code could not been parsed"))
+      return
+    }
+    switch receivedCode {
+    case 200..<300:
+      if rawStringResponse.contains(SeamlessVerificationMethod.EXTRA_CHECK_SUCCESSFUL_KEY) {
+        verificationListener?.onVerified()
+      } else {
+        verificationListener?.onVerificationFailed(e: SDKError.unexpected(message: "Seamless verification provider returned 200 but response body did not contain proper data"))
+      }
+      break
+    case 300..<400:
+      guard let redirectUrl = responseHandler.locationHeader else {
+        verificationListener?.onVerificationFailed(e: SDKError.unexpected(message: "300 Response message did not contain Location header"))
+        return
+      }
+      executeSeamlessVerificationCall(targetURI: redirectUrl)
+      break
+    default:
+      //Other error
+      verificationListener?.onVerificationFailed(e: SDKError.unexpected(message: "Seamless verification error while executing http request"))
+    }
+  }
+  
+  func onError(error: Error) {
+    print("Delegate returned error: \(error)")
+    deinitExecutor()
+    verificationListener?.onVerificationFailed(e: error)
+  }
+  
 }

@@ -415,7 +415,7 @@
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 7J28V5J56X;
+				DEVELOPMENT_TEAM = J38B8DW54U;
 				INFOPLIST_FILE = VerificationSample/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -433,8 +433,9 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = EE49D6251AE297B5FC6EDDD6 /* Pods-VerificationSample.release.xcconfig */;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = J38B8DW54U;
 				INFOPLIST_FILE = VerificationSample/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -442,7 +443,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.sinch.VerificationSample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "";
+				PROVISIONING_PROFILE_SPECIFIER = "VerificationSample AdHoc";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

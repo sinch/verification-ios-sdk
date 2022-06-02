@@ -6,7 +6,7 @@
 //  Copyright © 2020 Aleksander Wojcik. All rights reserved.
 //
 
-protocol VerificationStateListener: class {
+protocol VerificationStateListener: AnyObject {
     
     var verificationState: VerificationState { get }
     
