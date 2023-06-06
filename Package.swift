@@ -12,6 +12,6 @@ let package = Package(
         .package(url: "https://github.com/marmelroy/PhoneNumberKit", .upToNextMajor(from: "3.4.0")),
     ],
     targets: [
-        .target(name: "Verification", dependencies: ["Alamofire", PhoneNumberKit"], path: "Verification/Verification/Classes"),
+        .target(name: "Verification", dependencies: ["Alamofire", "PhoneNumberKit"], path: "Verification/Verification/Classes"),
     ]
  )
