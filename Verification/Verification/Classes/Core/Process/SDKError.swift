@@ -6,6 +6,8 @@
 //  Copyright © 2020 Aleksander Wojcik. All rights reserved.
 //
 
+import Foundation
+
 /// Enumeration defining error that SINCH Verifications API can throw.
 public enum SDKError: LocalizedError {
     

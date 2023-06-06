@@ -6,6 +6,8 @@
 //  Copyright © 2020 Aleksander Wojcik. All rights reserved.
 //
 
+import Foundation
+
 extension Decodable {
     
     static func make(from json: JSON) throws -> Self {

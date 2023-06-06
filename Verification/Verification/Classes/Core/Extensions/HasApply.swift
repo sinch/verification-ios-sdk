@@ -6,6 +6,8 @@
 //  Copyright © 2020 Aleksander Wojcik. All rights reserved.
 //
 
+import Foundation
+
 /** Protocol used for making Swift classes be able to use `apply` function.
  
  The concept is a copy of Kotlin's [apply](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/apply.html) function.

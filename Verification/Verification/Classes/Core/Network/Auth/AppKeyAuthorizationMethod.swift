@@ -6,6 +6,8 @@
 //  Copyright © 2020 Aleksander Wojcik. All rights reserved.
 //
 
+import Foundation
+
 /**
  [AuthorizationMethod](x-source-tag://[AuthorizationMethod]) that uses application key to authorize API requests. To get the key check your application page on
  [Sinch Dashboard](https://portal.sinch.com/)
