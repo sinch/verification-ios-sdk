@@ -8,7 +8,6 @@
 
 import Alamofire
 import Combine
-import CocoaLumberjack
 
 /// [Verification](x-source-tag://[Verification]) that uses Seamlesss to verify user's phone number.
 ///
@@ -117,7 +116,6 @@ extension SeamlessVerificationMethod: SeamlessVerificationExecutorDelegate {
     let rawStringResponse = String(decoding: data, as: UTF8.self)
     let rawTargetUriResposne = "\n\n----RAW TARGET URI RESPONSE---\n\n: \(rawStringResponse)\n\n----RAW TARGET URI RESPONSE END---"
     print(rawTargetUriResposne)
-    DDLogDebug(rawTargetUriResposne)
     let responseHandler = HttpRawResponseHandler(rawStringResponse)
     guard let receivedCode = responseHandler.responseCode else {
       verificationListener?.onVerificationFailed(e: SDKError.unexpected(message: "HTTP response code could not been parsed"))

@@ -11,7 +11,6 @@ project 'Verification/Verification.xcodeproj'
 def verification_pods
   pod 'Alamofire', '~> 5.2'
   pod 'PhoneNumberKit', '~> 3.1'
-  pod 'CocoaLumberjack/Swift', '~> 3.7.0'
 end
 
 target 'VerificationSample' do
