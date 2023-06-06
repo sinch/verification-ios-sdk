@@ -13,6 +13,6 @@ let package = Package(
         .package(url: "https://github.com/ashleymills/Reachability.swift", from: "5.1.0")
     ],
     targets: [
-        .target(name: "Verification", dependencies: ["Alamofire", "CocoaLumberjack", "PhoneNumberKit"], path: "Verification/Verification/Classes"),
+        .target(name: "Verification", dependencies: ["Alamofire", "CocoaLumberjack", "PhoneNumberKit", "Reachability"], path: "Verification/Verification/Classes"),
     ]
  )
