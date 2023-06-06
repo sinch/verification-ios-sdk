@@ -6,6 +6,8 @@
 //  Copyright © 2020 Aleksander Wojcik. All rights reserved.
 //
 
+import Foundation
+
 class InitiationApiCallback {
     
     private weak var verificationStateListener: VerificationStateListener?
