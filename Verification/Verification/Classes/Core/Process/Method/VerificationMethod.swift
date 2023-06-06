@@ -7,6 +7,7 @@
 //
 
 import Alamofire
+import Foundation
 
 /// Class containing common logic for every verification method.
 ///

@@ -8,6 +8,7 @@
 
 import Alamofire
 import Combine
+import Foundation
 
 /// [Verification](x-source-tag://[Verification]) that uses Seamlesss to verify user's phone number.
 ///
