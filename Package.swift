@@ -3,7 +3,7 @@
 import PackageDescription
 let package = Package(
     name: "SinchVerificationSDK",
-    platforms: [.iOS(.v12),
+    platforms: [.iOS(.v12)],
     products: [
         .library(name: "Verification", targets: ["Verification"])
     ],
