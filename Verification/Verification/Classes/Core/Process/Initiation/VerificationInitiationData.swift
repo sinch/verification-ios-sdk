@@ -38,7 +38,7 @@ protocol VerificationInitiationData {
 extension VerificationInitiationData {
     
     init(basedOnConfiguration config: VerificationMethodConfiguration) {
-        self.init(identity: VerificationIdentity(endpoint: config.number), honourEarlyReject: config.honoursEarlyReject, custom: config.custom, reference: config.reference, metadata: config.metadataFactory.create())
+        self.init(identity: VerificationIdentity(endpoint: config.number ?? ""), honourEarlyReject: config.honoursEarlyReject, custom: config.custom, reference: config.reference, metadata: config.metadataFactory.create())
     }
     
 }

@@ -54,7 +54,7 @@ public class CalloutVerificationConfig: VerificationMethodConfiguration {
         /// - Returns: CalloutVerificationConfig  instance with previously defined parameters.
         public func build() -> CalloutVerificationConfig {
             return CalloutVerificationConfig(
-                globalConfig: self.globalConfig, number: self.number, custom: self.custom,
+                globalConfig: self.globalConfig, number: self.number ?? "", custom: self.custom,
                 reference: self.reference, honoursEarlyReject: self.honourEarlyReject, acceptedLanguages: self.acceptedLanguages
             )
         }

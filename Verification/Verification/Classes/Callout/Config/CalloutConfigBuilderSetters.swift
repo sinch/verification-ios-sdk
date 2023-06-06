@@ -18,7 +18,7 @@ public protocol CalloutVerificationNumberSetter {
 public extension CalloutVerificationNumberSetter {
     
     func withVerificationProperties(_ verificationProperties: VerificationMethodProperties) -> CalloutVerificationConfigCreator {
-        number(verificationProperties.number)
+        number(verificationProperties.number ?? "")
             .custom(verificationProperties.custom)
             .honourEarlyReject(verificationProperties.honoursEarlyReject)
             .reference(verificationProperties.reference)
