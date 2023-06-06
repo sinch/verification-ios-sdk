@@ -6,6 +6,8 @@
 //  Copyright © 2020 Aleksander Wojcik. All rights reserved.
 //
 
+import Foundation
+
 /**
  General interface used for implementing different kind of ways to authorize Sinch API requests.
   - Tag: AuthorizationMethod
