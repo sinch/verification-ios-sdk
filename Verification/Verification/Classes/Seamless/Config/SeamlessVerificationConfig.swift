@@ -13,7 +13,7 @@
 public class SeamlessVerificationConfig: VerificationMethodConfiguration {
     
     internal init(
-        globalConfig: SinchGlobalConfig, number: String, custom: String? = nil,
+        globalConfig: SinchGlobalConfig, number: String?, custom: String? = nil,
         reference: String? = nil, honoursEarlyReject: Bool = true,
         acceptedLanguages: [VerificationLanguage] = []) {
         super.init(globalConfig: globalConfig, number: number, custom: custom,
@@ -48,6 +48,11 @@ public class SeamlessVerificationConfig: VerificationMethodConfiguration {
         /// - Returns: Instance of builder with assigned number field.
         public func number(_ number: String) -> SeamlessVerificationConfigCreator {
             return self.apply { $0.number = number }
+        }
+        
+        /// Allows to build a verification instance not meant to be initialized (POST /verifications request). In such a case it's not needed to pass a number to be verified and app can proceed to verify request directly. In such a flow a verification could be initialized externally and the SDK can be used to execute just the verification request. To do that pass the received 'targetUrl' parameter directly to the `verify` method.
+        public func skipLocalInitialization() -> SeamlessVerificationConfigCreator {
+            return self
         }
         
         /// Builds [SeamlessVerificationConfig](x-source-tag://[SeamlessVerificationConfig]) instance.

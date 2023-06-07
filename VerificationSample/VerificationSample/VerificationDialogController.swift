@@ -9,7 +9,6 @@
 import UIKit
 import Verification
 import SwiftEventBus
-import CocoaLumberjack
 
 protocol VerificationDialogDelegate: class {
     func verificationDialog(_ verificationDialog: VerificationDialogController, didTypeVerificationCode verificationCode: String, forMethod method: VerificationMethodType?)
@@ -59,10 +58,10 @@ class VerificationDialogController: UIViewController {
         hideKeyboardOnTouches()
         cancelButton.layer.borderWidth = 0.5
         cancelButton.layer.borderColor = UIColor.gray.cgColor
-        SwiftEventBus.onMainThread(self, name: SwiftEventBusLogger.DEBUG_EVENT_NAME) { [weak self] notification in
-            guard let notification = notification?.object as? DDLogMessage else { return }
+        SwiftEventBus.onMainThread(self, name: EventBusDestination.DEBUG_EVENT_NAME) { [weak self] notification in
+            guard let message = notification?.object as? String else { return }
             let currentText = self?.loggingLabel.text ?? ""
-            let modifiedText = currentText.isEmpty ? notification.message : "\(currentText)\n\(notification.message)"
+            let modifiedText = currentText.isEmpty ? message : "\(currentText)\n\(message)"
             self?.loggingLabel.text = modifiedText
         }
     }

@@ -7,7 +7,10 @@
 //
 
 import Alamofire
-import CocoaLumberjack
+import Foundation
+import SwiftyBeaver
+
+let log = SwiftyBeaver.self
 
 /// Class containing common logic for every verification method.
 ///
@@ -52,7 +55,7 @@ public class VerificationMethod: VerificationMethodCallbacks, InitiationListener
     private func verify(_ verificationCode: String, fromSource sourceType: VerificationSourceType, usingMethod method: VerificationMethodType?) {
         if verificationState.canVerify {
             update(newState: .verification(status: .ongoing))
-            DDLogDebug("Verification trying to verify code \(verificationCode) fromSource: \(sourceType) with \(String(describing: method))")
+            log.debug("Verification trying to verify code \(verificationCode) fromSource: \(sourceType) with \(String(describing: method))")
             onVerify(verificationCode, fromSource: sourceType, usingMethod: method)
         }
     }
@@ -78,13 +81,11 @@ public class VerificationMethod: VerificationMethodCallbacks, InitiationListener
     }
     
     public func onVerified() {
-        DDLogDebug("Verification successfull")
         self.cancelInterceptionTimeoutCallback()
         self.verificationListener?.onVerified()
     }
     
     public func onVerificationFailed(e: Error) {
-        DDLogDebug("Verificaiton failed with error: \(e.localizedDescription)")
         self.verificationListener?.onVerificationFailed(e: e)
     }
     

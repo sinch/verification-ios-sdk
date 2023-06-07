@@ -6,6 +6,8 @@
 //  Copyright © 2020 Aleksander Wojcik. All rights reserved.
 //
 
+import Foundation
+
 /// Interface defining common requirements for each verification method initiation response data.
 public struct InitiationResponseData: Equatable, Codable {
     

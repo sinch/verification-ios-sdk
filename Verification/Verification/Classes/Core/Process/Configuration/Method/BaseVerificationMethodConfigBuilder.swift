@@ -12,7 +12,7 @@
 public class BaseVerificationMethodConfigBuilder: VerificationMethodConfigCreatorParameters {
     
     var globalConfig: SinchGlobalConfig!
-    var number: String!
+    var number: String?
     
     private(set) var honourEarlyReject: Bool = true
     private(set) var custom: String?

@@ -7,6 +7,7 @@
 //
 
 import Alamofire
+import Foundation
 
 /// Monitor that logs each Alamofire request and response to standard output.
 final class LoggingMonitor: EventMonitor {

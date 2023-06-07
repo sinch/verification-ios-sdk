@@ -10,9 +10,8 @@ project 'Verification/Verification.xcodeproj'
 
 def verification_pods
   pod 'Alamofire', '~> 5.2'
-  pod 'ReachabilitySwift'
   pod 'PhoneNumberKit', '~> 3.1'
-  pod 'CocoaLumberjack/Swift', '~> 3.7.0'
+  pod 'SwiftyBeaver'
 end
 
 target 'VerificationSample' do
@@ -29,4 +28,14 @@ target 'Verification' do
       pod 'Mocker', '~> 2.2.0'
   end
   
+end
+
+post_install do |installer|
+    installer.generated_projects.each do |project|
+          project.targets.each do |target|
+              target.build_configurations.each do |config|
+                  config.build_settings['IPHONEOS_DEPLOYMENT_TARGET'] = '13.0'
+               end
+          end
+   end
 end

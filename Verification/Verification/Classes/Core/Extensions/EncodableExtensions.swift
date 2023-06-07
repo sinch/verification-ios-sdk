@@ -6,6 +6,8 @@
 //  Copyright © 2020 Aleksander Wojcik. All rights reserved.
 //
 
+import Foundation
+
 typealias JSON = [String: Any]
 
 extension JSONEncoder {

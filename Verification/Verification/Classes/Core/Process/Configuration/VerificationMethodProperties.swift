@@ -12,7 +12,7 @@ import Foundation
 public protocol VerificationMethodProperties {
     
     /// Number that needs be verified.
-    var number: String { get }
+    var number: String? { get }
     
     /// Custom string that is passed with the initiation request.
     var custom: String? { get }

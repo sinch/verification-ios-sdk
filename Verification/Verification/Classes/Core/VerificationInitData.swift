@@ -12,7 +12,7 @@ import Foundation
 public struct VerificationInitData: VerificationMethodProperties {
     
     public let usedMethod: VerificationMethodType
-    public let number: String
+    public let number: String?
     public let custom: String?
     public let reference: String?
     public let honoursEarlyReject: Bool

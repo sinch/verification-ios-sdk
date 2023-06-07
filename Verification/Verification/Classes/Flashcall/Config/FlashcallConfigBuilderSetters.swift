@@ -18,7 +18,7 @@ public protocol FlashcallVerificationNumberSetter {
 public extension FlashcallVerificationNumberSetter {
     
     func withVerificationProperties(_ verificationProperties: VerificationMethodProperties) -> FlashcallVerificationConfigCreator {
-        number(verificationProperties.number)
+        number(verificationProperties.number ?? "")
             .custom(verificationProperties.custom)
             .honourEarlyReject(verificationProperties.honoursEarlyReject)
             .reference(verificationProperties.reference)

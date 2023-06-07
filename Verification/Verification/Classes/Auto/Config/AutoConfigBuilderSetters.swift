@@ -20,7 +20,7 @@ public protocol AutoVerificationNumberSetter {
 public extension AutoVerificationNumberSetter {
     
     func withVerificationProperties(_ verificationProperties: VerificationMethodProperties) -> AutoVerificationConfigCreator {
-        number(verificationProperties.number)
+        number(verificationProperties.number ?? "")
             .custom(verificationProperties.custom)
             .honourEarlyReject(verificationProperties.honoursEarlyReject)
             .reference(verificationProperties.reference)

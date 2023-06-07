@@ -56,7 +56,7 @@ public class AutoVerificationConfig: VerificationMethodConfiguration {
         /// - Returns: AutoVerificationConfig  instance with previously defined parameters.
         public func build() -> AutoVerificationConfig {
             return AutoVerificationConfig(
-                globalConfig: self.globalConfig, number: self.number, custom: self.custom,
+                globalConfig: self.globalConfig, number: self.number ?? "", custom: self.custom,
                 reference: self.reference, honoursEarlyReject: self.honourEarlyReject, acceptedLanguages: self.acceptedLanguages
             )
         }

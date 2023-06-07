@@ -6,6 +6,7 @@
 //  Copyright © 2020 Sinch. All rights reserved.
 //
 
+import Foundation
 
 class ConfiguarionNameCollector: MetadataCollector {
 

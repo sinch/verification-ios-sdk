@@ -8,6 +8,7 @@
 
 
 import Alamofire
+import Foundation
 
 /// Protocol defining properties of each SINCH API request.
 protocol APIRouter: URLRequestConvertible {

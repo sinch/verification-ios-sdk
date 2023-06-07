@@ -7,6 +7,7 @@
 //
 
 import Alamofire
+import Foundation
 
 /// Manager used for interacting with Sinch Verification API.
 /// - Tag: ApiManager

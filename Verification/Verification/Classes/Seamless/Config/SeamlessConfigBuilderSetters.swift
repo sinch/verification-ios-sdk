@@ -13,13 +13,19 @@ public protocol SeamlessGlobalConfigSetter {
 public protocol SeamlessVerificationNumberSetter {
     func withVerificationProperties(_ verificationProperties: VerificationMethodProperties) -> SeamlessVerificationConfigCreator
     func number(_ number: String) -> SeamlessVerificationConfigCreator
+    func skipLocalInitialization() -> SeamlessVerificationConfigCreator
 }
 
 public extension SeamlessVerificationNumberSetter {
     
     func withVerificationProperties(_ verificationProperties: VerificationMethodProperties) -> SeamlessVerificationConfigCreator {
-        number(verificationProperties.number)
-            .custom(verificationProperties.custom)
+        let creator: SeamlessVerificationConfigCreator
+        if let propNumber = verificationProperties.number {
+            creator = self.number(propNumber)
+        } else {
+            creator = self.skipLocalInitialization()
+        }
+        return creator.custom(verificationProperties.custom)
             .honourEarlyReject(verificationProperties.honoursEarlyReject)
             .reference(verificationProperties.reference)
             .acceptedLanguages(verificationProperties.acceptedLanguages)

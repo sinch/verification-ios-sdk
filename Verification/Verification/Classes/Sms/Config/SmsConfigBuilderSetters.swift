@@ -18,7 +18,7 @@ public protocol SmsVerificationNumberSetter {
 public extension SmsVerificationNumberSetter {
     
     func withVerificationProperties(_ verificationProperties: VerificationMethodProperties) -> SmsVerificationConfigCreator {
-        number(verificationProperties.number)
+        number(verificationProperties.number ?? "")
             .custom(verificationProperties.custom)
             .honourEarlyReject(verificationProperties.honoursEarlyReject)
             .reference(verificationProperties.reference)

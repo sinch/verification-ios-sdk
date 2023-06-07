@@ -7,15 +7,21 @@
 //
 
 import UIKit
-import CocoaLumberjack
+import SwiftyBeaver
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
-        DDLog.add(DDOSLogger.sharedInstance) // Uses os_log
-        DDLog.add(SwiftEventBusLogger.sharedInstance)
+        // add log destinations. at least one is needed!
+        let console = ConsoleDestination()  // log to Xcode Console
+        let file = FileDestination()  // log to default swiftybeaver.log file
+        let eventBusDestination = EventBusDestination()
+        let log = SwiftyBeaver.self
+        log.addDestination(console)
+        log.addDestination(file)
+        log.addDestination(eventBusDestination)
         return true
     }
 

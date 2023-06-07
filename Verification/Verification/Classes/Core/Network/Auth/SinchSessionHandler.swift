@@ -7,6 +7,7 @@
 //
 
 import Alamofire
+import Foundation
 
 /// Alamofire Interceptor used for modyfing API calls executed by  [ApiManager](x-source-tag://[ApiManager])
 class SinchSessionHandler {

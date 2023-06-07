@@ -54,7 +54,7 @@ public class SmsVerificationConfig: VerificationMethodConfiguration {
         /// - Returns: SmsVerificationConfig  instance with previously defined parameters.
         public func build() -> SmsVerificationConfig {
             return SmsVerificationConfig(
-                globalConfig: self.globalConfig, number: self.number, custom: self.custom,
+                globalConfig: self.globalConfig, number: self.number ?? "", custom: self.custom,
                 reference: self.reference, honoursEarlyReject: self.honourEarlyReject, acceptedLanguages: self.acceptedLanguages
             )
         }

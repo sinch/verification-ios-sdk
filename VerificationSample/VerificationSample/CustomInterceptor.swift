@@ -7,6 +7,7 @@
 //
 
 import Alamofire
+import Foundation
 
 class CustomInterceptor: RequestInterceptor {
     
