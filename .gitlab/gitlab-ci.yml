@@ -9,9 +9,17 @@ include:
 stages:
     - Test SDK
     - Build Sample
-    - Publish To CocoaPods
+    - Publish To AppStore # Only for TestFlight testing
 
 ############################################## pipeline jobs
+
+testSDK:release:
+  extends:
+    - .conf:env
+    - .conf:release
+    - .conf:runner:tags
+    - .conf:rule:default
+    - .testSDK:do
 
 buildSample:debug:
   extends:
@@ -22,18 +30,10 @@ buildSample:debug:
     - .conf:rule:default
     - .buildSample:do
 
-publishToMaven:release:
+publishToAppStore:release:
   extends:
     - .conf:env
     - .conf:release
     - .conf:runner:tags
-    - .conf:rule:release
-    - .publishToCocoaPods:do
-
-testSDK:release:
-  extends:
-    - .conf:env
-    - .conf:release
-    - .conf:runner:tags
-    - .conf:rule:default
-    - .testSDK:do
+    - .conf:rule:defaultBranch
+    - .publishToAppStore:do

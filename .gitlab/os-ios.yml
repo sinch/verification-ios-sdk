@@ -24,9 +24,7 @@
 
 .conf:runner:tags:
     tags:
-        - shell
-        - concurrent
-        - android-ndk-r16b
+        - rtc-mac
 
 .conf:debug:
     variables:
@@ -63,8 +61,9 @@
         - *before_script_ios
         - pod install
         - security unlock-keychain -p $KEY_PASS appledev.keychain
+        - sed -i '' "s/<YOUR APP KEY>/$SAMPLE_APP_KEY/g" VerificationSample/VerificationSample/Environments.swift
         - xcodebuild -workspace verification-ios-sdk.xcworkspace -scheme VerificationSample -sdk iphoneos archive -derivedDataPath cOut/derivedData -archivePath cOut/artifacts/VerificationSample.xcarchive ONLY_ACTIVE_ARCH=NO
-        - xcodebuild -exportArchive -archivePath cOut/artifacts/VerificationSample.xcarchive -exportOptionsPlist VerificationSample/exportOptionsAdHoc.plist -exportPath cOut/artifacts/IPA
+        - xcodebuild -exportArchive -archivePath cOut/artifacts/VerificationSample.xcarchive -exportOptionsPlist VerificationSample/exportOptionsAdHoc.plist -exportPath cOut/artifacts/IPA -allowProvisioningUpdates
 
     interruptible: true
 
@@ -73,11 +72,9 @@
         paths:
             - cOut/artifacts/
 
-.publishToCocoaPods:do:
-    stage: Publish To CocoaPods
-
+.publishToAppStore:do:
+    stage: Publish To AppStore
     script:
         - *before_script_ios
-        - echo 'Publishing to CocoaPods' #TODO
-
+        - xcodebuild -exportArchive -archivePath cOut/artifacts/VerificationSample.xcarchive -exportOptionsPlist VerificationSample/exportOptionsAppStore.plist -exportPath cOut/artifacts/AppStoreIPA -allowProvisioningUpdates
     interruptible: true
