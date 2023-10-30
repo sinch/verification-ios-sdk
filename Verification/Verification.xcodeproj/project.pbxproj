@@ -1481,7 +1481,7 @@
 			baseConfigurationReference = CB66CBA28D723E2B2EF086B6 /* Pods-Verification.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
-				API_URL = "https://dc-usw2-std.verification.api.sinch.com/";
+				API_URL = "https://verification.api.sinch.com/";
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
@@ -1516,7 +1516,7 @@
 			baseConfigurationReference = FE30DF4B845BBE4B9A1BC28D /* Pods-Verification.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
-				API_URL = "https://dc-usw2-std.verification.api.sinch.com/";
+				API_URL = "https://verification.api.sinch.com/";
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Manual;
