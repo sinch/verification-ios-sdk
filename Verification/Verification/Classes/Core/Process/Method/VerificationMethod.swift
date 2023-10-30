@@ -55,7 +55,6 @@ public class VerificationMethod: VerificationMethodCallbacks, InitiationListener
     private func verify(_ verificationCode: String, fromSource sourceType: VerificationSourceType, usingMethod method: VerificationMethodType?) {
         if verificationState.canVerify {
             update(newState: .verification(status: .ongoing))
-            log.debug("Verification trying to verify code \(verificationCode) fromSource: \(sourceType) with \(String(describing: method))")
             onVerify(verificationCode, fromSource: sourceType, usingMethod: method)
         }
     }

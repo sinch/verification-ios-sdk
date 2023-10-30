@@ -3,12 +3,18 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 51;
+	objectVersion = 54;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		1D925759BC10BA4E754F0CE6 /* Pods_Verification.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 30BC95CAA38FB91215C425F8 /* Pods_Verification.framework */; };
 		46BC720D1E7F9270BAFAD983 /* Pods_Verification_VerificationTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 522340C046E2AB95BDA9196B /* Pods_Verification_VerificationTests.framework */; };
+		880343652AEBB17C004381CB /* sslfuncs.c in Sources */ = {isa = PBXBuildFile; fileRef = 8803435F2AEBB17B004381CB /* sslfuncs.c */; };
+		880343662AEBB17C004381CB /* SocketAddress.h in Headers */ = {isa = PBXBuildFile; fileRef = 880343602AEBB17C004381CB /* SocketAddress.h */; };
+		880343672AEBB17C004381CB /* sslfuncs.h in Headers */ = {isa = PBXBuildFile; fileRef = 880343612AEBB17C004381CB /* sslfuncs.h */; };
+		880343682AEBB17C004381CB /* HTTPRequester.m in Sources */ = {isa = PBXBuildFile; fileRef = 880343622AEBB17C004381CB /* HTTPRequester.m */; };
+		880343692AEBB17C004381CB /* HTTPRequester.h in Headers */ = {isa = PBXBuildFile; fileRef = 880343632AEBB17C004381CB /* HTTPRequester.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		8803436A2AEBB17C004381CB /* SocketAddress.m in Sources */ = {isa = PBXBuildFile; fileRef = 880343642AEBB17C004381CB /* SocketAddress.m */; };
 		8813C97C2A2F3029002CC9B4 /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8813C97B2A2F3029002CC9B4 /* Reachability.swift */; };
 		B1140C6727B4F14100BC2583 /* SeamlessVerificationExecutor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1140C6627B4F14100BC2583 /* SeamlessVerificationExecutor.swift */; };
 		B1578A96250608CC00E2068D /* PhoneNumberUITextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1578A95250608CC00E2068D /* PhoneNumberUITextField.swift */; };
@@ -161,6 +167,12 @@
 		522340C046E2AB95BDA9196B /* Pods_Verification_VerificationTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Verification_VerificationTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		708378DAF96DEE26452BFC2A /* Pods-Verification-VerificationTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Verification-VerificationTests.debug.xcconfig"; path = "Target Support Files/Pods-Verification-VerificationTests/Pods-Verification-VerificationTests.debug.xcconfig"; sourceTree = "<group>"; };
 		81958E9236C92FA63FA25DAE /* Pods-Verification-VerificationTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Verification-VerificationTests.release.xcconfig"; path = "Target Support Files/Pods-Verification-VerificationTests/Pods-Verification-VerificationTests.release.xcconfig"; sourceTree = "<group>"; };
+		8803435F2AEBB17B004381CB /* sslfuncs.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = sslfuncs.c; sourceTree = "<group>"; };
+		880343602AEBB17C004381CB /* SocketAddress.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SocketAddress.h; sourceTree = "<group>"; };
+		880343612AEBB17C004381CB /* sslfuncs.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = sslfuncs.h; sourceTree = "<group>"; };
+		880343622AEBB17C004381CB /* HTTPRequester.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTTPRequester.m; sourceTree = "<group>"; };
+		880343632AEBB17C004381CB /* HTTPRequester.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTTPRequester.h; sourceTree = "<group>"; };
+		880343642AEBB17C004381CB /* SocketAddress.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SocketAddress.m; sourceTree = "<group>"; };
 		8813C97B2A2F3029002CC9B4 /* Reachability.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
 		B1140C6627B4F14100BC2583 /* SeamlessVerificationExecutor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeamlessVerificationExecutor.swift; sourceTree = "<group>"; };
 		B1578A95250608CC00E2068D /* PhoneNumberUITextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneNumberUITextField.swift; sourceTree = "<group>"; };
@@ -334,6 +346,19 @@
 			);
 			name = Pods;
 			path = ../Pods;
+			sourceTree = "<group>";
+		};
+		8803435E2AEBB155004381CB /* NetworkingLogic */ = {
+			isa = PBXGroup;
+			children = (
+				880343632AEBB17C004381CB /* HTTPRequester.h */,
+				880343622AEBB17C004381CB /* HTTPRequester.m */,
+				880343602AEBB17C004381CB /* SocketAddress.h */,
+				880343642AEBB17C004381CB /* SocketAddress.m */,
+				8803435F2AEBB17B004381CB /* sslfuncs.c */,
+				880343612AEBB17C004381CB /* sslfuncs.h */,
+			);
+			path = NetworkingLogic;
 			sourceTree = "<group>";
 		};
 		AC06FF8E5233AF3AC0146297 /* Frameworks */ = {
@@ -521,6 +546,7 @@
 		B1E841A824E1527F00C29730 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				8803435E2AEBB155004381CB /* NetworkingLogic */,
 				B1CA818E257F73A20097B625 /* Auto */,
 				B1E842C724E157AB00C29730 /* Helper */,
 				B1E842B524E1577C00C29730 /* Seamless */,
@@ -994,7 +1020,10 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				880343662AEBB17C004381CB /* SocketAddress.h in Headers */,
+				880343692AEBB17C004381CB /* HTTPRequester.h in Headers */,
 				B1E8419F24E1527900C29730 /* Verification.h in Headers */,
+				880343672AEBB17C004381CB /* sslfuncs.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1054,6 +1083,7 @@
 				TargetAttributes = {
 					B1E8418D24E1527900C29730 = {
 						CreatedOnToolsVersion = 11.6;
+						LastSwiftMigration = 1500;
 					};
 					B1E8419624E1527900C29730 = {
 						CreatedOnToolsVersion = 11.6;
@@ -1168,9 +1198,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				B1E8424A24E154A900C29730 /* VerificationMethodConfigCreatorParameters.swift in Sources */,
+				8803436A2AEBB17C004381CB /* SocketAddress.m in Sources */,
 				B1E8428E24E156CF00C29730 /* DefaultLocaleCollector.swift in Sources */,
 				B1E842B124E1572300C29730 /* CalloutVerificationData.swift in Sources */,
 				B1E8420124E1546200C29730 /* FlashcallVerificationMethod.swift in Sources */,
+				880343682AEBB17C004381CB /* HTTPRequester.m in Sources */,
 				B194B128257F7F48002018BC /* AutoVerificationRouter.swift in Sources */,
 				B1CA81A1257F76A00097B625 /* AutoVerificationConfigSetter.swift in Sources */,
 				B1E8424D24E154A900C29730 /* VerificationIdentity.swift in Sources */,
@@ -1199,6 +1231,7 @@
 				B1E841EF24E153BD00C29730 /* SmsVerificationConfigSetter.swift in Sources */,
 				B1E8426124E154A900C29730 /* VerificationMethod.swift in Sources */,
 				B1E8425C24E154A900C29730 /* VerificationData.swift in Sources */,
+				880343652AEBB17C004381CB /* sslfuncs.c in Sources */,
 				B17610792510A843000C5EC1 /* ResponseHeadersExtensions.swift in Sources */,
 				B1E8426424E154A900C29730 /* AuthorizationMethod.swift in Sources */,
 				B1E842B224E1572300C29730 /* CalloutVerificationDetails.swift in Sources */,
@@ -1449,6 +1482,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				API_URL = "https://verification.api.sinch.com/";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Manual;
@@ -1470,6 +1504,8 @@
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				"PROVISIONING_PROFILE_SPECIFIER[sdk=macosx*]" = "";
 				SKIP_INSTALL = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -1481,6 +1517,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				API_URL = "https://verification.api.sinch.com/";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Manual;
 				DEFINES_MODULE = YES;
@@ -1501,6 +1538,7 @@
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				"PROVISIONING_PROFILE_SPECIFIER[sdk=macosx*]" = "";
 				SKIP_INSTALL = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
