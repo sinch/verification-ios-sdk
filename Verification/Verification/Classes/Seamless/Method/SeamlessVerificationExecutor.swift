@@ -10,88 +10,66 @@ import Foundation
 import Network
 
 protocol SeamlessVerificationExecutorDelegate: AnyObject {
-  
-  func onResponseReceived(data: Data)
-  
+  func onSuccess(data: String)
   func onError(error: Error)
-  
 }
 
 internal class SeamlessVerificationExecutor {
   
-  private let GET_FORMAT_STR = "GET %@ HTTP/1.1\r\n%@Host: %@\r\n\r\n"
-  
-  private let endpoint: URLComponents
   private let dispatchQueue = DispatchQueue.global(qos: .background)
-  private let connection: NWConnection
   
   weak var delegate: SeamlessVerificationExecutorDelegate?
   
-  init(endpoint: URLComponents) {
-    self.endpoint = endpoint
-    let tlsOptions = NWProtocolTLS.Options()
-    let tcpOptions = NWProtocolTCP.Options()
-    let port = endpoint.scheme == "http" ? NWEndpoint.Port.http : NWEndpoint.Port.https
-    let params = NWParameters(tls: port == NWEndpoint.Port.https ? tlsOptions : nil, tcp: tcpOptions)
-    params.requiredInterfaceType = .cellular
-    let host = NWEndpoint.Host(endpoint.host!)
+  func requestEvurlWithCellularData(evurl: String) {
+    dispatchQueue.async { [weak self] in
+      self?.requestEvurlWithCellularData_wt(evurl: evurl)
+    }
+  }
+  
+  private func requestEvurlWithCellularData_wt(evurl: String) {
+    let response = requestHelper(url: evurl)
     
-    self.connection =  NWConnection(host: host, port: port, using: params)
-    self.connection.stateUpdateHandler = { [weak self] newState in
-      print("TCP state change to: \(newState)")
-      switch newState {
-      case .ready:
-        self?.executeGET()
-        break
-      case .waiting(let error), .failed(let error):
-        self?.onDelegateThread { [weak self] in
-          self?.delegate?.onError(error: error)
-        }
-        self?.disconnect(withErrorCause: error)
-      default:
-        break
+    // If any internal and network errors occured in HTTPRequester.performGetRequest, the function will return "ERROR"
+    if response == "ERROR" {
+      onDelegateThread {
+        delegate?.onError(error: SDKError.unexpected(message: "Error when executing HTTP requests"))
+      }
+    } else {
+      // Final response after redirects received
+      onDelegateThread {
+        delegate?.onSuccess(data: response)
       }
     }
+  }
+  
+  /**
+   Recursive function that keeps requesting a new URL with cellular data when the HTTP request returns a HTTP redirect code (3xx)
+   
+   - Parameter url: The URL to be requested
+   - Returns: string response from the HTTP request
+   */
+  private func requestHelper(url: String) -> String {
+    // If the HTTP GET request returns a HTTP redirect code (3xx), HTTPRequester.performGetRequest returns a
+    // formatted string that contains the redirect URL. The formatted string starts with "REDIRECT:"
+    // and it's followed with the redirect URL.
+    print("Executing GET at \(url)")
+    var response = HTTPRequester.performGetRequest(URL(string: url.replacingOccurrences(of: " ", with: "%20")))
     
-  }
-  
-  func connect() throws {
-    connection.start(queue: dispatchQueue)
-  }
-  
-  func disconnect(withErrorCause error: Error?) {
-    if connection.state != .cancelled {
-      connection.cancel()
-    }
-  }
-  
-  func executeGET() {
-    let path = endpoint.path != "" ? endpoint.path : "/"
-    let query = endpoint.query != nil ? "?" + endpoint.query! : ""
-    let body =  String(format: GET_FORMAT_STR, String(path + query).addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!.trimmingCharacters(in: .whitespacesAndNewlines) , "", endpoint.host!)
-    let data = body.data(using: .utf8)
-    
-    self.connection.send(content: data, completion: NWConnection.SendCompletion.contentProcessed { _ in })
-    self.connection.receive(minimumIncompleteLength: 1, maximumLength: 8192) {  [weak self] completeContent, contentContext, isComplete, error in
-      self?.onDelegateThread { [weak self] in
-        if let error = error {
-          self?.delegate?.onError(error: error)
-        } else {
-          self?.delegate?.onResponseReceived(data: completeContent!)
-        }
-      }
+    if response!.range(of:"REDIRECT:") != nil {
+      // 1. Get the redirect URL by getting rid of the "REDIRECT:" substring
+      let redirectRange = response!.index(response!.startIndex, offsetBy: 9)...
+      let redirectLink = String(response![redirectRange])
+      // 2. Make a request to the redirect URL
+      response = requestHelper(url: redirectLink)
     }
     
+    return response!
   }
   
   private func onDelegateThread(_ f: ()->Void) {
     DispatchQueue.main.sync {
       f()
     }
-  }
-  
-  deinit {
-    disconnect(withErrorCause: nil)
   }
   
 }
