@@ -62,7 +62,6 @@ public class PhoneNumberUITextField: UITextField {
     }
     
     @objc private func numberDidChanged() {
-        self.updateDisplayedText()
     }
     
 }

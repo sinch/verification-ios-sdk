@@ -55,7 +55,7 @@ class VerificationController: UIViewController {
     private var initData: VerificationInitData {
         return VerificationInitData(
             usedMethod: buttonToMethodMap[selectedMethodButton] ?? .sms,
-            number: phoneNumberTextField.e164Number ?? "",
+            number: phoneNumberTextField.e164Number ?? phoneNumberTextField.text ?? "",
             custom: customField.text?.nilIfEmpty(),
             reference: referenceField.text?.nilIfEmpty(),
             honoursEarlyReject: honoursEarlyRejectField.isOn,
@@ -123,7 +123,7 @@ class VerificationController: UIViewController {
     private func buildSmsVerification() -> Verification {
         let smsConfiguration = SmsVerificationConfig.Builder.instance()
             .globalConfig(globalConfig)
-            .number(self.phoneNumberTextField.e164Number ?? "")
+            .number(self.phoneNumberTextField.e164Number ?? self.phoneNumberTextField.text ?? "")
             .acceptedLanguages((try? self.acceptedLanguagesField.text?.toLocaleList()) ?? [])
             .custom(self.customField.text)
             .honourEarlyReject(self.honoursEarlyRejectField.isSelected)
@@ -142,7 +142,7 @@ class VerificationController: UIViewController {
     private func buildFlashcallVerification() -> Verification {
         let flashcallConfiguration = FlashcallVerificationConfig.Builder.instance()
             .globalConfig(globalConfig)
-            .number(self.phoneNumberTextField.e164Number ?? "")
+            .number(self.phoneNumberTextField.e164Number ?? phoneNumberTextField.text ?? "")
             .acceptedLanguages((try? self.acceptedLanguagesField.text?.toLocaleList()) ?? [])
             .custom(self.customField.text)
             .honourEarlyReject(self.honoursEarlyRejectField.isSelected)
@@ -161,7 +161,7 @@ class VerificationController: UIViewController {
     private func buildCalloutVerification() -> Verification {
         let calloutConfiguration = CalloutVerificationConfig.Builder.instance()
             .globalConfig(globalConfig)
-            .number(self.phoneNumberTextField.e164Number ?? "")
+            .number(self.phoneNumberTextField.e164Number ?? self.phoneNumberTextField.text ?? "")
             .acceptedLanguages((try? self.acceptedLanguagesField.text?.toLocaleList()) ?? [])
             .custom(self.customField.text)
             .honourEarlyReject(self.honoursEarlyRejectField.isSelected)
@@ -180,7 +180,7 @@ class VerificationController: UIViewController {
     private func buildSeamlessVerification() -> Verification {
         let seamlessConfiguration = SeamlessVerificationConfig.Builder.instance()
             .globalConfig(globalConfig)
-            .number(self.phoneNumberTextField.e164Number ?? "")
+            .number(self.phoneNumberTextField.e164Number ?? self.phoneNumberTextField.text ?? "")
             .acceptedLanguages((try? self.acceptedLanguagesField.text?.toLocaleList()) ?? [])
             .custom(self.customField.text)
             .honourEarlyReject(self.honoursEarlyRejectField.isSelected)

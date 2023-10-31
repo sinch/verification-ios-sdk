@@ -15,7 +15,7 @@ struct Environment: Equatable {
 }
 
 let Environments: [Environment] = [
-    Environment(domain: "https://verification.api.sinch.com/", name: "Production", appKey: "<YOUR APP KEY>"),
+    Environment(domain: "https://dc-usw2-std.verification.api.sinch.com/", name: "Production", appKey: "caaf40d2-6ac7-4551-bc1f-cc732d8dad78"),
     Environment(domain: "https://verification.api.sinch.com/", name: "Production BROK", appKey: "<YOUR APP KEY>"),
     Environment(domain: "https://dc-aps1-std.verification.api.sinch.com/", name: "APS1", appKey: "<YOUR APP KEY>"),
     Environment(domain: "https://verificationapi-v1-01.sinchlab.com/", name: "Ftest1", appKey: "<YOUR APP KEY>"),

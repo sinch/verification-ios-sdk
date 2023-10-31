@@ -20,7 +20,7 @@ public enum Constants {
         static var domain: String {
             if let userDefinedDomain = userDefinedDomain { return userDefinedDomain }
             guard let urlPath = Bundle(for: ApiManager.self).infoDictionary!["API_URL"] as? String else {
-                return "https://verification.api.sinch.com/" //Returns production if not specified in Info.plist
+                return "https://dc-euc1-std.verification.api.sinch.com/" //Returns production if not specified in Info.plist
             }
             return urlPath
         }
