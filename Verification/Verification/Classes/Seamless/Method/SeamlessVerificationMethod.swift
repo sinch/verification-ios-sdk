@@ -57,7 +57,11 @@ public class SeamlessVerificationMethod: VerificationMethod {
     guard let urlComponents = URLComponents(string: targetURI) else {
       return
     }
-    seamlessExecutor = SeamlessVerificationExecutor(endpoint: urlComponents)
+    do {
+      seamlessExecutor = try SeamlessVerificationExecutor(endpoint: urlComponents)
+    } catch {
+      print("Fatal error while creating executor \(error)")
+    }
     seamlessExecutor?.delegate = self
     do {
       try seamlessExecutor?.connect()

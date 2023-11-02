@@ -27,16 +27,17 @@ internal class SeamlessVerificationExecutor {
   
   weak var delegate: SeamlessVerificationExecutorDelegate?
   
-  init(endpoint: URLComponents) {
+  init(endpoint: URLComponents) throws {
     self.endpoint = endpoint
     let tlsOptions = NWProtocolTLS.Options()
     let tcpOptions = NWProtocolTCP.Options()
     let port = endpoint.scheme == "http" ? NWEndpoint.Port.http : NWEndpoint.Port.https
     let params = NWParameters(tls: port == NWEndpoint.Port.https ? tlsOptions : nil, tcp: tcpOptions)
     params.requiredInterfaceType = .cellular
-    let host = NWEndpoint.Host(endpoint.host!)
     
-    self.connection =  NWConnection(host: host, port: port, using: params)
+    let nwEndpoint = try NWEndpoint.url(endpoint.asURL())
+    
+    self.connection = NWConnection(to: nwEndpoint, using: params)
     self.connection.stateUpdateHandler = { [weak self] newState in
       print("TCP state change to: \(newState)")
       switch newState {
