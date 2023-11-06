@@ -16,21 +16,25 @@ protocol SeamlessVerificationExecutorDelegate: AnyObject {
 
 internal class SeamlessVerificationExecutor {
   
+  private static let RESPONSE_ERROR = "ERROR"
+  private static let RESPONSE_REDIRECT = "REDIRECT:"
+  private static let SAFE_ENCODED_SPACE = "%20"
+  
   private let dispatchQueue = DispatchQueue.global(qos: .background)
   
   weak var delegate: SeamlessVerificationExecutorDelegate?
   
-  func requestEvurlWithCellularData(evurl: String) {
+  func executeGetAtTargetUrl(targetUrl: String) {
     dispatchQueue.async { [weak self] in
-      self?.requestEvurlWithCellularData_wt(evurl: evurl)
+      self?.executeGetAtTargetUrl_wt(targetUrl: targetUrl)
     }
   }
   
-  private func requestEvurlWithCellularData_wt(evurl: String) {
-    let response = requestHelper(url: evurl)
+  private func executeGetAtTargetUrl_wt(targetUrl: String) {
+    let response = requestHelper(url: targetUrl)
     
     // If any internal and network errors occured in HTTPRequester.performGetRequest, the function will return "ERROR"
-    if response == "ERROR" {
+    if response == SeamlessVerificationExecutor.RESPONSE_ERROR {
       onDelegateThread {
         delegate?.onError(error: SDKError.unexpected(message: "Error when executing HTTP requests"))
       }
@@ -52,18 +56,18 @@ internal class SeamlessVerificationExecutor {
     // If the HTTP GET request returns a HTTP redirect code (3xx), HTTPRequester.performGetRequest returns a
     // formatted string that contains the redirect URL. The formatted string starts with "REDIRECT:"
     // and it's followed with the redirect URL.
-    print("Executing GET at \(url)")
-    var response = HTTPRequester.performGetRequest(URL(string: url.replacingOccurrences(of: " ", with: "%20")))
-    
-    if response!.range(of:"REDIRECT:") != nil {
-      // 1. Get the redirect URL by getting rid of the "REDIRECT:" substring
-      let redirectRange = response!.index(response!.startIndex, offsetBy: 9)...
-      let redirectLink = String(response![redirectRange])
-      // 2. Make a request to the redirect URL
-      response = requestHelper(url: redirectLink)
+    guard let response = HTTPRequester.performGetRequest(URL(string: url.replacingOccurrences(of: " ", with: SeamlessVerificationExecutor.SAFE_ENCODED_SPACE))) else {
+      return SeamlessVerificationExecutor.RESPONSE_ERROR
     }
     
-    return response!
+    if response.range(of:SeamlessVerificationExecutor.RESPONSE_REDIRECT) != nil {
+      // 1. Get the redirect URL by getting rid of the "REDIRECT:" substring
+      let redirectRange = response.index(response.startIndex, offsetBy: SeamlessVerificationExecutor.RESPONSE_REDIRECT.count)...
+      let redirectLink = String(response[redirectRange])
+      // 2. Make a request to the redirect URL
+      return requestHelper(url: redirectLink)
+    }
+    return response
   }
   
   private func onDelegateThread(_ f: ()->Void) {

@@ -54,7 +54,7 @@ public class SeamlessVerificationMethod: VerificationMethod {
   }
   
   private func executeSeamlessVerificationCall(targetURI: String) {
-    seamlessExecutor.requestEvurlWithCellularData(evurl: targetURI)
+    seamlessExecutor.executeGetAtTargetUrl(targetUrl: targetURI)
   }
   
   /// Builder implementing fluent builder pattern to create [SeamlessVerificationMethod](x-source-tag://[SeamlessVerificationMethod]) objects.
@@ -106,7 +106,6 @@ extension SeamlessVerificationMethod: SeamlessVerificationExecutorDelegate {
       verificationListener?.onVerificationFailed(e: SDKError.unexpected(message: "HTTP response code could not been parsed"))
       return
     }
-    print("Seamless verification response:\n\(rawStringResponse)\n")
     switch receivedCode {
     case 200..<300:
       if rawStringResponse.contains(SeamlessVerificationMethod.EXTRA_CHECK_SUCCESSFUL_KEY) {
