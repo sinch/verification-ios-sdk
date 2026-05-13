@@ -38,6 +38,7 @@ public struct VerificationLanguage: Equatable, Codable {
     private static let WeightFormatter: NumberFormatter = {
         return NumberFormatter().apply {
             $0.numberStyle = .decimal
+            $0.locale = Locale(identifier: "en_US_POSIX")
             $0.minimumFractionDigits = 0
             $0.maximumFractionDigits = 3
         }

@@ -22,6 +22,7 @@ extension ResponseHeaders {
         let dateHeader = self["Date"]
         guard let dateHeaderUnwrapped = dateHeader else { return nil }
         let formatter = DateFormatter().apply {
+            $0.locale = Locale(identifier: "en_US_POSIX")
             $0.dateFormat = GenerationDateFormat
         }
         return formatter.date(from: dateHeaderUnwrapped)
