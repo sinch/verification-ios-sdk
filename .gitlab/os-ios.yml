@@ -50,7 +50,7 @@
     script:
         - *before_script_ios
         - pod install
-        - xcodebuild -workspace verification-ios-sdk.xcworkspace -scheme Verification -sdk iphonesimulator -destination 'platform=iOS Simulator,name=iPhone 8' test
+        - xcodebuild -workspace verification-ios-sdk.xcworkspace -scheme Verification -sdk iphonesimulator -destination 'platform=iOS Simulator,name=iPhone 15' test
 
     interruptible: true
 
