@@ -19,7 +19,7 @@ class VerificationController: UIViewController {
     
     lazy var globalConfig: SinchGlobalConfig = {
         return SinchGlobalConfig.Builder.instance()
-            .authorizationMethod(AppKeyAuthorizationMethod(appKey: "9e556452-e462-4006-aab0-8165ca04de66")) //TODO handle appkeys differently
+            .authorizationMethod(BasicAuthorizationMethod(appKey: "<YOUR APP KEY>", appSecret: "<YOUR APP SECRET>"))
             .build()
     }()
     

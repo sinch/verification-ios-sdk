@@ -33,6 +33,7 @@
 		B197B94A24E16E3100889BD0 /* VerificaitonLanguageTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B197B94324E16E3000889BD0 /* VerificaitonLanguageTests.swift */; };
 		B197B94B24E16E3100889BD0 /* AcceptedLanguagesParsingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B197B94424E16E3000889BD0 /* AcceptedLanguagesParsingTests.swift */; };
 		B197B94C24E16E3100889BD0 /* AppKeyAuthorizationMethodTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B197B94524E16E3000889BD0 /* AppKeyAuthorizationMethodTests.swift */; };
+		B7FBBE38F38F4F59924B4B96 /* BasicAuthorizationMethodTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74D206F8A510420D9EA4F0F9 /* BasicAuthorizationMethodTests.swift */; };
 		B197B94D24E16E3100889BD0 /* SimCardInfoHolderEncodingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B197B94724E16E3100889BD0 /* SimCardInfoHolderEncodingTests.swift */; };
 		B1C3C0AE27CE35D60021A0EC /* HttpRawResponseHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1C3C0AD27CE35D60021A0EC /* HttpRawResponseHandler.swift */; };
 		B1CA8194257F74340097B625 /* AutoVerificationInitiationData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1CA8193257F74340097B625 /* AutoVerificationInitiationData.swift */; };
@@ -101,6 +102,7 @@
 		B1E8426424E154A900C29730 /* AuthorizationMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1E8423424E154A900C29730 /* AuthorizationMethod.swift */; };
 		B1E8426524E154A900C29730 /* SinchSessionHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1E8423524E154A900C29730 /* SinchSessionHandler.swift */; };
 		B1E8426624E154A900C29730 /* AppKeyAuthorizationMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1E8423624E154A900C29730 /* AppKeyAuthorizationMethod.swift */; };
+		D4DDEF24C60A4DC293E37884 /* BasicAuthorizationMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEBC38B2F338408D80F12ECB /* BasicAuthorizationMethod.swift */; };
 		B1E8426724E154A900C29730 /* ApiManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1E8423724E154A900C29730 /* ApiManager.swift */; };
 		B1E8426824E154A900C29730 /* ApiRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1E8423824E154A900C29730 /* ApiRouter.swift */; };
 		B1E8426924E154A900C29730 /* LoggingMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1E8423924E154A900C29730 /* LoggingMonitor.swift */; };
@@ -191,6 +193,7 @@
 		B197B94324E16E3000889BD0 /* VerificaitonLanguageTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VerificaitonLanguageTests.swift; sourceTree = "<group>"; };
 		B197B94424E16E3000889BD0 /* AcceptedLanguagesParsingTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AcceptedLanguagesParsingTests.swift; sourceTree = "<group>"; };
 		B197B94524E16E3000889BD0 /* AppKeyAuthorizationMethodTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppKeyAuthorizationMethodTests.swift; sourceTree = "<group>"; };
+		74D206F8A510420D9EA4F0F9 /* BasicAuthorizationMethodTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasicAuthorizationMethodTests.swift; sourceTree = "<group>"; };
 		B197B94724E16E3100889BD0 /* SimCardInfoHolderEncodingTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SimCardInfoHolderEncodingTests.swift; sourceTree = "<group>"; };
 		B1C3C0AD27CE35D60021A0EC /* HttpRawResponseHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpRawResponseHandler.swift; sourceTree = "<group>"; };
 		B1CA8193257F74340097B625 /* AutoVerificationInitiationData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutoVerificationInitiationData.swift; sourceTree = "<group>"; };
@@ -262,6 +265,7 @@
 		B1E8423424E154A900C29730 /* AuthorizationMethod.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthorizationMethod.swift; sourceTree = "<group>"; };
 		B1E8423524E154A900C29730 /* SinchSessionHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SinchSessionHandler.swift; sourceTree = "<group>"; };
 		B1E8423624E154A900C29730 /* AppKeyAuthorizationMethod.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppKeyAuthorizationMethod.swift; sourceTree = "<group>"; };
+		BEBC38B2F338408D80F12ECB /* BasicAuthorizationMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasicAuthorizationMethod.swift; sourceTree = "<group>"; };
 		B1E8423724E154A900C29730 /* ApiManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiManager.swift; sourceTree = "<group>"; };
 		B1E8423824E154A900C29730 /* ApiRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiRouter.swift; sourceTree = "<group>"; };
 		B1E8423924E154A900C29730 /* LoggingMonitor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoggingMonitor.swift; sourceTree = "<group>"; };
@@ -401,6 +405,7 @@
 				B1D698A624E5056300AC4CA8 /* Method */,
 				B197B94224E16E3000889BD0 /* VerificationLanguage */,
 				B197B94524E16E3000889BD0 /* AppKeyAuthorizationMethodTests.swift */,
+				74D206F8A510420D9EA4F0F9 /* BasicAuthorizationMethodTests.swift */,
 				B197B94124E16E3000889BD0 /* VerificationStatesTests.swift */,
 				B176107A2510AD97000C5EC1 /* ResponseHeadersExtensionTests.swift */,
 				B176107C2510B84F000C5EC1 /* InitiationResponseDataTests.swift */,
@@ -789,6 +794,7 @@
 				B1E8423424E154A900C29730 /* AuthorizationMethod.swift */,
 				B1E8423524E154A900C29730 /* SinchSessionHandler.swift */,
 				B1E8423624E154A900C29730 /* AppKeyAuthorizationMethod.swift */,
+				BEBC38B2F338408D80F12ECB /* BasicAuthorizationMethod.swift */,
 			);
 			path = Auth;
 			sourceTree = "<group>";
@@ -1159,9 +1165,13 @@
 			inputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-Verification-VerificationTests/Pods-Verification-VerificationTests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
+			inputPaths = (
+			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-Verification-VerificationTests/Pods-Verification-VerificationTests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -1285,6 +1295,7 @@
 				B1E8429824E156CF00C29730 /* NetworkInfo.swift in Sources */,
 				B194B130257F8995002018BC /* CalloutInitiationDetails.swift in Sources */,
 				B1E8426624E154A900C29730 /* AppKeyAuthorizationMethod.swift in Sources */,
+				D4DDEF24C60A4DC293E37884 /* BasicAuthorizationMethod.swift in Sources */,
 				B1E8427124E154A900C29730 /* DataRequestsExtensions.swift in Sources */,
 				B1578A98250612AD00E2068D /* SinchPhoneNumberUtils.swift in Sources */,
 				B1E8426724E154A900C29730 /* ApiManager.swift in Sources */,
@@ -1326,6 +1337,7 @@
 				B1D698A524E3E5AD00AC4CA8 /* MockedVerificationMethod.swift in Sources */,
 				B176107B2510AD97000C5EC1 /* ResponseHeadersExtensionTests.swift in Sources */,
 				B197B94C24E16E3100889BD0 /* AppKeyAuthorizationMethodTests.swift in Sources */,
+				B7FBBE38F38F4F59924B4B96 /* BasicAuthorizationMethodTests.swift in Sources */,
 				B176107D2510B84F000C5EC1 /* InitiationResponseDataTests.swift in Sources */,
 				B197B94924E16E3100889BD0 /* VerificationStatesTests.swift in Sources */,
 				B1D698A324E3DFA500AC4CA8 /* VerificationMethodTests.swift in Sources */,
@@ -1484,10 +1496,9 @@
 				API_URL = "https://verification.api.sinch.com/";
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "Apple Development";
-				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
-				CODE_SIGN_STYLE = Manual;
+				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 589CW2BWK2;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
@@ -1502,7 +1513,6 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.sinch.Verification;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				"PROVISIONING_PROFILE_SPECIFIER[sdk=macosx*]" = "";
 				SKIP_INSTALL = YES;
 				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -1519,9 +1529,9 @@
 				API_URL = "https://verification.api.sinch.com/";
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "Apple Development";
-				CODE_SIGN_STYLE = Manual;
+				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 589CW2BWK2;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
@@ -1536,7 +1546,6 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.sinch.Verification;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				"PROVISIONING_PROFILE_SPECIFIER[sdk=macosx*]" = "";
 				SKIP_INSTALL = YES;
 				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_VERSION = 5.0;

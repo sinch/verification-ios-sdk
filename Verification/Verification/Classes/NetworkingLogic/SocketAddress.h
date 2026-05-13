@@ -9,6 +9,8 @@
 #define SocketAddress_h
 
 #import <Foundation/Foundation.h>
+#import <sys/types.h>
+#import <sys/socket.h>
 
 typedef struct sockaddr *sockaddr_t;
 

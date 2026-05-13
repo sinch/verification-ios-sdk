@@ -31,8 +31,7 @@ public class PhoneNumberUITextField: UITextField {
     
     public var e164Number: String? {
         do {
-            let phoneNumber =  try phoneKit.parse(self.text ?? "", withRegion: self.countryIso, ignoreType: false)
-            return phoneKit.format(phoneNumber, toType: .e164, withPrefix: true)
+          return self.text
         } catch {
             print("Phone number parsing failed with \(error.localizedDescription)")
             return nil
@@ -62,7 +61,6 @@ public class PhoneNumberUITextField: UITextField {
     }
     
     @objc private func numberDidChanged() {
-        self.updateDisplayedText()
     }
     
 }

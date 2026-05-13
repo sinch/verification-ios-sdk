@@ -48,7 +48,7 @@ class VerificationController: UIViewController {
     
     private var globalConfig: SinchGlobalConfig {
         return SinchGlobalConfig.Builder.instance()
-            .authorizationMethod(AppKeyAuthorizationMethod(appKey: selectedEnv.appKey))
+            .authorizationMethod(BasicAuthorizationMethod(appKey: selectedEnv.appKey, appSecret: selectedEnv.appSecret))
             .build()
     }
     
