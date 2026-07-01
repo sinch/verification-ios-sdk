@@ -142,6 +142,7 @@
 		B1E842C124E1578B00C29730 /* SeamlessVerificationConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1E842B724E1578B00C29730 /* SeamlessVerificationConfig.swift */; };
 		B1E842C224E1578B00C29730 /* SeamlessConfigBuilderSetters.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1E842B824E1578B00C29730 /* SeamlessConfigBuilderSetters.swift */; };
 		B1E842C324E1578B00C29730 /* SeamlessVerificationRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1E842BA24E1578B00C29730 /* SeamlessVerificationRouter.swift */; };
+		B1INDIA0224E1578B00C29730 /* SeamlessHeaderInterceptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1INDIA0124E1578B00C29730 /* SeamlessHeaderInterceptor.swift */; };
 		B1E842C424E1578B00C29730 /* SeamlessVerificationInitiationData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1E842BC24E1578B00C29730 /* SeamlessVerificationInitiationData.swift */; };
 		B1E842C524E1578B00C29730 /* SeamlessVerificationMethodSetter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1E842BF24E1578B00C29730 /* SeamlessVerificationMethodSetter.swift */; };
 		B1E842C624E1578B00C29730 /* SeamlessVerificationMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1E842C024E1578B00C29730 /* SeamlessVerificationMethod.swift */; };
@@ -306,6 +307,7 @@
 		B1E842B724E1578B00C29730 /* SeamlessVerificationConfig.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SeamlessVerificationConfig.swift; sourceTree = "<group>"; };
 		B1E842B824E1578B00C29730 /* SeamlessConfigBuilderSetters.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SeamlessConfigBuilderSetters.swift; sourceTree = "<group>"; };
 		B1E842BA24E1578B00C29730 /* SeamlessVerificationRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SeamlessVerificationRouter.swift; sourceTree = "<group>"; };
+		B1INDIA0124E1578B00C29730 /* SeamlessHeaderInterceptor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeamlessHeaderInterceptor.swift; sourceTree = "<group>"; };
 		B1E842BC24E1578B00C29730 /* SeamlessVerificationInitiationData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SeamlessVerificationInitiationData.swift; sourceTree = "<group>"; };
 		B1E842BF24E1578B00C29730 /* SeamlessVerificationMethodSetter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SeamlessVerificationMethodSetter.swift; sourceTree = "<group>"; };
 		B1E842C024E1578B00C29730 /* SeamlessVerificationMethod.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SeamlessVerificationMethod.swift; sourceTree = "<group>"; };
@@ -966,6 +968,7 @@
 			isa = PBXGroup;
 			children = (
 				B1E842BA24E1578B00C29730 /* SeamlessVerificationRouter.swift */,
+				B1INDIA0124E1578B00C29730 /* SeamlessHeaderInterceptor.swift */,
 				B1C3C0AD27CE35D60021A0EC /* HttpRawResponseHandler.swift */,
 			);
 			path = Network;
@@ -1211,6 +1214,7 @@
 				B1E8426F24E154A900C29730 /* EncodableExtensions.swift in Sources */,
 				B1C3C0AE27CE35D60021A0EC /* HttpRawResponseHandler.swift in Sources */,
 				B1E842C324E1578B00C29730 /* SeamlessVerificationRouter.swift in Sources */,
+				B1INDIA0224E1578B00C29730 /* SeamlessHeaderInterceptor.swift in Sources */,
 				B1E8425824E154A900C29730 /* InitiationListener.swift in Sources */,
 				B1E8424324E154A900C29730 /* Constants.swift in Sources */,
 				B1E842B424E1572300C29730 /* CalloutVerificationMethod.swift in Sources */,
@@ -1486,9 +1490,12 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				API_URL = "https://verification.api.sinch.com/";
+				API_URL_IN = "https://smv.sinchconverse.com/";
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
+				DEBUG_IMSI = "";
+				DEBUG_MSISDN = "";
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = 589CW2BWK2;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -1519,9 +1526,12 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				API_URL = "https://verification.api.sinch.com/";
+				API_URL_IN = "https://smvprod.sinchconverse.com/";
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
+				DEBUG_IMSI = "";
+				DEBUG_MSISDN = "";
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = 589CW2BWK2;
 				DYLIB_COMPATIBILITY_VERSION = 1;

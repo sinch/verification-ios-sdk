@@ -52,4 +52,12 @@ class SinchPhoneNumberUtilsTests: XCTestCase {
         XCTAssertEqual(SinchPhoneNumberUtils.formatNumberToE164("+12025550123", forCountryIso: countryIso), "+12025550123")
     }
     
+    func testIndianNumberDetection() throws {
+        XCTAssertTrue(SinchPhoneNumberUtils.isIndianNumber("+911234567890"))
+        XCTAssertTrue(SinchPhoneNumberUtils.isIndianNumber("+91 98765 43210"))
+        XCTAssertFalse(SinchPhoneNumberUtils.isIndianNumber("+48123456789"))
+        XCTAssertFalse(SinchPhoneNumberUtils.isIndianNumber("invalid"))
+        XCTAssertFalse(SinchPhoneNumberUtils.isIndianNumber(""))
+    }
+    
 }

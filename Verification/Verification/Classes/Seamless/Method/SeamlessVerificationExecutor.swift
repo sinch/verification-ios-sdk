@@ -24,14 +24,14 @@ internal class SeamlessVerificationExecutor {
   
   weak var delegate: SeamlessVerificationExecutorDelegate?
   
-  func executeGetAtTargetUrl(targetUrl: String) {
+  func executeGetAtTargetUrl(targetUrl: String, headers: [String: String] = [:]) {
     dispatchQueue.async { [weak self] in
-      self?.executeGetAtTargetUrl_wt(targetUrl: targetUrl)
+      self?.executeGetAtTargetUrl_wt(targetUrl: targetUrl, headers: headers)
     }
   }
   
-  private func executeGetAtTargetUrl_wt(targetUrl: String) {
-    let response = requestHelper(url: targetUrl)
+  private func executeGetAtTargetUrl_wt(targetUrl: String, headers: [String: String]) {
+    let response = requestHelper(url: targetUrl, headers: headers)
     
     // If any internal and network errors occured in HTTPRequester.performGetRequest, the function will return "ERROR"
     if response == SeamlessVerificationExecutor.RESPONSE_ERROR {
@@ -52,11 +52,15 @@ internal class SeamlessVerificationExecutor {
    - Parameter url: The URL to be requested
    - Returns: string response from the HTTP request
    */
-  private func requestHelper(url: String) -> String {
+  private func requestHelper(url: String, headers: [String: String]) -> String {
     // If the HTTP GET request returns a HTTP redirect code (3xx), HTTPRequester.performGetRequest returns a
     // formatted string that contains the redirect URL. The formatted string starts with "REDIRECT:"
     // and it's followed with the redirect URL.
-    guard let response = HTTPRequester.performGetRequest(URL(string: url.replacingOccurrences(of: " ", with: SeamlessVerificationExecutor.SAFE_ENCODED_SPACE))) else {
+    let encodedUrl = url.replacingOccurrences(of: " ", with: SeamlessVerificationExecutor.SAFE_ENCODED_SPACE)
+    guard let response = HTTPRequester.performGetRequest(
+      URL(string: encodedUrl),
+      headers: headers.isEmpty ? nil : headers
+    ) else {
       return SeamlessVerificationExecutor.RESPONSE_ERROR
     }
     
@@ -65,7 +69,7 @@ internal class SeamlessVerificationExecutor {
       let redirectRange = response.index(response.startIndex, offsetBy: SeamlessVerificationExecutor.RESPONSE_REDIRECT.count)...
       let redirectLink = String(response[redirectRange])
       // 2. Make a request to the redirect URL
-      return requestHelper(url: redirectLink)
+      return requestHelper(url: redirectLink, headers: headers)
     }
     return response
   }

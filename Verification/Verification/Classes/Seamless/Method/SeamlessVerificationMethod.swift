@@ -54,7 +54,8 @@ public class SeamlessVerificationMethod: VerificationMethod {
   }
   
   private func executeSeamlessVerificationCall(targetURI: String) {
-    seamlessExecutor.executeGetAtTargetUrl(targetUrl: targetURI)
+    let headers = SeamlessHeaderInterceptor(number: verificationMethodConfig.number).headers()
+    seamlessExecutor.executeGetAtTargetUrl(targetUrl: targetURI, headers: headers)
   }
   
   /// Builder implementing fluent builder pattern to create [SeamlessVerificationMethod](x-source-tag://[SeamlessVerificationMethod]) objects.

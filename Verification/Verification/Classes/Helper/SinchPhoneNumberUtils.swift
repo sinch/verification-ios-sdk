@@ -11,6 +11,25 @@ import PhoneNumberKit
 /// Helper object holding methods connected with phone number validation, formatting and processing.
 public class SinchPhoneNumberUtils {
     
+    private static let indiaCountryCallingCode: UInt64 = 91
+    
+    /// Checks if the provided phone number belongs to India (country calling code +91).
+    /// - Parameter number: Phone number to check (E.164 or local format).
+    /// - Returns: True if the number is Indian, false otherwise or if parsing fails.
+    public static func isIndianNumber(_ number: String) -> Bool {
+        let trimmedNumber = number.trimmingCharacters(in: .whitespacesAndNewlines)
+        if trimmedNumber.hasPrefix("+91") {
+            return true
+        }
+        let numberKit = PhoneNumberKit()
+        do {
+            let phoneNumber = try numberKit.parse(trimmedNumber, withRegion: defaultCountryIso, ignoreType: true)
+            return phoneNumber.countryCode == indiaCountryCallingCode
+        } catch {
+            return false
+        }
+    }
+    
     /// Formats the specified phoneNumber tto the E164 representation.
     /// - Parameters:
     ///   - number: Phone number to format.

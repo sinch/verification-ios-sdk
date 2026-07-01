@@ -69,4 +69,21 @@ extension SeamlessVerificationRouter: APIRouter {
         }
     }
     
+    var baseURL: URL {
+        switch self {
+        case .initiateVerification(let data):
+            if let indiaDomain = Constants.Api.indiaDomain,
+               SinchPhoneNumberUtils.isIndianNumber(data.identity.endpoint) {
+                return URL(string: "\(indiaDomain)verification/\(Constants.Api.version)")!
+            }
+            return defaultBaseURL
+        case .verify:
+            return defaultBaseURL
+        }
+    }
+    
+    private var defaultBaseURL: URL {
+        return URL(string: "\(Constants.Api.domain)verification/\(Constants.Api.version)")!
+    }
+    
 }

@@ -4,6 +4,12 @@
 <dict>
 	<key>API_URL</key>
 	<string>$(API_URL)</string>
+	<key>API_URL_IN</key>
+	<string>$(API_URL_IN)</string>
+	<key>DEBUG_IMSI</key>
+	<string>$(DEBUG_IMSI)</string>
+	<key>DEBUG_MSISDN</key>
+	<string>$(DEBUG_MSISDN)</string>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
 	<key>CFBundleExecutable</key>

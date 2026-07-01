@@ -41,6 +41,10 @@ static const NSString *HTTP_RESPONSE_START = @"HTTP/";
  @return A string response from the request to the URL
  */
 + (NSString *)performGetRequest:(NSURL *)url {
+    return [self performGetRequest:url headers:nil];
+}
+
++ (NSString *)performGetRequest:(NSURL *)url headers:(NSDictionary<NSString *, NSString *> *)headers {
     // Stores any errors that occur during execution
     OSStatus status;
     
@@ -163,6 +167,15 @@ static const NSString *HTTP_RESPONSE_START = @"HTTP/";
     
     // Create the HTTP request string
     NSString *requestString = [NSString stringWithFormat: PATTERN_REQUEST_BASE, [url path], [url query] ? [@"?" stringByAppendingString:[url query]] : @"", [url host], [url port] ? [@":" stringByAppendingFormat:@"%@", [url port]] : @""];
+    
+    if (headers != nil) {
+        for (NSString *headerName in headers) {
+            NSString *headerValue = headers[headerName];
+            if (headerValue.length > 0) {
+                requestString = [requestString stringByAppendingFormat:@"%@: %@\r\n", headerName, headerValue];
+            }
+        }
+    }
     
     requestString = [requestString stringByAppendingString: REQUEST_CONNECTION_CLOSE];
     

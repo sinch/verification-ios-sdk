@@ -29,6 +29,9 @@ protocol APIRouter: URLRequestConvertible {
     var headers: HTTPHeaders { get }
     
     var appendPathToBaseUrl: Bool { get }
+    
+    /// Sinch API base URL (differs based on used environment).
+    var baseURL: URL { get }
 }
 
 extension APIRouter {

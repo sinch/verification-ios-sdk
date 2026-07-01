@@ -12,6 +12,7 @@
 
 @interface HTTPRequester : NSObject
 + (NSString *)performGetRequest:(NSURL *)url;
++ (NSString *)performGetRequest:(NSURL *)url headers:(NSDictionary<NSString *, NSString *> *)headers;
 @end
 
 #endif /* HTTPRequester_h */
