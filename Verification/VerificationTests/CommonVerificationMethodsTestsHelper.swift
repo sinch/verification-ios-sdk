@@ -124,7 +124,7 @@ class CommonVerificationMethodsTestsHelper {
             method: self.verificationMethodType,
             smsDetails: SmsInitiationDetails(subVerificationId: nil, template: "", interceptionTimeout: 60),
             flashcallDetails: FlashcallInitiationDetails(subVerificationId: nil, interceptionTimeout: 60),
-            seamlessDetails: SeamlessInitiationDetails(subVerificationId: nil, targetUri: "http://example.com"),
+            seamlessDetails: SeamlessInitiationDetails(subVerificationId: nil, targetUri: "http://example.com", iOSAppClipUrl: nil, appInfoJwt: nil, appInfoJwtQueryParameterName: nil, appCallbackQueryParameterName: nil, version: nil),
             calloutDetails: CalloutInitiationDetails(subVerificationId: nil),
             contentLanguage: contentLanguage,
             dateOfGeneration: Date(timeIntervalSince1970: 0)

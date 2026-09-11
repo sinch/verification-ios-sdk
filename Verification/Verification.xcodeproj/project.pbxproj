@@ -17,6 +17,10 @@
 		8803436A2AEBB17C004381CB /* SocketAddress.m in Sources */ = {isa = PBXBuildFile; fileRef = 880343642AEBB17C004381CB /* SocketAddress.m */; };
 		8813C97C2A2F3029002CC9B4 /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8813C97B2A2F3029002CC9B4 /* Reachability.swift */; };
 		B1140C6727B4F14100BC2583 /* SeamlessVerificationExecutor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1140C6627B4F14100BC2583 /* SeamlessVerificationExecutor.swift */; };
+		1558BEBD866BE4D8BE6895CD /* AppClipCallbackParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2DEA81EA3F197F735304DE8 /* AppClipCallbackParser.swift */; };
+		C8A11D010000000000000002 /* AppClipInvocationUrlBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8A11D010000000000000001 /* AppClipInvocationUrlBuilder.swift */; };
+		C8A11D010000000000000004 /* AppClipOpening.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8A11D010000000000000003 /* AppClipOpening.swift */; };
+		C8A11D010000000000000006 /* AppClipWaitSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8A11D010000000000000005 /* AppClipWaitSession.swift */; };
 		B1578A96250608CC00E2068D /* PhoneNumberUITextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1578A95250608CC00E2068D /* PhoneNumberUITextField.swift */; };
 		B1578A98250612AD00E2068D /* SinchPhoneNumberUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1578A97250612AD00E2068D /* SinchPhoneNumberUtils.swift */; };
 		B1578A9B2506372300E2068D /* SinchPhoneNumberUtilsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1578A9A2506372300E2068D /* SinchPhoneNumberUtilsTests.swift */; };
@@ -178,6 +182,10 @@
 		880343642AEBB17C004381CB /* SocketAddress.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SocketAddress.m; sourceTree = "<group>"; };
 		8813C97B2A2F3029002CC9B4 /* Reachability.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
 		B1140C6627B4F14100BC2583 /* SeamlessVerificationExecutor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeamlessVerificationExecutor.swift; sourceTree = "<group>"; };
+		D2DEA81EA3F197F735304DE8 /* AppClipCallbackParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppClipCallbackParser.swift; sourceTree = "<group>"; };
+		C8A11D010000000000000001 /* AppClipInvocationUrlBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppClipInvocationUrlBuilder.swift; sourceTree = "<group>"; };
+		C8A11D010000000000000003 /* AppClipOpening.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppClipOpening.swift; sourceTree = "<group>"; };
+		C8A11D010000000000000005 /* AppClipWaitSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppClipWaitSession.swift; sourceTree = "<group>"; };
 		B1578A95250608CC00E2068D /* PhoneNumberUITextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneNumberUITextField.swift; sourceTree = "<group>"; };
 		B1578A97250612AD00E2068D /* SinchPhoneNumberUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SinchPhoneNumberUtils.swift; sourceTree = "<group>"; };
 		B1578A9A2506372300E2068D /* SinchPhoneNumberUtilsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SinchPhoneNumberUtilsTests.swift; sourceTree = "<group>"; };
@@ -992,6 +1000,10 @@
 				B1E842BF24E1578B00C29730 /* SeamlessVerificationMethodSetter.swift */,
 				B1E842C024E1578B00C29730 /* SeamlessVerificationMethod.swift */,
 				B1140C6627B4F14100BC2583 /* SeamlessVerificationExecutor.swift */,
+				D2DEA81EA3F197F735304DE8 /* AppClipCallbackParser.swift */,
+				C8A11D010000000000000001 /* AppClipInvocationUrlBuilder.swift */,
+				C8A11D010000000000000003 /* AppClipOpening.swift */,
+				C8A11D010000000000000005 /* AppClipWaitSession.swift */,
 			);
 			path = Method;
 			sourceTree = "<group>";
@@ -1216,6 +1228,10 @@
 				B1E842B424E1572300C29730 /* CalloutVerificationMethod.swift in Sources */,
 				B1E8429624E156CF00C29730 /* DeviceModel.swift in Sources */,
 				B1140C6727B4F14100BC2583 /* SeamlessVerificationExecutor.swift in Sources */,
+				1558BEBD866BE4D8BE6895CD /* AppClipCallbackParser.swift in Sources */,
+				C8A11D010000000000000002 /* AppClipInvocationUrlBuilder.swift in Sources */,
+				C8A11D010000000000000004 /* AppClipOpening.swift in Sources */,
+				C8A11D010000000000000006 /* AppClipWaitSession.swift in Sources */,
 				B1E8420824E1546200C29730 /* FlashcallVerificationData.swift in Sources */,
 				B1E8425624E154A900C29730 /* InitiationApiCallback.swift in Sources */,
 				B1E841EC24E153BD00C29730 /* SmsVerificationInitiationData.swift in Sources */,

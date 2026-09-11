@@ -50,12 +50,12 @@ final class AlamofireLogger: EventMonitor {
         ⚡️ Request Started: \(request)
         ⚡️ Body Data: \(body)
         """
-        NSLog(message)
+        log.debug(message)
     }
 
     func request<Value>(_ request: DataRequest, didParseResponse response: AFDataResponse<Value>) {
         let body = response.data.map { String(decoding: $0, as: UTF8.self)  } ?? "None"
-        NSLog("\n⚡️ Response Received: \(response.debugDescription)")
-        NSLog("\n⚡️ Response Body: \(body)")
+        log.debug("\n⚡️ Response Received: \(response.debugDescription)")
+        log.debug("\n⚡️ Response Body: \(body)")
     }
 }

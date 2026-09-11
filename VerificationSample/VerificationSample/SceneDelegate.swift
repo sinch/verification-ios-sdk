@@ -7,8 +7,11 @@
 //
 
 import UIKit
+import SwiftyBeaver
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
+
+    private let log = SwiftyBeaver.self
 
     var window: UIWindow?
 
@@ -18,6 +21,50 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // If using a storyboard, the `window` property will automatically be initialized and attached to the scene.
         // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
         guard let _ = (scene as? UIWindowScene) else { return }
+
+        // App launched cold from a universal link (associated domain).
+        if let userActivity = connectionOptions.userActivities.first(where: {
+            $0.activityType == NSUserActivityTypeBrowsingWeb
+        }) {
+            handleUniversalLink(userActivity)
+        }
+    }
+
+    func scene(_ scene: UIScene, continue userActivity: NSUserActivity) {
+        // App already running (foreground or background) when a universal link is opened.
+        guard userActivity.activityType == NSUserActivityTypeBrowsingWeb else { return }
+        handleUniversalLink(userActivity)
+    }
+
+    private func handleUniversalLink(_ userActivity: NSUserActivity) {
+        guard let url = userActivity.webpageURL else {
+            log.warning("Universal link received without a webpageURL: \(userActivity.activityType)")
+            return
+        }
+        log.info("Universal link opened for associated domain: \(url.absoluteString)")
+        showLinkAlert(for: url)
+
+        guard let verificationController = window?.rootViewController as? VerificationController else {
+            log.warning("Universal link received but root view controller is not a VerificationController")
+            return
+        }
+        verificationController.handleUniversalLinkCallback(url)
+    }
+
+    private func showLinkAlert(for url: URL) {
+        let alert = UIAlertController(
+            title: "Associated Domain Opened",
+            message: "Host: \(url.host ?? "unknown")\n\nURL: \(url.absoluteString)",
+            preferredStyle: .alert
+        )
+        alert.addAction(UIAlertAction(title: "OK", style: .default))
+
+        // Present from the top-most view controller so it works regardless of what's on screen.
+        guard var top = window?.rootViewController else { return }
+        while let presented = top.presentedViewController {
+            top = presented
+        }
+        top.present(alert, animated: true)
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {

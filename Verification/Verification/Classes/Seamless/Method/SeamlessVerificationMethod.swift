@@ -7,9 +7,7 @@
 //
 
 import Alamofire
-import Combine
 import Foundation
-import SwiftyBeaver
 
 /// [Verification](x-source-tag://[Verification]) that uses Seamlesss to verify user's phone number.
 ///
@@ -21,12 +19,28 @@ public class SeamlessVerificationMethod: VerificationMethod {
   static let EXTRA_CHECK_SUCCESSFUL_KEY = "SUCCESSFUL"
   
   private let seamlessExecutor: SeamlessVerificationExecutor = SeamlessVerificationExecutor()
+  private let appClipOpening: AppClipOpening
+  private let appClipWaitSession = AppClipWaitSession()
   
   override init(
     verificationMethodConfig: VerificationMethodConfiguration,
     initiationListener: InitiationListener? = nil,
     verificationListener: VerificationListener? = nil)
   {
+    self.appClipOpening = UIApplicationAppClipOpening()
+    super.init(verificationMethodConfig: verificationMethodConfig,
+               initiationListener: initiationListener,
+               verificationListener: verificationListener)
+    seamlessExecutor.delegate = self
+  }
+
+  init(
+    verificationMethodConfig: VerificationMethodConfiguration,
+    initiationListener: InitiationListener? = nil,
+    verificationListener: VerificationListener? = nil,
+    appClipOpening: AppClipOpening)
+  {
+    self.appClipOpening = appClipOpening
     super.init(verificationMethodConfig: verificationMethodConfig,
                initiationListener: initiationListener,
                verificationListener: verificationListener)
@@ -50,11 +64,84 @@ public class SeamlessVerificationMethod: VerificationMethod {
   override func onVerify(_ verificationCode: String,
                          fromSource sourceType: VerificationSourceType,
                          usingMethod method: VerificationMethodType?) {
-    executeSeamlessVerificationCall(targetURI: verificationCode)
+    if initiationResponseData?.seamlessDetails?.isV2 == true {
+      // v2 (App Clip) flow: verificationCode is the universal link callback URL opened by the App Clip.
+      verifyAppClipCallback(url: verificationCode)
+    } else {
+      executeSeamlessVerificationCall(targetURI: verificationCode)
+    }
   }
-  
+
+  private func verifyAppClipCallback(url callbackUrlString: String) {
+    appClipWaitSession.cancel()
+    guard let callbackUrl = URL(string: callbackUrlString) else {
+      verificationListener?.onVerificationFailed(e: SDKError.illegalArgument(message: "App Clip callback is not a valid URL"))
+      return
+    }
+
+    // Presence of appCallbackQueryParameterName is validated upfront in openAppClip.
+    guard let queryParameterName = initiationResponseData?.seamlessDetails?.appCallbackQueryParameterName else {
+      verificationListener?.onVerificationFailed(
+        e: SDKError.unexpected(message: "v2 seamless verification response is missing appCallbackQueryParameterName")
+      )
+      return
+    }
+
+    do {
+      let operatorToken = try AppClipCallbackParser(callbackUrl: callbackUrl).extractOperatorToken(queryParameterName: queryParameterName)
+      self.service
+        .request(SeamlessVerificationRouter.verifyWithCredential(
+          data: SeamlessCallbackData(state: id ?? "", operatorToken: operatorToken)
+        ))
+        .sinchValidationResponse(VerificationApiCallback(listener: self, verificationStateListener: self))
+    } catch {
+      verificationListener?.onVerificationFailed(e: error)
+    }
+  }
+
   private func executeSeamlessVerificationCall(targetURI: String) {
     seamlessExecutor.executeGetAtTargetUrl(targetUrl: targetURI)
+  }
+
+  private func openAppClip(_ seamlessDetails: SeamlessInitiationDetails?) {
+    guard let seamlessDetails else {
+      verificationListener?.onVerificationFailed(
+        e: SDKError.unexpected(message: "v2 seamless verification response is missing required App Clip invocation data (iOSAppClipUrl, appInfoJwt, appInfoJwtQueryParameterName, appCallbackQueryParameterName)")
+      )
+      return
+    }
+    AppClipLauncher.open(
+      details: seamlessDetails,
+      using: appClipOpening,
+      onSuccess: { [weak self] in
+        self?.startAppClipWaitSession()
+      },
+      onFailure: { [weak self] error in
+        self?.verificationListener?.onVerificationFailed(e: error)
+      }
+    )
+  }
+
+  private func startAppClipWaitSession() {
+    appClipWaitSession.start { [weak self] outcome in
+      guard let self else { return }
+      self.update(newState: .verification(status: .error))
+      self.verificationListener?.onVerificationFailed(e: outcome.asSDKError)
+    }
+  }
+
+  override func onStop() {
+    appClipWaitSession.cancel()
+  }
+
+  public override func onVerified() {
+    appClipWaitSession.cancel()
+    super.onVerified()
+  }
+
+  public override func onVerificationFailed(e: Error) {
+    appClipWaitSession.cancel()
+    super.onVerificationFailed(e: e)
   }
   
   /// Builder implementing fluent builder pattern to create [SeamlessVerificationMethod](x-source-tag://[SeamlessVerificationMethod]) objects.
@@ -92,7 +179,13 @@ public class SeamlessVerificationMethod: VerificationMethod {
   
   public override func onInitiated(_ data: InitiationResponseData) {
     super.onInitiated(data)
-    verify(verificationCode: data.seamlessDetails?.targetUri ?? "")
+    if data.seamlessDetails?.isV2 == true {
+      // v2 (App Clip) flow: open the App Clip and wait for the app to supply the operator token via verify(_:).
+      openAppClip(data.seamlessDetails)
+    } else {
+      // v1 (cellular redirect) flow: auto-verify against the returned targetUri.
+      verify(verificationCode: data.seamlessDetails?.targetUri ?? "")
+    }
   }
   
 }

@@ -68,6 +68,8 @@ public class VerificationMethod: VerificationMethodCallbacks, InitiationListener
     func onInitiate() { }
     
     func onVerify(_ verificationCode: String, fromSource sourceType: VerificationSourceType, usingMethod method: VerificationMethodType?) { }
+
+    func onStop() {}
     
     public func onInitiated(_ data: InitiationResponseData) {
         self.initiationResponseData = data
@@ -118,6 +120,7 @@ extension VerificationMethod: Verification {
     
     public func stop() {
         cancelInterceptionTimeoutCallback()
+        onStop()
         guard !verificationState.isVerificationProcessFinished else { return }
         update(newState: .manuallyStopped)
     }

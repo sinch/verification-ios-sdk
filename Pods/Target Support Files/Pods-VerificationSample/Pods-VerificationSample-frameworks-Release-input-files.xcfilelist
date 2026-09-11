@@ -3,3 +3,4 @@ ${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework
 ${BUILT_PRODUCTS_DIR}/PhoneNumberKit/PhoneNumberKit.framework
 ${BUILT_PRODUCTS_DIR}/SwiftEventBus/SwiftEventBus.framework
 ${BUILT_PRODUCTS_DIR}/SwiftyBeaver/SwiftyBeaver.framework
+${PODS_XCFRAMEWORKS_BUILD_DIR}/BugfenderSDK/BugfenderSDK.framework/BugfenderSDK

@@ -8,6 +8,7 @@
 
 import UIKit
 import SwiftyBeaver
+import BugfenderSDK
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -18,10 +19,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let console = ConsoleDestination()  // log to Xcode Console
         let file = FileDestination()  // log to default swiftybeaver.log file
         let eventBusDestination = EventBusDestination()
+
+        Bugfender.activateLogger("<BUGFENDER_KEY>")
+        Bugfender.enableCrashReporting()
+        let bugfenderDestination = BugfenderDestination()
+
         let log = SwiftyBeaver.self
         log.addDestination(console)
         log.addDestination(file)
         log.addDestination(eventBusDestination)
+        log.addDestination(bugfenderDestination)
+
+        log.info("VerificationSample launched — Bugfender logger active")
+
         return true
     }
 

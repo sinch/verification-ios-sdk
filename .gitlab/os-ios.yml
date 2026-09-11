@@ -24,7 +24,7 @@
 
 .conf:runner:tags:
     tags:
-        - rtc-mac
+        - rtc-ci-macbook
 
 .conf:debug:
     variables:
@@ -60,9 +60,9 @@
     script:
         - *before_script_ios
         - pod install
-        - security unlock-keychain -p $KEY_PASS appledev.keychain
-        - sed -i '' "s/<YOUR APP KEY>/$SAMPLE_APP_KEY/g" VerificationSample/VerificationSample/Environments.swift
-        - xcodebuild -workspace verification-ios-sdk.xcworkspace -scheme VerificationSample -sdk iphoneos archive -derivedDataPath cOut/derivedData -archivePath cOut/artifacts/VerificationSample.xcarchive ONLY_ACTIVE_ARCH=NO
+        - echo "$ENVIRONMENTS_SWIFT_B64" | base64 -D -o VerificationSample/VerificationSample/Environments.swift
+        - sed -i '' "s|<BUGFENDER_KEY>|$BUGFENDER_KEY|g" VerificationSample/VerificationSample/AppDelegate.swift
+        - xcodebuild -workspace verification-ios-sdk.xcworkspace -scheme VerificationSample -sdk iphoneos archive -derivedDataPath cOut/derivedData -archivePath cOut/artifacts/VerificationSample.xcarchive ONLY_ACTIVE_ARCH=NO -allowProvisioningUpdates
         - xcodebuild -exportArchive -archivePath cOut/artifacts/VerificationSample.xcarchive -exportOptionsPlist VerificationSample/exportOptionsAdHoc.plist -exportPath cOut/artifacts/IPA -allowProvisioningUpdates
 
     interruptible: true
@@ -74,6 +74,7 @@
 
 .publishToAppStore:do:
     stage: Publish To AppStore
+    allow_failure: true
     script:
         - *before_script_ios
         - xcodebuild -exportArchive -archivePath cOut/artifacts/VerificationSample.xcarchive -exportOptionsPlist VerificationSample/exportOptionsAppStore.plist -exportPath cOut/artifacts/AppStoreIPA -allowProvisioningUpdates

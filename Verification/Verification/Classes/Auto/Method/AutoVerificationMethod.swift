@@ -14,12 +14,17 @@ import Alamofire
 /// of the verification.
 /// - TAG: AutoVerificationMethod
 public class AutoVerificationMethod: VerificationMethod {
+
+    private let appClipOpening: AppClipOpening
+    private let appClipWaitSession = AppClipWaitSession()
         
     init(
         verificationMethodConfig: AutoVerificationConfig,
         initiationListener: InitiationListener? = nil,
-        verificationListener: VerificationListener? = nil)
+        verificationListener: VerificationListener? = nil,
+        appClipOpening: AppClipOpening = UIApplicationAppClipOpening())
     {
+        self.appClipOpening = appClipOpening
         super.init(verificationMethodConfig: verificationMethodConfig,
                    initiationListener: initiationListener,
                    verificationListener: verificationListener)
@@ -47,9 +52,15 @@ public class AutoVerificationMethod: VerificationMethod {
     public override func onVerify(_ verificationCode: String,
                                   fromSource sourceType: VerificationSourceType,
                                   usingMethod method: VerificationMethodType?) {
+        if shouldHandleAppClipCallback(method: method) {
+            verifyAppClipCallback(url: verificationCode)
+            return
+        }
         guard let method = method,
               let subVerificationId = self.initiationResponseData?.details(ofMethod: method)?.subVerificationId else {
-            //TODO -> error message?
+            verificationListener?.onVerificationFailed(
+                e: SDKError.illegalArgument(message: "Auto verification is missing a method or sub-verification id")
+            )
             return
         }
         self.verificationListener?.onVerificationEvent(
@@ -68,9 +79,82 @@ public class AutoVerificationMethod: VerificationMethod {
         self.verificationListener?.onVerificationEvent(
             event: AutoVerificationEvent.subMethodVerificationCallEvent(method: .seamless)
         )
+        if seamlessData.isV2 {
+            AppClipLauncher.open(
+                details: seamlessData,
+                using: appClipOpening,
+                onSuccess: { [weak self] in
+                    self?.appClipWaitSession.start { [weak self] outcome in
+                        self?.handleSeamlessAppClipUnavailable(error: outcome.asSDKError)
+                    }
+                },
+                onFailure: { [weak self] error in
+                    self?.handleSeamlessAppClipUnavailable(error: error)
+                }
+            )
+            return
+        }
         self.service
-            .request(SeamlessVerificationRouter.verify(targetUri: seamlessData.targetUri))
+            .request(SeamlessVerificationRouter.verify(targetUri: seamlessData.targetUri ?? ""))
             .sinchValidationResponse(VerificationApiCallback(listener: self, verificationStateListener: self))
+    }
+
+    private func shouldHandleAppClipCallback(method: VerificationMethodType?) -> Bool {
+        guard initiationResponseData?.seamlessDetails?.isV2 == true else { return false }
+        return method == nil || method == .seamless
+    }
+
+    private func handleSeamlessAppClipUnavailable(error: Error) {
+        verificationListener?.onVerificationEvent(
+            event: AutoVerificationEvent.subMethodFailedEvent(method: .seamless, e: error)
+        )
+    }
+
+    private func verifyAppClipCallback(url callbackUrlString: String) {
+        appClipWaitSession.cancel()
+        guard let callbackUrl = URL(string: callbackUrlString) else {
+            verificationListener?.onVerificationFailed(e: SDKError.illegalArgument(message: "App Clip callback is not a valid URL"))
+            return
+        }
+
+        guard let queryParameterName = initiationResponseData?.seamlessDetails?.appCallbackQueryParameterName else {
+            verificationListener?.onVerificationFailed(
+                e: SDKError.unexpected(message: "v2 seamless verification response is missing appCallbackQueryParameterName")
+            )
+            return
+        }
+
+        guard let childId = initiationResponseData?.seamlessDetails?.subVerificationId, !childId.isEmpty else {
+            verificationListener?.onVerificationFailed(
+                e: SDKError.unexpected(message: "v2 auto seamless verification response is missing subVerificationId")
+            )
+            return
+        }
+
+        do {
+            let operatorToken = try AppClipCallbackParser(callbackUrl: callbackUrl).extractOperatorToken(queryParameterName: queryParameterName)
+            self.service
+                .request(SeamlessVerificationRouter.verifyWithCredential(
+                    data: SeamlessCallbackData(state: childId, operatorToken: operatorToken)
+                ))
+                .sinchValidationResponse(VerificationApiCallback(listener: self, verificationStateListener: self))
+        } catch {
+            verificationListener?.onVerificationFailed(e: error)
+        }
+    }
+
+    override func onStop() {
+        appClipWaitSession.cancel()
+    }
+
+    public override func onVerified() {
+        appClipWaitSession.cancel()
+        super.onVerified()
+    }
+
+    public override func onVerificationFailed(e: Error) {
+        appClipWaitSession.cancel()
+        super.onVerificationFailed(e: e)
     }
     
     private func verificationData(withCode code: String,

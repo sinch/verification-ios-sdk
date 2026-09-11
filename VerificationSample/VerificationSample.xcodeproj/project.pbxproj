@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		8813C9AE2A306104002CC9B4 /* EventBusDestination.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8813C9AD2A306104002CC9B4 /* EventBusDestination.swift */; };
+		8813C9AF2A306104002CC9B5 /* BugfenderDestination.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8813C9B02A306104002CC9B6 /* BugfenderDestination.swift */; };
 		B17233F124C5871F00E35C9E /* VerificationDialogController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B17233F024C5871F00E35C9E /* VerificationDialogController.swift */; };
 		B17233FF24C6C4B100E35C9E /* MethodButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B17233FE24C6C4B100E35C9E /* MethodButton.swift */; };
 		B172340124C6C62300E35C9E /* UIColorExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B172340024C6C62300E35C9E /* UIColorExtensions.swift */; };
@@ -40,7 +41,9 @@
 
 /* Begin PBXFileReference section */
 		4A0A77DE58183A197AEF6A05 /* Pods-VerificationSample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VerificationSample.debug.xcconfig"; path = "Target Support Files/Pods-VerificationSample/Pods-VerificationSample.debug.xcconfig"; sourceTree = "<group>"; };
+		880E738E3000F5D4000BACA4 /* VerificationSample.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = VerificationSample.entitlements; sourceTree = "<group>"; };
 		8813C9AD2A306104002CC9B4 /* EventBusDestination.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventBusDestination.swift; sourceTree = "<group>"; };
+		8813C9B02A306104002CC9B6 /* BugfenderDestination.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BugfenderDestination.swift; sourceTree = "<group>"; };
 		B1105C5D24D8268100788DEB /* VerificationCallout.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = VerificationCallout.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B110853224D1773C001FAAB7 /* VerificationFlashcall.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = VerificationFlashcall.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B158993024DA7417000F4133 /* VerificationSeamless.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = VerificationSeamless.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -101,6 +104,7 @@
 		B1EF430724B46C5F009BE30C /* VerificationSample */ = {
 			isa = PBXGroup;
 			children = (
+				880E738E3000F5D4000BACA4 /* VerificationSample.entitlements */,
 				B1EF430824B46C5F009BE30C /* AppDelegate.swift */,
 				B1EF430A24B46C5F009BE30C /* SceneDelegate.swift */,
 				B1EF430C24B46C5F009BE30C /* VerificationController.swift */,
@@ -114,6 +118,7 @@
 				B1D698B624EA86FF00AC4CA8 /* Environments.swift */,
 				B1FE5B73259B3D3600069DA2 /* CustomInterceptor.swift */,
 				8813C9AD2A306104002CC9B4 /* EventBusDestination.swift */,
+				8813C9B02A306104002CC9B6 /* BugfenderDestination.swift */,
 			);
 			path = VerificationSample;
 			sourceTree = "<group>";
@@ -223,13 +228,9 @@
 			inputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-VerificationSample/Pods-VerificationSample-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
-			inputPaths = (
-			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-VerificationSample/Pods-VerificationSample-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -267,6 +268,7 @@
 			files = (
 				B17233F124C5871F00E35C9E /* VerificationDialogController.swift in Sources */,
 				8813C9AE2A306104002CC9B4 /* EventBusDestination.swift in Sources */,
+				8813C9AF2A306104002CC9B5 /* BugfenderDestination.swift in Sources */,
 				B17233FF24C6C4B100E35C9E /* MethodButton.swift in Sources */,
 				B1EF430D24B46C5F009BE30C /* VerificationController.swift in Sources */,
 				B172340124C6C62300E35C9E /* UIColorExtensions.swift in Sources */,
@@ -419,6 +421,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = NO;
+				CODE_SIGN_ENTITLEMENTS = VerificationSample/VerificationSample.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 589CW2BWK2;
@@ -442,6 +445,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = NO;
+				CODE_SIGN_ENTITLEMENTS = VerificationSample/VerificationSample.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 589CW2BWK2;

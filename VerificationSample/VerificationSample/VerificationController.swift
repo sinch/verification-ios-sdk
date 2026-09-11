@@ -8,6 +8,9 @@
 
 import UIKit
 import Verification
+import SwiftyBeaver
+
+private let log = SwiftyBeaver.self
 
 class VerificationController: UIViewController {
     
@@ -105,6 +108,11 @@ class VerificationController: UIViewController {
         self.verification?.initiate()
     }
     
+    func handleUniversalLinkCallback(_ url: URL) {
+        log.info("handleUniversalLinkCallback called with url: \(url.absoluteString)")
+        verification?.verify(verificationCode: url.absoluteString)
+    }
+
     @IBAction func didTapMethodButton(_ sender: UIButton) {
         guard !sender.isSelected else { return }
         methodButtons.forEach {
@@ -211,11 +219,12 @@ class VerificationController: UIViewController {
 extension VerificationController: VerificationListener {
     
     func onVerified() {
-        print("OnVerified called")
+        log.info("onVerified called")
         verificationDialogController?.showVerifiedMessage()
     }
-    
+
     func onVerificationFailed(e: Error) {
+        log.error("onVerificationFailed called with error: \(e.localizedDescription)")
         verificationDialogController?.showError(withMessage: e.localizedDescription)
     }
     
@@ -224,11 +233,12 @@ extension VerificationController: VerificationListener {
 extension VerificationController: InitiationListener {
     
     func onInitiated(_ data: InitiationResponseData) {
-        print("onInitiated called data is\n\(data)")
+        log.info("onInitiated called, data is:\n\(data)")
         verificationDialogController?.adjustInputsVisibility(usingInitiationResponseDetails: data)
     }
-    
+
     func onInitiationFailed(e: Error) {
+        log.error("onInitiationFailed called with error: \(e.localizedDescription)")
         verificationDialogController?.showError(withMessage: e.localizedDescription)
     }
     
@@ -237,12 +247,13 @@ extension VerificationController: InitiationListener {
 extension VerificationController: VerificationDialogDelegate {
     
     func verificationDialogCancelPressed(_ verificationDialog: VerificationDialogController) {
+        log.info("verificationDialogCancelPressed - stopping verification")
         verification?.stop()
         verificationDialog.dismiss(animated: true, completion: nil)
     }
-    
+
     func verificationDialog(_ verificationDialog: VerificationDialogController, didTypeVerificationCode verificationCode: String, forMethod method: VerificationMethodType?) {
-        print("Delegate passed code \(verificationCode)")
+        log.info("verificationDialog didTypeVerificationCode: \(verificationCode), method: \(String(describing: method))")
         verification?.verify(verificationCode: verificationCode, method: method)
     }
     

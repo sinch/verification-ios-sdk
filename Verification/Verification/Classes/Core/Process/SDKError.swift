@@ -22,6 +22,9 @@ public enum SDKError: LocalizedError {
     
     /// Error indicating that verification has not been completed after interception timeout and is in expired state.
     case timeoutException
+
+    /// Error indicating that the App Clip was dismissed before the host received a callback.
+    case appClipDismissed
     
     /// Unexpected error
     case unexpected(message: String)
@@ -36,6 +39,8 @@ public enum SDKError: LocalizedError {
             return data.message ?? "Sinch api returned an error without message"
         case .timeoutException:
             return "Verification process has not been completed within interception timeout"
+        case .appClipDismissed:
+            return "App Clip was dismissed before verification completed"
         case .unexpected(let message):
             return message
         }

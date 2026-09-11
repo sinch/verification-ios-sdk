@@ -1,5 +1,5 @@
 # Uncomment this line to define a global platform for your project
-platform :ios, '10.0'
+platform :ios, '13.0'
 
 # Uncomment this line if you're using Swift
 use_frameworks!
@@ -18,6 +18,7 @@ target 'VerificationSample' do
   project 'VerificationSample/VerificationSample.xcodeproj'
   verification_pods
   pod 'SwiftEventBus', :tag => '5.0.1', :git => 'https://github.com/cesarferreira/SwiftEventBus.git'
+  pod 'BugfenderSDK', '~> 3.0'
 end
   
 target 'Verification' do

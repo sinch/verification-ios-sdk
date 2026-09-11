@@ -43,6 +43,16 @@ THE SOFTWARE.
 		</dict>
 		<dict>
 			<key>FooterText</key>
+			<string>See https://bugfender.com/terms-of-service/</string>
+			<key>License</key>
+			<string>Commercial</string>
+			<key>Title</key>
+			<string>BugfenderSDK</string>
+			<key>Type</key>
+			<string>PSGroupSpecifier</string>
+		</dict>
+		<dict>
+			<key>FooterText</key>
 			<string>The MIT License (MIT)
 
 Copyright (c) 2018 Roy Marmelstein

@@ -35,5 +35,5 @@ publishToAppStore:release:
     - .conf:env
     - .conf:release
     - .conf:runner:tags
-    - .conf:rule:defaultBranch
+    - .conf:rule:defaultManual
     - .publishToAppStore:do

@@ -12,7 +12,7 @@ import XCTest
 class InitiationResponseDataTests: XCTestCase {
     
     func testNoTimeoutDate() throws {
-        let initiationData = InitiationResponseData(id: "", method: .seamless, smsDetails: nil, flashcallDetails: nil, seamlessDetails: SeamlessInitiationDetails(subVerificationId: nil, targetUri: ""), calloutDetails: nil, contentLanguage: nil, dateOfGeneration: Date())
+        let initiationData = InitiationResponseData(id: "", method: .seamless, smsDetails: nil, flashcallDetails: nil, seamlessDetails: SeamlessInitiationDetails(subVerificationId: nil, targetUri: "", iOSAppClipUrl: nil, appInfoJwt: nil, appInfoJwtQueryParameterName: nil, appCallbackQueryParameterName: nil, version: nil), calloutDetails: nil, contentLanguage: nil, dateOfGeneration: Date())
         
         XCTAssertNil(initiationData.initiationDataTimeoutDate)
     }

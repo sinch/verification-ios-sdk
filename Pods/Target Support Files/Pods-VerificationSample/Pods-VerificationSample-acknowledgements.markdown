@@ -24,6 +24,10 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
 
 
+## BugfenderSDK
+
+See https://bugfender.com/terms-of-service/
+
 ## PhoneNumberKit
 
 The MIT License (MIT)

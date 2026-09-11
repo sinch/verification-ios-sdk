@@ -40,7 +40,7 @@ class SeamlessVerificationMethodTests: XCTestCase {
     
     private func createHelperWithSeamlessMethod() -> CommonVerificationMethodsTestsHelper {
         let helper = CommonVerificationMethodsTestsHelper(testCase: self, verificationMethodType: .seamless, verificationUrlCreator: { data in
-            return URL(string: data.seamlessDetails!.targetUri)!
+            return URL(string: data.seamlessDetails!.targetUri ?? "")!
         })
         let method = createMethod(withHelperAsListener: helper)
         helper.method = method

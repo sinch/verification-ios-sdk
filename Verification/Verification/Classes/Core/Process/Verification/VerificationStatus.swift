@@ -16,7 +16,8 @@ public enum VerificationStatus: String, Codable {
     case successful = "SUCCESSFUL"
     
     /// Verification attempt was made, but the number was not verified.
-    case failed = "FAILED"
+    /// Encoded as the API value `FAIL`. `FAILED` is also accepted when decoding.
+    case failed = "FAIL"
     
     /// Verification attempt was denied by Sinch or your backend.
     case denied = "DENIED"
@@ -26,5 +27,34 @@ public enum VerificationStatus: String, Codable {
     
     /// Verification attempt could not be completed due to a network error or the number being unreachable.
     case error = "ERROR"
+    
+    public init(from decoder: Decoder) throws {
+        let container = try decoder.singleValueContainer()
+        let raw = try container.decode(String.self)
+        switch raw.uppercased() {
+        case "PENDING":
+            self = .pending
+        case "SUCCESSFUL":
+            self = .successful
+        case "FAIL", "FAILED":
+            self = .failed
+        case "DENIED":
+            self = .denied
+        case "ABORTED":
+            self = .aborted
+        case "ERROR":
+            self = .error
+        default:
+            throw DecodingError.dataCorruptedError(
+                in: container,
+                debugDescription: "Unknown verification status \(raw)"
+            )
+        }
+    }
+    
+    public func encode(to encoder: Encoder) throws {
+        var container = encoder.singleValueContainer()
+        try container.encode(rawValue)
+    }
     
 }

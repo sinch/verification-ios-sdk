@@ -1,5 +1,6 @@
 PODS:
   - Alamofire (5.4.0)
+  - BugfenderSDK (3.0.0)
   - Mocker (2.2.0)
   - PhoneNumberKit (3.3.1):
     - PhoneNumberKit/PhoneNumberKitCore (= 3.3.1)
@@ -12,6 +13,7 @@ PODS:
 
 DEPENDENCIES:
   - Alamofire (~> 5.2)
+  - BugfenderSDK (~> 3.0)
   - Mocker (~> 2.2.0)
   - PhoneNumberKit (~> 3.1)
   - SwiftEventBus (from `https://github.com/cesarferreira/SwiftEventBus.git`, tag `5.0.1`)
@@ -20,6 +22,7 @@ DEPENDENCIES:
 SPEC REPOS:
   trunk:
     - Alamofire
+    - BugfenderSDK
     - Mocker
     - PhoneNumberKit
     - SwiftyBeaver
@@ -36,11 +39,12 @@ CHECKOUT OPTIONS:
 
 SPEC CHECKSUMS:
   Alamofire: 3b6a534a3df22db367e4dedeeca73d1ddfcf0e2f
+  BugfenderSDK: 4cb5cf08948529da8eeeb627d2d13371dcfb8e02
   Mocker: d0ceb340eddd5c28539a691ce67d068674cef9a0
   PhoneNumberKit: ff153d5e299f6da566cb73c6aa71e354933b2932
   SwiftEventBus: b30f617a6aca5a9336464b4d3f5931034762f2d5
   SwiftyBeaver: 84069991dd5dca07d7069100985badaca7f0ce82
 
-PODFILE CHECKSUM: 41915eb4f0bcae24298b6e78b77dc7b071888cfd
+PODFILE CHECKSUM: 5307b2bf948668ebcc98c5c6dbee89bf4e449612
 
 COCOAPODS: 1.16.2
